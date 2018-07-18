@@ -22,9 +22,9 @@ class Map extends Component {
           defaultZoom={this.props.zoom}
         >
           <AnyReactComponent
-            lat={59.955413}
-            lng={30.337844}
-            text={'Kreyser Avrora'}
+            lat={46.883448}
+            lng={17.437112}
+            text={'Home'}
           />
         </GoogleMapReact>
       </div>
@@ -33,3 +33,5 @@ class Map extends Component {
 }
 
 export default Map;
+
+// adding markers: https://github.com/google-map-react/google-map-react-examples/blob/master/web/flux/components/examples/x_simple/simple_map_page.jsx
