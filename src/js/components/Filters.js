@@ -1,13 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 const Filters = () => (
             <section>
                 <h2>Filters</h2>
                 <select>
-                    <option value="volvo">Volvo</option>
-                    <option value="saab">Saab</option>
-                    <option value="mercedes">Mercedes</option>
-                    <option value="audi">Audi</option>
+                    <option value="location">Location</option>
+                    <option value="date">Date</option>
                 </select>
             </section>
 )
