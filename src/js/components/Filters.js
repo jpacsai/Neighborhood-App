@@ -1,13 +1,9 @@
 import React, { Component } from 'react';
 
-class Filters extends Component {
-    render() {
-        return (
+const Filters = () => (
             <section>
                 <h2>Filters</h2>
             </section>
-        )
-    }
-}
+)
 
 export default Filters;

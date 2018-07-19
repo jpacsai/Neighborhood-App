@@ -1,21 +1,20 @@
-import React, { Component } from 'react';
-import Header from './components/Header';
-import Map from './components/Map';
+import React from 'react';
 import Filters from './components/Filters';
+import ListContainer from './containers/list-container';
+import MapContainer from './containers/map-container';
+require('../index.css');
 
-
-class App extends Component {
-	render() {
-		return (
-			<div>
-				<Header />
-				<Filters />
-				<main>
-					<Map />
-				</main>
-			</div>
-		);
-	}
-}
+const App = () => (
+	<div>
+		<header>
+			<h1>Neighborhood App</h1>
+		</header>
+		<Filters />
+		<main>
+			<ListContainer />
+			<MapContainer />
+		</main>
+	</div>
+)
 
 export default App;
