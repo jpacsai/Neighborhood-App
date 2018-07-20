@@ -16,15 +16,44 @@ export function loadData(){
         return fetch(url)
         .then(res => res.json())
         .then((response)=>{
+            //createFilters(response);
             dispatch(eventAction(response));
         })
         .catch(function() {
             console.log("error");
-        });
+        })
     }
 }
 
-export function eventAction(response){
+export function createFilters(e){ 
+    const events = e; 
+
+    console.log('hoo', events)
+    
+    const allGenres = [];
+    const allLocations = [];
+
+    for (let i = 0; i < events.length; i++) {
+        const genre = events[i].classifications[0].genre.name;
+        const location = events[i]._embedded.venues[0].city.name;
+        if (allGenres.includes(genre) === false) {
+            allGenres.push(genre);
+        }
+        if (allLocations.includes(location) === false) {
+            allLocations.push(location);
+        }
+    }
+    
+    //filterAction(allGenres, allLocations);
+    console.log(allGenres);
+    console.log(allLocations);
+
+    return((dispatch) => dispatch(filterAction(allGenres, allLocations)))
+
+    
+}
+
+export function eventAction(response) {
     console.log('load data success');
     return{
         type:"EVENT_SUCCESS",
@@ -32,15 +61,11 @@ export function eventAction(response){
     }
 }
 
-/*
-let date = new Date();
-    const today = date.getFullYear() + '-' + (date.getMonth()+1) + '-' + date.getDate();
-
-    date.setDate(date.getDate() + 7);
-
-    const nextWeek = date.getFullYear() + '-' + (date.getMonth()+1) + '-' + date.getDate();
-
-    const url = 'https://app.ticketmaster.com/discovery/v2/events.JSON?apikey=GEKqrkYNGL9POROireeB9D6fzdpWP8dj&marketId=204&startDateTime=' + today + 'T00:00:00Z&endDateTime=' + nextWeek + 'T23:59:00Z&includeTBA=no&includeTBD=no';
-
-    console.log(url);
-    */
+export function filterAction(allGenres, allLocations) {
+    console.log('genre filter action');
+    return {
+        type: "FILTERS_CREATED",
+        genres: allGenres,
+        locations: allLocations
+    }
+}
