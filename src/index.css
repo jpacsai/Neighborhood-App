@@ -3,3 +3,55 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+header {
+  height: 8vh;
+}
+
+.title {
+  text-align: center;
+  padding: 10px;
+}
+
+main {
+  height: 92vh;
+  display: flex;
+  flex-direction: row;
+}
+
+.side-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 25%;
+}
+
+.filter-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  height: 12%;
+}
+
+.filter-container-header {
+  margin: 8px;
+}
+
+.event-list {
+  height: 88%;
+  list-style-type: none;
+  padding: 0 10px;
+  overflow: scroll;
+  overflow-x: hidden;
+  margin: 0;
+}
+
+.event {
+  margin: 5px 0;
+}
+
+#map {
+  width: 75%;
+}

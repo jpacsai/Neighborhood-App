@@ -9,9 +9,10 @@ class ListContainer extends Component {
     }
 
     render() {
-        console.log(this.props.events);
         return (
-            <List list={this.props.events}/>
+            <ul className='event-list'>
+                <List list={this.props.events}/>
+            </ul>
         )
     }
 }

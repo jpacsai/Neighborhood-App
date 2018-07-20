@@ -7,11 +7,13 @@ require('../index.css');
 const App = () => (
 	<div>
 		<header>
-			<h1>Neighborhood App</h1>
+			<h1 className='title'>Neighborhood App</h1>
 		</header>
-		<Filters />
 		<main>
-			<ListContainer />
+			<aside className='side-menu'>
+				<Filters />
+				<ListContainer />
+			</aside>
 			<MapContainer />
 		</main>
 	</div>
