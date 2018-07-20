@@ -3,54 +3,47 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif; }
-
-header {
-  height: 8vh; }
-
-.title {
-  text-align: center;
-  padding: 10px;
-  margin: 0; }
-
-main {
-  height: 92vh;
-  display: flex;
-  flex-direction: row; }
-
-.side-menu {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 25%; }
-
-.aside-header {
-  margin: 8px;
-  text-align: center; }
-
-.aside-header-list {
-  height: 7%; }
-
-.filter-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 10px;
-  height: 12%; }
-
-.event-list-container {
-  height: 88%;
-  overflow-x: hidden; }
-
-.event-list {
-  list-style-type: none;
-  padding: 0 10px;
-  margin: 0;
-  height: 90%;
-  overflow: scroll; }
-
-.event {
-  margin: 5px 0; }
-
-#map {
-  width: 75%; }
+  body header {
+    height: 8vh; }
+    body header .title {
+      text-align: center;
+      padding: 10px;
+      margin: 0; }
+  body main {
+    height: 92vh;
+    display: flex;
+    flex-direction: row; }
+    body main aside {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 25%; }
+      body main aside .aside-header {
+        margin: 0;
+        padding: 8px;
+        text-align: center; }
+      body main aside .aside-header-list {
+        height: 7%;
+        display: flex;
+        justify-content: center;
+        align-items: center; }
+      body main aside .filter-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        height: 12%; }
+      body main aside .event-list-container {
+        height: 88%;
+        overflow-x: hidden; }
+        body main aside .event-list-container .event-list {
+          list-style-type: none;
+          padding: 0 10px;
+          margin: 0;
+          height: 90%;
+          overflow: scroll; }
+        body main aside .event-list-container .event {
+          margin: 5px 0; }
+    body main #map {
+      width: 75%; }
