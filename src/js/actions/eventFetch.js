@@ -1,6 +1,19 @@
 export function loadData(){
+    let date = new Date();
+    let month = (date.getMonth()+1) + '';
+    month = month.length < 2 ? '0' + month : month;
+    const today = date.getFullYear() + '-' + month + '-' + date.getDate();
+
+    date.setDate(date.getDate() + 7);
+    month = (date.getMonth()+1) + '';
+    month = month.length < 2 ? '0' + month : month;
+
+    const nextWeek = date.getFullYear() + '-' + month + '-' + date.getDate();
+
+    const url = 'https://app.ticketmaster.com/discovery/v2/events.JSON?apikey=GEKqrkYNGL9POROireeB9D6fzdpWP8dj&marketId=204&startDateTime=' + today + 'T00:00:00Z&endDateTime=' + nextWeek + 'T23:59:00Z&includeTBA=no&includeTBD=no';
+
     return(dispatch)=>{
-        return fetch(`https://app.ticketmaster.com/discovery/v2/events.JSON?apikey=GEKqrkYNGL9POROireeB9D6fzdpWP8dj&marketId=204&startDateTime=2018-07-19T15:44:00Z&endDateTime=2018-07-26T23:59:00Z&includeTBA=no&includeTBD=no`)
+        return fetch(url)
         .then(res => res.json())
         .then((response)=>{
             dispatch(eventAction(response));
@@ -18,3 +31,16 @@ export function eventAction(response){
         events: response._embedded.events
     }
 }
+
+/*
+let date = new Date();
+    const today = date.getFullYear() + '-' + (date.getMonth()+1) + '-' + date.getDate();
+
+    date.setDate(date.getDate() + 7);
+
+    const nextWeek = date.getFullYear() + '-' + (date.getMonth()+1) + '-' + date.getDate();
+
+    const url = 'https://app.ticketmaster.com/discovery/v2/events.JSON?apikey=GEKqrkYNGL9POROireeB9D6fzdpWP8dj&marketId=204&startDateTime=' + today + 'T00:00:00Z&endDateTime=' + nextWeek + 'T23:59:00Z&includeTBA=no&includeTBD=no';
+
+    console.log(url);
+    */
