@@ -40,19 +40,20 @@ body {
       }
       
       .filter-container {
-        flex-flow: row-reverse wrap;
+        display: flex;
+        flex-direction: column;
         justify-content: center;
-        align-content: space-between;
+        align-items: center;
         padding: 10px;
-        height: 12%;
+        height: 23%;
 
-        button {
-          margin-left: 5px;
+        select {
+          margin-bottom: 5px;
         }
       }
       
       .event-list-container {
-        height: 88%;
+        height: 76%;
         overflow-x: hidden;
   
         .event-list {

@@ -28,15 +28,16 @@ body {
         justify-content: center;
         align-items: center; }
       body main aside .filter-container {
-        flex-flow: row-reverse wrap;
+        display: flex;
+        flex-direction: column;
         justify-content: center;
-        align-content: space-between;
+        align-items: center;
         padding: 10px;
-        height: 12%; }
-        body main aside .filter-container button {
-          margin-left: 5px; }
+        height: 23%; }
+        body main aside .filter-container select {
+          margin-bottom: 5px; }
       body main aside .event-list-container {
-        height: 88%;
+        height: 76%;
         overflow-x: hidden; }
         body main aside .event-list-container .event-list {
           list-style-type: none;
