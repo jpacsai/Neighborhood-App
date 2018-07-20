@@ -10,9 +10,12 @@ class ListContainer extends Component {
 
     render() {
         return (
-            <ul className='event-list'>
-                <List list={this.props.events}/>
-            </ul>
+            <section className='event-list-container'>
+                <h2 className={ ['aside-header', 'aside-header-list'].join(' ') }>Events</h2>
+                <ul className='event-list'>
+                    <List list={this.props.events}/>
+                </ul>
+            </section>
         )
     }
 }

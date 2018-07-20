@@ -2,7 +2,7 @@ import React from 'react';
 import Filters from './components/Filters';
 import ListContainer from './containers/list-container';
 import MapContainer from './containers/map-container';
-require('../index.css');
+require('../css/index.css');
 
 const App = () => (
 	<div>
