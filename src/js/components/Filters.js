@@ -7,6 +7,7 @@ const Filters = () => (
                     <option value="location">Location</option>
                     <option value="date">Date</option>
                 </select>
+                <button>Filter</button>
             </section>
 )
 
