@@ -5,7 +5,7 @@ const List = (props) => {
     return props.list.map((event) => {
         return (
             <li key={ event.id } className='event'>{ event.name }
-                { <p>date: { event.dates.start.localDate } time: { event.dates.start.localTime }</p> }
+                { <p>Date: { event.dates.start.localDate } { (event.dates.start.localTime).slice(0,5) } Location: { event._embedded.venues[0].city.name }</p> }
             </li>
         )
     })
