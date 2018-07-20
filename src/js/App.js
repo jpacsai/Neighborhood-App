@@ -1,5 +1,5 @@
 import React from 'react';
-import Filters from './components/Filters';
+import FilterContainer from './containers/filter-container';
 import ListContainer from './containers/list-container';
 import MapContainer from './containers/map-container';
 require('../css/index.css');
@@ -11,7 +11,7 @@ const App = () => (
 		</header>
 		<main>
 			<aside className='side-menu'>
-				<Filters />
+				<FilterContainer />
 				<ListContainer />
 			</aside>
 			<MapContainer />
