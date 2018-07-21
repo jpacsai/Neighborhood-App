@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
-// import FilterContainer from './containers/filter-container';
-import ListContainer from './containers/list-container';
 import MapContainer from './containers/map-container';
-import * as loadData from './actions/eventFetch';
+import loadData from './actions/eventFetch';
 import { connect } from 'react-redux';
+import List from './components/List';
+import FilterContainer from './containers/filter-container';
 require('../css/index.css');
 
 class App extends Component {
 	componentWillMount() {
-		this.props.loadData();
+		loadData();
 	}
 
 	render() {
@@ -19,8 +19,13 @@ class App extends Component {
 				</header>
 				<main>
 					<aside className='side-menu'>
-						{/*<FilterContainer />*/}
-						<ListContainer events={this.props.events}/>
+						<FilterContainer genres={ this.props.genres } locations={ this.props.locations }/>
+						<section className='event-list-container'>
+							<h2 className={ ['aside-header', 'aside-header-list'].join(' ') }>Events</h2>
+							<ul className='event-list'>
+								<List list={ this.props.events }/>
+							</ul>
+						</section>
 					</aside>
 					<MapContainer />
 				</main>
@@ -30,9 +35,10 @@ class App extends Component {
 }
 
 function mapStateToProps(state) {
-    console.log('events: ', state.events);
     return {
-        events: state.events
+		events: state.events.events,
+		genres: state.events.genres,
+		locations: state.events.locations
     }
 }
 
