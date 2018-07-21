@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import Filters from './../components/Filters';
-// import * as createFilters from './../actions/eventFetch';
+import Filters from '../components/Filters';
+import * as createFilters from './../actions/createFilterList';
 
 class FilterContainer extends Component {
+
+    componentWillMount() {
+        this.props.createFilters(this.props.events);
+    }
+
     render() {
         console.log('in filter genres: ',this.props.genres);
         return (
@@ -18,13 +23,11 @@ class FilterContainer extends Component {
 }
 
 function mapStateToProps(state) {
-    console.log('state: ',state.filters)
+    console.log('state in filters: ',state.filters)
     return {
         locations: state.filters[1],
         genres: state.filters[0]
     }
 }
 
-export default connect(mapStateToProps)(FilterContainer);
-
-// export default FilterContainer;
+export default connect(mapStateToProps, createFilters)(FilterContainer);
