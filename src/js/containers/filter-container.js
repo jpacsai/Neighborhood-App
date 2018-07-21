@@ -7,8 +7,9 @@ class FilterContainer extends Component {
         return (
             <section className='filter-container'>
                 <h2 className={ ['aside-header', 'aside-header-filter'].join(' ') }>Filters</h2>
-                    <Filters title={'Location'} list={ locations } locations={ locations } events={ events } genres={ genres }/>
-                    <Filters title={'Genre'} list={ genres } locations={ locations } events={ events } genres={ genres }/>
+                    <Filters title={'Location'} list={ locations } events={ events }/>
+                    <Filters title={'Genre'} list={ genres } events={ events } />
+                    <button>Filter</button>
             </section>
         )
     }

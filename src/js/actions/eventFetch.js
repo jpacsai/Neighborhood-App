@@ -17,7 +17,7 @@ export default function loadData(){
         .then(res => res.json())
         .then((response)=>{
             const filters = createFilters(response._embedded.events);
-            dispatch(eventAction(response, filters));
+            dispatch(eventActionDispatch(response, filters));
         })
         .catch(function() {
             console.log("error");
@@ -46,7 +46,7 @@ function createFilters(events){
     }
 }
 
-function eventAction(response, filters) {
+function eventActionDispatch(response, filters) {
     console.log('load data success');
     return{
         type:"EVENT_SUCCESS",

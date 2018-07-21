@@ -1,23 +1,33 @@
-import React from 'react';
-import filterList from './../actions/filterEvents';
+import React, { Component } from 'react';
+import { filterAction } from './../actions/filterEvents';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 
-const Filters = (props) => {
-    const { title, list, events, locations, genres } = props;
-    if (list) {
-        return (
-            <select selected={ title } onChange={ (e) => filterList(events, title, e) }>
-                <option disabled value={title}>Select {title}</option>
-                { props.list.map(item => {
-                    return (
-                        <option key={item} value={item}>{item}</option>
-                    )
-                }) }
-            </select>
-        )
-    }
-    else {
-        return null;
+class Filters extends Component {
+    render() {
+        const { title, list } = this.props;
+        if (list) {
+            return (
+                <select selected={ title } onChange={ (val) => 
+                    this.props.filterAction(title, val)
+                }>
+                    <option disabled value={title}>Select {title}</option>
+                    { list.map(item => {
+                        return (
+                            <option key={item} value={item}>{item}</option>
+                        )
+                    }) }
+                </select>
+            )
+        }
+        else {
+            return null;
+        }
     }
 }
 
-export default Filters;
+function matchDispatchToProps(dispatch) {
+    return bindActionCreators({ filterAction: filterAction }, dispatch);
+}
+
+export default connect(null, matchDispatchToProps)(Filters);

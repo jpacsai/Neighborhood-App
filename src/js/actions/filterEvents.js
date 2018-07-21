@@ -1,4 +1,6 @@
-export default function filterList(events, title, e) {
+export const filterAction = (title, val) => {
+    //console.log('val: ', val.target.value)
+    /*
     if (title === 'Location') {
         const newEvents = events.filter(event => {
             return event._embedded.venues[0].city.name === e.target.value;
@@ -7,18 +9,28 @@ export default function filterList(events, title, e) {
         return newEvents;
     }
     else if (title === 'Genre') {
-        /*const newEvents = events.filter(event => {
-            return event.classification[0].genre.name === e.target.value;
+        const newEvents = events.filter(event => {
+            return event.classifications[0].genre.name === e.target.value;
         });
-        console.log()
         console.log(newEvents);
-        return newEvents; */
-    }
-}
+        return newEvents;
+    }*/
 
-function filterAction(events) {
-    return {
-        type:"FILTER_LIST",
-        events: 'sthing'
+    
+
+    if (val.hasOwnProperty('target')) {
+        const value = val.target.value;
+        const message = title === 'Location' ? 'FILTER_LOCATION' : 'FILTER_GENRE'
+        
+        /*return (dispatch) => {
+            console.log('filter action') 
+            return dispatch(filterActionDespatch(message, value));
+        };*/
+
+        console.log('filter action despatched')
+        return {
+            type: message,
+            filter: value
+        }
     }
 }
