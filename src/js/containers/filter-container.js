@@ -1,18 +1,14 @@
 import React, { Component } from 'react';
-import Filters from '../components/Filters';
+import Filters from './../components/Filters';
 
 class FilterContainer extends Component {
-    click() {
-        console.log('haho');
-    }
-
     render() {
+        const { events, locations, genres } = this.props;
         return (
             <section className='filter-container'>
                 <h2 className={ ['aside-header', 'aside-header-filter'].join(' ') }>Filters</h2>
-                    <Filters title={'Location'} list={ this.props.locations }/>
-                    <Filters title={'Genre'} list={ this.props.genres }/>
-                <button onClick={this.click}>Filter</button>
+                    <Filters title={'Location'} list={ locations } locations={ locations } events={ events } genres={ genres }/>
+                    <Filters title={'Genre'} list={ genres } locations={ locations } events={ events } genres={ genres }/>
             </section>
         )
     }
