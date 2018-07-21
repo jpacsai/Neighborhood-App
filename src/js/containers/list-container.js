@@ -1,13 +1,8 @@
 import React, { Component } from 'react';
-import List from './../components/List';
-import { connect } from 'react-redux';
-import * as loadData from './../actions/eventFetch';
+import List from '../components/List';
+
 
 class ListContainer extends Component {
-    componentWillMount() {
-        this.props.loadData();
-    }
-
     render() {
         return (
             <section className='event-list-container'>
@@ -20,17 +15,4 @@ class ListContainer extends Component {
     }
 }
 
-function mapStateToProps(state) {
-    console.log('events: ', state.events);
-    return {
-        events: state.events
-    }
-}
-/*
-function matchDispatchToProps(dispatch) {
-    return bindActionCreators({ selectEvent: selectEvent }, dispatch);
-}
-
-export default connect(mapStateToProps, matchDispatchToProps)(ListContainer);*/
-
-export default connect(mapStateToProps, loadData)(ListContainer);
+export default ListContainer;

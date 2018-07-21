@@ -1,7 +1,6 @@
 import React from 'react';
 
 const List = (props) => {
-    console.log(props.list)
     return props.list.map((event) => {
         return (
             <li key={ event.id } className='event'>{ event.name }
