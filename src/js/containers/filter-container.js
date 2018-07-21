@@ -1,15 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Filters from './../components/Filters';
-import * as createFilters from './../actions/eventFetch';
+// import * as createFilters from './../actions/eventFetch';
 
 class FilterContainer extends Component {
-    componentWillMount() {
-        this.props.createFilters(events);
-    }
-
     render() {
-        console.log('genres: ',this.props.genres);
+        console.log('in filter genres: ',this.props.genres);
         return (
             <section className='filter-container'>
                 <h2 className={ ['aside-header', 'aside-header-filter'].join(' ') }>Filters</h2>
@@ -22,13 +18,13 @@ class FilterContainer extends Component {
 }
 
 function mapStateToProps(state) {
+    console.log('state: ',state.filters)
     return {
-        events: state.events,
-        locations: state.locations,
-        genres: state.genres
+        locations: state.filters[1],
+        genres: state.filters[0]
     }
 }
 
-export default connect(mapStateToProps, createFilters)(FilterContainer);
+export default connect(mapStateToProps)(FilterContainer);
 
 // export default FilterContainer;

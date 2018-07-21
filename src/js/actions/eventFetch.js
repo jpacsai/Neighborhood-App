@@ -16,7 +16,7 @@ export function loadData(){
         return fetch(url)
         .then(res => res.json())
         .then((response)=>{
-            //createFilters(response);
+            dispatch(createFilters(response));
             dispatch(eventAction(response));
         })
         .catch(function() {
@@ -26,7 +26,7 @@ export function loadData(){
 }
 
 export function createFilters(e){ 
-    const events = e; 
+    const events = e._embedded.events; 
 
     console.log('hoo', events)
     
@@ -45,7 +45,7 @@ export function createFilters(e){
     }
     
     //filterAction(allGenres, allLocations);
-    console.log(allGenres);
+    console.log('allGenres: ',allGenres);
     console.log(allLocations);
 
     return((dispatch) => dispatch(filterAction(allGenres, allLocations)))
@@ -62,7 +62,7 @@ export function eventAction(response) {
 }
 
 export function filterAction(allGenres, allLocations) {
-    console.log('genre filter action');
+    console.log('genre filter action', allGenres);
     return {
         type: "FILTERS_CREATED",
         genres: allGenres,

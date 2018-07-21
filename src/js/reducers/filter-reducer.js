@@ -1,11 +1,10 @@
-export default function filterReducer (state = {}, action) {
-    console.log(action);
+export default function filterReducer (state = [], action) {
+    console.log('filters created', action.genres);
     switch (action.type) {
         case "FILTERS_CREATED":
-           return Object.assign({}, state, {
-                genres: action.genres,
-                locations: action.locations
-            });
+            const newState = state.concat([action.genres, action.locations])
+            console.log('newState: ', newState)
+            return newState;
         default:
           return state
       }

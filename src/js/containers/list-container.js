@@ -21,6 +21,7 @@ class ListContainer extends Component {
 }
 
 function mapStateToProps(state) {
+    console.log('events: ', state.events);
     return {
         events: state.events
     }
