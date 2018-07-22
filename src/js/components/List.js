@@ -4,7 +4,7 @@ const List = (props) => {
     if (props.list) {
         return props.list.map((event) => {
             const date = event.dates.start.localDate || 'unknown date';
-            const time = event.dates.start.localTime || 'unkown time';
+            const time = event.dates.start.localTime ? (event.dates.start.localTime).slice(0, 5) : '';
             const location = event._embedded.venues[0].city.name || 'unkown location';
             console.log('event ',event);
             return (
