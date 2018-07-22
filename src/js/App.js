@@ -10,7 +10,10 @@ require('../css/index.css');
 class App extends Component {
 	componentDidMount() {
 		const { dispatch } = this.props;
-		dispatch(loadData());
+		dispatch(loadData()).then(() => {
+			console.log('call filters', this.props.events);
+			dispatch(createFilters(this.props.events));
+		});
 	}
 
 	componentWillReceiveProps(nextProps) {

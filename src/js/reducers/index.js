@@ -5,7 +5,7 @@ import createFilterReducer from './createFilter-reducer';
 
 export default combineReducers({
     events: eventsReducer,
-    //filters: createFilterReducer
+    filters: createFilterReducer
 });
 
 /* STATE STRUCTURE:

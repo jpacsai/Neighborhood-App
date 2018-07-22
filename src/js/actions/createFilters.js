@@ -14,10 +14,11 @@ export function createFilters(events){
             allLocations.push(location);
         }
     }
-    return createFiltersActionDispatch(message, allGenres, allLocations);     
+    return createFiltersDispatch(message, allGenres, allLocations);     
 }
 
-function createFiltersActionDispatch(message, allGenres, allLocations) {
+function createFiltersDispatch(message, allGenres, allLocations) {
+    console.log('dispatching filter lists');
     return {
         type: message,
         genres: allGenres,
