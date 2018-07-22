@@ -5,15 +5,15 @@ import createFilterReducer from './createFilter-reducer';
 
 export default combineReducers({
     events: eventsReducer,
-    filters: createFilterReducer
+    //filters: createFilterReducer
 });
 
 /* STATE STRUCTURE:
 
 const store = {
   events: {
-    allEvents: [],
-    filteredEvents: [],
+    events: [],
+    ( filteredEvents: [], ) not ready yet
   },
   filters: {
     genres: [],

@@ -1,5 +1,5 @@
 export function loadData(){
-    console.log('loadData')
+    console.log('fetching events')
     let date = new Date();
     let month = (date.getMonth()+1) + '';
     month = month.length < 2 ? '0' + month : month;
@@ -19,21 +19,17 @@ export function loadData(){
         .then((response)=>{
             dispatch(loadDataActionDispatch(response));
         })
-        .catch(function() {
-            console.log("error");
+        .catch(function(error) {
+            console.log('error: ', error);
         })
     }
 }
 
-function loadDataActionDispatch(response, filters) {
+function loadDataActionDispatch(response) {
     console.log('load data success');
     return{
         type:"EVENT_FETCH_SUCCESS",
         events: {
             events: response._embedded.events},
-        /*genres: {
-            genres: filters.genres },
-        locations: {
-            locations: filters.locations}*/
     }
 }

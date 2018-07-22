@@ -3,14 +3,18 @@ import MapContainer from './containers/map-container';
 import { loadData } from './actions/eventFetch';
 import { connect } from 'react-redux';
 import List from './components/List';
-import FilterContainer from './containers/filter-container';
+// import FilterContainer from './containers/filter-container';
 import { createFilters } from './actions/createFilters';
 require('../css/index.css');
 
 class App extends Component {
-	componentWillMount() {
+	componentDidMount() {
 		const { dispatch } = this.props;
-		dispatch(loadData()).then(() => dispatch(createFilters(this.props.events)));
+		dispatch(loadData());
+	}
+
+	componentWillReceiveProps(nextProps) {
+		console.log('nextProps: ', nextProps.events)
 	}
 
 	render() {
@@ -21,7 +25,7 @@ class App extends Component {
 				</header>
 				<main>
 					<aside className='side-menu'>
-						<FilterContainer events={this.props.events} genres={ this.props.genres } locations={ this.props.locations }/>
+						{/* <FilterContainer events={this.props.events} genres={ this.props.genres } locations={ this.props.locations }/> */}
 						<section className='event-list-container'>
 							<h2 className={ ['aside-header', 'aside-header-list'].join(' ') }>Events</h2>
 							<ul className='event-list'>
@@ -37,8 +41,9 @@ class App extends Component {
 }
 
 function mapStateToProps(state) {
+	console.log('state', state)
     return {
-		events: state.events.allEvents,
+		events: state.events.events,
 		//genres: state.events.genres,
 		//locations: state.events.locations
     }
