@@ -42,7 +42,8 @@ function mapStateToProps(state) {
     return {
 		events: state.events.events,
 		genres: state.filters.genres,
-		locations: state.filters.locations
+		locations: state.filters.locations,
+		// filteredEvents: state.filteredEvents
     }
 }
 

@@ -1,26 +1,29 @@
 import { combineReducers } from 'redux';
 import eventsReducer from './events-reducer';
-// import filterReducer from './filter-reducer';
+import filterEventsReducer from './filterEvents-reducer';
 import createFilterReducer from './createFilter-reducer';
 import filtersToApplyReducer from './filtersToApply-reducer';
 
 export default combineReducers({
     events: eventsReducer,
     filters: createFilterReducer,
-    filtersToApply: filtersToApplyReducer
+    filtersToApply: filtersToApplyReducer,
+    // filteredEvents: filterEventsReducer
 });
 
 /* STATE STRUCTURE:
 
 const store = {
-  events: {
-    events: [],
-    ( filteredEvents: [], ) not ready yet
-  },
-  filters: {
+  events: [],
+  filters: {  // change to filterLists
     genres: [],
     locations: []
-  }
+  },
+  filtersToApply: {
+    genre: '',
+    location: ''
+  },
+  filteredEvents: []
 }
 
 */

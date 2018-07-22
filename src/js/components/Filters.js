@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import { filterAction } from '../actions/filterEvents';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { filtersToApply } from './../actions/filtersToApply';
