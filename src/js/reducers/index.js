@@ -1,23 +1,23 @@
 import { combineReducers } from 'redux';
 import eventsReducer from './events-reducer';
-import filterReducer from './filter-reducer';
+// import filterReducer from './filter-reducer';
+import createFilterReducer from './createFilter-reducer';
 
 export default combineReducers({
     events: eventsReducer,
-    filter: filterReducer
+    filters: createFilterReducer
 });
 
-/*
+/* STATE STRUCTURE:
 
 const store = {
   events: {
-    events: [],
-    locations: [],
-    genres: []
+    allEvents: [],
+    filteredEvents: [],
   },
-  filter: {
-    location: '',
-    genre: ''
+  filters: {
+    genres: [],
+    locations: []
   }
 }
 

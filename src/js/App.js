@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
 import MapContainer from './containers/map-container';
-import loadData from './actions/eventFetch';
+import { loadData } from './actions/eventFetch';
 import { connect } from 'react-redux';
 import List from './components/List';
 import FilterContainer from './containers/filter-container';
+import { createFilters } from './actions/createFilters';
 require('../css/index.css');
 
 class App extends Component {
 	componentWillMount() {
-		loadData();
+		const { dispatch } = this.props;
+		dispatch(loadData()).then(() => dispatch(createFilters(this.props.events)));
 	}
 
 	render() {
@@ -36,13 +38,13 @@ class App extends Component {
 
 function mapStateToProps(state) {
     return {
-		events: state.events.events,
-		genres: state.events.genres,
-		locations: state.events.locations
+		events: state.events.allEvents,
+		//genres: state.events.genres,
+		//locations: state.events.locations
     }
 }
 
-export default connect(mapStateToProps, loadData)(App);
+export default connect(mapStateToProps)(App);
 
 
 // https://app.ticketmaster.com/discovery/v2/events.JSON?apikey=GEKqrkYNGL9POROireeB9D6fzdpWP8dj&marketId=204&startDateTime=2018-07-19T15:44:00Z&endDateTime=2018-07-26T23:59:00Z&includeTBA=no&includeTBD=no

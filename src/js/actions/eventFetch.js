@@ -1,4 +1,5 @@
-export default function loadData(){
+export function loadData(){
+    console.log('loadData')
     let date = new Date();
     let month = (date.getMonth()+1) + '';
     month = month.length < 2 ? '0' + month : month;
@@ -16,8 +17,7 @@ export default function loadData(){
         return fetch(url)
         .then(res => res.json())
         .then((response)=>{
-            const filters = createFilters(response._embedded.events);
-            dispatch(eventActionDispatch(response, filters));
+            dispatch(loadDataActionDispatch(response));
         })
         .catch(function() {
             console.log("error");
@@ -25,36 +25,15 @@ export default function loadData(){
     }
 }
 
-function createFilters(events){ 
-    const allGenres = [];
-    const allLocations = [];
-
-    for (let i = 0; i < events.length; i++) {
-        const genre = events[i].classifications[0].genre.name;
-        const location = events[i]._embedded.venues[0].city.name;
-        if (allGenres.includes(genre) === false) {
-            allGenres.push(genre);
-        }
-        if (allLocations.includes(location) === false) {
-            allLocations.push(location);
-        }
-    }
-
-    return {
-        genres: allGenres,
-        locations: allLocations
-    }
-}
-
-function eventActionDispatch(response, filters) {
+function loadDataActionDispatch(response, filters) {
     console.log('load data success');
     return{
-        type:"EVENT_SUCCESS",
+        type:"EVENT_FETCH_SUCCESS",
         events: {
             events: response._embedded.events},
-        genres: {
+        /*genres: {
             genres: filters.genres },
         locations: {
-            locations: filters.locations}
+            locations: filters.locations}*/
     }
 }

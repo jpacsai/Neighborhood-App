@@ -1,9 +1,15 @@
 export default function eventReducer (state = {}, action) {
     switch (action.type) {
-        case "EVENT_SUCCESS":
-            const newState = Object.assign({}, state, action.events, action.genres, action.locations);
-          return newState;
+        case "EVENT_FETCH_SUCCESS":
+            const newState = {
+                ...state,
+                events: {
+                    ...state.events,
+                        allEvents: action.events.events
+                }
+            }
+            return newState;
         default:
-          return state
+            return state;
       }
 }

@@ -1,9 +1,9 @@
-export default function filterReducer (state = initialState, action) {
+const initialState = {
+    location: '',
+    genre: ''
+}
 
-    const initialState = {
-        location: '',
-        genre: ''
-    }
+export default function filterReducer (state = initialState, action) {
 
     switch (action.type) {
         case 'FILTER_LOCATION':

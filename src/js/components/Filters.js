@@ -26,8 +26,8 @@ class Filters extends Component {
     }
 }
 
-function matchDispatchToProps(dispatch) {
+function mapDispatchToProps(dispatch) {
     return bindActionCreators({ filterAction: filterAction }, dispatch);
 }
 
-export default connect(null, matchDispatchToProps)(Filters);
+export default connect(null, mapDispatchToProps)(Filters);
