@@ -17,7 +17,7 @@ export function loadData(){
         return fetch(url)
         .then(res => res.json())
         .then((response)=>{
-            dispatch(loadDataActionDispatch(response));
+            dispatch(loadDataDispatcher(response));
         })
         .catch(function(error) {
             console.log('error: ', error);
@@ -25,7 +25,7 @@ export function loadData(){
     }
 }
 
-function loadDataActionDispatch(response) {
+function loadDataDispatcher(response) {
     console.log('load data success');
     return{
         type:"EVENT_FETCH_SUCCESS",

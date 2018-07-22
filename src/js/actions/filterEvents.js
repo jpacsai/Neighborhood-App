@@ -1,36 +1,36 @@
-export const filterAction = (title, val) => {
-    //console.log('val: ', val.target.value)
-    /*
+export function filterAction (events, title, val) {
+    console.log('filtering action');
+    let filteredEvents = [];
     if (title === 'Location') {
-        const newEvents = events.filter(event => {
-            return event._embedded.venues[0].city.name === e.target.value;
+        filteredEvents = events.filter(event => {
+            return event._embedded.venues[0].city.name === val.target.value;
         });
-        console.log(newEvents);
-        return newEvents;
+        console.log(filteredEvents);
     }
     else if (title === 'Genre') {
-        const newEvents = events.filter(event => {
-            return event.classifications[0].genre.name === e.target.value;
+        filteredEvents = events.filter(event => {
+            return event.classifications[0].genre.name === val.target.value;
         });
-        console.log(newEvents);
-        return newEvents;
-    }*/
+        console.log(filteredEvents);
+    }
 
-    
+    const message = title === 'Location' ? 'FILTER_LOCATION' : 'FILTER_GENRE';
 
+    /*
     if (val.hasOwnProperty('target')) {
         const value = val.target.value;
-        const message = title === 'Location' ? 'FILTER_LOCATION' : 'FILTER_GENRE'
-        
-        /*return (dispatch) => {
+        return (dispatch) => {
             console.log('filter action') 
             return dispatch(filterActionDespatch(message, value));
         };*/
 
-        console.log('filter action despatched')
-        return {
-            type: message,
-            filter: value
-        }
+    console.log('filter action despatched')
+    return filterEventsDispatcher(message, filteredEvents);
+}
+
+function filterEventsDispatcher(message, filteredEvents) {
+    return {
+        type: message,
+        filteredEvents
     }
 }

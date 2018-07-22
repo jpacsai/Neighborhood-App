@@ -9,7 +9,7 @@ class Filters extends Component {
         if (list) {
             return (
                 <select selected={ title } onChange={ (val) => 
-                    this.props.filterAction(title, val)
+                    this.props.filterAction(this.props.events, title, val)
                 }>
                     <option disabled value={title}>Select {title}</option>
                     { list.map(item => {
@@ -26,8 +26,14 @@ class Filters extends Component {
     }
 }
 
+function mapStateToProps(state) {
+    return {
+        events: state.events.events
+    }
+}
+
 function mapDispatchToProps(dispatch) {
     return bindActionCreators({ filterAction: filterAction }, dispatch);
 }
 
-export default connect(null, mapDispatchToProps)(Filters);
+export default connect(mapStateToProps, mapDispatchToProps)(Filters);

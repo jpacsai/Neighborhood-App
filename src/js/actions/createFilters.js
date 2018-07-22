@@ -13,10 +13,10 @@ export function createFilters(events){
             allLocations.push(location);
         }
     }
-    return createFiltersDispatch(message, allGenres, allLocations);     
+    return createFiltersDispatcher(message, allGenres, allLocations);     
 }
 
-function createFiltersDispatch(message, allGenres, allLocations) {
+function createFiltersDispatcher(message, allGenres, allLocations) {
     return {
         type: message,
         genres: allGenres,
