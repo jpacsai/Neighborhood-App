@@ -1,4 +1,5 @@
 export default function createFilterReducer (state = {}, action) {
+    console.log('filter reducer: ', action.type);
     switch (action.type) {
         case 'FILTERLIST_CREATED':
             const newState = {
@@ -6,7 +7,6 @@ export default function createFilterReducer (state = {}, action) {
                 genres: action.genres,
                 locations: action.locations
             }
-            console.log('filterList newState', newState);
             return newState;
         default:
           return state

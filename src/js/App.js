@@ -11,13 +11,8 @@ class App extends Component {
 	componentDidMount() {
 		const { dispatch } = this.props;
 		dispatch(loadData()).then(() => {
-			console.log('call filters', this.props.events);
 			dispatch(createFilters(this.props.events));
 		});
-	}
-
-	componentWillReceiveProps(nextProps) {
-		console.log('nextProps: ', nextProps.events)
 	}
 
 	render() {
@@ -44,7 +39,6 @@ class App extends Component {
 }
 
 function mapStateToProps(state) {
-	console.log('state', state)
     return {
 		events: state.events.events,
 		genres: state.filters.genres,

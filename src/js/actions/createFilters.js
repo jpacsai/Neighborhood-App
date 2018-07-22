@@ -1,6 +1,5 @@
 export function createFilters(events){ 
-    //console.log('creating filters action');
-    console.log('creating filters from: ', events);
+    console.log('creating filters action');
     const allGenres = [];
     const allLocations = [];
     const message = 'FILTERLIST_CREATED'
@@ -18,7 +17,6 @@ export function createFilters(events){
 }
 
 function createFiltersDispatch(message, allGenres, allLocations) {
-    console.log('dispatching filter lists');
     return {
         type: message,
         genres: allGenres,
