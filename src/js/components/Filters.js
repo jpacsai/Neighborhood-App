@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { filterAction } from './../actions/filterEvents';
+// import { filterAction } from '../actions/filterEvents';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import { filtersToApply } from './../actions/filtersToApply';
 
 class Filters extends Component {
     render() {
@@ -9,7 +10,7 @@ class Filters extends Component {
         if (list) {
             return (
                 <select selected={ title } onChange={ (val) => 
-                    this.props.filterAction(this.props.events, title, val)
+                    this.props.filtersToApply(title, val)
                 }>
                     <option disabled value={title}>Select {title}</option>
                     { list.map(item => {
@@ -26,14 +27,8 @@ class Filters extends Component {
     }
 }
 
-function mapStateToProps(state) {
-    return {
-        events: state.events.events
-    }
-}
-
 function mapDispatchToProps(dispatch) {
-    return bindActionCreators({ filterAction: filterAction }, dispatch);
+    return bindActionCreators({ filtersToApply: filtersToApply }, dispatch);
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Filters);
+export default connect(null, mapDispatchToProps)(Filters);

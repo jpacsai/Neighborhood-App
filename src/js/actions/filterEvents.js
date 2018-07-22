@@ -16,14 +16,6 @@ export function filterAction (events, title, val) {
 
     const message = title === 'Location' ? 'FILTER_LOCATION' : 'FILTER_GENRE';
 
-    /*
-    if (val.hasOwnProperty('target')) {
-        const value = val.target.value;
-        return (dispatch) => {
-            console.log('filter action') 
-            return dispatch(filterActionDespatch(message, value));
-        };*/
-
     console.log('filter action despatched')
     return filterEventsDispatcher(message, filteredEvents);
 }

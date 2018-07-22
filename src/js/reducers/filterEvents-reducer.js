@@ -1,10 +1,4 @@
-const initialState = {
-    location: '',
-    genre: ''
-}
-
-export default function filterReducer (state = initialState, action) {
-
+export default function filterReducer (state = { location: null, genre: null }, action) {
     switch (action.type) {
         case 'FILTER_LOCATION':
             const newState = Object.assign({}, state, action);
