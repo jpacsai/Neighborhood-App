@@ -3,12 +3,14 @@ import eventsReducer from './events-reducer';
 import filterEventsReducer from './filterEvents-reducer';
 import createFilterReducer from './createFilter-reducer';
 import filtersToApplyReducer from './filtersToApply-reducer';
+import hideDateReducer from './hideDate-reducer';
 
 export default combineReducers({
     events: eventsReducer,
     filters: createFilterReducer,
     filtersToApply: filtersToApplyReducer,
-    filteredEvents: filterEventsReducer
+    filteredEvents: filterEventsReducer,
+    dateHidden: hideDateReducer
 });
 
 /* STATE STRUCTURE:

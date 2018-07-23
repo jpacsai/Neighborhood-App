@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import Filters from '../components/Filters';
 import { filterEvents } from './../actions/filterEvents';
 import { bindActionCreators } from 'redux';
+import DateContainer from './date-container';
 
 class FilterContainer extends Component {
     render() {
@@ -11,6 +12,7 @@ class FilterContainer extends Component {
             <section className='filter-container'>
                 <h2 className={ ['aside-header', 'aside-header-filter'].join(' ') }>Filters</h2>
                 <form onSubmit={ (e) => this.props.filterEvents(e, this.props.events, this.props.genreFilter, this.props.locationFilter) }>
+                    <DateContainer />
                     <Filters title={'Location'} list={ locations } events={ events }/>
                     <Filters title={'Genre'} list={ genres } events={ events } />
                     <button>Filter</button>
