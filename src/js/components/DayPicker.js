@@ -18,6 +18,7 @@ class DatePicker extends Component {
 
         return (
             <DayPicker
+                showOutsideDays
                 disabledDays={{
                     before: todayDate,
                     after: nextWeekDate
