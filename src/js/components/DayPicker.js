@@ -6,15 +6,23 @@ import 'react-day-picker/lib/style.css';
 import { selectDay } from './../actions/selectDay';
 
 class DatePicker extends Component {
+    constructor(props) {
+        super(props);
+        this.dateCreator = this.dateCreator.bind(this);
+    }
+
+    dateCreator(days = 0) {
+        let date = new Date();
+        date.setDate(date.getDate() + days); 
+        const newDate = new Date(date.getFullYear(), date.getMonth(), date.getDate());
+        return newDate;
+    }
 
     render() {
-
-        let date = new Date();
-        const todayDate = new Date(date.getFullYear(), date.getMonth(), date.getDate());   
-        date.setDate(date.getDate() + 6); 
-        const nextWeekDate = new Date(date.getFullYear(), date.getMonth(), date.getDate());
+        const todayDate = this.dateCreator(0);   
+        const nextWeekDate = this.dateCreator(6);
         const todayTime = todayDate.getTime();
-        const nextWeekTime = nextWeekDate.getTime();
+        const nextWeekTime = this.dateCreator(7).getTime();
 
         return (
             <DayPicker
