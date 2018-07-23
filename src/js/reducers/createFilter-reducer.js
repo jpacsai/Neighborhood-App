@@ -5,7 +5,6 @@ export default function createFilterReducer (state = {}, action) {
         case 'FILTERLIST_CREATED':
             const newState = {
                 ...state,
-                genres: action.genres,
                 locations: action.locations
             }
             return newState;

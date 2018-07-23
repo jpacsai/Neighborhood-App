@@ -15,10 +15,9 @@ class FilterContainer extends Component {
             <section className='filter-container'>
                 <h2 className={ ['aside-header', 'aside-header-filter'].join(' ') }>Filters</h2>
                 <form onSubmit={ (e) => 
-                    this.props.filterEvents(e, this.props.events, this.props.genreFilter, this.props.locationFilter) }>
+                    this.props.filterEvents(e, this.props.events, this.props.locationFilter) }>
                         <DateContainer />
                         <Filters title={ 'Location' } list={ locations } events={ events }/>
-                        <Filters title={ 'Genre' } list={ genres } events={ events } />
                         <button>Filter</button>
                 </form>
             </section>

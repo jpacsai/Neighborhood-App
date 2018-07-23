@@ -1,9 +1,9 @@
-export function filterEvents (e, events, genreFilter, locationFilter) {
+export function filterEvents (e, events, locationFilter) {
     e.preventDefault();
 
-    const filteredEvents = events.filter((event) => event.classifications[0].genre.name === genreFilter && event._embedded.venues[0].city.name === locationFilter)
-        // event._embedded.venues[0].city.name
-        // event.classifications[0].genre.name
+    console.log('locationFilter ', locationFilter)
+
+    const filteredEvents = events.filter((event) => event._embedded.venues[0].city.name === locationFilter);
 
     console.log(filteredEvents);
 

@@ -8,7 +8,9 @@ class Filters extends Component {
         const { title, list } = this.props;
         if (list) {
             return (
-                <select selected={ title } onChange={ (val) => 
+                <select 
+                    selected={ title } 
+                    onChange={ (val) => 
                     this.props.filtersToApply(title, val)
                 }>
                     <option disabled value={title}>Select {title}</option>

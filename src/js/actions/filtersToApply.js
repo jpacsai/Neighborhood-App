@@ -1,5 +1,7 @@
 export function filtersToApply(title, val) {
-    let message = title === 'Location' ? 'ADD_LOCATION_FILTER' : 'ADD_GENRE_FILTER';
+    let message = 'ADD_LOCATION_FILTER';
+    
+    // let message = title === 'Location' ? 'ADD_LOCATION_FILTER' : 'ADD_GENRE_FILTER';
 
     return filtersToApplyDispatcher(message, val.target.value);
 }

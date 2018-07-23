@@ -20,11 +20,11 @@ export default combineReducers({
 const store = {
 	events: [],
 	filters: {                // change property name to filterLists
-		genres: [],
+		// genres: [],
 		locations: []
 	},
 	filtersToApply: {
-		genre: '',
+		// genre: '',
 		location: ''
 	},
 	filteredEvents: [],
