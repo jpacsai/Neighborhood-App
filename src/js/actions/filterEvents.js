@@ -8,16 +8,25 @@ export function filterEvents (e, events, genreFilter, locationFilter) {
 
     console.log(filteredEvents);
 
-    const message = 'FILTERING_EVENTS';
-
+    let message;
+    let value;
     
-    return filterEventsDispatcher(message, filteredEvents);
+    if (filteredEvents.length === 0) {
+        message = 'NO_MATHING_FILTERED_EVENTS';
+        value = 'no match found'
+    }
+    else {
+        message = 'FILTERING_EVENTS';
+        value = filteredEvents;
+    }
+    
+    return filterEventsDispatcher(message, value);
 }
 
-function filterEventsDispatcher(message, filteredEvents) {
+function filterEventsDispatcher(message, value) {
     console.log('filter action despatched')
     return {
         type: message,
-        filteredEvents
+        filteredEvents: value
     }
 }

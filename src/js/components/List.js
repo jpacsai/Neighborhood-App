@@ -1,7 +1,12 @@
 import React from 'react';
 
 const List = (props) => {
-    if (props.list) {
+    if (props.list === 'no match') {
+        return (
+            <li className='event'>No match found</li>
+        )
+    }
+    else if (props.list) {
         return props.list.map((event) => {
             const date = event.dates.start.localDate || 'unknown date';
             const time = event.dates.start.localTime ? (event.dates.start.localTime).slice(0, 5) : null;

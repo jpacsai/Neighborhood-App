@@ -4,7 +4,9 @@ export default function filterEventsReducer (state = [], action) {
             const newState = action.filteredEvents;
             console.log('filtered events: ',newState);
             return newState;
-
+        case 'NO_MATHING_FILTERED_EVENTS':
+            const value = action.filteredEvents;
+            return value;
         default:
             return state
       }

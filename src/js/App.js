@@ -16,7 +16,9 @@ class App extends Component {
 	}
 
 	render() {
-		const list = this.props.filteredEvents.length === 0 ? this.props.events : this.props.filteredEvents;
+		const displayList = this.props.filteredEvents.length === 0 ? this.props.events : this.props.filteredEvents === 'no match found' ? 'no match' : this.props.filteredEvents;
+		// this.props.filteredEvents === false ? this.props.events : this.props.filteredEvents === 'no match found' ? 'no match found' : this.props.filteredEvents;
+		console.log('list: ', displayList)
 		return (
 			<div>
 				<header>
@@ -28,7 +30,7 @@ class App extends Component {
 						<section className='event-list-container'>
 							<h2 className={ ['aside-header', 'aside-header-list'].join(' ') }>Events</h2>
 							<ul className='event-list'>
-								<List list={ list }/>
+								<List list={ displayList }/>
 							</ul>
 						</section>
 					</aside>
