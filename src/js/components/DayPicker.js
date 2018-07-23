@@ -8,10 +8,10 @@ import { selectDay } from './../actions/selectDay';
 class DatePicker extends Component {
 
     render() {
-        
+
         let date = new Date();
         const todayDate = new Date(date.getFullYear(), date.getMonth(), date.getDate());   
-        date.setDate(date.getDate() + 7); 
+        date.setDate(date.getDate() + 6); 
         const nextWeekDate = new Date(date.getFullYear(), date.getMonth(), date.getDate());
         const todayTime = todayDate.getTime();
         const nextWeekTime = nextWeekDate.getTime();
