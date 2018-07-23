@@ -8,11 +8,10 @@ class DateContainer extends Component {
     render() {
         return (
             <div className='date-container'>
-                <button type="button" onClick={ () => this.props.hideDatePicker(this.props.isHidden) }>Select Dates</button>
-                { this.props.isHidden === false &&
-                    <DatePicker />
-                }
-                
+                <button type="button" onClick={ () => this.props.hideDatePicker(this.props.isHidden) }>
+                    Select Dates
+                </button>
+                { this.props.isHidden === false && <DatePicker /> }
             </div>
         )
     }

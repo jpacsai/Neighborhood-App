@@ -5,28 +5,17 @@ import 'react-day-picker/lib/style.css';
 class DatePicker extends Component {
     render() {
         let date = new Date();
-        const today = {
-            year: date.getFullYear(),
-            month: date.getMonth(),
-            day: date.getDate()
-        }       
-        const todayDate = new Date(today.year, today.month, today.day);   
+        const todayDate = new Date(date.getFullYear(), date.getMonth(), date.getDate());   
         date.setDate(date.getDate() + 7); 
-        const nextWeek = {
-            year: date.getFullYear(),
-            month: date.getMonth(),
-            day: date.getDate()
-        }
-        const nextWeekDate = new Date(nextWeek.year, nextWeek.month, nextWeek.day);
+        const nextWeekDate = new Date(date.getFullYear(), date.getMonth(), date.getDate());
 
         return (
             <DayPicker
-            disabledDays={[
-              {
-                before: todayDate,
-                after: nextWeekDate
-              }
-            ]} />
+                disabledDays={{
+                    before: todayDate,
+                    after: nextWeekDate
+                }}
+            />
         )
     }
 }
