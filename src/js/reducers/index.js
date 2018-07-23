@@ -4,13 +4,15 @@ import createFilterReducer from './createFilter-reducer';
 import filtersToApplyReducer from './filtersToApply-reducer';
 import filterEventsReducer from './filterEvents-reducer';
 import hideDateReducer from './hideDate-reducer';
+import selectDayReducer from './selectDay-reducer';
 
 export default combineReducers({
     events: eventsReducer,
     filters: createFilterReducer,
     filtersToApply: filtersToApplyReducer,
     filteredEvents: filterEventsReducer,
-    dateHidden: hideDateReducer
+	dateHidden: hideDateReducer,
+	selectedDays: selectDayReducer
 });
 
 /* STATE STRUCTURE:
@@ -26,7 +28,8 @@ const store = {
 		location: ''
 	},
 	filteredEvents: [],
-	dateHidden: boolean
+	dateHidden: boolean,
+	selectedDates: []
 }
 
 */

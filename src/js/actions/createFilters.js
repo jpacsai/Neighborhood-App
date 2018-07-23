@@ -1,8 +1,9 @@
 export function createFilters(events){ 
-    console.log('creating filters action');
+
     const allGenres = [];
     const allLocations = [];
     const message = 'FILTERLIST_CREATED'
+
     for (let i = 0; i < events.length; i++) {
         const genre = events[i].classifications[0].genre.name;
         const location = events[i]._embedded.venues[0].city.name;
@@ -13,6 +14,7 @@ export function createFilters(events){
             allLocations.push(location);
         }
     }
+    
     return createFiltersDispatcher(message, allGenres, allLocations);     
 }
 

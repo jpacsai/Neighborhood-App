@@ -1,8 +1,11 @@
 export function loadData(){
-    console.log('fetching events')
+
+    console.log('fetching events');
+
     let date = new Date();
     let month = (date.getMonth()+1) + '';
     month = month.length < 2 ? '0' + month : month;
+    
     const today = date.getFullYear() + '-' + month + '-' + date.getDate();
 
     date.setDate(date.getDate() + 7);

@@ -1,6 +1,5 @@
 export function filterEvents (e, events, genreFilter, locationFilter) {
     e.preventDefault();
-    console.log('filtering events action');
 
     const filteredEvents = events.filter((event) => event.classifications[0].genre.name === genreFilter && event._embedded.venues[0].city.name === locationFilter)
         // event._embedded.venues[0].city.name
@@ -24,7 +23,6 @@ export function filterEvents (e, events, genreFilter, locationFilter) {
 }
 
 function filterEventsDispatcher(message, value) {
-    console.log('filter action despatched')
     return {
         type: message,
         filteredEvents: value

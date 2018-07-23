@@ -5,6 +5,7 @@ import { createStore, applyMiddleware } from 'redux';
 import reducer from './js/reducers/index';
 import thunk from "redux-thunk";
 import './css/index.css';
+import 'react-day-picker/lib/style.css';
 import App from './js/App';
 import registerServiceWorker from './registerServiceWorker';
 

@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import DatePicker from './../components/DatePicker';
+import DatePicker from './../components/DayPicker';
 import { hideDatePicker } from './../actions/hideDatePicker';
 
 class DateContainer extends Component {
+
     render() {
         return (
             <div className='date-container'>
