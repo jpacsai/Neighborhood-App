@@ -1,11 +1,11 @@
-export default function filterEventsReducer (state = [], action) { /*
+export default function filterEventsReducer (state = [], action) {
     switch (action.type) {
-        case 'FILTER_LOCATION':
-            const newState = 
-            console.log(newState);
+        case 'FILTERING_EVENTS':
+            const newState = action.filteredEvents;
+            console.log('filtered events: ',newState);
             return newState;
 
         default:
             return state
-      } */
+      }
 }

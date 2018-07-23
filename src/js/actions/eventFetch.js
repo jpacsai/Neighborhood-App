@@ -26,7 +26,7 @@ export function loadData(){
 }
 
 function loadDataDispatcher(response) {
-    console.log('load data success');
+    console.log('load data success', response._embedded.events);
     return{
         type:"EVENT_FETCH_SUCCESS",
         events: {

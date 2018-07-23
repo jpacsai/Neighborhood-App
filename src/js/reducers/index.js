@@ -8,7 +8,7 @@ export default combineReducers({
     events: eventsReducer,
     filters: createFilterReducer,
     filtersToApply: filtersToApplyReducer,
-    // filteredEvents: filterEventsReducer
+    filteredEvents: filterEventsReducer
 });
 
 /* STATE STRUCTURE:

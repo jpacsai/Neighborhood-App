@@ -16,6 +16,7 @@ class App extends Component {
 	}
 
 	render() {
+		const list = this.props.filteredEvents.length === 0 ? this.props.events : this.props.filteredEvents;
 		return (
 			<div>
 				<header>
@@ -27,7 +28,7 @@ class App extends Component {
 						<section className='event-list-container'>
 							<h2 className={ ['aside-header', 'aside-header-list'].join(' ') }>Events</h2>
 							<ul className='event-list'>
-								<List list={ this.props.events }/>
+								<List list={ list }/>
 							</ul>
 						</section>
 					</aside>
@@ -43,7 +44,7 @@ function mapStateToProps(state) {
 		events: state.events.events,
 		genres: state.filters.genres,
 		locations: state.filters.locations,
-		// filteredEvents: state.filteredEvents
+		filteredEvents: state.filteredEvents
     }
 }
 
