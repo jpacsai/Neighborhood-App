@@ -25,7 +25,8 @@ const store = {
     genre: '',
     location: ''
   },
-  filteredEvents: []
+  filteredEvents: [],
+  dateHidden: boolean
 }
 
 */
