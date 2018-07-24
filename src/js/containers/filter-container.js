@@ -9,13 +9,13 @@ import DatePicker from './../components/DayPicker';
 class FilterContainer extends Component {
 
     render() {
-        const { events, locations, genres } = this.props;
+        const { events, locations } = this.props;
 
         return (
             <section className='filter-container'>
                 <h2 className={ ['aside-header', 'aside-header-filter'].join(' ') }>Filters</h2>
                 <button type="button" onClick={ () => this.props.hideDatePicker(this.props.isHidden) }>
-                    { this.props.isHidden  && 'Show Filters' || 'Hide Filters'}
+                    { (this.props.isHidden  && 'Show Filters') || 'Hide Filters'}
                 </button>
                 { this.props.isHidden === false &&  
                 <form onSubmit={ (e) => 
@@ -32,7 +32,6 @@ class FilterContainer extends Component {
 function mapStateToProps(state) {
     return {
         events: state.events.events,
-        genreFilter: state.filtersToApply.genre,
         locationFilter: state.filtersToApply.location,
         isHidden: state.dateHidden
     }
