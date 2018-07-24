@@ -22,7 +22,7 @@ class FilterContainer extends Component {
                     this.props.filterEvents(e, this.props.events, this.props.locationFilter) }>
                         <DatePicker />
                         <Filters title={ 'Location' } list={ locations } events={ events }/>
-                        <button>Filter</button>
+                        <button onClick={ () => this.props.hideDatePicker(this.props.isHidden) }>Filter</button>
                 </form> 
             </section>
         )
