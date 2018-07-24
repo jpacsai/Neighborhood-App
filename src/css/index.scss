@@ -21,10 +21,11 @@ body {
     flex-direction: row;
   
     aside {
+      /*
       display: flex;
       flex-direction: column;
       align-items: center;
-      min-width: 295px;
+      min-width: 295px; */
 
       .aside-header {
         margin: 0;
@@ -46,7 +47,7 @@ body {
         justify-content: center;
         align-items: center;
         padding: 10px;
-        height: 13%;
+        transition: 1s;
 
         form {
           display: flex;
@@ -64,13 +65,14 @@ body {
         }
       }
 
-      .filter-container-open {
-        height: 77%;
-      }
-
       .event-list-container {
-        height: 86%;
+        height: 84%;
         overflow-x: hidden;
+        position: relative;
+        top: -315px;
+        z-index: 2;
+        background-color: white;
+        transition: 1s;
 
         .event-list {
           list-style-type: none;
@@ -91,12 +93,9 @@ body {
       }  
 
       .event-list-container-compact {
-        height: 32%;
+        top: 0;
+        height: 28%;
       }
-    }
-    
-    #map {
-      width: 75%;
     }
   }
 }

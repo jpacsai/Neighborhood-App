@@ -11,7 +11,7 @@ export default combineReducers({
     filters: createFilterReducer,
     filtersToApply: filtersToApplyReducer,
     filteredEvents: filterEventsReducer,
-	dateHidden: hideDateReducer,
+	isHidden: hideDateReducer,
 	selectedDays: selectDayReducer
 });
 

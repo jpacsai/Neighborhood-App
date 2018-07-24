@@ -61,7 +61,7 @@ function mapStateToProps(state) {
 		genres: state.filters.genres,
 		locations: state.filters.locations,
 		filteredEvents: state.filteredEvents,
-		isHidden: state.dateHidden
+		isHidden: state.isHidden
     }
 }
 

@@ -11,24 +11,19 @@ class FilterContainer extends Component {
     render() {
         const { events, locations } = this.props;
 
-        const basicFilterStyle = 'filter-container';
-        const openFilterStyle = 'filter-container-open';
-        
-        const filterStyle = this.props.isHidden ? basicFilterStyle : [basicFilterStyle, openFilterStyle].join(' ');
-        
         return (
-            <section className={ filterStyle }>
+            <section className={ 'filter-container' }>
                 <h2 className={ ['aside-header', 'aside-header-filter'].join(' ') }>Filters</h2>
                 <button type="button" onClick={ () => this.props.hideDatePicker(this.props.isHidden) }>
                     { (this.props.isHidden  && 'Show Filters') || 'Hide Filters'}
                 </button>
-                { this.props.isHidden === false &&  
+                
                 <form onSubmit={ (e) => 
                     this.props.filterEvents(e, this.props.events, this.props.locationFilter) }>
                         <DatePicker />
                         <Filters title={ 'Location' } list={ locations } events={ events }/>
                         <button>Filter</button>
-                </form> }
+                </form> 
             </section>
         )
     }
@@ -38,7 +33,7 @@ function mapStateToProps(state) {
     return {
         events: state.events.events,
         locationFilter: state.filtersToApply.location,
-        isHidden: state.dateHidden
+        isHidden: state.isHidden
     }
 }
 
