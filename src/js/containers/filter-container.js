@@ -4,8 +4,7 @@ import { bindActionCreators } from 'redux';
 import Filters from '../components/Filters';
 import { filterEvents } from './../actions/filterEvents';
 import { hideDatePicker } from './../actions/hideDatePicker';
-
-import DateContainer from './date-container';
+import DatePicker from './../components/DayPicker';
 
 class FilterContainer extends Component {
 
@@ -21,7 +20,7 @@ class FilterContainer extends Component {
                 { this.props.isHidden === false &&  
                 <form onSubmit={ (e) => 
                     this.props.filterEvents(e, this.props.events, this.props.locationFilter) }>
-                        <DateContainer />
+                        <DatePicker />
                         <Filters title={ 'Location' } list={ locations } events={ events }/>
                         <button>Filter</button>
                 </form> }
