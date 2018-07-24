@@ -11,8 +11,13 @@ class FilterContainer extends Component {
     render() {
         const { events, locations } = this.props;
 
+        const basicFilterStyle = 'filter-container';
+        const openFilterStyle = 'filter-container-open';
+        
+        const filterStyle = this.props.isHidden ? basicFilterStyle : [basicFilterStyle, openFilterStyle].join(' ');
+        
         return (
-            <section className='filter-container'>
+            <section className={ filterStyle }>
                 <h2 className={ ['aside-header', 'aside-header-filter'].join(' ') }>Filters</h2>
                 <button type="button" onClick={ () => this.props.hideDatePicker(this.props.isHidden) }>
                     { (this.props.isHidden  && 'Show Filters') || 'Hide Filters'}

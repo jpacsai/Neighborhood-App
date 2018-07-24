@@ -1,5 +1,4 @@
 export default function createFilterReducer (state = {}, action) {
-    console.log('filter reducer: ', action.type);
     
     switch (action.type) {
         case 'FILTERLIST_CREATED':

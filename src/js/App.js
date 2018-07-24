@@ -21,6 +21,11 @@ class App extends Component {
 		const displayList = this.props.filteredEvents.length === 0 ? this.props.events : 
 			this.props.filteredEvents === 'no match found' ? 'no match' : this.props.filteredEvents;
 
+		const basicEventStyle = 'event-list-container';
+		const compactEventStyle = 'event-list-container-compact';
+
+		const eventStyle = this.props.isHidden ? basicEventStyle : [basicEventStyle, compactEventStyle].join(' ');
+
 		return (
 			<div>
 				<header>
@@ -34,7 +39,7 @@ class App extends Component {
 							genres={ this.props.genres }
 							locations={ this.props.locations }
 						/>
-						<section className='event-list-container'>
+						<section className={ eventStyle }>
 							<h2 className={ ['aside-header', 'aside-header-list'].join(' ') }>Events</h2>
 							<ul className='event-list'>
 								<List list={ displayList }/>
@@ -55,7 +60,8 @@ function mapStateToProps(state) {
 		events: state.events.events,
 		genres: state.filters.genres,
 		locations: state.filters.locations,
-		filteredEvents: state.filteredEvents
+		filteredEvents: state.filteredEvents,
+		isHidden: state.dateHidden
     }
 }
 
