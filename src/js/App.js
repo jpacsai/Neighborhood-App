@@ -17,10 +17,15 @@ class App extends Component {
 		});
 	}
 
+	calculateNum() {
+		return this.props.filteredEvents.length === 0 ? this.props.events.length : 
+		this.props.filteredEvents === 'no match found' ? 'no match' : this.props.filteredEvents.length;
+	}
+
 	render() {
 		const displayList = this.props.filteredEvents.length === 0 ? this.props.events : 
 			this.props.filteredEvents === 'no match found' ? 'no match' : this.props.filteredEvents;
-
+		
 		const basicEventStyle = 'event-list-container';
 		const compactEventStyle = 'event-list-container-compact';
 
@@ -41,6 +46,9 @@ class App extends Component {
 						/>
 						<section className={ eventStyle }>
 							<h2 className={ ['aside-header', 'aside-header-list'].join(' ') }>Events</h2>
+							{ this.props.filteredEvents && this.props.events && 
+								<p className='event-count'>{ displayList.length } event{ displayList.length > 1 && 's'} found</p>
+							} 
 							<ul className='event-list'>
 								<List list={ displayList }/>
 							</ul>
