@@ -8,7 +8,6 @@ import FilterModal from './../components/FilterModal';
 class FilterContainer extends Component {
 
     render() {
-        const { events, locations } = this.props;
 
         return (
             <section className={ 'filter-container' }>
@@ -17,7 +16,7 @@ class FilterContainer extends Component {
                     { (this.props.isHidden  && 'Show Filters') || 'Hide Filters'}
                 </button>
                 
-                {/* this.props.isHidden && < FilterModal /> */}
+                { !this.props.isHidden && < FilterModal list = { this.props.locations }/> }
 
             </section>
         )

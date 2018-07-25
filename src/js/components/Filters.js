@@ -6,6 +6,7 @@ import { filtersToApply } from './../actions/filtersToApply';
 class Filters extends Component {
     render() {
         const { title, list } = this.props;
+        
         if (list) {
             return (
                 <select 

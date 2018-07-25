@@ -1,12 +1,8 @@
 export function filterEvents (e, events, locationFilter) {
     e.preventDefault();
 
-    console.log('locationFilter ', locationFilter)
-
     const filteredEvents = events.filter((event) => event._embedded.venues[0].city.name === locationFilter);
-
-    console.log(filteredEvents);
-
+    
     let message;
     let value;
     

@@ -13,58 +13,66 @@ body {
     height: 92vh;
     display: flex;
     flex-direction: row; }
-    body main aside {
-      /*
+    body main aside .aside-header {
+      margin: 0;
+      padding: 8px;
+      text-align: center; }
+    body main aside .aside-header-list {
+      height: 6%;
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+    body main aside .filter-container {
+      background-color: white;
       display: flex;
       flex-direction: column;
+      justify-content: center;
       align-items: center;
-      min-width: 295px; */ }
-      body main aside .aside-header {
-        margin: 0;
-        padding: 8px;
-        text-align: center; }
-      body main aside .aside-header-list {
-        height: 6%;
+      padding: 10px;
+      transition: 1s; }
+      body main aside .filter-container .filter-modal {
+        position: absolute;
+        z-index: 2;
+        top: 15%;
+        left: 10%;
+        width: 80%;
+        height: 70%;
+        min-height: 360px;
         display: flex;
+        align-items: center;
         justify-content: center;
-        align-items: center; }
-      body main aside .filter-container {
-        background-color: white;
+        flex-direction: row;
+        background-color: rgba(255, 255, 255, 0.9);
+        animation: fadeIn 0.8s; }
+      body main aside .filter-container form {
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 10px;
-        transition: 1s; }
-        body main aside .filter-container form {
-          display: flex;
-          flex-direction: column;
-          justify-content: space-between;
-          align-items: center; }
-          body main aside .filter-container form .DayPicker {
-            background-color: white; }
-          body main aside .filter-container form select {
-            margin-bottom: 5px; }
-      body main aside .event-list-container {
+        justify-content: space-between;
+        align-items: center; }
+        body main aside .filter-container form .DayPicker {
+          background-color: white; }
+        body main aside .filter-container form select {
+          margin-bottom: 5px; }
+    body main aside .event-list-container {
+      height: 84%;
+      overflow-x: hidden; }
+      body main aside .event-list-container .event-count {
+        margin: 5px;
+        text-align: center; }
+      body main aside .event-list-container .event-list {
+        list-style-type: none;
+        padding: 0 10px;
+        margin: 0;
         height: 84%;
+        overflow: scroll;
         overflow-x: hidden; }
-        body main aside .event-list-container .event-count {
-          margin: 5px;
-          text-align: center; }
-        body main aside .event-list-container .event-list {
-          list-style-type: none;
-          padding: 0 10px;
-          margin: 0;
-          height: 84%;
-          overflow: scroll;
-          overflow-x: hidden; }
-        body main aside .event-list-container .event-list-compact {
-          height: 66%; }
-        body main aside .event-list-container .event {
-          margin: 5px 0;
-          background-color: aquamarine; }
-          body main aside .event-list-container .event p {
-            margin: 0; }
-      body main aside .event-list-container-compact {
-        top: 0;
-        height: 28%; }
+      body main aside .event-list-container .event-list-compact {
+        height: 66%; }
+      body main aside .event-list-container .event {
+        margin: 5px 0;
+        background-color: aquamarine; }
+        body main aside .event-list-container .event p {
+          margin: 0; }
+    body main aside .event-list-container-compact {
+      top: 0;
+      height: 28%; }

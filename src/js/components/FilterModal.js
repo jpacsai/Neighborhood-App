@@ -1,23 +1,25 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import Filters from '../components/Filters';
 import { filterEvents } from './../actions/filterEvents';
 import { hideDatePicker } from './../actions/hideDatePicker';
 import DatePicker from './../components/DayPicker';
+import Filters from './Filters';
 
 class FilterModal extends Component {
 
     render() {
-        const { events, locations } = this.props;
 
         return (
-            <form onSubmit={ (e) => 
-                this.props.filterEvents(e, this.props.events, this.props.locationFilter) }>
-                    <DatePicker />
-                    <Filters title={ 'Location' } list={ locations } events={ events }/>
-                    <button onClick={ () => this.props.hideDatePicker(this.props.isHidden) }>Filter</button>
-            </form> 
+            <form className='filter-modal' onSubmit={ (e) => {
+                this.props.filterEvents(e, this.props.events, this.props.locationFilter)
+            }
+                    } >
+                <DatePicker />
+                <Filters title={ 'Location' } list={ this.props.list } events={ this.props.events }/>
+                <input type="submit" value="Submit" />
+
+            </form>
         )
     }
 }
