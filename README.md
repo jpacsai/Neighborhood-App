@@ -1,6 +1,5 @@
 ### To-Do:
 
-...
 - [x] generate filters from event list
 - [x] add calendar
    - [x] disable days
@@ -12,7 +11,7 @@
 - [x] disable month toggle in calendar, display 6 weeks
 - [x] move filters to modal window
 - [x] add close button to modal
-...
+***
 - [ ] add date to filtering
 - [ ] add 'none' to location filter list + function
 - [ ] add reset filters button + function
