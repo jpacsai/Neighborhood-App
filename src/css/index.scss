@@ -83,8 +83,13 @@ body {
           list-style-type: none;
           padding: 0 10px;
           margin: 0;
-          height: 90%;
+          height: 84%;
           overflow: scroll;
+          overflow-x: hidden;
+        }
+
+        .event-list-compact {
+          height: 66%;
         }
   
         .event {

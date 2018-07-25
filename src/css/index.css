@@ -60,8 +60,11 @@ body {
           list-style-type: none;
           padding: 0 10px;
           margin: 0;
-          height: 90%;
-          overflow: scroll; }
+          height: 84%;
+          overflow: scroll;
+          overflow-x: hidden; }
+        body main aside .event-list-container .event-list-compact {
+          height: 66%; }
         body main aside .event-list-container .event {
           margin: 5px 0;
           background-color: aquamarine; }

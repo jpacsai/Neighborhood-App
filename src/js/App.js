@@ -27,9 +27,11 @@ class App extends Component {
 			this.props.filteredEvents === 'no match found' ? 'no match' : this.props.filteredEvents;
 		
 		const basicEventStyle = 'event-list-container';
-		const compactEventStyle = 'event-list-container-compact';
+		const basicListStyle = 'event-list';
 
-		const eventStyle = this.props.isHidden ? basicEventStyle : [basicEventStyle, compactEventStyle].join(' ');
+		const eventStyle = this.props.isHidden ? basicEventStyle : [basicEventStyle, basicEventStyle+'-compact'].join(' ');
+
+		const listStyle = this.props.isHidden ? basicListStyle : [basicListStyle, basicListStyle+'-compact'].join(' ');
 
 		return (
 			<div>
@@ -49,7 +51,7 @@ class App extends Component {
 							{ this.props.filteredEvents && this.props.events && 
 								<p className='event-count'>{ displayList.length } event{ displayList.length > 1 && 's'} found</p>
 							} 
-							<ul className='event-list'>
+							<ul className={ listStyle }>
 								<List list={ displayList }/>
 							</ul>
 						</section>
