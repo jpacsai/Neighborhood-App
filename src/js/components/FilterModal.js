@@ -18,7 +18,7 @@ class FilterModal extends Component {
                 <DatePicker />
                 <Filters title={ 'Location' } list={ this.props.list } events={ this.props.events }/>
                 <input type="submit" value="Submit" />
-
+                <button className='filter-modal-closeButton' type='button'>Close</button>
             </form>
         )
     }

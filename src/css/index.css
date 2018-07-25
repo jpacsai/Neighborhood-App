@@ -44,6 +44,10 @@ body {
         flex-direction: row;
         background-color: rgba(255, 255, 255, 0.9);
         animation: fadeIn 0.8s; }
+        body main aside .filter-container .filter-modal .filter-modal-closeButton {
+          position: absolute;
+          top: 15px;
+          right: 15px; }
       body main aside .filter-container form {
         display: flex;
         flex-direction: column;

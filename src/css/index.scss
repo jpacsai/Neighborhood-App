@@ -58,6 +58,12 @@ body {
           flex-direction: row;
           background-color: rgba(255, 255, 255, 0.9);
           animation: fadeIn 0.8s;
+
+          .filter-modal-closeButton {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+          }
         }
 
         form {
