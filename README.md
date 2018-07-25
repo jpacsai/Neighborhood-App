@@ -7,11 +7,13 @@
    - [x] multiselect days
 - [x] fix date format in fetch
 - [x] hide/show filter section
-- [x] add event counter
-
+- [x] add event counter  
+...
 - [ ] fix event list section scroll
 - [ ] disable month toggle in calendar
 - [ ] add date to filtering
+- [ ] add 'none' to location filter list
+- [ ] add reset filters button + function
 - [ ] add markers to map
 - [ ] add auto scroll upon filtering (no idea)
 - [ ] choose color palette
