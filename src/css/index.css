@@ -47,12 +47,7 @@ body {
             margin-bottom: 5px; }
       body main aside .event-list-container {
         height: 84%;
-        overflow-x: hidden;
-        position: relative;
-        top: -315px;
-        z-index: 2;
-        background-color: white;
-        transition: 1s; }
+        overflow-x: hidden; }
         body main aside .event-list-container .event-count {
           margin: 5px;
           text-align: center; }

@@ -17,7 +17,8 @@ class FilterContainer extends Component {
                     { (this.props.isHidden  && 'Show Filters') || 'Hide Filters'}
                 </button>
                 
-                < FilterModal />
+                {/* this.props.isHidden && < FilterModal /> */}
+
             </section>
         )
     }
