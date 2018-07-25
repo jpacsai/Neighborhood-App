@@ -9,13 +9,15 @@
 - [x] hide/show filter section
 - [x] add event counter  
 ...
-- [ ] fix event list section scroll
-- [ ] disable month toggle in calendar
+- [x] fix event list section scroll
+- [x] disable month toggle in calendar, display 6 weeks
 - [ ] add date to filtering
-- [ ] add 'none' to location filter list
+- [ ] add 'none' to location filter list + function
 - [ ] add reset filters button + function
+- [ ] sort event list by alphabet
+- [ ] sort by function
 - [ ] add markers to map
-- [ ] add auto scroll upon filtering (no idea)
+- [ ] add auto scroll upon filtering ( no idea :/ )
 - [ ] choose color palette
 - [ ] style page
 - [ ] make it responsive
@@ -23,3 +25,4 @@
    - [ ] tab order
    - [ ] aria labels
 - [ ] check ticketmaster page form API usage terms
+
