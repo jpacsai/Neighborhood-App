@@ -7,7 +7,7 @@ export function filtersToApply(title, val) {
 }
 
 function filtersToApplyDispatcher(message, val) {
-    console.log('filtersToApply action dispatched', val)
+
     return {
         type: message,
         filter: val

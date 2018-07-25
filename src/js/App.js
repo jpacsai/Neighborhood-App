@@ -25,13 +25,6 @@ class App extends Component {
 	render() {
 		const displayList = this.props.filteredEvents.length === 0 ? this.props.events : 
 			this.props.filteredEvents === 'no match found' ? 'no match' : this.props.filteredEvents;
-		/*
-		const basicEventStyle = 'event-list-container';
-		const basicListStyle = 'event-list';
-
-		const eventStyle = this.props.isHidden ? basicEventStyle : [basicEventStyle, basicEventStyle+'-compact'].join(' ');
-
-		const listStyle = this.props.isHidden ? basicListStyle : [basicListStyle, basicListStyle+'-compact'].join(' ');*/
 
 		return (
 			<div>

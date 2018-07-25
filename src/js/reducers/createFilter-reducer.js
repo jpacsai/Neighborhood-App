@@ -4,7 +4,8 @@ export default function createFilterReducer (state = {}, action) {
         case 'FILTERLIST_CREATED':
             const newState = {
                 ...state,
-                locations: action.locations
+                locations: action.locations,
+                dates: action.dates
             }
             return newState;
 
