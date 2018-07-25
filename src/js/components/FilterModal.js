@@ -20,7 +20,12 @@ class FilterModal extends Component {
                 <Filters title={ 'Location' } list={ this.props.list } events={ this.props.events }/>
                 <input type="submit" value="Submit" />
                 <button 
-                    className='filter-modal-closeButton' 
+                    type='button'
+                    className='filter-reset-btn'>
+                    Clear Filters
+                </button>
+                <button 
+                    className='filter-modal-close-btn' 
                     type='button'
                     onClick={ () => this.props.hideDatePicker(this.props.isHidden) } >
                     Close
