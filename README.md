@@ -12,6 +12,8 @@
 - [x] move filters to modal window
 - [x] add close button to modal
 ***
+- [ ] extract dates from fetch
+- [ ] disable dates based on extracted data
 - [ ] add date to filtering
 - [ ] add 'none' to location filter list + function
 - [ ] add reset filters button + function
