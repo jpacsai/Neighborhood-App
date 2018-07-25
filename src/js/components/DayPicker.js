@@ -27,6 +27,7 @@ class DatePicker extends Component {
         return (
             <DayPicker
                 showOutsideDays
+                fixedWeeks
                 canChangeMonth={ false }
                 disabledDays={{
                     before: todayDate,
