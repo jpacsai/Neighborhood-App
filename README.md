@@ -33,4 +33,7 @@
    - [ ] aria labels
 - [ ] check ticketmaster page form API usage terms
 - [ ] add auto scroll upon filtering ( no idea :/ )
+- [ ] validate page
+- [ ] comment code
+- [ ] write readme
 
