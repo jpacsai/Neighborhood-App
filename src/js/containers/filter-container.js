@@ -17,9 +17,7 @@ class FilterContainer extends Component {
                     onClick={ () => this.props.hideDatePicker(this.props.isHidden) }>
                     Show Filters
                 </button>
-                
-                { !this.props.isHidden && < FilterModal list = { this.props.locations }/> }
-
+                { !this.props.isHidden && < FilterModal /> }
             </section>
         )
     }
@@ -27,8 +25,6 @@ class FilterContainer extends Component {
 
 function mapStateToProps(state) {
     return {
-        events: state.events.events,
-        locationFilter: state.filtersToApply.location,
         isHidden: state.isHidden
     }
 }

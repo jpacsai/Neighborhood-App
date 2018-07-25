@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux';
 import { filterEvents } from './../actions/filterEvents';
 import { hideDatePicker } from './../actions/hideDatePicker';
 import DatePicker from './../components/DayPicker';
-import Filters from './Filters';
+import FilterList from './FilterList';
 
 class FilterModal extends Component {
 
@@ -13,11 +13,10 @@ class FilterModal extends Component {
         return (
             <form className='filter-modal' onSubmit={ (e) => {
                 this.props.filterEvents(e, this.props.events, this.props.locationFilter)
-            }
-                    } >
+            } } >
                 <h2 className={ ['aside-header', 'aside-header-filter'].join(' ') }>Filters</h2>
                 <DatePicker />
-                <Filters title={ 'Location' } list={ this.props.list } events={ this.props.events }/>
+                <FilterList title={ 'Location' } locations={ this.props.locations } />
                 <input type="submit" value="Submit" />
                 <button 
                     type='button'
@@ -37,6 +36,7 @@ class FilterModal extends Component {
 
 function mapStateToProps(state) {
     return {
+        locations: state.filters.locations,
         events: state.events.events,
         locationFilter: state.filtersToApply.location,
         isHidden: state.isHidden

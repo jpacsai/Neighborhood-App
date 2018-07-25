@@ -24,7 +24,6 @@ const store = {
 		dates: []
 	},
 	filtersToApply: {
-		// genre: '',
 		location: ''
 	},
 	filteredEvents: [],

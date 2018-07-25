@@ -34,11 +34,7 @@ class App extends Component {
 
 				<main>
 					<aside className='side-menu'>
-						<FilterContainer 
-							events={ this.props.events }
-							genres={ this.props.genres }
-							locations={ this.props.locations }
-						/>
+						<FilterContainer />
 						<section className={ 'event-list-container' }>
 							<h2 className={ ['aside-header', 'aside-header-list'].join(' ') }>Events</h2>
 							{ this.props.filteredEvents && this.props.events && 
@@ -61,7 +57,6 @@ class App extends Component {
 function mapStateToProps(state) {
     return {
 		events: state.events.events,
-		genres: state.filters.genres,
 		locations: state.filters.locations,
 		filteredEvents: state.filteredEvents,
 		isHidden: state.isHidden
