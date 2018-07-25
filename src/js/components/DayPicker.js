@@ -47,7 +47,8 @@ class DatePicker extends Component {
 
 function mapStateToProps(state) {
     return {
-        selectedDays : state.selectedDays
+        selectedDays : state.selectedDays,
+        availableDays: state.filters.dates
     }
 }
 

@@ -9,12 +9,14 @@ export function createFilters(events){
         const location = events[i]._embedded.venues[0].city.name;
         const date = events[i].dates.start.localDate;
 
+        const dateFormat = new Date(date.slice(0,4), parseInt(date.slice(5, 7)), parseInt(date.slice(8,10)));
+
         if (allLocations.includes(location) === false) {
             allLocations.push(location);
         }
 
-        if (allDates.includes(date) === false) {
-            allDates.push(date);
+        if (allDates.includes(dateFormat) === false) {
+            allDates.push(dateFormat);
         }
     }
 

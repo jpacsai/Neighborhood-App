@@ -3,6 +3,7 @@ export default function selectDayReducer (state = [], action) {
     switch (action.type) {
         case 'ADD_DAY':
             const addToState = [...state, action.payload]
+            console.log(addToState)
             return addToState;
 
         case 'REMOVE_DAY':
