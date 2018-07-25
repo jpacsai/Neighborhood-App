@@ -85,6 +85,7 @@ body {
       .event-list-container {
         height: 84%;
         overflow-x: hidden;
+        width: 280px;
 
         .event-count {
           margin: 5px;
@@ -99,10 +100,6 @@ body {
           overflow: scroll;
           overflow-x: hidden;
         }
-
-        .event-list-compact {
-          height: 66%;
-        }
   
         .event {
           margin: 5px 0;
@@ -112,11 +109,6 @@ body {
             margin: 0;
           }
         }
-      }  
-
-      .event-list-container-compact {
-        top: 0;
-        height: 28%;
       }
     }
   }

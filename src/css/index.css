@@ -59,7 +59,8 @@ body {
           margin-bottom: 5px; }
     body main aside .event-list-container {
       height: 84%;
-      overflow-x: hidden; }
+      overflow-x: hidden;
+      width: 280px; }
       body main aside .event-list-container .event-count {
         margin: 5px;
         text-align: center; }
@@ -70,13 +71,8 @@ body {
         height: 84%;
         overflow: scroll;
         overflow-x: hidden; }
-      body main aside .event-list-container .event-list-compact {
-        height: 66%; }
       body main aside .event-list-container .event {
         margin: 5px 0;
         background-color: aquamarine; }
         body main aside .event-list-container .event p {
           margin: 0; }
-    body main aside .event-list-container-compact {
-      top: 0;
-      height: 28%; }
