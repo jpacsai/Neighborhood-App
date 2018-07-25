@@ -95,7 +95,7 @@ class DatePicker extends Component {
                     if (between) {
                         this.props.dayClick(day, this.props.selectedDays);
                     }
-                }}
+                } }
             />
         )
     }
