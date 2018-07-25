@@ -18,17 +18,17 @@ export default combineReducers({
 /* STATE STRUCTURE:
 
 const store = {
-	events: [],
-	filters: {                // change property name to filterLists
-		locations: [],
-		dates: []
+	events: [],				objects
+	filters: {                							// change property name to filterLists
+		locations: [],		string
+		dates: [] 			new Date()
 	},
 	filtersToApply: {
-		location: ''
+		location: ''		string
 	},
-	filteredEvents: [],
-	dateHidden: boolean,
-	selectedDates: []
+	filteredEvents: [],		object
+	dateHidden: boolean,	boolean
+	selectedDates: []		new Date()
 }
 
 */

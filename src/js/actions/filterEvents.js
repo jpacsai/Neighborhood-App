@@ -7,7 +7,7 @@ export function filterEvents (e, events, locationFilter) {
     let value;
     
     if (filteredEvents.length === 0) {
-        message = 'NO_MATHING_FILTERED_EVENTS';
+        message = 'NO_MATCHING_FILTERED_EVENTS';
         value = 'no match found'
     }
     else {
