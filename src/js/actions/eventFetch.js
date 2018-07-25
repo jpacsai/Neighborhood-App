@@ -10,7 +10,7 @@ export function loadData(){
     
     const today = date.getFullYear() + '-' + month + '-' + day;
 
-    date.setDate(date.getDate() + 7);
+    date.setDate(date.getDate() + 6);
     month = (date.getMonth()+1) + '';
     month = month.length < 2 ? '0' + month : month;
     day = (date.getDate() + '');
