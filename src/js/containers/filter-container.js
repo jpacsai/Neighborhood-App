@@ -12,8 +12,10 @@ class FilterContainer extends Component {
         return (
             <section className={ 'filter-container' }>
                 <h2 className={ ['aside-header', 'aside-header-filter'].join(' ') }>Filters</h2>
-                <button type="button" onClick={ () => this.props.hideDatePicker(this.props.isHidden) }>
-                    { (this.props.isHidden  && 'Show Filters') || 'Hide Filters'}
+                <button 
+                    type="button"
+                    onClick={ () => this.props.hideDatePicker(this.props.isHidden) }>
+                    Show Filters
                 </button>
                 
                 { !this.props.isHidden && < FilterModal list = { this.props.locations }/> }
