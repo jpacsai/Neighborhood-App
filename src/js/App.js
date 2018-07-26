@@ -14,6 +14,7 @@ class App extends Component {
 	componentDidMount() {
 		const { loadData, createFilters } = this.props;
 		loadData().then(() => {
+			//addDateProperty(this.props.events);
 			createFilters(this.props.events);
 		});
 	}

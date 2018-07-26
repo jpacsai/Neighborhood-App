@@ -1,3 +1,5 @@
+import { addDateProperty } from './addDate';
+
 export function loadData(){
 
     console.log('fetching events');
@@ -24,19 +26,10 @@ export function loadData(){
         return fetch(url)
         .then(res => res.json())
         .then((response)=>{
-            dispatch(loadDataDispatcher(response));
+            dispatch(addDateProperty(response));
         })
         .catch(function(error) {
             console.log('error: ', error);
         })
-    }
-}
-
-function loadDataDispatcher(response) {
-    console.log('load data success', response._embedded.events);
-    return{
-        type:"EVENT_FETCH_SUCCESS",
-        events: {
-            events: response._embedded.events},
     }
 }
