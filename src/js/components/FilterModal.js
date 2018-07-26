@@ -12,7 +12,7 @@ class FilterModal extends Component {
 
         return (
             <form className='filter-modal' onSubmit={ (e) => {
-                this.props.filterEvents(e, this.props.events, this.props.locationFilter)
+                this.props.filterEvents(e, this.props.events, this.props.locationFilter, this.props.dateFilter)
             } } >
                 <h2 className={ ['aside-header', 'aside-header-filter'].join(' ') }>Filters</h2>
                 <button 
@@ -43,6 +43,7 @@ function mapStateToProps(state) {
         locations: state.filters.locations,
         events: state.events.events,
         locationFilter: state.filtersToApply.locations,
+        dateFilter: state.filtersToApply.selectedDays,
         isHidden: state.isHidden
     }
 }
