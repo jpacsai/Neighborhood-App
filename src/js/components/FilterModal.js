@@ -11,7 +11,7 @@ class FilterModal extends Component {
 
     render() {
 
-        const { events, locations, locationFilter, dateFilter, isHidden, filterEvents, hideDatePicker, reset } = this.props;
+        const { events, locationFilter, dateFilter, isHidden, filterEvents, hideDatePicker, reset } = this.props;
 
         return (
             <form className='filter-modal' onSubmit={ (e) => {
@@ -26,7 +26,7 @@ class FilterModal extends Component {
                 </button>
                 <div className='filter-area'>
                     <DatePicker />
-                    <FilterList locations={ locations } />
+                    <FilterList />
                 </div>
                 <div className='filter-buttons'>
                     <input className='filter-modal-btn' type="submit" value="Submit" />
@@ -47,7 +47,6 @@ class FilterModal extends Component {
 function mapStateToProps(state) {
     return {
         events: state.events.events,
-        locations: state.filterLists.locations,
         locationFilter: state.filtersToApply.locations,
         dateFilter: state.filtersToApply.selectedDays,
         isHidden: state.isHidden

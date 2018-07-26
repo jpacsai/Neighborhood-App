@@ -5,6 +5,8 @@ import { filtersToApply } from './../actions/filtersToApply';
 
 class FilterList extends Component {
 
+    
+
     render() {
 
         const { locations, filtersToApply, locationFilters } = this.props;
@@ -21,10 +23,13 @@ class FilterList extends Component {
                                 <input
                                     id={ item }
                                     defaultChecked = { locationFilters.includes(item) }
-                                    type="checkbox" 
+                                    checked={ locationFilters.includes(item) }
+                                    type="checkbox"
                                     name={ item } 
                                     value={ item } 
-                                    onChange={ (value) => filtersToApply(value, locationFilters) }
+                                    onChange={ (value) => {
+                                        filtersToApply(value, locationFilters);
+                                    } }
                                 />
                                 <label htmlFor={ item }>{ item }</label>
                             </div>
@@ -42,6 +47,7 @@ class FilterList extends Component {
 
 function mapStateToProps(state) {
     return {
+        locations: state.filterLists.locations,
         locationFilters: state.filtersToApply.locations
     }
 }
