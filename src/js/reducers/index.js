@@ -9,10 +9,13 @@ import selectDayReducer from './selectDay-reducer';
 export default combineReducers({
     events: eventsReducer,
     filters: createFilterReducer,
-    filtersToApply: filtersToApplyReducer,
+    filtersToApply: combineReducers({
+		locations: filtersToApplyReducer,
+		selectedDays: selectDayReducer
+	}),
     filteredEvents: filterEventsReducer,
 	isHidden: hideDateReducer,
-	selectedDays: selectDayReducer
+
 });
 
 /* STATE STRUCTURE:
@@ -23,10 +26,13 @@ const store = {
 		locations: [],		string
 		dates: [] 			new Date()
 	},
-	filtersToApply: [],		array
+	filtersToApply: {
+		locations: [],		array
+		selectedDates: []	new Date()
+	}
 	filteredEvents: [],		object
 	dateHidden: boolean,	boolean
-	selectedDates: []		new Date()
+	
 }
 
 */
