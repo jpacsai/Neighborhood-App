@@ -4,22 +4,23 @@
 - [x] add calendar
    - [x] disable days
    - [x] multiselect days
-- [x] fix date format in fetch
+- [x] fix: date format in fetch
 - [x] hide/show filter section
 - [x] add event counter  
-- [x] fix event list section scroll
+- [x] fix: event list section scroll
 - [x] disable month toggle in calendar, display 6 weeks
 - [x] move filters to modal window
 - [x] add close button to modal
 - [x] extract dates from fetch
 - [x] inspect date formats in all dates
 - [x] disable dates based on extracted data
-- [x] fix modal layout
+- [x] fix: modal layout
 - [x] change location filters to checkboxes instead of select options
-- [x] fix filtering with multiple locations
+- [x] fix: filtering with multiple locations
 - [x] add date to filtering
+- [x] add reset filters button + function
+- [x] fix: display all events after resetting filters
 ***
-- [ ] add reset filters button + function
 - [ ] fix: keep checkboxes checked when modal is closed --> move checkbox checked-state to state  :(
 - [ ] add 'remove date' function to filtersToApply
 - [ ] sort event list by date and alphabet by default
