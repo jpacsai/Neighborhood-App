@@ -25,7 +25,7 @@ class App extends Component {
 
 	render() {
 		const displayList = this.props.filteredEvents.length === 0 ? this.props.events : 
-			this.props.filteredEvents === 'no match found' ? 'no match' : this.props.filteredEvents;
+			this.props.filteredEvents === 'no match found' ? '' : this.props.filteredEvents;
 
 		return (
 			<div>
@@ -42,7 +42,7 @@ class App extends Component {
 								<p className='event-count'>{ displayList.length } event{ displayList.length > 1 && 's'} found</p>
 							} 
 							<ul className='event-list'>
-								<List list={ displayList }/>
+								<List list={ displayList || 'no match' }/>
 							</ul>
 						</section>
 					</aside>
