@@ -1,16 +1,21 @@
 import React from 'react';
 
 const List = (props) => {
-    if (props.list === 'no match') {
+
+    const { list } = props;
+
+    if (list === 'no match') {
         return (
             <li className='event'>No match found</li>
         )
     }
-    else if (props.list) {
-        return props.list.map( (event) => {
+
+    else if (list) {
+        return list.map( (event) => {
             const date = event.dates.start.localDate || 'unknown date';
             const time = event.dates.start.localTime ? (event.dates.start.localTime).slice(0, 5) : null;
             const location = event._embedded.venues[0].city.name || 'unkown location';
+            
             return (
                 <li key={ event.id } className='event'>
                     { event.name }
@@ -19,6 +24,7 @@ const List = (props) => {
             )
         })
     }
+
     else {
         return null;
     }

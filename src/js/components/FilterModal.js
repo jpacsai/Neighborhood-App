@@ -10,28 +10,30 @@ import { resetFiltering } from './../actions/resetFiltering';
 class FilterModal extends Component {
 
     render() {
+        
+        const { events, locations, locationFilter, dateFilter, isHidden, filterEvents, hideDatePicker, reset } = this.props;
 
         return (
             <form className='filter-modal' onSubmit={ (e) => {
-                this.props.filterEvents(e, this.props.events, this.props.locationFilter, this.props.dateFilter)
+                filterEvents(e, events, locationFilter, dateFilter)
             } } >
-                <h2 className={ ['aside-header', 'aside-header-filter'].join(' ') }>Filters</h2>
+                <h2 className='aside-header aside-header-filter'>Filters</h2>
                 <button 
                     className='filter-modal-btn filter-modal-close-btn' 
                     type='button'
-                    onClick={ () => this.props.hideDatePicker(this.props.isHidden) } >
+                    onClick={ () => hideDatePicker(isHidden) } >
                     Close
                 </button>
                 <div className='filter-area'>
                     <DatePicker />
-                    <FilterList title={ 'Location' } locations={ this.props.locations } />
+                    <FilterList locations={ locations } />
                 </div>
                 <div className='filter-buttons'>
                     <input className='filter-modal-btn' type="submit" value="Submit" />
                     <button 
                         type='button'
                         className='filter-modal-btn filter-reset-btn'
-                        onClick={ () => this.props.reset() } >
+                        onClick={ () => reset() } >
                         Clear Filters
                     </button>
                 </div>
@@ -42,8 +44,8 @@ class FilterModal extends Component {
 
 function mapStateToProps(state) {
     return {
-        locations: state.filters.locations,
         events: state.events.events,
+        locations: state.filters.locations,
         locationFilter: state.filtersToApply.locations,
         dateFilter: state.filtersToApply.selectedDays,
         isHidden: state.isHidden

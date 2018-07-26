@@ -63,7 +63,7 @@ class DatePicker extends Component {
     }
 
     render() {
-        const { availableDays } = this.props;
+        const { availableDays, selectedDays, dayClick } = this.props;
 
         const todayDate = this.dateCreator(0);   
         const nextWeekDate = this.dateCreator(6);
@@ -76,7 +76,6 @@ class DatePicker extends Component {
         });
         const formatNoEventDays = this.transformDays(noEventDays);
         
-
         return (
             <DayPicker
                 firstDayOfWeek={ 1 }
@@ -89,11 +88,11 @@ class DatePicker extends Component {
                         daysOfWeek: formatNoEventDays
                     }
                  ] }
-                selectedDays={ this.props.selectedDays }
+                selectedDays={ selectedDays }
                 onDayClick={ (day) => {
                     const between = (todayTime <= day.getTime() && nextWeekTime >= day.getTime());
                     if (between) {
-                        this.props.dayClick(day, this.props.selectedDays);
+                        dayClick(day, selectedDays);
                     }
                 } }
             />

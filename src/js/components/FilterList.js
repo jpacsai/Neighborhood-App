@@ -4,21 +4,25 @@ import { connect } from 'react-redux';
 import { filtersToApply } from './../actions/filtersToApply';
 
 class FilterList extends Component {
+
     render() {
-        const { title, locations } = this.props;
+
+        const { locations, filtersToApply } = this.props;
         
         if (locations) {
+
             return (
                 <div className='filter-select'>
                     <h3>Locations</h3>
                     { locations.map(item => {
+
                         return (
                             <div key={item}>
                                 <input
                                     type="checkbox" 
                                     name={item} 
                                     value={item} 
-                                    onChange={ (value) => this.props.filtersToApply(value)}
+                                    onChange={ (value) => filtersToApply(value)}
                                 />{item}<br/>
                             </div>
                         )
@@ -26,6 +30,7 @@ class FilterList extends Component {
                 </div>
             )
         }
+        
         else {
             return null;
         }
