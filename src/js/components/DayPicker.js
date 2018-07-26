@@ -38,26 +38,8 @@ class DatePicker extends Component {
 
     transformDays(days) {
         const formattedDays = days.map(date => {
-            const format = String(new Date(date.slice(0,4), parseInt(date.slice(5, 7)-1, 10), parseInt(date.slice(8,10), 10)));
-            const s = format.slice(0,3);
-            switch(s) {
-                case 'Mon':
-                    return 1;
-                case 'Tue':
-                    return 2;
-                case 'Wed':
-                    return 3;
-                case 'Thu':
-                    return 4;
-                case 'Fri':
-                    return 5;
-                case 'Sat':
-                    return 6;
-                case 'Sun':
-                    return 7;
-                default:
-                    return -1;
-            }
+            const dayNum = new Date(date.slice(0,4), parseInt(date.slice(5, 7)-1, 10), parseInt(date.slice(8,10), 10)).getDay();
+            return dayNum;
         })
         return formattedDays;
     }
