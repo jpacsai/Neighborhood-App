@@ -5,6 +5,9 @@ export default function filtersToApplyReducer (state = [], action) {
             const a = [...state, action.filter];
             return a;
 
+        case 'CLEAR_FILTERS' :
+            return [];
+
         default:
             return state
     }

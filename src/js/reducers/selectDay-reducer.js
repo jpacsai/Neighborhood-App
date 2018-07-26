@@ -10,6 +10,9 @@ export default function selectDayReducer (state = [], action) {
             removeFromState.splice(action.payload, 1);
             return removeFromState;
 
+        case 'CLEAR_FILTERS':
+            return [];
+
         default:
             return state
     }

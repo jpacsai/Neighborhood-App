@@ -5,6 +5,7 @@ import { filterEvents } from './../actions/filterEvents';
 import { hideDatePicker } from './../actions/hideDatePicker';
 import DatePicker from './../components/DayPicker';
 import FilterList from './FilterList';
+import { resetFiltering } from './../actions/resetFiltering';
 
 class FilterModal extends Component {
 
@@ -29,7 +30,8 @@ class FilterModal extends Component {
                     <input className='filter-modal-btn' type="submit" value="Submit" />
                     <button 
                         type='button'
-                        className='filter-modal-btn filter-reset-btn'>
+                        className='filter-modal-btn filter-reset-btn'
+                        onClick={ () => this.props.reset() } >
                         Clear Filters
                     </button>
                 </div>
@@ -51,7 +53,8 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
     return bindActionCreators({
         filterEvents: filterEvents,
-        hideDatePicker: hideDatePicker 
+        hideDatePicker: hideDatePicker,
+        reset: resetFiltering 
     }, dispatch);
 }
 
