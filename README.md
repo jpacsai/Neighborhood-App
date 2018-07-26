@@ -20,7 +20,9 @@
 - [x] add date to filtering
 - [x] add reset filters button + function
 - [x] fix: display all events after resetting filters
+- [x] refactor: transform day function in DayPicker
 ***
+- [ ] check again all functions using dates for refactoring
 - [ ] fix: keep checkboxes checked when modal is closed --> move checkbox checked-state to state  :(
 - [ ] add 'remove date' function to filtersToApply
 - [ ] sort event list by date and alphabet by default
