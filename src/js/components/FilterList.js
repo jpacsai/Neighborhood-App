@@ -24,7 +24,7 @@ class FilterList extends Component {
                                     type="checkbox" 
                                     name={ item } 
                                     value={ item } 
-                                    onChange={ (value) => filtersToApply(value) }
+                                    onChange={ (value) => filtersToApply(value, locationFilters) }
                                 />
                                 <label htmlFor={ item }>{ item }</label>
                             </div>

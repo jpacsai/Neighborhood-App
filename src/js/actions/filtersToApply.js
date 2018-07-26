@@ -1,14 +1,20 @@
-export function filtersToApply(val) {
+export function filtersToApply(val, locationFilters) {
     
-    let message = 'ADD_LOCATION_FILTER';
+    const location = val.target.name;
+    
+    const includesFilter = locationFilters.includes(location)
 
-    return filtersToApplyDispatcher(message, val.target.name);
+    const message = includesFilter ? 'REMOVE_LOCATION_FILTER' : 'ADD_LOCATION_FILTER';
+    const index = includesFilter ? locationFilters.indexOf(location) : null;
+
+    return filtersToApplyDispatcher(message, location, index);
 }
 
-function filtersToApplyDispatcher(message, val) {
+function filtersToApplyDispatcher(message, location, index) {
 
     return {
         type: message,
-        filter: val
+        filter: location,
+        index
     }
 }
