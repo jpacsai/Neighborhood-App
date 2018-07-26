@@ -13,9 +13,8 @@ class FilterList extends Component {
                     <h3>Locations</h3>
                     { locations.map(item => {
                         return (
-                            <div>
-                                <input 
-                                    key={item} 
+                            <div key={item}>
+                                <input
                                     type="checkbox" 
                                     name={item} 
                                     value={item} 

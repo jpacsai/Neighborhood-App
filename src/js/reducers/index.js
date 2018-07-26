@@ -23,9 +23,7 @@ const store = {
 		locations: [],		string
 		dates: [] 			new Date()
 	},
-	filtersToApply: {
-		location: ''		string
-	},
+	filtersToApply: [],		array
 	filteredEvents: [],		object
 	dateHidden: boolean,	boolean
 	selectedDates: []		new Date()

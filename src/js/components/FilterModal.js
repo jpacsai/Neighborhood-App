@@ -42,7 +42,7 @@ function mapStateToProps(state) {
     return {
         locations: state.filters.locations,
         events: state.events.events,
-        locationFilter: state.filtersToApply.location,
+        locationFilter: state.filtersToApply,
         isHidden: state.isHidden
     }
 }
