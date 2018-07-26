@@ -17,8 +17,9 @@
 - [x] fix modal layout
 - [x] change location filters to checkboxes instead of select options
 - [x] fix filtering with multiple locations
+- [x] add date to filtering
 ***
-- [ ] add date to filtering
+- [ ] add 'remove date' function to filtersToApply
 - [ ] add 'none' to location filter list + function
 - [ ] add reset filters button + function
 - [ ] sort event list by date and alphabet by default
