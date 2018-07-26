@@ -7,7 +7,7 @@ class FilterList extends Component {
 
     render() {
 
-        const { locations, filtersToApply } = this.props;
+        const { locations, filtersToApply, locationFilters } = this.props;
         
         if (locations) {
 
@@ -17,13 +17,16 @@ class FilterList extends Component {
                     { locations.map(item => {
 
                         return (
-                            <div key={item}>
+                            <div key={ item }>
                                 <input
+                                    id={ item }
+                                    defaultChecked = { locationFilters.includes(item) }
                                     type="checkbox" 
-                                    name={item} 
-                                    value={item} 
-                                    onChange={ (value) => filtersToApply(value)}
-                                />{item}<br/>
+                                    name={ item } 
+                                    value={ item } 
+                                    onChange={ (value) => filtersToApply(value) }
+                                />
+                                <label htmlFor={ item }>{ item }</label>
                             </div>
                         )
                     }) }
@@ -37,10 +40,16 @@ class FilterList extends Component {
     }
 }
 
+function mapStateToProps(state) {
+    return {
+        locationFilters: state.filtersToApply.locations
+    }
+}
+
 function mapDispatchToProps(dispatch) {
     return bindActionCreators({ filtersToApply: filtersToApply }, dispatch);
 }
 
-export default connect(null, mapDispatchToProps)(FilterList);
+export default connect(mapStateToProps, mapDispatchToProps)(FilterList);
 
 /* onChange={ (val) => this.props.filtersToApply(title, val)} */
