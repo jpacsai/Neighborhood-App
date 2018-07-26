@@ -38,16 +38,31 @@ body {
         width: 80%;
         height: 70%;
         min-height: 360px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: row;
+        display: grid;
+        grid-template: 20% 60% 20% / 1fr;
         background-color: rgba(255, 255, 255, 0.9);
         animation: fadeIn 0.8s; }
+        body main aside .filter-container .filter-modal .filter-modal-btn {
+          color: red;
+          margin: 5px;
+          width: 150px;
+          padding: 10px; }
         body main aside .filter-container .filter-modal .filter-modal-close-btn {
           position: absolute;
           top: 15px;
           right: 15px; }
+        body main aside .filter-container .filter-modal .filter-area {
+          grid-area: 2 / 1 / 3 / 2;
+          display: grid;
+          grid-template: 1fr / 50% 50%; }
+          body main aside .filter-container .filter-modal .filter-area .filter-select {
+            grid-area: 1 / 2 / 2 / 3; }
+        body main aside .filter-container .filter-modal .filter-buttons {
+          grid-area: 3 / 1 / 4 / 2;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column; }
       body main aside .filter-container form {
         display: flex;
         flex-direction: column;

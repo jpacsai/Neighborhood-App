@@ -82,8 +82,8 @@ class DatePicker extends Component {
                 firstDayOfWeek={ 1 }
                 disabledDays={ [
                     {
-                    before: todayDate,
-                    after: nextWeekDate
+                        before: todayDate,
+                        after: nextWeekDate
                     },
                     {
                         daysOfWeek: formatNoEventDays

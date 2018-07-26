@@ -1,11 +1,8 @@
-export default function filtersToApplyReducer (state = { location: null }, action) {
+export default function filtersToApplyReducer (state = [], action) {
     
     switch (action.type) {
         case 'ADD_LOCATION_FILTER':
-            const a = {
-                ...state,
-                location: action.filter
-            }
+            const a = [...state, action.filter];
             return a;
 
         default:

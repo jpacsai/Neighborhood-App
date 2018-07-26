@@ -15,20 +15,24 @@ class FilterModal extends Component {
                 this.props.filterEvents(e, this.props.events, this.props.locationFilter)
             } } >
                 <h2 className={ ['aside-header', 'aside-header-filter'].join(' ') }>Filters</h2>
-                <DatePicker />
-                <FilterList title={ 'Location' } locations={ this.props.locations } />
-                <input type="submit" value="Submit" />
                 <button 
-                    type='button'
-                    className='filter-reset-btn'>
-                    Clear Filters
-                </button>
-                <button 
-                    className='filter-modal-close-btn' 
+                    className='filter-modal-btn filter-modal-close-btn' 
                     type='button'
                     onClick={ () => this.props.hideDatePicker(this.props.isHidden) } >
                     Close
                 </button>
+                <div className='filter-area'>
+                    <DatePicker />
+                    <FilterList title={ 'Location' } locations={ this.props.locations } />
+                </div>
+                <div className='filter-buttons'>
+                    <input className='filter-modal-btn' type="submit" value="Submit" />
+                    <button 
+                        type='button'
+                        className='filter-modal-btn filter-reset-btn'>
+                        Clear Filters
+                    </button>
+                </div>
             </form>
         )
     }

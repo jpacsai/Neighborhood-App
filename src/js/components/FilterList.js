@@ -9,17 +9,22 @@ class FilterList extends Component {
         
         if (locations) {
             return (
-                <select 
-                    selected={ title } 
-                    onChange={ (val) => this.props.filtersToApply(title, val)
-                }>
-                    <option disabled value={title}>Select {title}</option>
+                <div className='filter-select'>
+                    <h3>Locations</h3>
                     { locations.map(item => {
                         return (
-                            <option key={item} value={item}>{item}</option>
+                            <div>
+                                <input 
+                                    key={item} 
+                                    type="checkbox" 
+                                    name={item} 
+                                    value={item} 
+                                    onChange={ (value) => this.props.filtersToApply(value)}
+                                />{item}<br/>
+                            </div>
                         )
                     }) }
-                </select>
+                </div>
             )
         }
         else {
@@ -33,3 +38,5 @@ function mapDispatchToProps(dispatch) {
 }
 
 export default connect(null, mapDispatchToProps)(FilterList);
+
+/* onChange={ (val) => this.props.filtersToApply(title, val)} */
