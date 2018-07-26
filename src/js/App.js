@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { loadData } from './actions/eventFetch';
+import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { createFilters } from './actions/createFilters';
 import FilterContainer from './containers/filter-container';
@@ -11,9 +12,9 @@ require('../css/index.css');
 class App extends Component {
 
 	componentDidMount() {
-		const { dispatch } = this.props;
-		dispatch(loadData()).then(() => {
-			dispatch(createFilters(this.props.events));
+		const { loadData, createFilters } = this.props;
+		loadData().then(() => {
+			createFilters(this.props.events);
 		});
 	}
 
@@ -35,8 +36,8 @@ class App extends Component {
 				<main>
 					<aside className='side-menu'>
 						<FilterContainer />
-						<section className={ 'event-list-container' }>
-							<h2 className={ ['aside-header', 'aside-header-list'].join(' ') }>Events</h2>
+						<section className='event-list-container'>
+							<h2 className='aside-header aside-header-list'>Events</h2>
 							{ this.props.filteredEvents && this.props.events && 
 								<p className='event-count'>{ displayList.length } event{ displayList.length > 1 && 's'} found</p>
 							} 
@@ -63,6 +64,13 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapStateToProps)(App);
+function mapDispatchToProps(dispatch) {
+    return bindActionCreators({
+		loadData: loadData,
+		createFilters: createFilters
+	}, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
 
 // https://app.ticketmaster.com/discovery/v2/events.JSON?apikey=GEKqrkYNGL9POROireeB9D6fzdpWP8dj&marketId=204&startDateTime=2018-07-19T15:44:00Z&endDateTime=2018-07-26T23:59:00Z&includeTBA=no&includeTBD=no
