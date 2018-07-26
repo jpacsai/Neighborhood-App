@@ -54,7 +54,7 @@ body {
           min-height: 360px;
           display: grid;
           grid-template: 20% 60% 20% / 1fr;
-          background-color: rgba(255, 255, 255, 0.9);
+          background-color: white;
           animation: fadeIn 0.8s;
 
           .filter-modal-btn {
@@ -75,8 +75,18 @@ body {
             display: grid;
             grid-template: 1fr / 50% 50%;
 
+            .DayPicker {
+              max-width: 320px;
+              height: 270px;
+              margin: auto;
+            }
+
             .filter-select {
               grid-area: 1 / 2 / 2 / 3;
+
+              .filter-select-li {
+                margin: 5px;
+              }
             }
           }
 
@@ -85,11 +95,7 @@ body {
             display: flex;
             align-items: center;
             justify-content: center;
-            flex-direction: column;
-
-            .filter-reset-btn {
-  
-            }
+            flex-direction: row;
           }
         }
 

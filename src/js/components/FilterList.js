@@ -19,7 +19,7 @@ class FilterList extends Component {
                     { locations.map(item => {
 
                         return (
-                            <div key={ item }>
+                            <div key={ item } className='filter-select-li'>
                                 <input
                                     id={ item }
                                     defaultChecked = { locationFilters.includes(item) }
