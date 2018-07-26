@@ -19,9 +19,9 @@
 - [x] fix filtering with multiple locations
 - [x] add date to filtering
 ***
-- [ ] add 'remove date' function to filtersToApply
-- [ ] add 'none' to location filter list + function
 - [ ] add reset filters button + function
+- [ ] fix: keep checkboxes checked when modal is closed --> move checkbox checked-state to state  :(
+- [ ] add 'remove date' function to filtersToApply
 - [ ] sort event list by date and alphabet by default
 - [ ] sort by function
    - [x] date (default)
