@@ -16,6 +16,7 @@
 - [x] disable dates based on extracted data
 - [x] fix modal layout
 - [x] change location filters to checkboxes instead of select options
+- [x] fix filtering with multiple locations
 ***
 - [ ] add date to filtering
 - [ ] add 'none' to location filter list + function
