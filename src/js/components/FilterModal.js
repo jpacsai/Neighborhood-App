@@ -10,7 +10,7 @@ import { resetFiltering } from './../actions/resetFiltering';
 class FilterModal extends Component {
 
     render() {
-        
+
         const { events, locations, locationFilter, dateFilter, isHidden, filterEvents, hideDatePicker, reset } = this.props;
 
         return (
@@ -33,7 +33,9 @@ class FilterModal extends Component {
                     <button 
                         type='button'
                         className='filter-modal-btn filter-reset-btn'
-                        onClick={ () => reset() } >
+                        onClick={ (e) => {
+                            reset();
+                        } } >
                         Clear Filters
                     </button>
                 </div>
@@ -56,7 +58,7 @@ function mapDispatchToProps(dispatch) {
     return bindActionCreators({
         filterEvents: filterEvents,
         hideDatePicker: hideDatePicker,
-        reset: resetFiltering 
+        reset: resetFiltering
     }, dispatch);
 }
 

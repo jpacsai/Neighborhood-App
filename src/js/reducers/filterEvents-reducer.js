@@ -9,6 +9,9 @@ export default function filterEventsReducer (state = [], action) {
             const value = action.filteredEvents;
             return value;
 
+        case 'CLEAR_FILTERS':
+            return [];
+
         default:
             return state;
     }

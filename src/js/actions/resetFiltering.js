@@ -1,5 +1,5 @@
 export function resetFiltering() {
-    return {
+    return { 
         type: 'CLEAR_FILTERS'
     }
 }
