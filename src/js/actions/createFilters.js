@@ -2,12 +2,14 @@ export function createFilters(events){
 
     const allLocations = [];
     const allDates = [];
+    const allDatesObj = [];
     const message = 'FILTERLIST_CREATED'
 
     for (let i = 0; i < events.length; i++) {
         
         const location = events[i]._embedded.venues[0].city.name;
         const date = events[i].dates.start.localDate;
+        const obj = events[i].dates.start.dateObj;
 
         if (allLocations.includes(location) === false) {
             allLocations.push(location);
@@ -15,19 +17,19 @@ export function createFilters(events){
 
         if (allDates.includes(date) === false) {
             allDates.push(date);
+            allDatesObj.push(obj);
         }
 
     }
     
-    console.log('allDates: ', allDates);
-    
-    return createFiltersDispatcher(message, allLocations, allDates);     
+    return createFiltersDispatcher(message, allLocations, allDates, allDatesObj);     
 }
 
-function createFiltersDispatcher(message, allLocations, allDates) {
+function createFiltersDispatcher(message, allLocations, allDates, allDatesObj) {
     return {
         type: message,
         locations: allLocations,
-        dates: allDates
+        dates: allDates,
+        datesObj: allDatesObj
     }
 }

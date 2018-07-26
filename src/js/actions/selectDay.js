@@ -3,7 +3,7 @@ import { DateUtils } from 'react-day-picker';
 export function selectDay(day, selectedDays){
     let selected;
     let selectedIndex;
-    console.log(day);
+
     if (selectedDays) {
         selectedIndex = selectedDays.findIndex(selectedDay =>
             DateUtils.isSameDay(selectedDay, day));

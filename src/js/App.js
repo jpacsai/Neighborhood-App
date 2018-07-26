@@ -14,7 +14,6 @@ class App extends Component {
 	componentDidMount() {
 		const { loadData, createFilters } = this.props;
 		loadData().then(() => {
-			//addDateProperty(this.props.events);
 			createFilters(this.props.events);
 		});
 	}
@@ -59,7 +58,7 @@ class App extends Component {
 function mapStateToProps(state) {
     return {
 		events: state.events.events,
-		locations: state.filters.locations,
+		locations: state.filterLists.locations,
 		filteredEvents: state.filteredEvents,
 		isHidden: state.isHidden
     }

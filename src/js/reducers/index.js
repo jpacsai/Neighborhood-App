@@ -8,7 +8,7 @@ import selectDayReducer from './selectDay-reducer';
 
 export default combineReducers({
     events: eventsReducer,
-    filters: createFilterReducer,
+    filterLists: createFilterReducer,
     filtersToApply: combineReducers({
 		locations: filtersToApplyReducer,
 		selectedDays: selectDayReducer
@@ -22,9 +22,10 @@ export default combineReducers({
 
 const store = {
 	events: [],				objects
-	filters: {                							// change property name to filterLists
+	filterLists: {                							// change property name to filterLists
 		locations: [],		string
-		dates: [] 			new Date()
+		dates: [], 			string --> "2018-07-28"
+		datesObj: []		date Obj
 	},
 	filtersToApply: {
 		locations: [],		array
