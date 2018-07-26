@@ -1,5 +1,6 @@
 ### To-Do:
 
+...
 - [x] generate filters from event list
 - [x] add calendar
    - [x] disable days
@@ -21,10 +22,12 @@
 - [x] add reset filters button + function
 - [x] fix: display all events after resetting filters
 - [x] refactor: transform day function in DayPicker
+- [x] check again all functions using dates for refactoring
+- [x] fix: keep checkboxes checked when modal is closed --> move checkbox checked-state to state
+   - [x] add 'remove date' function to filtersToApply
+   - [x] fix: uncheck all locations when reset is clicked
+- [x] fix: event counter when no match found
 ***
-- [ ] check again all functions using dates for refactoring
-- [ ] fix: keep checkboxes checked when modal is closed --> move checkbox checked-state to state  :(
-- [ ] add 'remove date' function to filtersToApply
 - [ ] sort event list by date and alphabet by default
 - [ ] sort by function
    - [x] date (default)
