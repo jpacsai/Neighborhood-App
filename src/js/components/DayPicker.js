@@ -6,10 +6,6 @@ import 'react-day-picker/lib/style.css';
 import { selectDay } from './../actions/selectDay';
 
 class DatePicker extends Component {
-    constructor(props) {
-        super(props);
-        this.dateCreator = this.dateCreator.bind(this);
-    }
 
     dateCreator(days = 0) {
         let date = new Date();
@@ -24,7 +20,7 @@ class DatePicker extends Component {
             let date = new Date();
             date.setDate(date.getDate() + i);
 
-            let month = (date.getMonth()+1) + '';
+            let month = (date.getMonth() + 1) + '';
             month = month.length < 2 ? '0' + month : month;
 
             let day = (date.getDate() + '');
@@ -33,10 +29,10 @@ class DatePicker extends Component {
             const dateFormat = date.getFullYear() + '-' + month + '-' + day;
             week.push(dateFormat);
         }
-        return week;      
+        return week;
     }
 
-    transformDays(days) {
+    transformDays(days) { // "2018-07-27" ==> date object ==> weekday as a number (0-6)
         const formattedDays = days.map(date => {
             const dayNum = new Date(date.slice(0,4), parseInt(date.slice(5, 7)-1, 10), parseInt(date.slice(8,10), 10)).getDay();
             return dayNum;
