@@ -14,8 +14,9 @@
 - [x] extract dates from fetch
 - [x] inspect date formats in all dates
 - [x] disable dates based on extracted data
+- [x] fix modal layout
+- [x] change location filters to checkboxes instead of select options
 ***
-- [ ] fix modal layout
 - [ ] add date to filtering
 - [ ] add 'none' to location filter list + function
 - [ ] add reset filters button + function
