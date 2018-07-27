@@ -93,21 +93,28 @@ class App extends Component {
 							<h2 className='aside-header aside-header-list'>Events</h2>
 							{ this.props.fetchReady && 
 								<p className='event-count'><span>{ displayList.length || '0' } event{ displayList.length > 1 && 's'} found</span>
-									<select 
-										className='event-list-sortBy-btn'
-										onChange={ (e) => this.props.sortAction(e) }
-									>
-										<option value="abc">Abc</option>
-										<option value="date">Date</option>
-										<option value="location">Location</option>
-									</select>
 								</p>
 							} 
+							<div className='event-list-search-container'>
+								<input
+								type="text"
+								placeholder="Search by title or author"
+								onChange={ (event) => console.log(event.target.value) }
+								/> 
+								<select 
+									className='event-list-sortBy-btn'
+									onChange={ (e) => this.props.sortAction(e) }
+								>
+									<option value="abc">Abc</option>
+									<option value="date">Date</option>
+									<option value="location">Location</option>
+								</select>
+							</div>
 							<ul className='event-list'>
-								{ (this.props.fetchReady && this.sorting(displayWhat, sortType) &&
+								{ this.props.fetchReady && 
+									( this.sorting(displayWhat, sortType) &&
 									<List list={ this.sorting(displayWhat, sortType) } /> ) 
-									|| this.props.fetchReady && 
-									<li className='event'>{ 'no match found' }</li> }
+									|| <li className='event'>{ 'no match found' }</li> }
 							</ul>
 						</section>
 					</aside>
