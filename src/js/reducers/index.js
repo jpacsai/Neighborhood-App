@@ -5,9 +5,11 @@ import filtersToApplyReducer from './filtersToApply-reducer';
 import filterEventsReducer from './filterEvents-reducer';
 import hideDateReducer from './hideDate-reducer';
 import selectDayReducer from './selectDay-reducer';
+import { fetchReadyReducer } from './fetchReady-reducer';
 
 export default combineReducers({
-    events: eventsReducer,
+	events: eventsReducer,
+	fetchReady: fetchReadyReducer,
     filterLists: createFilterReducer,
     filtersToApply: combineReducers({
 		locations: filtersToApplyReducer,
@@ -22,7 +24,8 @@ export default combineReducers({
 
 const store = {
 	events: [],				objects
-	filterLists: {                							// change property name to filterLists
+	fetchReady: boolean,	boolean
+	filterLists: {
 		locations: [],		string
 		dates: [], 			string --> "2018-07-28"
 		datesObj: []		date Obj
@@ -33,7 +36,6 @@ const store = {
 	}
 	filteredEvents: [],		object
 	dateHidden: boolean,	boolean
-	
 }
 
 */

@@ -1,4 +1,5 @@
 import { addDateProperty } from './addDate';
+import { fetchReady } from './featchReady';
 
 export function loadData(){
 
@@ -27,6 +28,7 @@ export function loadData(){
         .then(res => res.json())
         .then((response)=>{
             dispatch(addDateProperty(response));
+            dispatch(fetchReady());
         })
         .catch(function(error) {
             console.log('error: ', error);

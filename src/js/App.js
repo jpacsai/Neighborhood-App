@@ -6,6 +6,7 @@ import { createFilters } from './actions/createFilters';
 import FilterContainer from './containers/filter-container';
 import List from './components/List';
 import MapContainer from './containers/map-container';
+import { fetchReady } from './actions/featchReady';
 
 require('../css/index.css');
 
@@ -38,11 +39,11 @@ class App extends Component {
 						<FilterContainer />
 						<section className='event-list-container'>
 							<h2 className='aside-header aside-header-list'>Events</h2>
-							{ this.props.filteredEvents && this.props.events && 
+							{ this.props.fetchReady && 
 								<p className='event-count'>{ displayList.length } event{ displayList.length > 1 && 's'} found</p>
 							} 
 							<ul className='event-list'>
-								<List list={ displayList || 'no match' }/>
+								{ this.props.fetchReady && <List list={ displayList || 'no match' }/> }
 							</ul>
 						</section>
 					</aside>
@@ -58,6 +59,7 @@ class App extends Component {
 function mapStateToProps(state) {
     return {
 		events: state.events.events,
+		fetchReady: state.fetchReady,
 		locations: state.filterLists.locations,
 		filteredEvents: state.filteredEvents,
 		isHidden: state.isHidden
