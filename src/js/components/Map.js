@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
+import Place from './Place';
 
 const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
@@ -27,6 +28,7 @@ class Map extends Component {
 					defaultCenter={ this.props.center }
 					defaultZoom={ this.props.zoom }
 				>
+				<Place lat={52.591225} lng={-0.718484} text={'MIDDLE'} /* Kreyser Avrora */ />
 					<AnyReactComponent
 						lat={ 46.883448 }
 						lng={ 17.437112 }
