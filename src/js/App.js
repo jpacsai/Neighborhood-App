@@ -31,6 +31,8 @@ class App extends Component {
 					return this.sortByAlphabet(arr);
 				case 'date':
 					return this.sortByDate(arr);
+				case 'location':
+					return this.sortByLocation(arr);
 				default:
 					return this.sortByAlphabet(arr);
 			}
@@ -53,6 +55,18 @@ class App extends Component {
 				var textB = b.name;
 				return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
 			})
+			return newArr;
+		}
+	}
+
+	sortByLocation(arr) {
+		if (arr) {
+			const newArr = arr.slice(0);
+			newArr.sort((a, b) => {
+				var locationA = a._embedded.venues[0].city.name;
+				var locationB = b._embedded.venues[0].city.name;
+				return (locationA < locationB) ? -1 : (locationA > locationB) ? 1 : 0;
+			});
 			return newArr;
 		}
 	}
@@ -84,6 +98,7 @@ class App extends Component {
 									>
 										<option value="abc">Abc</option>
 										<option value="date">Date</option>
+										<option value="location">Location</option>
 									</select>
 								</p>
 							} 

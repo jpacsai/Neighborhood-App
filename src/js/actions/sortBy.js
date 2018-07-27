@@ -1,10 +1,36 @@
 export function sortBy(e) {
 
-    const val = e.target.value
-    const message = val === 'abc' ? 'SORT_BY_ABC' : 'SORT_BY_DATE';
-    
+    const val = e.target.value;
+    const message = ((val) => {
+        switch(val) {
+            case 'abc':
+                return 'SORT_BY_ABC';
+            case 'date':
+                return 'SORT_BY_DATE';
+            case 'location':
+                return 'SORT_BY_LOCATION';
+            default:
+                return 'SORT_BY_ABC';
+        }
+    })(val);
+
+    console.log(message);
+
     return {
         type: message,
         sortBy: val
     }
 }
+
+
+
+var price = (function(color) {  
+  switch(color) {
+    case 'red':
+      return 10;
+    case 'blue':
+      return 20;
+    default:
+      return 30;
+  }
+})('blue');

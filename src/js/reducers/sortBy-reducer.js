@@ -4,6 +4,8 @@ export function sortByReducer(state = 'abc', action) {
             return 'abc';
         case 'SORT_BY_DATE':
             return 'date';
+        case 'SORT_BY_LOCATION':
+            return 'location';
         default:
             return state;
     }
