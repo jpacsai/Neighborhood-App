@@ -34,10 +34,11 @@
    - [x] location
    - [x] alphabet
 - [x] fix: display list message when no events found
+- [x] move display list function to state
+- [x] move sorted list to state
+- [x] add test marker to map
 ***
-- [ ] move display list function to state
-- [ ] add search (by name)
-- [ ] add markers to map
+- [ ] add all markers to map
 - [ ] error handling
 - [ ] choose color palette
 - [ ] style page
