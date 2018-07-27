@@ -29,12 +29,13 @@
 - [x] fix: event counter when no match found
 - [x] add state to check if fetch is ready
 - [x] sort event list by date by default
-***
-- [ ] add subcategories inside event list depending on sorting method (dates / location)
-- [ ] sort by function
+- [x] sort by function
    - [x] date (default)
-   - [ ] location
-   - [ ] alphabet
+   - [x] location
+   - [x] alphabet
+- [x] fix: display list message when no events found
+***
+- [ ] move display list function to state
 - [ ] add search (by name)
 - [ ] add markers to map
 - [ ] error handling
