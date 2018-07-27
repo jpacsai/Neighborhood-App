@@ -1,4 +1,7 @@
+import { displayWhichList } from './displayList';
+
 export function filterEvents (e, events, locationFilter, dateFilter) {
+
     e.preventDefault();
 
     // Sat Jul 28 2018 12:00:00 GMT+0200 (közép-európai nyári idő)  ==> "2018-07-28"
@@ -36,6 +39,8 @@ export function filterEvents (e, events, locationFilter, dateFilter) {
         message = 'FILTERING_EVENTS';
         value = filteredEvents;
     }
+
+    displayWhichList(events, value);
     
     return filterEventsDispatcher(message, value);
 }

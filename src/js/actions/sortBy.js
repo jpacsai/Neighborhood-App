@@ -21,16 +21,3 @@ export function sortBy(e) {
         sortBy: val
     }
 }
-
-
-
-var price = (function(color) {  
-  switch(color) {
-    case 'red':
-      return 10;
-    case 'blue':
-      return 20;
-    default:
-      return 30;
-  }
-})('blue');

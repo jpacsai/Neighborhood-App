@@ -6,6 +6,7 @@ import { hideDatePicker } from './../actions/hideDatePicker';
 import DatePicker from './../components/DayPicker';
 import FilterList from './FilterList';
 import { resetFiltering } from './../actions/resetFiltering';
+import { displayList } from './../actions/displayList';
 
 class FilterModal extends Component {
 
@@ -15,7 +16,7 @@ class FilterModal extends Component {
 
         return (
             <form className='filter-modal' onSubmit={ (e) => {
-                filterEvents(e, events, locationFilter, dateFilter)
+                filterEvents(e, events, locationFilter, dateFilter);
             } } >
                 <h2 className='aside-header aside-header-filter'>Filters</h2>
                 <button 
@@ -34,7 +35,7 @@ class FilterModal extends Component {
                         type='button'
                         className='filter-modal-btn filter-reset-btn'
                         onClick={ (e) => {
-                            reset();
+                            reset(events);
                         } } >
                         Clear Filters
                     </button>

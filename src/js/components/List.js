@@ -12,9 +12,10 @@ const List = (props) => {
 
     else if (list) {
         return list.map( (event) => {
-            const date = event.dates.start.localDate || 'unknown date';
+
+            const date = event.dates.start.localDate;
             const time = event.dates.start.localTime ? (event.dates.start.localTime).slice(0, 5) : null;
-            const location = event._embedded.venues[0].city.name || 'unkown location';
+            const location = event._embedded.venues[0].city.name;
             
             return (
                 <li key={ event.id } className='event'>

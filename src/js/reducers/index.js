@@ -5,8 +5,9 @@ import filtersToApplyReducer from './filtersToApply-reducer';
 import filterEventsReducer from './filterEvents-reducer';
 import hideDateReducer from './hideDate-reducer';
 import selectDayReducer from './selectDay-reducer';
-import { fetchReadyReducer } from './fetchReady-reducer';
-import { sortByReducer } from './sortBy-reducer';
+import fetchReadyReducer from './fetchReady-reducer';
+import sortByReducer from './sortBy-reducer';
+import displayListReducer from './displayList-reducer';
 
 export default combineReducers({
 	events: eventsReducer,
@@ -18,7 +19,8 @@ export default combineReducers({
 	}),
     filteredEvents: filterEventsReducer,
 	isHidden: hideDateReducer,
-	sortBy: sortByReducer
+	sortBy: sortByReducer,
+	displayList: displayListReducer
 });
 
 /* STATE STRUCTURE:
