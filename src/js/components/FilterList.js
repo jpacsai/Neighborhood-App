@@ -22,7 +22,7 @@ class FilterList extends Component {
                             <div key={ item } className='filter-select-li'>
                                 <input
                                     id={ item }
-                                    defaultChecked = { locationFilters.includes(item) }
+                                    
                                     checked={ locationFilters.includes(item) }
                                     type="checkbox"
                                     name={ item } 
