@@ -1,9 +1,7 @@
-import { displayWhichList } from './displayList';
-
 export function resetFiltering(events) {
-    displayWhichList(events, []);
 
     return { 
-        type: 'CLEAR_FILTERS'
+        type: 'CLEAR_FILTERS',
+        allEvents: events
     }
 }

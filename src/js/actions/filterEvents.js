@@ -1,5 +1,3 @@
-import { displayWhichList } from './displayList';
-
 export function filterEvents (e, events, locationFilter, dateFilter) {
 
     e.preventDefault();
@@ -39,15 +37,14 @@ export function filterEvents (e, events, locationFilter, dateFilter) {
         message = 'FILTERING_EVENTS';
         value = filteredEvents;
     }
-
-    displayWhichList(events, value);
     
-    return filterEventsDispatcher(message, value);
+    return filterEventsDispatcher(message, value, events);
 }
 
-function filterEventsDispatcher(message, value) {
+function filterEventsDispatcher(message, value, events) {
     return {
         type: message,
-        filteredEvents: value
+        filteredEvents: value,
+        events
     }
 }

@@ -6,7 +6,6 @@ import { hideDatePicker } from './../actions/hideDatePicker';
 import DatePicker from './../components/DayPicker';
 import FilterList from './FilterList';
 import { resetFiltering } from './../actions/resetFiltering';
-import { displayList } from './../actions/displayList';
 
 class FilterModal extends Component {
 

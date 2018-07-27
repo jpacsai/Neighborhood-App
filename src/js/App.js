@@ -7,17 +7,15 @@ import FilterContainer from './containers/filter-container';
 import List from './components/List';
 import MapContainer from './containers/map-container';
 import { sortBy } from './actions/sortBy';
-import { displayWhichList } from './actions/displayList';
 
 require('../css/index.css');
 
 class App extends Component {
 
 	componentDidMount() {
-		const { loadData, createFilters, displayWhichList } = this.props;
+		const { loadData, createFilters } = this.props;
 		loadData().then(() => {
 			createFilters(this.props.events);
-			displayWhichList(this.props.events, this.props.filteredEvents);
 		});
 	}
 
@@ -75,12 +73,9 @@ class App extends Component {
 	}
 
 	render() {
-		const { sortType } = this.props;
+		const { sortType, displayWhich, fetchReady, sortAction } = this.props;
 
-		const displayWhat = this.props.filteredEvents.length === 0 ? this.props.events : 
-			this.props.filteredEvents === 'no match found' ? null : this.props.filteredEvents;
-
-		const displayList = this.sorting(displayWhat, sortType);
+		const sortedList = this.sorting(displayWhich, sortType);
 
 		return (
 			<div>
@@ -93,11 +88,11 @@ class App extends Component {
 						<FilterContainer />
 						<section className='event-list-container'>
 							<h2 className='aside-header aside-header-list'>Events</h2>
-							{ this.props.fetchReady && 
-								<p className='event-count'><span>{ displayList.length || '0' } event{ displayList.length > 1 && 's'} found</span>
+							{ fetchReady && 
+								<p className='event-count'><span>{ sortedList.length || '0' } event{ sortedList.length > 1 && 's'} found</span>
 									<select 
 										className='event-list-sortBy-btn'
-										onChange={ (e) => this.props.sortAction(e) }
+										onChange={ (e) => sortAction(e) }
 									>
 										<option value="abc">Abc</option>
 										<option value="date">Date</option>
@@ -106,10 +101,8 @@ class App extends Component {
 								</p>
 							} 
 							<ul className='event-list'>
-							{ this.props.fetchReady &&
-								(( this.sorting(displayWhat, sortType) &&
-									<List list={ this.sorting(displayWhat, sortType) } />)
-									|| 	<li className='event'>{ 'no match found' }</li> ) }
+							{ fetchReady &&
+								(( sortedList.length === 0 && <li className='event'>{ 'no match found' }</li> ) || <List list={ sortedList } /> ) }
 							</ul>
 						</section>
 					</aside>
@@ -138,8 +131,7 @@ function mapDispatchToProps(dispatch) {
     return bindActionCreators({
 		loadData: loadData,
 		createFilters: createFilters,
-		sortAction: sortBy,
-		displayWhichList
+		sortAction: sortBy
 	}, dispatch);
 }
 

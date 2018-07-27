@@ -14,8 +14,6 @@ export function sortBy(e) {
         }
     })(val);
 
-    console.log(message);
-
     return {
         type: message,
         sortBy: val

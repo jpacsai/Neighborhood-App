@@ -5,8 +5,6 @@ import { filtersToApply } from './../actions/filtersToApply';
 
 class FilterList extends Component {
 
-    
-
     render() {
 
         const { locations, filtersToApply, locationFilters } = this.props;

@@ -28,7 +28,7 @@ export function loadData(){
         .then(res => res.json())
         .then((response)=>{
             dispatch(addDateProperty(response));
-            dispatch(fetchReady());
+            dispatch(fetchReady(response));
         })
         .catch(function(error) {
             console.log('error: ', error);
