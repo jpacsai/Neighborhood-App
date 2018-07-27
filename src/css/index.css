@@ -83,8 +83,16 @@ body {
       overflow-x: hidden;
       width: 280px; }
       body main aside .event-list-container .event-count {
+        position: relative;
         margin: 5px;
-        text-align: center; }
+        text-align: center;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center; }
+        body main aside .event-list-container .event-count .event-list-sortBy-btn {
+          position: absolute;
+          right: 0; }
       body main aside .event-list-container .event-list {
         list-style-type: none;
         padding: 0 10px;

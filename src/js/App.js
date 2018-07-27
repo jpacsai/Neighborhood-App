@@ -23,6 +23,17 @@ class App extends Component {
 		this.props.filteredEvents === 'no match found' ? 'no match' : this.props.filteredEvents.length;
 	}
 
+	sortBy(arr, e = null) {
+		switch(e.target.value) {
+			case 'abc':
+				return this.sortByAlphabet(arr);
+			case 'date':
+				return this.sortByAlphabet(arr);
+			default:
+				return this.sortByAlphabet(arr);
+		}
+	}
+
 	sortByDate(arr) {
 		if (arr) {
 			const newArr = arr.slice(0);
@@ -44,8 +55,10 @@ class App extends Component {
 	}
 
 	render() {
-		const displayList = this.props.filteredEvents.length === 0 ? this.sortByDate(this.props.events) : 
-			this.props.filteredEvents === 'no match found' ? '' : this.sortByDate(this.props.filteredEvents);
+		const { sortBy } = this;
+
+		const displayList = this.props.filteredEvents.length === 0 ? this.props.events : 
+			this.props.filteredEvents === 'no match found' ? '' : this.props.filteredEvents;
 
 		return (
 			<div>
@@ -59,7 +72,14 @@ class App extends Component {
 						<section className='event-list-container'>
 							<h2 className='aside-header aside-header-list'>Events</h2>
 							{ this.props.fetchReady && 
-								<p className='event-count'>{ displayList.length } event{ displayList.length > 1 && 's'} found</p>
+								<p className='event-count'><span>{ displayList.length } event{ displayList.length > 1 && 's'} found</span>
+									<select 
+										className='event-list-sortBy-btn'
+									>
+										<option value="abc">Abc</option>
+										<option value="date">Date</option>
+									</select>
+								</p>
 							} 
 							<ul className='event-list'>
 								{ this.props.fetchReady && 
