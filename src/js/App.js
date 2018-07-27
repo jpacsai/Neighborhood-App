@@ -6,6 +6,7 @@ import { createFilters } from './actions/createFilters';
 import FilterContainer from './containers/filter-container';
 import List from './components/List';
 import MapContainer from './containers/map-container';
+import { sortBy } from './actions/sortBy';
 
 require('../css/index.css');
 
@@ -23,14 +24,16 @@ class App extends Component {
 		this.props.filteredEvents === 'no match found' ? 'no match' : this.props.filteredEvents.length;
 	}
 
-	sortBy(arr, e = null) {
-		switch(e.target.value) {
-			case 'abc':
-				return this.sortByAlphabet(arr);
-			case 'date':
-				return this.sortByAlphabet(arr);
-			default:
-				return this.sortByAlphabet(arr);
+	sorting(arr, method) {
+		if (arr) {
+			switch(method) {
+				case 'abc':
+					return this.sortByAlphabet(arr);
+				case 'date':
+					return this.sortByDate(arr);
+				default:
+					return this.sortByAlphabet(arr);
+			}
 		}
 	}
 
@@ -55,10 +58,12 @@ class App extends Component {
 	}
 
 	render() {
-		const { sortBy } = this;
+		const { sortType } = this.props;
 
-		const displayList = this.props.filteredEvents.length === 0 ? this.props.events : 
-			this.props.filteredEvents === 'no match found' ? '' : this.props.filteredEvents;
+		const displayWhat = this.props.filteredEvents.length === 0 ? this.props.events : 
+			this.props.filteredEvents === 'no match found' ? null : this.props.filteredEvents;
+
+		const displayList = this.sorting(displayWhat, sortType);
 
 		return (
 			<div>
@@ -75,6 +80,7 @@ class App extends Component {
 								<p className='event-count'><span>{ displayList.length } event{ displayList.length > 1 && 's'} found</span>
 									<select 
 										className='event-list-sortBy-btn'
+										onChange={ (e) => this.props.sortAction(e) }
 									>
 										<option value="abc">Abc</option>
 										<option value="date">Date</option>
@@ -83,7 +89,7 @@ class App extends Component {
 							} 
 							<ul className='event-list'>
 								{ this.props.fetchReady && 
-									<List list={ displayList }/> }
+									<List list={ this.sorting(displayWhat, sortType) }/> }
 							</ul>
 						</section>
 					</aside>
@@ -102,14 +108,16 @@ function mapStateToProps(state) {
 		fetchReady: state.fetchReady,
 		locations: state.filterLists.locations,
 		filteredEvents: state.filteredEvents,
-		isHidden: state.isHidden
+		isHidden: state.isHidden,
+		sortType: state.sortBy
     }
 }
 
 function mapDispatchToProps(dispatch) {
     return bindActionCreators({
 		loadData: loadData,
-		createFilters: createFilters
+		createFilters: createFilters,
+		sortAction: sortBy
 	}, dispatch);
 }
 
