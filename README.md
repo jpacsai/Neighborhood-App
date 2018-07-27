@@ -27,13 +27,17 @@
    - [x] add 'remove date' function to filtersToApply
    - [x] fix: uncheck all locations when reset is clicked
 - [x] fix: event counter when no match found
+- [x] add state to check if fetch is ready
+- [x] sort event list by date by default
 ***
-- [ ] sort event list by date and alphabet by default
+- [ ] add subcategories inside event list depending on sorting method (dates / location)
 - [ ] sort by function
    - [x] date (default)
    - [ ] location
    - [ ] alphabet
+- [ ] add search (by name)
 - [ ] add markers to map
+- [ ] error handling
 - [ ] choose color palette
 - [ ] style page
 - [ ] make it responsive
