@@ -11,11 +11,11 @@ class FilterModal extends Component {
 
     render() {
 
-        const { events, locationFilter, dateFilter, isHidden, filterEvents, hideDatePicker, reset } = this.props;
+        const { events, locationFilter, dateFilter, isHidden, filterEvents, hideDatePicker, reset, sortByMethod } = this.props;
 
         return (
             <form className='filter-modal' onSubmit={ (e) => {
-                filterEvents(e, events, locationFilter, dateFilter);
+                filterEvents(e, events, locationFilter, dateFilter, sortByMethod);
             } } >
                 <h2 className='aside-header aside-header-filter'>Filters</h2>
                 <button 
@@ -34,7 +34,7 @@ class FilterModal extends Component {
                         type='button'
                         className='filter-modal-btn filter-reset-btn'
                         onClick={ (e) => {
-                            reset(events);
+                            reset(events, sortByMethod);
                         } } >
                         Clear Filters
                     </button>
@@ -49,7 +49,8 @@ function mapStateToProps(state) {
         events: state.events.events,
         locationFilter: state.filtersToApply.locations,
         dateFilter: state.filtersToApply.selectedDays,
-        isHidden: state.isHidden
+        isHidden: state.isHidden,
+        sortByMethod: state.sortBy
     }
 }
 

@@ -1,7 +1,12 @@
+import { sortByAlphabet } from './sortByAlphabet';
+
 export function fetchReady(response) {
-    console.log('response', response._embedded.events)
+
+    const events = response._embedded.events
+    const sortedEvents = sortByAlphabet(events);
+
     return {
         type: 'FETCH_READY',
-        payload: response._embedded.events
+        payload: sortedEvents
     }
 }

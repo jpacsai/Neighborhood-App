@@ -1,21 +1,5 @@
-export function sortBy(e) {
+import { sortingEvents } from './sortingEvents';
 
-    const val = e.target.value;
-    const message = ((val) => {
-        switch(val) {
-            case 'abc':
-                return 'SORT_BY_ABC';
-            case 'date':
-                return 'SORT_BY_DATE';
-            case 'location':
-                return 'SORT_BY_LOCATION';
-            default:
-                return 'SORT_BY_ABC';
-        }
-    })(val);
+export function sortBy(e, list) {
 
-    return {
-        type: message,
-        sortBy: val
-    }
 }
