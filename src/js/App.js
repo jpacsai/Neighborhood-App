@@ -6,7 +6,6 @@ import { createFilters } from './actions/createFilters';
 import FilterContainer from './containers/filter-container';
 import List from './components/List';
 import MapContainer from './containers/map-container';
-import { fetchReady } from './actions/featchReady';
 
 require('../css/index.css');
 
@@ -24,9 +23,17 @@ class App extends Component {
 		this.props.filteredEvents === 'no match found' ? 'no match' : this.props.filteredEvents.length;
 	}
 
+	sortByDate(arr) {
+		if (arr) {
+			const newArr = arr.slice(0);
+			newArr.sort((a, b) => a.dates.start.dateObj.getTime() - b.dates.start.dateObj.getTime());
+		return newArr;
+		}
+	}
+
 	render() {
-		const displayList = this.props.filteredEvents.length === 0 ? this.props.events : 
-			this.props.filteredEvents === 'no match found' ? '' : this.props.filteredEvents;
+		const displayList = this.props.filteredEvents.length === 0 ? this.sortByDate(this.props.events) : 
+			this.props.filteredEvents === 'no match found' ? '' : this.sortByDate(this.props.filteredEvents);
 
 		return (
 			<div>
@@ -43,7 +50,8 @@ class App extends Component {
 								<p className='event-count'>{ displayList.length } event{ displayList.length > 1 && 's'} found</p>
 							} 
 							<ul className='event-list'>
-								{ this.props.fetchReady && <List list={ displayList || 'no match' }/> }
+								{ this.props.fetchReady && 
+									<List list={ displayList }/> }
 							</ul>
 						</section>
 					</aside>
