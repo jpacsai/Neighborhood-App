@@ -37,6 +37,7 @@ class App extends Component {
 					return this.sortByAlphabet(arr);
 			}
 		}
+		return '';
 	}
 
 	sortByDate(arr) {
@@ -91,7 +92,7 @@ class App extends Component {
 						<section className='event-list-container'>
 							<h2 className='aside-header aside-header-list'>Events</h2>
 							{ this.props.fetchReady && 
-								<p className='event-count'><span>{ displayList.length } event{ displayList.length > 1 && 's'} found</span>
+								<p className='event-count'><span>{ displayList.length || '0' } event{ displayList.length > 1 && 's'} found</span>
 									<select 
 										className='event-list-sortBy-btn'
 										onChange={ (e) => this.props.sortAction(e) }
@@ -103,8 +104,10 @@ class App extends Component {
 								</p>
 							} 
 							<ul className='event-list'>
-								{ this.props.fetchReady && 
-									<List list={ this.sorting(displayWhat, sortType) }/> }
+								{ (this.props.fetchReady && this.sorting(displayWhat, sortType) &&
+									<List list={ this.sorting(displayWhat, sortType) } /> ) 
+									|| this.props.fetchReady && 
+									<li className='event'>{ 'no match found' }</li> }
 							</ul>
 						</section>
 					</aside>
