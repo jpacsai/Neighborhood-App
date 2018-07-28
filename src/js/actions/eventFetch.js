@@ -1,5 +1,6 @@
-import { addDateProperty } from './addDate';
+import { addProperty } from './addProperty';
 import { fetchReady } from './featchReady';
+import { createFilters } from './createFilters';
 
 export function loadData(){
 
@@ -27,7 +28,7 @@ export function loadData(){
         return fetch(url)
         .then(res => res.json())
         .then((response)=>{
-            dispatch(addDateProperty(response));
+            dispatch(addProperty(response));
             dispatch(fetchReady(response));
         })
         .catch(function(error) {
