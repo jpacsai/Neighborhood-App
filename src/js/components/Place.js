@@ -3,7 +3,6 @@ import shouldPureComponentUpdate from 'react-pure-render';
 
 export default class Place extends Component {
 
-
   static defaultProps = {};
 
   shouldComponentUpdate = shouldPureComponentUpdate;
@@ -17,3 +16,4 @@ export default class Place extends Component {
     );
   }
 }
+

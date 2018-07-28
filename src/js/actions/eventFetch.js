@@ -1,6 +1,5 @@
 import { addProperty } from './addProperty';
 import { fetchReady } from './featchReady';
-import { createFilters } from './createFilters';
 
 export function loadData(){
 

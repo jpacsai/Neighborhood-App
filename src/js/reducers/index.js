@@ -40,6 +40,7 @@ const store = {
 	filteredEvents: [],		object
 	dateHidden: boolean,	boolean,
 	sortBy: ''				string ( 'abc' / 'date' )
+	displayList: []			array
 }
 
 */
