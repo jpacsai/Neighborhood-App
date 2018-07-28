@@ -154,6 +154,47 @@ body {
         }
       }
     }
+
+    #map {
+
+      .greatPlaceStyle {
+        position: relative;
+        left: -15px;
+        top: -19px;
+        text-align: 'center';
+        background-color: 'yellow';
+        width: 30px;
+        height: 30px;
+        background: red;
+        -moz-border-radius:    100%;
+        -webkit-border-radius: 100%;
+        border-radius:         100%;
+      }
+
+      .greatPlaceStyle:before {
+        content:"";
+        position: absolute;
+        top: 29px;
+        left: 10px;
+        width: 0;
+        height: 0;
+        border-top: 8px solid red;
+        border-right: 5px solid transparent;
+        border-left: 5px solid transparent;
+      }
+
+      .bounce {
+        animation: bounce 0.5s;
+        animation-direction: alternate;
+        animation-timing-function: cubic-bezier(.5,0.05,1,.5);
+        animation-iteration-count: infinite;
+      }
+
+      @keyframes bounce {
+        from { transform: translate3d(0, 0, 0);     }
+        to   { transform: translate3d(0, 30px, 0); }
+      }
+    }
   }
 }
 

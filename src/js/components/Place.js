@@ -10,14 +10,8 @@ export default class Place extends Component {
 
   render() {
 
-    const greatPlaceStyle = {
-        position: 'absolute',
-        transform: 'translate(-50%, -50%)',
-        backgroundColor: 'yellow'
-      }
-
     return (
-       <div style={greatPlaceStyle}>
+       <div className='greatPlaceStyle'>
           {this.props.text}
        </div>
     );
