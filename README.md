@@ -38,7 +38,13 @@
 - [x] move sorted list to state
 - [x] add test marker to map
 ***
+- [ ] find coordinates of places without them
+   - [ ] add method to find coordinates from address
+   - [ ] add property to event objects without them
 - [ ] add all markers to map
+- [ ] cluster markers in same location
+- [ ] add infowindows
+- [ ] cluster infowindows
 - [ ] error handling
 - [ ] choose color palette
 - [ ] style page
