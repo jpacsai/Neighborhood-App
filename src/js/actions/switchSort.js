@@ -3,8 +3,6 @@ import { sortByDate } from './sortByDate';
 import { sortByLocation } from './sortByLocation';
 
 export function switchSort(sortMethod, list) {
-    
-    console.log('switch', list)
 
     const val = sortMethod || 'abc';
 
