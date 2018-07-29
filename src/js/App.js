@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { loadData } from './actions/eventFetch';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { createFilters } from './actions/createFilters';
 import FilterContainer from './containers/filter-container';
 import List from './components/List';
 import MapContainer from './containers/map-container';
@@ -13,10 +12,8 @@ require('../css/index.css');
 class App extends Component {
 
 	componentDidMount() {
-		const { loadData, createFilters } = this.props;
-		loadData().then(() => {
-			createFilters(this.props.events);
-		});
+		const { loadData } = this.props;
+		loadData();
 	}
 
 	render() {
@@ -72,7 +69,6 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
     return bindActionCreators({
 		loadData: loadData,
-		createFilters: createFilters,
 		sortAction: sortingEvents,
 	}, dispatch);
 }

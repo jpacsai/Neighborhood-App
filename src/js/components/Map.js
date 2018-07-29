@@ -13,7 +13,8 @@ class Map extends Component {
 	};
 
 	render() {
-		const { displayList } = this.props;
+		const { displayList, fetchReady } = this.props;
+
 		return (
 			// Important! Always set the container height explicitly
 			<div id='map' 
@@ -29,22 +30,15 @@ class Map extends Component {
 					defaultZoom={ this.props.zoom }
 				>
 				
-				{ displayList &&  displayList.map( (event) => {
-					if (event._embedded.venues[0].location) {
+				{ (fetchReady && displayList ) && displayList.map( (event) => {
 
 						const latitude = Number(event._embedded.venues[0].location.latitude);
 						const longitude = Number(event._embedded.venues[0].location.longitude);
 						const text = event._embedded.venues[0].city.name;
-						console.log(latitude, longitude);
 
 						return (
 							<Place key={ event.id } lat={ latitude } lng={ longitude } text={ text } />
 						)
-					}
-					// <Place lat={52.486243} lng={-1.890401} text={'Here'} /* Birmingham */ />
-					else {
-						return null;
-					}
 				}) }
 
 				</GoogleMapReact>
@@ -55,7 +49,8 @@ class Map extends Component {
 
 function mapStateToProps(state) {
     return {
-		displayList: state.displayList
+		displayList: state.displayList,
+		fetchReady: state.fetchReady,
     }
 }
 

@@ -1,5 +1,5 @@
 export default function displayListReducer (state = [], action) {
-
+    // console.log(action.type)
     switch (action.type) {
         case 'FETCH_READY':
             return action.payload;

@@ -1,7 +1,7 @@
 export default function createFilterReducer (state = {}, action) {
     
     switch (action.type) {
-        case 'FILTERLIST_CREATED':
+        case 'FETCH_READY':
             const newState = {
                 ...state,
                 locations: action.locations,
