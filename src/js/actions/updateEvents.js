@@ -3,7 +3,7 @@ import { createFilters } from './createFilters';
 
 Geocode.setApiKey("AIzaSyA5ivLlpxg-AwsOTPELxcuO1zQ64Vo6yRo");
 
-export function addProperty(list) {
+export function updateEvents(list) {
 
     const events = list._embedded.events;
 

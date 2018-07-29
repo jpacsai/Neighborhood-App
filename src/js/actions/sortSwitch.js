@@ -2,7 +2,7 @@ import { sortByAlphabet } from './sortByAlphabet';
 import { sortByDate } from './sortByDate';
 import { sortByLocation } from './sortByLocation';
 
-export function switchSort(sortMethod, list) {
+export function sortSwitch(sortMethod, list) {
 
     const val = sortMethod || 'abc';
 

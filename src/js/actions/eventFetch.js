@@ -1,4 +1,4 @@
-import { addProperty } from './addProperty';
+import { updateEvents } from './updateEvents';
 
 export function loadData(){
 
@@ -26,7 +26,7 @@ export function loadData(){
         return fetch(url)
         .then(res => res.json())
         .then((response)=>{
-            dispatch(addProperty(response));
+            dispatch(updateEvents(response));
         })
         .catch(function(error) {
             console.log('error: ', error);

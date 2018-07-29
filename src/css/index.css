@@ -79,7 +79,7 @@ body {
         body main aside .filter-container form select {
           margin-bottom: 5px; }
     body main aside .event-list-container {
-      height: 84%;
+      height: 86%;
       overflow-x: hidden;
       width: 280px; }
       body main aside .event-list-container .event-count {
@@ -97,7 +97,7 @@ body {
         list-style-type: none;
         padding: 0 10px;
         margin: 0;
-        height: 84%;
+        height: 81%;
         overflow: scroll;
         overflow-x: hidden; }
       body main aside .event-list-container .event {

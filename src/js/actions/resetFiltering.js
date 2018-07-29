@@ -1,8 +1,8 @@
-import { switchSort } from './switchSort';
+import { sortSwitch } from './sortSwitch';
 
 export function resetFiltering(events, sortByMethod) {
 
-    const sortedEvents = switchSort(sortByMethod, events);
+    const sortedEvents = sortSwitch(sortByMethod, events);
     
     return { 
         type: 'CLEAR_FILTERS',

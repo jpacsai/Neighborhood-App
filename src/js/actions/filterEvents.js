@@ -1,4 +1,4 @@
-import { switchSort } from './switchSort';
+import { sortSwitch } from './sortSwitch';
 
 export function filterEvents (e, events, locationFilter, dateFilter, sortByMethod) {
 
@@ -39,7 +39,7 @@ export function filterEvents (e, events, locationFilter, dateFilter, sortByMetho
     }
     else {
         message = 'FILTERING_EVENTS';
-        value = switchSort(sortByMethod, filteredEvents);
+        value = sortSwitch(sortByMethod, filteredEvents);
     }
     
     return filterEventsDispatcher(message, value, events);
