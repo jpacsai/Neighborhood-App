@@ -13,7 +13,7 @@ class Map extends Component {
 	};
 
 	render() {
-		const { displayList, fetchReady } = this.props;
+		const { displayList, fetchReady, venues } = this.props;
 
 		return (
 			// Important! Always set the container height explicitly
@@ -30,14 +30,14 @@ class Map extends Component {
 					defaultZoom={ this.props.zoom }
 				>
 				
-				{ (fetchReady && displayList ) && displayList.map( (event) => {
+				{ (fetchReady && venues ) && venues.map( (venue) => {
 
-						const latitude = Number(event._embedded.venues[0].location.latitude);
-						const longitude = Number(event._embedded.venues[0].location.longitude);
-						const text = event._embedded.venues[0].city.name;
+						const latitude = venue.lat;
+						const longitude = venue.lng;
+						const text = venue.name;
 
 						return (
-							<Place key={ event.id } lat={ latitude } lng={ longitude } text={ text } />
+							<Place key={ venue.id } lat={ latitude } lng={ longitude } text={ text } />
 						)
 				}) }
 
@@ -51,6 +51,7 @@ function mapStateToProps(state) {
     return {
 		displayList: state.displayList,
 		fetchReady: state.fetchReady,
+		venues: state.venues
     }
 }
 

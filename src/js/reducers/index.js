@@ -8,6 +8,7 @@ import selectDayReducer from './selectDay-reducer';
 import fetchReadyReducer from './fetchReady-reducer';
 import sortByReducer from './sortBy-reducer';
 import displayListReducer from './displayList-reducer';
+import venueReducer from './venue-reducer';
 
 export default combineReducers({
 	events: eventReducer,
@@ -21,7 +22,7 @@ export default combineReducers({
 	isHidden: hideDateReducer,
 	sortBy: sortByReducer,
 	displayList: displayListReducer,
-	// venues
+	venues: venueReducer
 });
 
 /* STATE STRUCTURE:
