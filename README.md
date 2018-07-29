@@ -37,11 +37,12 @@
 - [x] move display list function to state
 - [x] move sorted list to state
 - [x] add test marker to map
+- [x] find coordinates of places without them
+   - [x] add method to find coordinates from address
+   - [x] add property to event objects without them
+- [x] add all markers to map
+- [x] refactor: fix async geocode
 ***
-- [ ] find coordinates of places without them
-   - [ ] add method to find coordinates from address
-   - [ ] add property to event objects without them
-- [ ] add all markers to map
 - [ ] cluster markers in same location
 - [ ] add infowindows
 - [ ] cluster infowindows
