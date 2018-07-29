@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 // import { bindActionCreators } from 'redux';
-import Place from './../components/Place';
+//import Place from './../components/Place';
+
+const Place = ({ text }) => <div>{text}</div>; 
 
 class PlaceContainer extends Component {
     render() {
@@ -13,15 +15,13 @@ class PlaceContainer extends Component {
                     const latitude = Number(event._embedded.venues[0].location.latitude);
                     const longitude = Number(event._embedded.venues[0].location.longitude);
                     const text = event._embedded.venues[0].city.name;
-
                     console.log(latitude, longitude);
 
-                    //  <Place lat={52.486243} lng={-1.890401} text={'Here'} />
                     return (
-                        <Place lat={ latitude } lng={ longitude } text={ text } key={ event.id } />
+                        <Place key={ event.id } lat={ latitude } lng={ longitude } text={ text } />
                     )
                 }
-                
+                // <Place lat={52.486243} lng={-1.890401} text={'Here'} /* Birmingham */ />
                 else {
                     return null;
                 }
