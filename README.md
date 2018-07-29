@@ -41,7 +41,7 @@
    - [x] add method to find coordinates from address
    - [x] add property to event objects without them
 - [x] add all markers to map
-- [x] refactor: fix async geocode
+- [x] refactor: fix async geocode  
 ~~cluster markers in same location~~
 ***
 - [ ] change logic of displaying markers:
