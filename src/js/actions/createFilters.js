@@ -3,9 +3,6 @@ export function createFilters(events){
     const allLocations = [];
     const allDates = [];
     const allDatesObj = [];
-    //const message = 'FILTERLIST_CREATED'
-
-    // sconsole.log('filters created:', events);
 
     for (let i = 0; i < events.length; i++) {
         
@@ -21,7 +18,6 @@ export function createFilters(events){
             allDates.push(date);
             allDatesObj.push(obj);
         }
-
     }
 
     return {
@@ -29,15 +25,4 @@ export function createFilters(events){
         dates: allDates,
         datesObj: allDatesObj
     }
-    
-    // return createFiltersDispatcher(message, allLocations, allDates, allDatesObj);     
 }
-
-/*function createFiltersDispatcher(message, allLocations, allDates, allDatesObj) {
-    return {
-        type: message,
-        locations: allLocations,
-        dates: allDates,
-        datesObj: allDatesObj
-    }
-}*/

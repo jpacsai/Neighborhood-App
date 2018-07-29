@@ -55,5 +55,3 @@ function mapStateToProps(state) {
 }
 
 export default connect(mapStateToProps)(Map);
-
-// adding markers: https://github.com/google-map-react/google-map-react-examples/blob/master/web/flux/components/examples/x_simple/simple_map_page.jsx

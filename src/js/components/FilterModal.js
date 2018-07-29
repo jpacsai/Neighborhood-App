@@ -46,7 +46,7 @@ class FilterModal extends Component {
 
 function mapStateToProps(state) {
     return {
-        events: state.events.events,
+        events: state.events,
         locationFilter: state.filtersToApply.locations,
         dateFilter: state.filtersToApply.selectedDays,
         isHidden: state.isHidden,

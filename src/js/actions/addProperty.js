@@ -16,11 +16,9 @@ export function addProperty(list) {
     })
 
     let promises = toUpdate.map(event => {
-
         const line1 = event._embedded.venues[0].address.line1;
         const city = event._embedded.venues[0].city.name;
         const name = event._embedded.venues[0].name;
-    
         const address = `${name}, ${line1}, ${city}`
     
         return getCoords(address, event)

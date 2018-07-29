@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import eventsReducer from './events-reducer';
+import eventReducer from './events-reducer';
 import createFilterReducer from './createFilter-reducer';
 import filtersToApplyReducer from './filtersToApply-reducer';
 import filterEventsReducer from './filterEvents-reducer';
@@ -10,7 +10,7 @@ import sortByReducer from './sortBy-reducer';
 import displayListReducer from './displayList-reducer';
 
 export default combineReducers({
-	events: eventsReducer,
+	events: eventReducer,
 	fetchReady: fetchReadyReducer,
     filterLists: createFilterReducer,
     filtersToApply: combineReducers({
