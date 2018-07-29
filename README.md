@@ -42,10 +42,14 @@
    - [x] add property to event objects without them
 - [x] add all markers to map
 - [x] refactor: fix async geocode
+~~cluster markers in same location~~
 ***
-- [ ] cluster markers in same location
+- [ ] change logic of displaying markers:
+   - [x] reduce displayList into single venues with a list of it's displayed events
+   - [ ] change logis of displayList: move it to action, use venue function on it immediately
+   - [x] add new property to store, change list in Map component
+- [ ] cluster infowindows for same venue
 - [ ] add infowindows
-- [ ] cluster infowindows
 - [ ] error handling
 - [ ] choose color palette
 - [ ] style page
