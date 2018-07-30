@@ -1,7 +1,8 @@
 export function modalVisibility(val) {
 
     const value = val ? false : true;
-    const message = 'TOGGLE_DATE_VISIBILITY';
+    const message = 'TOGGLE_MODAL_VISIBILITY';
+
     return modalVisibilityDispatcher(message, value);
 }
 

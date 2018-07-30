@@ -4,7 +4,7 @@ export function filtersToApply(val, locationFilters) {
     
     const includesFilter = locationFilters.includes(location)
 
-    const message = includesFilter ? 'REMOVE_LOCATION_FILTER' : 'ADD_LOCATION_FILTER';
+    const message = includesFilter ? 'REMOVE_LOCATION' : 'ADD_LOCATION';
     const index = includesFilter ? locationFilters.indexOf(location) : null;
 
     return filtersToApplyDispatcher(message, location, index);

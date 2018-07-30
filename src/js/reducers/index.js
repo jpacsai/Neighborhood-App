@@ -40,7 +40,7 @@ const store = {
 		selectedDates: []	new Date()
 	}
 	filteredEvents: [],		object
-	dateHidden: boolean,	boolean,
+	modalVisibility: boolean,	boolean,
 	sortBy: ''				string ( 'abc' / 'date' )
 	displayList: []			array
 }
