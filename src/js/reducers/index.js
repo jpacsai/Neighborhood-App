@@ -9,6 +9,7 @@ import sortByReducer from './sortBy-reducer';
 import displayListReducer from './displayList-reducer';
 import venueReducer from './venue-reducer';
 import modalVisibilityReducer from './modalVisibility-reducer';
+import allVenuesReducer from './allVenues-reducer';
 
 export default combineReducers({
 	events: eventReducer,
@@ -22,6 +23,7 @@ export default combineReducers({
 	modalVisibility: modalVisibilityReducer,
 	displayList: displayListReducer,
 	sortBy: sortByReducer,
+	allVenues: allVenuesReducer,
 	venues: venueReducer
 });
 
