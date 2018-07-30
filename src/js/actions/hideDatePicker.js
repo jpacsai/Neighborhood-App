@@ -7,6 +7,6 @@ export function hideDatePicker(val) {
 function hideDateDispatcher(message, value) {
     return {
         type: message,
-        isHidden: value
+        payload: value
     }
 }

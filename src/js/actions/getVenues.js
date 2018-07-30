@@ -24,18 +24,15 @@ export function getVenues(displayEvents) {
         }
         else {
             const index = displayVenues.findIndex( venue => {
-                return event[i]._embedded.venues[0].id === venue.venueId
+                return displayEvents[i]._embedded.venues[0].id === venue.venueId
             });
-            displayVenues[index].eventsArray.push(event[i])
+            displayVenues[index].eventsArray.push(displayEvents[i])
         }
     }
 
     console.log('displayVenues', displayVenues);
 
-    return {
-        type: 'VENUES',
-        payload: displayVenues
-    }
+    return displayVenues;
 }
 
 /*

@@ -34,10 +34,10 @@ class Map extends Component {
 
 						const latitude = venue.lat;
 						const longitude = venue.lng;
-						const text = venue.name;
+						const text = venue.venueName;
 
 						return (
-							<Place key={ venue.id } lat={ latitude } lng={ longitude } text={ text } />
+							<Place key={ venue.venueName } lat={ latitude } lng={ longitude } text={ text } />
 						)
 				}) }
 

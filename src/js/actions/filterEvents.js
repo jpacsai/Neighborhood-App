@@ -1,4 +1,5 @@
 import { sortSwitch } from './sortSwitch';
+import { getVenues } from './getVenues';
 
 export function filterEvents (e, events, locationFilter, dateFilter, sortByMethod) {
 
@@ -27,28 +28,32 @@ export function filterEvents (e, events, locationFilter, dateFilter, sortByMetho
                         allDates.includes(event.dates.start.localDate)
         )
     });
+
+    console.log('filtered events :', venues);
     
-    console.log('filtered events :', filteredEvents);
-    
+
     let message;
-    let value;
+    let displayEvents;
+    let venues;
     
     if (filteredEvents.length === 0) {
         message = 'NO_MATCHING_FILTERED_EVENTS';
-        value = 'no match found'
+        displayEvents = 'no match found';
+        venues = [];
     }
     else {
         message = 'FILTERING_EVENTS';
-        value = sortSwitch(sortByMethod, filteredEvents);
+        displayEvents = sortSwitch(sortByMethod, filteredEvents);
+        venues = getVenues(filteredEvents);
     }
     
-    return filterEventsDispatcher(message, value, events);
+    return filterEventsDispatcher(message, displayEvents, venues);
 }
 
-function filterEventsDispatcher(message, value, events) {
+function filterEventsDispatcher(message, displayEvents, venues) {
     return {
         type: message,
-        filteredEvents: value,
-        events
+        filteredEvents: displayEvents,
+        venues
     }
 }

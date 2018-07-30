@@ -20,8 +20,8 @@ export default combineReducers({
 	}),
     filteredEvents: filterEventsReducer,
 	isHidden: hideDateReducer,
-	sortBy: sortByReducer,
 	displayList: displayListReducer,
+	sortBy: sortByReducer,
 	venues: venueReducer
 });
 

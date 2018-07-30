@@ -1,5 +1,6 @@
 import Geocode from "react-geocode";
 import { createFilters } from './createFilters';
+import { getVenues } from './getVenues';
 
 Geocode.setApiKey("AIzaSyA5ivLlpxg-AwsOTPELxcuO1zQ64Vo6yRo");
 
@@ -32,15 +33,7 @@ export function updateEvents(list) {
     return (dispatch) => {
         Promise.all(promises)
         .then(results => {
-            const list = updatedList.slice(0);
-            for (let i = 0; i < results.length; i++) {
-                const resultLocation = results[i]._embedded.venues[0].location;
-                const index = list.findIndex(event => {
-                    return event.id === results[i].id;
-                })
-                list[index]._embedded.venues[0].location = resultLocation;
-            }
-            return list;
+            return mergeWithCoords(results, updatedList);
         })
         .then((results) => {
             const obj = {
@@ -48,9 +41,10 @@ export function updateEvents(list) {
                 payload: results,
                 locations: filterLists.locations,
                 dates: filterLists.dates,
-                datesObj: filterLists.datesObj
+                datesObj: filterLists.datesObj,
+                allVenues: getVenues(results)
             }
-            dispatch(obj)
+            dispatch(obj);
         })
         .catch(e => {
             console.error(e);
@@ -81,4 +75,16 @@ function getCoords(address) {
             console.error(error);
         }
     )
+}
+
+function mergeWithCoords(results, updatedList) {
+    const list = updatedList.slice(0);
+    for (let i = 0; i < results.length; i++) {
+        const resultLocation = results[i]._embedded.venues[0].location;
+        const index = list.findIndex(event => {
+            return event.id === results[i].id;
+        })
+        list[index]._embedded.venues[0].location = resultLocation;
+    }
+    return list;
 }
