@@ -43,11 +43,18 @@
 - [x] add all markers to map
 - [x] refactor: fix async geocode  
 ~~cluster markers in same location~~
-***
-- [ ] change logic of displaying markers:
+- [x] add allVenues property to state
+- [x] fix: show all venues on map after resetting filters
+- [x] close modal when filters applied
+- [x] map the flow of actions to store
+   - [x] inject venue property into actions
+- [x] change logic of displaying markers:
    - [x] reduce displayList into single venues with a list of it's displayed events
-   - [ ] change logis of displayList: move it to action, use venue function on it immediately
    - [x] add new property to store, change list in Map component
+- [x] fix: clearing filters causes sortBy list to 
+***
+- [ ] zoom in on event venue when event is clicked in list
+   - [ ] add default center to state
 - [ ] cluster infowindows for same venue
 - [ ] add infowindows
 - [ ] error handling
