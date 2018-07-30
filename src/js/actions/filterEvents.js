@@ -43,7 +43,7 @@ export function filterEvents (e, events, locationFilter, dateFilter, sortByMetho
     }
     else {
         message = 'FILTERING_EVENTS';
-        displayEvents = sortSwitch(sortByMethod, filteredEvents);
+        displayEvents = sortSwitch(filteredEvents, sortByMethod);
         venues = getVenues(filteredEvents);
     }
     
