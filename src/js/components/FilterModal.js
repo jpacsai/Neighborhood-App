@@ -16,6 +16,7 @@ class FilterModal extends Component {
         return (
             <form className='filter-modal' onSubmit={ (e) => {
                 filterEvents(e, events, locationFilter, dateFilter, sortByMethod);
+                hideModal(modalVisible);
             } } >
                 <h2 className='aside-header aside-header-filter'>Filters</h2>
                 <button 
