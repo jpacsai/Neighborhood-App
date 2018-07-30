@@ -1,9 +1,9 @@
 import { sortSwitch } from './sortSwitch';
 
-export function sortingEvents(e, list) {
+export function sortingEvents(list, e) {
 
     const method = e.target.value
-    const sortedList = sortSwitch(method, list);
+    const sortedList = sortSwitch(list, method);
 
     const message = 'SORTING_LIST';
     

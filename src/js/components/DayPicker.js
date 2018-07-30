@@ -49,11 +49,15 @@ class DatePicker extends Component {
         const nextWeekTime = this.dateCreator(7).getTime();
         
         const weekDays = this.weekCreator();
-        const noEventDays = weekDays.filter((day) => {
-            return !availableDays.includes(day);
-        });
-        const formatNoEventDays = this.transformDays(noEventDays);
-        
+        let noEventDays;
+        let formatNoEventDays;
+        if (availableDays) {
+            noEventDays = weekDays.filter((day) => {
+                return !availableDays.includes(day);
+            });
+            formatNoEventDays = this.transformDays(noEventDays);
+        }
+
         return (
             <DayPicker
                 firstDayOfWeek={ 1 }

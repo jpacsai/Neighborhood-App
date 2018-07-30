@@ -3,12 +3,12 @@ import eventReducer from './events-reducer';
 import createFilterReducer from './createFilter-reducer';
 import filtersToApplyReducer from './filtersToApply-reducer';
 import filterEventsReducer from './filterEvents-reducer';
-import hideDateReducer from './hideDate-reducer';
 import selectDayReducer from './selectDay-reducer';
 import fetchReadyReducer from './fetchReady-reducer';
 import sortByReducer from './sortBy-reducer';
 import displayListReducer from './displayList-reducer';
 import venueReducer from './venue-reducer';
+import modalVisibilityReducer from './modalVisibility-reducer';
 
 export default combineReducers({
 	events: eventReducer,
@@ -19,7 +19,7 @@ export default combineReducers({
 		selectedDays: selectDayReducer
 	}),
     filteredEvents: filterEventsReducer,
-	isHidden: hideDateReducer,
+	modalVisibility: modalVisibilityReducer,
 	displayList: displayListReducer,
 	sortBy: sortByReducer,
 	venues: venueReducer

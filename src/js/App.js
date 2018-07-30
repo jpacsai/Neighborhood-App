@@ -34,7 +34,7 @@ class App extends Component {
 								<p className='event-count'><span>{ displayList.length || '0' } event{ displayList.length > 1 && 's'} found</span>
 									<select 
 										className='event-list-sortBy-btn'
-										onChange={ (e) => sortAction(e, displayList) }
+										onChange={ (e) => sortAction(displayList, e) }
 									>
 										<option value="abc">Abc</option>
 										<option value="date">Date</option>

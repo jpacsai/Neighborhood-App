@@ -1,6 +1,7 @@
 import Geocode from "react-geocode";
 import { createFilters } from './createFilters';
 import { getVenues } from './getVenues';
+import { sortByAlphabet } from './sortByAlphabet';
 
 Geocode.setApiKey("AIzaSyA5ivLlpxg-AwsOTPELxcuO1zQ64Vo6yRo");
 
@@ -38,7 +39,7 @@ export function updateEvents(list) {
         .then((results) => {
             const obj = {
                 type:"FETCH_READY",
-                payload: results,
+                payload: sortByAlphabet(results),
                 locations: filterLists.locations,
                 dates: filterLists.dates,
                 datesObj: filterLists.datesObj,

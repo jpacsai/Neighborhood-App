@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { filterEvents } from './../actions/filterEvents';
-import { hideDatePicker } from './../actions/hideDatePicker';
+import { modalVisibility } from './../actions/modalVisibility';
 import DatePicker from './../components/DayPicker';
 import FilterList from './FilterList';
 import { resetFiltering } from './../actions/resetFiltering';
@@ -11,7 +11,7 @@ class FilterModal extends Component {
 
     render() {
 
-        const { events, locationFilter, dateFilter, isHidden, filterEvents, hideDatePicker, reset, sortByMethod } = this.props;
+        const { events, locationFilter, dateFilter, modalVisible, filterEvents, reset, sortByMethod, hideModal } = this.props;
 
         return (
             <form className='filter-modal' onSubmit={ (e) => {
@@ -21,7 +21,7 @@ class FilterModal extends Component {
                 <button 
                     className='filter-modal-btn filter-modal-close-btn' 
                     type='button'
-                    onClick={ () => hideDatePicker(isHidden) } >
+                    onClick={ () => hideModal(modalVisible) } >
                     Close
                 </button>
                 <div className='filter-area'>
@@ -49,7 +49,7 @@ function mapStateToProps(state) {
         events: state.events,
         locationFilter: state.filtersToApply.locations,
         dateFilter: state.filtersToApply.selectedDays,
-        isHidden: state.isHidden,
+        modalVisible: state.modalVisibility,
         sortByMethod: state.sortBy
     }
 }
@@ -57,7 +57,7 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
     return bindActionCreators({
         filterEvents: filterEvents,
-        hideDatePicker: hideDatePicker,
+        hideModal: modalVisibility,
         reset: resetFiltering
     }, dispatch);
 }

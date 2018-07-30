@@ -1,24 +1,24 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { hideDatePicker } from './../actions/hideDatePicker';
 import FilterModal from './../components/FilterModal';
+import { modalVisibility } from './../actions/modalVisibility';
 
 class FilterContainer extends Component {
 
     render() {
         
-        const { hideDatePicker, isHidden } = this.props;
+        const { modalVisibility, modalVisible } = this.props;
 
         return (
             <section className='filter-container'>
                 <h2 className='aside-header aside-header-filter'>Filters</h2>
                 <button 
                     type="button"
-                    onClick={ () => hideDatePicker(isHidden) }>
+                    onClick={ () => modalVisibility(modalVisible) }>
                     Show Filters
                 </button>
-                { !isHidden && < FilterModal /> }
+                { modalVisible && < FilterModal /> }
             </section>
         )
     }
@@ -26,13 +26,13 @@ class FilterContainer extends Component {
 
 function mapStateToProps(state) {
     return {
-        isHidden: state.isHidden
+        modalVisible: state.modalVisibility
     }
 }
 
 function mapDispatchToProps(dispatch) {
     return bindActionCreators({
-        hideDatePicker: hideDatePicker 
+        modalVisibility
     }, dispatch);
 }
 

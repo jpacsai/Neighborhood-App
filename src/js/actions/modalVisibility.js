@@ -1,10 +1,11 @@
-export function hideDatePicker(val) {
+export function modalVisibility(val) {
+
     const value = val ? false : true;
     const message = 'TOGGLE_DATE_VISIBILITY';
-    return hideDateDispatcher(message, value);
+    return modalVisibilityDispatcher(message, value);
 }
 
-function hideDateDispatcher(message, value) {
+function modalVisibilityDispatcher(message, value) {
     return {
         type: message,
         payload: value
