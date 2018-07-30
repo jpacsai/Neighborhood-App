@@ -10,6 +10,9 @@ import displayListReducer from './displayList-reducer';
 import venueReducer from './venue-reducer';
 import modalVisibilityReducer from './modalVisibility-reducer';
 import allVenuesReducer from './allVenues-reducer';
+import mapSizeReducer from './mapSize-reducer';
+import defaultBoundsReducer from './defaultBounds-reducer';
+import filterBoundsReducer from './filterBounds-reducer';
 
 export default combineReducers({
 	events: eventReducer,
@@ -24,7 +27,10 @@ export default combineReducers({
 	displayList: displayListReducer,
 	sortBy: sortByReducer,
 	allVenues: allVenuesReducer,
-	venues: venueReducer
+	venues: venueReducer,
+	mapSize: mapSizeReducer,
+	defaultBounds: defaultBoundsReducer,
+	filterBounds: filterBoundsReducer
 });
 
 /* STATE STRUCTURE:
@@ -43,8 +49,23 @@ const store = {
 	}
 	filteredEvents: [],		object
 	modalVisibility: boolean,	boolean,
-	sortBy: ''				string ( 'abc' / 'date' )
 	displayList: []			array
+	sortBy: ''				string ( 'abc' / 'date' )
+	
+	mapSize: {
+		width: num,
+		height: num
+	}
+	defaultBounds: {
+		ne: {
+			lat: num
+			lng: num
+		}
+		sw: {
+			lat: num
+			lng: num
+		}
+	}
 }
 
 */

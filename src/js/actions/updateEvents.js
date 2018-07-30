@@ -2,6 +2,7 @@ import Geocode from "react-geocode";
 import { createFilters } from './createFilters';
 import { getVenues } from './getVenues';
 import { sortByAlphabet } from './sortByAlphabet';
+import { calcBounds } from './calcBounds';
 
 Geocode.setApiKey("AIzaSyA5ivLlpxg-AwsOTPELxcuO1zQ64Vo6yRo");
 
@@ -29,6 +30,10 @@ export function updateEvents(list) {
             return event;
         })
     });
+
+    let allVenues;
+    let sorted;
+    let bounds;
       
     // Wait for all Promises to complete
     return (dispatch) => {
@@ -37,15 +42,21 @@ export function updateEvents(list) {
             return mergeWithCoords(results, updatedList);
         })
         .then((results) => {
-            const obj = {
+                allVenues = getVenues(results)
+                sorted = sortByAlphabet(results)
+                bounds = calcBounds(allVenues)
+        })
+        .then(() => {
+            const payloadObj = {
                 type:"FETCH_READY",
-                payload: sortByAlphabet(results),
+                payload: sorted,
                 locations: filterLists.locations,
                 dates: filterLists.dates,
                 datesObj: filterLists.datesObj,
-                allVenues: getVenues(results)
+                allVenues: allVenues,
+                bounds: bounds
             }
-            dispatch(obj);
+            dispatch(payloadObj);
         })
         .catch(e => {
             console.error(e);

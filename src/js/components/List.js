@@ -18,7 +18,11 @@ const List = (props) => {
             const location = event._embedded.venues[0].city.name;
             
             return (
-                <li key={ event.id } className='event'>
+                <li 
+                    key={ event.id } 
+                    className='event'
+                    onClick={ () => console.log(event.name)}
+                >
                     { event.name }
                     <p>Date: { date } { time } Location: { location }</p>
                 </li>
