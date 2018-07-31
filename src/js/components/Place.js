@@ -3,6 +3,7 @@ import shouldPureComponentUpdate from 'react-pure-render';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { closeCloseUp } from './../actions/closeCloseUp';
+import { hoverOutList } from './../actions/hoverOutList';
 
 class Place extends Component {
 
@@ -12,7 +13,7 @@ class Place extends Component {
 
   render() {
 
-    const { closeCloseUp, eventInfo, showInfo, hoverId } = this.props;
+    const { closeCloseUp, eventInfo, showInfo, hoverId, hoverOut } = this.props;
 
     const match = hoverId === this.props.venueId;
     console.log('match?', match)
@@ -32,7 +33,10 @@ class Place extends Component {
                 <img className='event-infoWindow-img' src={ eventInfo.images[5].url} alt='Photo of the artist/event' />
                 <button 
                     className='event-infoWindow-close-btn' 
-                    onClick={() => { closeCloseUp() }}>X</button>
+                    onClick={ () => { 
+                        closeCloseUp(); 
+                        hoverOut();
+                    } }>X</button>
             </div> }
         </div>
     );
@@ -41,15 +45,16 @@ class Place extends Component {
 
 function mapStateToProps(state) {
     return {
-    showInfo: state.closeUp.value,
-    eventInfo: state.closeUp.event,
-    hoverId: state.hoverEvent
+        showInfo: state.closeUp.value,
+        eventInfo: state.closeUp.event,
+        hoverId: state.hoverEvent
     }
 }
 
 function mapDispatchToProps(dispatch) {
     return bindActionCreators({
-		closeCloseUp
+        closeCloseUp,
+        hoverOut: hoverOutList
 	}, dispatch);
 }
 
