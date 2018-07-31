@@ -64,9 +64,13 @@
 - [x] hover over event list items highlights venue marker
 - [x] add close btn to infowindow
 - [x] fix: disable highlighting other markers when infowindow is open
+- [x] click on venue marker centers map over it
 ***
-- [ ] click on venue marker shows all (filtered) events in infowindow
-- [ ] click on venue marker centers map over it
+- [ ] fix: place component infowindow when marker clicked (closeUp value)
+- [ ] some venue doesn't have a marker ???
+- [ ] click on venue marker shows all (filtered) events in list (filter displayed list for that venue)
+   - [ ] add infowindow with venue name and btn to close it
+   - [ ] after closing infowindow display previous (filtered) list
 - [ ] make marker bounce when marker is selected, change color too
 - [ ] error handling
 - [ ] choose color palette
@@ -75,11 +79,10 @@
    - [ ] fix css on infowindow size
 - [ ] make it responsive
 - [ ] a11y: 
-   - [ ] tab order
+   - [ ] focus list then capture it if needed
    - [ ] aria labels
 - [ ] check ticketmaster page form API usage terms
 - [ ] add auto scroll upon filtering ( no idea :/ )
 - [ ] validate page
 - [ ] comment code
 - [ ] write readme
-
