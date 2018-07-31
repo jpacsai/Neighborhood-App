@@ -9,7 +9,7 @@ class List extends Component {
 
     render() {
 
-        const { list, closeUp, hoverIn, hoverOut } = this.props;
+        const { list, closeUp, hoverIn, hoverOut, infoOpen } = this.props;
     
         if (list === 'no match') {
             return (
@@ -30,10 +30,14 @@ class List extends Component {
                         key={ event.id }
                         className='event'
                         onMouseEnter={ () => { 
-                            hoverIn(venueId)
+                            if (infoOpen === false) {
+                                hoverIn(venueId)
+                            }
                         } }
                         onMouseLeave={ () => { 
-                            hoverOut()
+                            if (infoOpen === false) {
+                                hoverOut()
+                            }
                         } }
                         onClick={ () => {
                             closeUp(event)
@@ -53,11 +57,11 @@ class List extends Component {
 
 }
 
-/* function mapStateToProps(state) {
+function mapStateToProps(state) {
     return {
-
+        infoOpen: state.closeUp.value
     }
-} */
+}
 
 function mapDispatchToProps(dispatch) {
     return bindActionCreators({
@@ -67,4 +71,4 @@ function mapDispatchToProps(dispatch) {
     }, dispatch);
 }
 
-export default connect(null, mapDispatchToProps)(List);
+export default connect(mapStateToProps, mapDispatchToProps)(List);
