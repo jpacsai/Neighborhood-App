@@ -41,6 +41,7 @@ class List extends Component {
                         } }
                         onClick={ () => {
                             closeUp(event)
+                            hoverIn(venueId)
                         } }
                     >
                         { event.name }
