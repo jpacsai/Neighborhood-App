@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import Place from './Place';
 import mapSize from './../actions/mapSize';
 import { fitBounds } from 'google-map-react/utils';
+import { fetchReady } from './../actions/fetchReady';
 
 class Map extends Component {
 	
@@ -59,26 +60,30 @@ class Map extends Component {
 					height: '100%',
 					width: '100%'
 				}}>
-				<GoogleMapReact
-					bootstrapURLKeys={{
-							key: 'AIzaSyA5ivLlpxg-AwsOTPELxcuO1zQ64Vo6yRo'
-					}}
-					center={ center }
-					zoom={ zoom }
-				>
+
+				{ fetchReady && 
 				
-				{ (fetchReady && venues ) && venues.map( (venue) => {
+					<GoogleMapReact
+						bootstrapURLKeys={{
+								key: 'AIzaSyA5ivLlpxg-AwsOTPELxcuO1zQ64Vo6yRo'
+						}}
+						center={ center }
+						zoom={ zoom }
+					>
+					
+					{ (fetchReady && venues ) && venues.map( (venue) => {
 
-						const latitude = venue.lat;
-						const longitude = venue.lng;
-						const text = venue.venueName;
+							const latitude = venue.lat;
+							const longitude = venue.lng;
+							const text = venue.venueName;
 
-						return (
-							<Place key={ venue.venueName } lat={ latitude } lng={ longitude } text={ text } />
-						)
-				}) }
+							return (
+								<Place key={ venue.venueName } lat={ latitude } lng={ longitude } text={ text } />
+							)
+					}) }
 
-				</GoogleMapReact>
+					</GoogleMapReact>
+				}
 			</div>
 		);
 	}
