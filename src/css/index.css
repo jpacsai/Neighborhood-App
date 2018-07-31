@@ -110,26 +110,21 @@ body {
         background-color: lightgrey; }
     body main #map .placeStyle {
       position: relative;
-      left: -15px;
-      top: -19px;
+      left: -10px;
+      top: -30px;
       text-align: 'center';
       background-color: 'yellow';
-      width: 30px;
+      width: 20px;
       height: 30px;
       background: red;
-      -moz-border-radius: 100%;
-      -webkit-border-radius: 100%;
-      border-radius: 100%; }
-    body main #map .placeStyle:before {
-      content: "";
-      position: absolute;
-      top: 29px;
-      left: 10px;
-      width: 0;
-      height: 0;
-      border-top: 8px solid red;
-      border-right: 5px solid transparent;
-      border-left: 5px solid transparent; }
+      -webkit-clip-path: polygon(100% 75%, 50% 100%, 0 75%, 0 0, 50% 25%, 100% 0);
+      clip-path: polygon(100% 75%, 50% 100%, 0 75%, 0 0, 50% 25%, 100% 0); }
+    body main #map .placeStyle:hover,
+    body main #map .placeStyle-hoverOver {
+      background: greenyellow; }
+    body main #map .placeStyle:hover:before,
+    body main #map .placeStyle-hoverOver:before {
+      border-top-color: greenyellow; }
     body main #map .bounce {
       animation: bounce 0.5s;
       animation-direction: alternate;
