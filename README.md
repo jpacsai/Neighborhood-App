@@ -60,11 +60,11 @@
 - [x] recalculate on filtering, resetting
 - [x] add single event infowindow
 - [x] zoom in on venue marker when event is clicked in list
-***
-- [x] add close btn to infowindow
-- [ ] fix css on infowindow size
 - [x] close infowindow when filter btn is clicked
-- [ ] hover over event list items highlights venue marker
+- [x] hover over event list items highlights venue marker
+- [x] add close btn to infowindow
+- [x] fix: disable highlighting other markers when infowindow is open
+***
 - [ ] click on venue marker shows all (filtered) events in infowindow
 - [ ] click on venue marker centers map over it
 - [ ] make marker bounce when marker is selected, change color too
@@ -72,6 +72,7 @@
 - [ ] choose color palette
 - [ ] style page
    - [ ] grid in infowindow
+   - [ ] fix css on infowindow size
 - [ ] make it responsive
 - [ ] a11y: 
    - [ ] tab order
