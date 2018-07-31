@@ -6,13 +6,12 @@ import Place from './Place';
 import mapSize from './../actions/mapSize';
 import { fitBounds } from 'google-map-react/utils';
 import { closeCloseUp } from './../actions/closeCloseUp';
-import { closeUp } from './../actions/closeUp';
 
 class Map extends Component {
 	
 	componentDidMount() {
 
-		const { mapSize, closeCloseUp, closeUp } = this.props;
+		const { mapSize, closeCloseUp } = this.props;
 		const { mapElement } = this;
 
 		mapElement.addEventListener('click', closeCloseUp);
@@ -24,7 +23,7 @@ class Map extends Component {
 	}
 
 	componentWillUnmount() {
-		const { closeCloseUp, closeUp } = this.props;
+		const { closeCloseUp } = this.props;
 		const { mapElement } = this;
 
 		mapElement.removeEventListener('click', closeCloseUp);

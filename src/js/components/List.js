@@ -7,7 +7,7 @@ class List extends Component {
 
     render() {
 
-        const { list, closeUp, showInfo } = this.props;
+        const { list, closeUp } = this.props;
     
         if (list === 'no match') {
             return (
@@ -24,12 +24,9 @@ class List extends Component {
                 
                 return (
                     <li 
-                        key={ event.id } 
+                        key={ event.id }
                         className='event'
-                        onClick={ () => {
-                            console.log(event.name);
-                            closeUp();
-                        }}
+                        onClick={ () => closeUp(event) }
                     >
                         { event.name }
                         <p>Date: { date } { time } Location: { location }</p>
@@ -44,13 +41,13 @@ class List extends Component {
     }
 
 }
-/*
-function mapStateToProps(state) {
+
+/* function mapStateToProps(state) {
     return {
 
     }
-}
-*/
+} */
+
 function mapDispatchToProps(dispatch) {
     return bindActionCreators({
         closeUp

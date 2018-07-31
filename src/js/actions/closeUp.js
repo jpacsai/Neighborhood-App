@@ -1,5 +1,6 @@
-export function closeUp() {
+export function closeUp(event) {
 
+    console.log('closeup', event)
     const payload = true;
 
     return {
