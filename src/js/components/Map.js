@@ -11,10 +11,10 @@ class Map extends Component {
 	
 	componentDidMount() {
 
-		const { mapSize, closeCloseUp } = this.props;
+		const { mapSize /*, closeCloseUp */} = this.props;
 		const { mapElement } = this;
 
-		mapElement.addEventListener('click', closeCloseUp);
+		// mapElement.addEventListener('click', closeCloseUp);
 
 		
 		const width = mapElement.clientWidth;
@@ -22,16 +22,13 @@ class Map extends Component {
 		mapSize(width, height);
 	}
 
-	componentWillUnmount() {
+	/*componentWillUnmount() {
 		const { closeCloseUp } = this.props;
 		const { mapElement } = this;
 
 		mapElement.removeEventListener('click', closeCloseUp);
-	}
-
-	handleGlobalClick() {
-		console.log('map click');
-	}
+	}*/
+	
 
 	render() {
 

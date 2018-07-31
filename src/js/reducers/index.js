@@ -37,21 +37,21 @@ export default combineReducers({
 /* STATE STRUCTURE:
 
 const store = {
-	events: [],				objects
-	fetchReady: boolean,	boolean
+	events: [],					objects
+	fetchReady: boolean,		boolean
 	filterLists: {
-		locations: [],		string
-		dates: [], 			string --> format: "2018-07-28"
-		datesObj: []		date Obj
+		locations: [],			string
+		dates: [], 				string --> format: "2018-07-28"
+		datesObj: []			date Obj
 	},
 	filtersToApply: {
-		locations: [],		array
-		selectedDates: []	new Date()
+		locations: [],			array
+		selectedDates: []		new Date()
 	}
-	filteredEvents: [],		object
+	filteredEvents: [],			object
 	modalVisibility: boolean,	boolean,
-	displayList: []			array
-	sortBy: ''				string ( 'abc' / 'date' )
+	displayList: []				array
+	sortBy: ''					string ( 'abc' / 'date' )
 	
 	mapSize: {
 		width: num,
@@ -66,6 +66,11 @@ const store = {
 			lat: num
 			lng: num
 		}
+	}
+
+	closeUp: {
+		value: boolean
+		event: obj
 	}
 }
 
