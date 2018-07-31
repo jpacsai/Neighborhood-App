@@ -5,15 +5,34 @@ import { connect } from 'react-redux';
 import Place from './Place';
 import mapSize from './../actions/mapSize';
 import { fitBounds } from 'google-map-react/utils';
+import { closeCloseUp } from './../actions/closeCloseUp';
+import { closeUp } from './../actions/closeUp';
 
 class Map extends Component {
 	
 	componentDidMount() {
-		const { mapSize } = this.props;
-		const width = this.mapElement.clientWidth;
-		const height = this.mapElement.clientHeight;
+
+		const { mapSize, closeCloseUp, closeUp } = this.props;
+		const { mapElement } = this;
+
+		mapElement.addEventListener('click', closeCloseUp);
+
+		
+		const width = mapElement.clientWidth;
+		const height = mapElement.clientHeight;
 		mapSize(width, height);
-	  }
+	}
+
+	componentWillUnmount() {
+		const { closeCloseUp, closeUp } = this.props;
+		const { mapElement } = this;
+
+		mapElement.removeEventListener('click', closeCloseUp);
+	}
+
+	handleGlobalClick() {
+		console.log('map click');
+	}
 
 	render() {
 
@@ -96,13 +115,15 @@ function mapStateToProps(state) {
 		mapwidth: state.mapSize.width,
 		mapheight: state.mapSize.height,
 		mapNW: state.bounds.nw,
-		mapSE: state.bounds.se
+		mapSE: state.bounds.se,
+		showInfo: state.closeUp
     }
 }
 
 function mapDispatchToProps(dispatch) {
     return bindActionCreators({
-		mapSize
+		mapSize,
+		closeCloseUp
 	}, dispatch);
 }
 

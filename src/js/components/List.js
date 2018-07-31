@@ -28,7 +28,7 @@ class List extends Component {
                         className='event'
                         onClick={ () => {
                             console.log(event.name);
-                            closeUp(showInfo);
+                            closeUp();
                         }}
                     >
                         { event.name }
@@ -44,17 +44,17 @@ class List extends Component {
     }
 
 }
-
+/*
 function mapStateToProps(state) {
     return {
-        showInfo: state.closeUp
+
     }
 }
-
+*/
 function mapDispatchToProps(dispatch) {
     return bindActionCreators({
         closeUp
     }, dispatch);
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(List);
+export default connect(null, mapDispatchToProps)(List);

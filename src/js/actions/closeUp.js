@@ -1,6 +1,6 @@
-export function closeUp(val) {
+export function closeUp() {
 
-    const payload = val ? false : true;
+    const payload = true;
 
     return {
         type: 'TOGGLE_CLOSEUP',
