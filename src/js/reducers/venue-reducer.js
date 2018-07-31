@@ -7,6 +7,9 @@ export default function venueReducer (state = [], action) {
         case 'FILTERING_EVENTS':
             return action.venues;
 
+        case 'NO_MATCHING_FILTERED_EVENTS':
+            return [];
+
         case 'CLEAR_FILTERS':
             return action.allVenues;
 
