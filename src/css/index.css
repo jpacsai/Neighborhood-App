@@ -119,12 +119,8 @@ body {
       background: red;
       -webkit-clip-path: polygon(100% 75%, 50% 100%, 0 75%, 0 0, 50% 25%, 100% 0);
       clip-path: polygon(100% 75%, 50% 100%, 0 75%, 0 0, 50% 25%, 100% 0); }
-    body main #map .placeStyle:hover,
-    body main #map .placeStyle-hoverOver {
+    body main #map .placeStyle:hover {
       background: greenyellow; }
-    body main #map .placeStyle:hover:before,
-    body main #map .placeStyle-hoverOver:before {
-      border-top-color: greenyellow; }
     body main #map .bounce {
       animation: bounce 0.5s;
       animation-direction: alternate;
