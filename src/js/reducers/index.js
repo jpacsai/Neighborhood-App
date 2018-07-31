@@ -29,7 +29,7 @@ export default combineReducers({
 	allVenues: allVenuesReducer,
 	venues: venueReducer,
 	mapSize: mapSizeReducer,
-	defaultBounds: defaultBoundsReducer,
+	bounds: defaultBoundsReducer,
 	filterBounds: filterBoundsReducer
 });
 

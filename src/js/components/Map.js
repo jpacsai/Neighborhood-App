@@ -12,7 +12,6 @@ class Map extends Component {
 		const width = this.mapElement.clientWidth;
 		const height = this.mapElement.clientHeight;
 		this.props.mapSize(width, height);
-		console.log(height, width);
 	  }
 
 	render() {
@@ -91,8 +90,8 @@ function mapStateToProps(state) {
 		venues: state.venues,
 		mapwidth: state.mapSize.width,
 		mapheight: state.mapSize.height,
-		defnw: state.defaultBounds.ne,
-		defse: state.defaultBounds.sw
+		defnw: state.bounds.nw,
+		defse: state.bounds.se
     }
 }
 

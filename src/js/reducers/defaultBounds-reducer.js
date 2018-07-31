@@ -3,8 +3,8 @@ export default function defaultBoundsReducer (state = {}, action) {
     switch (action.type) {
         case 'FETCH_READY':
             return {
-                ne: action.bounds.ne,
-                sw: action.bounds.sw
+                nw: action.bounds.nw,
+                se: action.bounds.se
             };
             
         default:

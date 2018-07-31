@@ -12,7 +12,7 @@ export function calcBounds(arr) {
         }
     }
 
-    const ne = {
+    const nw = {
         lat: highestLat,
         lng: smallestLng
     }
@@ -29,15 +29,13 @@ export function calcBounds(arr) {
         }
     }
 
-    const sw = {
+    const se = {
         lat: smallestLat,
         lng: highestLng
     }
 
-    console.log('calcbounds', ne, sw)
-  
     return {
-        ne,
-        sw
+        nw,
+        se
     }
 }
