@@ -224,6 +224,12 @@ body {
         .event-infoWindow-img {
           width: 180px;
         }
+
+        .event-infoWindow-close-btn {
+          position: absolute;
+          right: 10px;
+          top: 10px;
+        }
       }
 
       .event-infoWindow:before {

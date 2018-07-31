@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import shouldPureComponentUpdate from 'react-pure-render';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { closeCloseUp } from './../actions/closeCloseUp';
 
 class Place extends Component {
 
@@ -10,6 +12,8 @@ class Place extends Component {
 
   render() {
 
+    const { closeCloseUp, eventInfo, showInfo } = this.props;
+
     return (
         <div 
             className='placeStyle'
@@ -17,13 +21,15 @@ class Place extends Component {
             onMouseLeave={() => { }}
         >
             {this.props.text}
-            { (this.props.showInfo && (this.props.venueId === this.props.eventInfo._embedded.venues[0].id)) &&
+            { (showInfo && (this.props.venueId === eventInfo._embedded.venues[0].id)) &&
             <div className='event-infoWindow'>
-                <h3>{this.props.eventInfo.name}</h3>
-                <h4>{this.props.eventInfo._embedded.venues[0].name}</h4>
-                <img className='event-infoWindow-img' src={this.props.eventInfo.images[5].url} />
+                <h3>{ eventInfo.name}</h3>
+                <h4>{ eventInfo._embedded.venues[0].name}</h4>
+                <img className='event-infoWindow-img' src={ eventInfo.images[5].url} alt='Photo of the artist/event' />
+                <button 
+                    className='event-infoWindow-close-btn' 
+                    onClick={() => { closeCloseUp() }}>X</button>
             </div> }
-            { /* this.state.isMouseInside ? <button>Your Button</button> : null */}
         </div>
     );
   }
@@ -36,4 +42,10 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapStateToProps)(Place);
+function mapDispatchToProps(dispatch) {
+    return bindActionCreators({
+		closeCloseUp
+	}, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Place);

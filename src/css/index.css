@@ -159,6 +159,10 @@ body {
         font-size: 15px; }
       body main #map .event-infoWindow .event-infoWindow-img {
         width: 180px; }
+      body main #map .event-infoWindow .event-infoWindow-close-btn {
+        position: absolute;
+        right: 10px;
+        top: 10px; }
     body main #map .event-infoWindow:before {
       content: "";
       position: absolute;

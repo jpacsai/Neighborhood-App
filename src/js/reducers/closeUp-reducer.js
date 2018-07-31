@@ -6,7 +6,6 @@ export default function closeUpReducer (state = {value: false}, action) {
             const newState = Object.assign({}, state)
             newState.value = action.value;
             newState.event = action.event;
-            console.log(newState)
             return newState;
             
         default:

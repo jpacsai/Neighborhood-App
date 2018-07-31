@@ -73,7 +73,6 @@ class Map extends Component {
 		} : mapBounds.center;
 
 		const zoom = showInfo ? 13 : mapBounds.zoom;
-		console.log('what bound', what);
 
 		return (
 			// Important! Always set the container height explicitly

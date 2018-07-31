@@ -1,6 +1,5 @@
 export function closeUp(event) {
 
-    console.log('closeup', event)
     const value = true;
 
     return {
