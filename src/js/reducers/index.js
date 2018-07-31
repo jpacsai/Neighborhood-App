@@ -32,8 +32,7 @@ export default combineReducers({
 	mapSize: mapSizeReducer,
 	bounds: boundsReducer,
 	closeUp: closeUpReducer,
-	hoverEvent: hoverListReducer
-	// vanueInfoWindow: 
+	hoverEvent: hoverListReducer,
 });
 
 /* STATE STRUCTURE:
@@ -72,7 +71,7 @@ const store = {
 
 	closeUp: {
 		value: boolean
-		event: obj
+		venue: obj
 	}
 }
 

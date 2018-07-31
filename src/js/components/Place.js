@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { closeCloseUp } from './../actions/closeCloseUp';
 import { hoverOutList } from './../actions/hoverOutList';
+import { markerClick } from './../actions/markerClick';
+import { closeUp } from '../actions/closeUp';
 
 class Place extends Component {
 
@@ -13,10 +15,9 @@ class Place extends Component {
 
   render() {
 
-    const { closeCloseUp, eventInfo, showInfo, hoverId, hoverOut } = this.props;
+    const { closeCloseUp, eventInfo, showInfo, hoverId, hoverOut, closeUp } = this.props;
 
     const match = hoverId === this.props.venueId;
-    console.log('match?', match)
 
     const markerStyle = match ? 'map-marker map-marker-list-hovered' : 'map-marker';
 
@@ -25,7 +26,12 @@ class Place extends Component {
             onMouseEnter={() => { }}
             onMouseLeave={() => { }}
         >
-            <div className={ markerStyle }></div>
+            <div 
+                className={ markerStyle }
+                onClick={ () => {
+                    closeUp(null, this.props.venue);
+                } }
+            ></div>
             { (showInfo && (this.props.venueId === eventInfo._embedded.venues[0].id)) &&
             <div className='event-infoWindow'>
                 <h3>{ eventInfo.name}</h3>
@@ -54,7 +60,9 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
     return bindActionCreators({
         closeCloseUp,
-        hoverOut: hoverOutList
+        hoverOut: hoverOutList,
+        markerClick,
+        closeUp
 	}, dispatch);
 }
 
