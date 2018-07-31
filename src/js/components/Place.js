@@ -15,12 +15,11 @@ class Place extends Component {
     const { closeCloseUp, eventInfo, showInfo } = this.props;
 
     return (
-        <div 
-            className='placeStyle'
+        <div
             onMouseEnter={() => { }}
             onMouseLeave={() => { }}
         >
-            {this.props.text}
+            <div className='placeStyle'></div>
             { (showInfo && (this.props.venueId === eventInfo._embedded.venues[0].id)) &&
             <div className='event-infoWindow'>
                 <h3>{ eventInfo.name}</h3>
