@@ -162,7 +162,7 @@ body {
 
     #map {
 
-      .placeStyle {
+      .map-marker {
         position: relative;
         left: -10px;
         top: -30px;
@@ -173,10 +173,13 @@ body {
         background: red;
         -webkit-clip-path: polygon(100% 75%, 50% 100%, 0 75%, 0 0, 50% 25%, 100% 0);
         clip-path: polygon(100% 75%, 50% 100%, 0 75%, 0 0, 50% 25%, 100% 0);
+        cursor: pointer;
       }
 
-      .placeStyle:hover {
+      .map-marker:hover,
+      .map-marker-list-hovered {
         background: greenyellow;
+        z-index: 2;
       }
 
       .bounce {

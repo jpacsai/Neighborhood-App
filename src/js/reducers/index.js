@@ -13,6 +13,7 @@ import allVenuesReducer from './allVenues-reducer';
 import mapSizeReducer from './mapSize-reducer';
 import boundsReducer from './bounds-reducer';
 import closeUpReducer from './closeUp-reducer';
+import hoverListReducer from './hoverList-reducer';
 
 export default combineReducers({
 	events: eventReducer,
@@ -31,6 +32,7 @@ export default combineReducers({
 	mapSize: mapSizeReducer,
 	bounds: boundsReducer,
 	closeUp: closeUpReducer,
+	hoverEvent: hoverListReducer
 	// vanueInfoWindow: 
 });
 

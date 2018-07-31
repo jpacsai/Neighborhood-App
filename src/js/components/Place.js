@@ -12,14 +12,19 @@ class Place extends Component {
 
   render() {
 
-    const { closeCloseUp, eventInfo, showInfo } = this.props;
+    const { closeCloseUp, eventInfo, showInfo, hoverId } = this.props;
+
+    const match = hoverId === this.props.venueId;
+    console.log('match?', match)
+
+    const markerStyle = match ? 'map-marker map-marker-list-hovered' : 'map-marker';
 
     return (
         <div
             onMouseEnter={() => { }}
             onMouseLeave={() => { }}
         >
-            <div className='placeStyle'></div>
+            <div className={ markerStyle }></div>
             { (showInfo && (this.props.venueId === eventInfo._embedded.venues[0].id)) &&
             <div className='event-infoWindow'>
                 <h3>{ eventInfo.name}</h3>
@@ -37,7 +42,8 @@ class Place extends Component {
 function mapStateToProps(state) {
     return {
     showInfo: state.closeUp.value,
-    eventInfo: state.closeUp.event
+    eventInfo: state.closeUp.event,
+    hoverId: state.hoverEvent
     }
 }
 

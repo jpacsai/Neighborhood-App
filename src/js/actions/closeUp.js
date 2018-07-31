@@ -1,5 +1,5 @@
 export function closeUp(event) {
-
+    
     const value = true;
 
     return {

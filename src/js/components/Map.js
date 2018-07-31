@@ -64,8 +64,6 @@ class Map extends Component {
 		}
 		
 		const mapBounds = fitBounds(bounds, size)
-		// const { center, zoom } = fitBounds(bounds, size);
-		const what = fitBounds(bounds, size);
 
 		const center = showInfo ? {
 			lat: Number(showEvent._embedded.venues[0].location.latitude),

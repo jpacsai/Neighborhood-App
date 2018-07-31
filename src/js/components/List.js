@@ -2,12 +2,14 @@ import React, { Component } from 'react';
 import { closeUp } from './../actions/closeUp';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { hoverInList } from './../actions/hoverInList';
+import { hoverOutList } from './../actions/hoverOutList';
 
 class List extends Component {
 
     render() {
 
-        const { list, closeUp } = this.props;
+        const { list, closeUp, hoverIn, hoverOut } = this.props;
     
         if (list === 'no match') {
             return (
@@ -21,12 +23,21 @@ class List extends Component {
                 const date = event.dates.start.localDate;
                 const time = event.dates.start.localTime ? (event.dates.start.localTime).slice(0, 5) : null;
                 const location = event._embedded.venues[0].city.name;
+                const venueId = event._embedded.venues[0].id;
                 
                 return (
                     <li 
                         key={ event.id }
                         className='event'
-                        onClick={ () => closeUp(event) }
+                        onMouseEnter={ () => { 
+                            hoverIn(venueId)
+                        } }
+                        onMouseLeave={ () => { 
+                            hoverOut()
+                        } }
+                        onClick={ () => {
+                            closeUp(event)
+                        } }
                     >
                         { event.name }
                         <p>Date: { date } { time } Location: { location }</p>
@@ -50,7 +61,9 @@ class List extends Component {
 
 function mapDispatchToProps(dispatch) {
     return bindActionCreators({
-        closeUp
+        closeUp,
+        hoverIn: hoverInList,
+        hoverOut: hoverOutList
     }, dispatch);
 }
 

@@ -108,7 +108,7 @@ body {
           margin: 0; }
       body main aside .event-list-container .event:hover {
         background-color: lightgrey; }
-    body main #map .placeStyle {
+    body main #map .map-marker {
       position: relative;
       left: -10px;
       top: -30px;
@@ -118,9 +118,12 @@ body {
       height: 30px;
       background: red;
       -webkit-clip-path: polygon(100% 75%, 50% 100%, 0 75%, 0 0, 50% 25%, 100% 0);
-      clip-path: polygon(100% 75%, 50% 100%, 0 75%, 0 0, 50% 25%, 100% 0); }
-    body main #map .placeStyle:hover {
-      background: greenyellow; }
+      clip-path: polygon(100% 75%, 50% 100%, 0 75%, 0 0, 50% 25%, 100% 0);
+      cursor: pointer; }
+    body main #map .map-marker:hover,
+    body main #map .map-marker-list-hovered {
+      background: greenyellow;
+      z-index: 2; }
     body main #map .bounce {
       animation: bounce 0.5s;
       animation-direction: alternate;
