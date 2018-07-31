@@ -5,7 +5,6 @@ import { connect } from 'react-redux';
 import Place from './Place';
 import mapSize from './../actions/mapSize';
 import { fitBounds } from 'google-map-react/utils';
-import { fetchReady } from './../actions/fetchReady';
 
 class Map extends Component {
 	
@@ -62,7 +61,7 @@ class Map extends Component {
 				}}>
 
 				{ fetchReady && 
-				
+
 					<GoogleMapReact
 						bootstrapURLKeys={{
 								key: 'AIzaSyA5ivLlpxg-AwsOTPELxcuO1zQ64Vo6yRo'

@@ -30,9 +30,6 @@ export function filterEvents (e, events, locationFilter, dateFilter, sortByMetho
         )
     });
 
-    console.log('filtered events :', venues);
-    
-
     let message;
     let displayEvents;
     let venues;
