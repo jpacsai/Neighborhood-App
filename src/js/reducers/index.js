@@ -12,6 +12,7 @@ import modalVisibilityReducer from './modalVisibility-reducer';
 import allVenuesReducer from './allVenues-reducer';
 import mapSizeReducer from './mapSize-reducer';
 import boundsReducer from './bounds-reducer';
+import closeUpReducer from './closeUp-reducer';
 
 export default combineReducers({
 	events: eventReducer,
@@ -28,7 +29,8 @@ export default combineReducers({
 	allVenues: allVenuesReducer,
 	venues: venueReducer,
 	mapSize: mapSizeReducer,
-	bounds: boundsReducer
+	bounds: boundsReducer,
+	closeUp: closeUpReducer
 });
 
 /* STATE STRUCTURE:

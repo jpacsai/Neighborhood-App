@@ -61,7 +61,6 @@ function mapStateToProps(state) {
     return {
 		events: state.events.events,
 		fetchReady: state.fetchReady,
-		isHidden: state.isHidden,
 		displayList: state.displayList
     }
 }

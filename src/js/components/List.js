@@ -1,8 +1,11 @@
 import React from 'react';
+import { closeUp } from './../actions/closeUp';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
 const List = (props) => {
 
-    const { list } = props;
+    const { list, closeUp, showInfo } = props;
 
     if (list === 'no match') {
         return (
@@ -21,7 +24,10 @@ const List = (props) => {
                 <li 
                     key={ event.id } 
                     className='event'
-                    onClick={ () => console.log(event.name)}
+                    onClick={ () => {
+                        console.log(event.name);
+                        closeUp(showInfo);
+                    }}
                 >
                     { event.name }
                     <p>Date: { date } { time } Location: { location }</p>
@@ -35,4 +41,16 @@ const List = (props) => {
     }
 }
 
-export default List;
+function mapStateToProps(state) {
+    return {
+        showInfo: state.closeUp
+    }
+}
+
+function mapDispatchToProps(dispatch) {
+    return bindActionCreators({
+        closeUp
+    }, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(List);
