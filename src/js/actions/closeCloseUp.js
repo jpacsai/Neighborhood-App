@@ -1,11 +1,12 @@
 export function closeCloseUp() {
 
-    const payload = false;
+    const value = false;
 
     console.log('close closeup')
 
     return {
         type: 'CLOSE_CLOSEUP',
-        payload
+        value,
+        event: null
     }
 }

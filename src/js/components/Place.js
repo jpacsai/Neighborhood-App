@@ -30,7 +30,8 @@ class Place extends Component {
 
 function mapStateToProps(state) {
     return {
-		showInfo: state.closeUp
+		showInfo: state.closeUp.value,
+		event: state.closeUp.event
     }
 }
 
