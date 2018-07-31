@@ -1,5 +1,6 @@
 import { sortSwitch } from './sortSwitch';
 import { getVenues } from './getVenues';
+import { calcBounds } from './calcBounds';
 
 export function filterEvents (e, events, locationFilter, dateFilter, sortByMethod) {
 
@@ -35,25 +36,29 @@ export function filterEvents (e, events, locationFilter, dateFilter, sortByMetho
     let message;
     let displayEvents;
     let venues;
+    let bounds;
     
     if (filteredEvents.length === 0) {
         message = 'NO_MATCHING_FILTERED_EVENTS';
         displayEvents = 'no match found';
         venues = [];
+        bounds = null;
     }
     else {
         message = 'FILTERING_EVENTS';
         displayEvents = sortSwitch(filteredEvents, sortByMethod);
         venues = getVenues(filteredEvents);
+        bounds = calcBounds(venues);
     }
     
-    return filterEventsDispatcher(message, displayEvents, venues);
+    return filterEventsDispatcher(message, displayEvents, venues, bounds);
 }
 
-function filterEventsDispatcher(message, displayEvents, venues) {
+function filterEventsDispatcher(message, displayEvents, venues, bounds) {
     return {
         type: message,
         filteredEvents: displayEvents,
-        venues
+        venues,
+        bounds
     }
 }
