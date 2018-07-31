@@ -9,14 +9,15 @@ import { fitBounds } from 'google-map-react/utils';
 class Map extends Component {
 	
 	componentDidMount() {
+		const { mapSize } = this.props;
 		const width = this.mapElement.clientWidth;
 		const height = this.mapElement.clientHeight;
-		this.props.mapSize(width, height);
+		mapSize(width, height);
 	  }
 
 	render() {
 
-		const { fetchReady, venues, defnw, defse, mapwidth, mapheight } = this.props;
+		const { fetchReady, venues, mapNW, mapSE, mapwidth, mapheight } = this.props;
 
 		const size = {
 			width: mapwidth, // Map width in pixels
@@ -37,12 +38,12 @@ class Map extends Component {
 		if (fetchReady) {
 			bounds = {
 				nw: {
-					lat: defnw.lat,
-					lng: defnw.lng
+					lat: mapNW.lat,
+					lng: mapNW.lng
 				},
 				se: {
-					lat: defse.lat,
-					lng: defse.lng
+					lat: mapSE.lat,
+					lng: mapSE.lng
 				}
 			};	
 		}
@@ -90,14 +91,14 @@ function mapStateToProps(state) {
 		venues: state.venues,
 		mapwidth: state.mapSize.width,
 		mapheight: state.mapSize.height,
-		defnw: state.bounds.nw,
-		defse: state.bounds.se
+		mapNW: state.bounds.nw,
+		mapSE: state.bounds.se
     }
 }
 
 function mapDispatchToProps(dispatch) {
     return bindActionCreators({
-		mapSize: mapSize
+		mapSize
 	}, dispatch);
 }
 
