@@ -58,11 +58,10 @@
 ~~move fitbounds to state~~
 - [x] calculate fitbounds for displayed (filtered) markers to trigger auto zoom on markers
 - [x] recalculate on filtering, resetting
+- [x] add single event infowindow
+- [x] zoom in on venue marker when event is clicked in list
 ***
-- [ ] zoom in on venue  marker when event is clicked in list
 - [ ] hover or click on venue marker shows all (filtered) events infowindow
-- [x] hover or click on list event shows single event infowindow
-- [ ] add infowindows
 - [ ] check area code at ticketmaster API page (Dorset in Midlands???)
 - [ ] error handling
 - [ ] choose color palette
