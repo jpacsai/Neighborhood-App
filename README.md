@@ -53,13 +53,17 @@
    - [x] add new property to store, change list in Map component
 - [x] fix: clearing filters when no filters selected triggers resorting
 - [x] fix: don't display markers when no match found after filtering
+- [x] calculate most north-west and south-east coordinates
+- [x] add fitbounds to map  
+~~move fitbounds to state~~
+- [x] calculate fitbounds for displayed (filtered) markers to trigger auto zoom on markers
+- [x] recalculate on filtering, resetting
 ***
 - [ ] zoom in on venue  marker when event is clicked in list
-   - [x] calculate most north-west and south-east coordinates
-   - [x] add fitbounds to map
-   - [ ] move fitbounds to state
-- [ ] cluster infowindows for same venue
+- [ ] hover or click on venue marker shows all (filtered) events infowindow
+- [x] hover or click on list event shows single event infowindow
 - [ ] add infowindows
+- [ ] check area code at ticketmaster API page (Dorset in Midlands???)
 - [ ] error handling
 - [ ] choose color palette
 - [ ] style page
