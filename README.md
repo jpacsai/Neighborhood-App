@@ -61,6 +61,7 @@
 - [x] add single event infowindow
 - [x] zoom in on venue marker when event is clicked in list
 ***
+- [ ] close infowindow when filter btn is clicked
 - [ ] hover or click on venue marker shows all (filtered) events infowindow
 - [ ] check area code at ticketmaster API page (Dorset in Midlands???)
 - [ ] error handling
