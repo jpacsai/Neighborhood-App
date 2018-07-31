@@ -95,7 +95,12 @@ class Map extends Component {
 							const text = venue.venueName;
 
 							return (
-								<Place key={ venue.venueName } lat={ latitude } lng={ longitude } text={ text } />
+								<Place 
+									key={ venue.venueName }
+									lat={ latitude }
+									lng={ longitude }
+									text={ text }
+								/>
 							)
 					}) }
 

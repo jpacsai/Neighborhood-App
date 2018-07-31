@@ -105,7 +105,7 @@ body {
         background-color: aquamarine; }
         body main aside .event-list-container .event p {
           margin: 0; }
-    body main #map .greatPlaceStyle {
+    body main #map .placeStyle {
       position: relative;
       left: -15px;
       top: -19px;
@@ -117,7 +117,7 @@ body {
       -moz-border-radius: 100%;
       -webkit-border-radius: 100%;
       border-radius: 100%; }
-    body main #map .greatPlaceStyle:before {
+    body main #map .placeStyle:before {
       content: "";
       position: absolute;
       top: 29px;

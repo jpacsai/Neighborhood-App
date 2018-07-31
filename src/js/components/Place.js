@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import shouldPureComponentUpdate from 'react-pure-render';
+import { connect } from 'react-redux';
 
-export default class Place extends Component {
+class Place extends Component {
 
   static defaultProps = {};
 
@@ -10,10 +11,27 @@ export default class Place extends Component {
   render() {
 
     return (
-       <div className='greatPlaceStyle'>
-          {this.props.text}
-       </div>
+       	<div 
+        	className='placeStyle'
+			onMouseEnter={() => {
+				
+			}}
+			onMouseLeave={() => {
+
+			}}
+        >
+			{this.props.text}
+			{ this.props.showInfo && <div>Hello</div>}
+			{ /* this.state.isMouseInside ? <button>Your Button</button> : null */}
+       	</div>
     );
   }
 }
 
+function mapStateToProps(state) {
+    return {
+		showInfo: state.closeUp
+    }
+}
+
+export default connect(mapStateToProps)(Place);

@@ -157,7 +157,7 @@ body {
 
     #map {
 
-      .greatPlaceStyle {
+      .placeStyle {
         position: relative;
         left: -15px;
         top: -19px;
@@ -171,7 +171,7 @@ body {
         border-radius:         100%;
       }
 
-      .greatPlaceStyle:before {
+      .placeStyle:before {
         content:"";
         position: absolute;
         top: 29px;

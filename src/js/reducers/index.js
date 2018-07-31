@@ -30,7 +30,8 @@ export default combineReducers({
 	venues: venueReducer,
 	mapSize: mapSizeReducer,
 	bounds: boundsReducer,
-	closeUp: closeUpReducer
+	closeUp: closeUpReducer,
+	// vanueInfoWindow: 
 });
 
 /* STATE STRUCTURE:
