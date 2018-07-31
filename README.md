@@ -51,10 +51,13 @@
 - [x] change logic of displaying markers:
    - [x] reduce displayList into single venues with a list of it's displayed events
    - [x] add new property to store, change list in Map component
-- [x] fix: clearing filters causes sortBy list to 
+- [x] fix: clearing filters when no filters selected triggers resorting
+- [x] fix: don't display markers when no match found after filtering
 ***
-- [ ] zoom in on event venue when event is clicked in list
-   - [ ] add default center to state
+- [ ] zoom in on venue  marker when event is clicked in list
+   - [x] calculate most north-west and south-east coordinates
+   - [x] add fitbounds to map
+   - [ ] move fitbounds to state
 - [ ] cluster infowindows for same venue
 - [ ] add infowindows
 - [ ] error handling
