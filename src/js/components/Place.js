@@ -9,7 +9,7 @@ class Place extends Component {
   shouldComponentUpdate = shouldPureComponentUpdate;
 
   render() {
-
+	console.log('eventId:',this.props.venueId)
     return (
        	<div 
         	className='placeStyle'
@@ -21,7 +21,7 @@ class Place extends Component {
 			}}
         >
 			{this.props.text}
-			{ this.props.showInfo && <div>Hello</div>}
+			{ (this.props.showInfo && (this.props.venueId === this.props.eventInfo._embedded.venues[0].id)) && <div>Hello</div>}
 			{ /* this.state.isMouseInside ? <button>Your Button</button> : null */}
        	</div>
     );
@@ -31,7 +31,7 @@ class Place extends Component {
 function mapStateToProps(state) {
     return {
 		showInfo: state.closeUp.value,
-		event: state.closeUp.event
+		eventInfo: state.closeUp.event
     }
 }
 

@@ -90,16 +90,13 @@ class Map extends Component {
 					
 					{ (fetchReady && venues ) && venues.map( (venue) => {
 
-							const latitude = venue.lat;
-							const longitude = venue.lng;
-							const text = venue.venueName;
-
 							return (
 								<Place 
 									key={ venue.venueName }
-									lat={ latitude }
-									lng={ longitude }
-									text={ text }
+									lat={ venue.lat }
+									lng={ venue.lng }
+									text={ venue.venueName }
+									venueId={ venue.venueId }
 								/>
 							)
 					}) }
