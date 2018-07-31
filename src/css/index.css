@@ -102,9 +102,12 @@ body {
         overflow-x: hidden; }
       body main aside .event-list-container .event {
         margin: 5px 0;
-        background-color: aquamarine; }
+        background-color: aquamarine;
+        cursor: pointer; }
         body main aside .event-list-container .event p {
           margin: 0; }
+      body main aside .event-list-container .event:hover {
+        background-color: lightgrey; }
     body main #map .placeStyle {
       position: relative;
       left: -15px;
@@ -138,3 +141,21 @@ body {
     transform: translate3d(0, 0, 0); }
   to {
     transform: translate3d(0, 30px, 0); } }
+    body main #map .event-infoWindow {
+      position: relative;
+      padding: 20px;
+      top: -330px;
+      background-color: white;
+      width: 200px;
+      height: 250px;
+      left: -100px;
+      z-index: 2;
+      border: 2px solid red;
+      text-align: center; }
+      body main #map .event-infoWindow h3 {
+        margin: 0;
+        font-size: 18px; }
+      body main #map .event-infoWindow h4 {
+        font-size: 15px; }
+      body main #map .event-infoWindow .event-infoWindow-img {
+        width: 180px; }

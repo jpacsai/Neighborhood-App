@@ -57,7 +57,7 @@ const store = {
 		width: num,
 		height: num
 	}
-	defaultBounds: {
+	bounds: {
 		ne: {
 			lat: num
 			lng: num

@@ -147,10 +147,15 @@ body {
         .event {
           margin: 5px 0;
           background-color: aquamarine;
+          cursor: pointer;
 
           p {
             margin: 0;
           }
+        }
+
+        .event:hover {
+          background-color: lightgrey;
         }
       }
     }
@@ -194,6 +199,34 @@ body {
         from { transform: translate3d(0, 0, 0);     }
         to   { transform: translate3d(0, 30px, 0); }
       }
+
+      .event-infoWindow {
+        position: relative;
+        padding: 20px;
+        top: -330px;
+        background-color: white;
+        width: 200px;
+        height: 250px;
+        left: -100px;
+        z-index: 2;
+        border: 2px solid red;
+        text-align: center;
+
+        h3 {
+          margin: 0;
+          font-size: 18px;
+        }
+
+        h4 {
+          font-size: 15px;
+        }
+
+        .event-infoWindow-img {
+          width: 180px;
+        }
+      }
+
+      
     }
   }
 }
