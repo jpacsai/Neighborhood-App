@@ -18,7 +18,7 @@ class FilterModal extends Component {
                 filterEvents(e, events, locationFilter, dateFilter, sortByMethod);
                 hideModal(modalVisible);
             } } >
-                <h2 className='aside-header aside-header-filter'>Filters</h2>
+                <h2 className='aside-header aside-filter-header'>Filters</h2>
                 <button 
                     className='filter-modal-btn filter-modal-close-btn' 
                     type='button'
@@ -36,9 +36,7 @@ class FilterModal extends Component {
                         className='filter-modal-btn filter-reset-btn'
                         onClick={ (e) => {
                             reset(events, sortByMethod, allVenues);
-                        } } >
-                        Clear Filters
-                    </button>
+                        } } >Clear</button>
                 </div>
             </form>
         )
