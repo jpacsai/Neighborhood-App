@@ -4,12 +4,13 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { hoverInList } from './../actions/hoverInList';
 import { hoverOutList } from './../actions/hoverOutList';
+import { infoWindow } from './../actions/infoWindow';
 
 class List extends Component {
 
     render() {
 
-        const { list, closeUp, hoverIn, hoverOut, infoOpen } = this.props;
+        const { list, closeUp, hoverIn, hoverOut, infoOpen, infoWindow } = this.props;
     
         if (list === 'no match') {
             return (
@@ -24,6 +25,10 @@ class List extends Component {
                 const time = event.dates.start.localTime ? (event.dates.start.localTime).slice(0, 5) : null;
                 const location = event._embedded.venues[0].city.name;
                 const venueId = event._embedded.venues[0].id;
+                const place = {
+                    lat: Number(event._embedded.venues[0].location.latitude),
+                    lng: Number(event._embedded.venues[0].location.longitude)
+                }
                 
                 return (
                     <li 
@@ -40,8 +45,9 @@ class List extends Component {
                             }
                         } }
                         onClick={ () => {
-                            closeUp(event)
-                            hoverIn(venueId)
+                            closeUp(place);
+                            hoverIn(venueId);
+                            infoWindow(event);
                         } }
                     >
                         { event.name }
@@ -68,7 +74,8 @@ function mapDispatchToProps(dispatch) {
     return bindActionCreators({
         closeUp,
         hoverIn: hoverInList,
-        hoverOut: hoverOutList
+        hoverOut: hoverOutList,
+        infoWindow
     }, dispatch);
 }
 

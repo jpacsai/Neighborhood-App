@@ -4,8 +4,8 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { closeCloseUp } from './../actions/closeCloseUp';
 import { hoverOutList } from './../actions/hoverOutList';
-import { markerClick } from './../actions/markerClick';
 import { closeUp } from '../actions/closeUp';
+import { infoWindow } from './../actions/infoWindow';
 
 class Place extends Component {
 
@@ -15,11 +15,16 @@ class Place extends Component {
 
   render() {
 
-    const { closeCloseUp, eventInfo, showInfo, hoverId, hoverOut, closeUp } = this.props;
+    const { closeCloseUp, eventInfo, showInfo, hoverId, hoverOut, closeUp, venue } = this.props;
 
     const match = hoverId === this.props.venueId;
 
     const markerStyle = match ? 'map-marker map-marker-list-hovered' : 'map-marker';
+
+    const place = {
+        lat: venue.lat,
+        lng: venue.lng
+    }
 
     return (
         <div
@@ -29,7 +34,7 @@ class Place extends Component {
             <div 
                 className={ markerStyle }
                 onClick={ () => {
-                    closeUp(null, this.props.venue);
+                    closeUp(place);
                 } }
             ></div>
             { (showInfo && (this.props.venueId === eventInfo._embedded.venues[0].id)) &&
@@ -39,8 +44,8 @@ class Place extends Component {
                 <img className='event-infoWindow-img' src={ eventInfo.images[5].url} alt='Photo of the artist/event' />
                 <button 
                     className='event-infoWindow-close-btn' 
-                    onClick={ () => { 
-                        closeCloseUp(); 
+                    onClick={ () => {
+                        closeCloseUp(place); 
                         hoverOut();
                     } }>X</button>
             </div> }
@@ -52,7 +57,7 @@ class Place extends Component {
 function mapStateToProps(state) {
     return {
         showInfo: state.closeUp.value,
-        eventInfo: state.closeUp.event,
+        eventInfo: state.infoWindow,
         hoverId: state.hoverEvent
     }
 }
@@ -61,7 +66,6 @@ function mapDispatchToProps(dispatch) {
     return bindActionCreators({
         closeCloseUp,
         hoverOut: hoverOutList,
-        markerClick,
         closeUp
 	}, dispatch);
 }

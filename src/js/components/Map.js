@@ -32,7 +32,7 @@ class Map extends Component {
 
 	render() {
 
-		const { fetchReady, venues, mapNW, mapSE, mapwidth, mapheight, showInfo, showVenue } = this.props;
+		const { fetchReady, venues, mapNW, mapSE, mapwidth, mapheight, closeUp, closeUpLat, closeUpLng } = this.props;
 
 		const size = {
 			width: mapwidth, // Map width in pixels
@@ -65,14 +65,12 @@ class Map extends Component {
 		
 		const mapBounds = fitBounds(bounds, size)
 
-		const center = showInfo ? {
-			lat: showVenue.lat,
-			lng: showVenue.lng
+		const center = closeUp ? {
+			lat: closeUpLat,
+			lng: closeUpLng
 		} : mapBounds.center;
 
-		console.log(showVenue);
-
-		const zoom = showInfo ? 13 : mapBounds.zoom;
+		const zoom = closeUp ? 13 : mapBounds.zoom;
 
 		return (
 			// Important! Always set the container height explicitly
@@ -124,8 +122,9 @@ function mapStateToProps(state) {
 		mapheight: state.mapSize.height,
 		mapNW: state.bounds.nw,
 		mapSE: state.bounds.se,
-		showInfo: state.closeUp.value,
-		showVenue: state.closeUp.venue,
+		closeUp: state.closeUp.value,
+		closeUpLat: state.closeUp.lat,
+		closeUpLng: state.closeUp.lng,
     }
 }
 

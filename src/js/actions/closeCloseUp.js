@@ -7,6 +7,7 @@ export function closeCloseUp() {
     return {
         type: 'CLOSE_CLOSEUP',
         value,
-        event: null
+        lat: null,
+        lng: null
     }
 }

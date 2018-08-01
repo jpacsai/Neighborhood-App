@@ -1,21 +1,14 @@
-export function closeUp(event, place) {
+export function closeUp(place) {
     
     const value = true;
 
-    const venue = event ? {
-        lat: Number(event._embedded.venues[0].location.latitude),
-        lng: Number(event._embedded.venues[0].location.longitude)
-    } : {
-        lat: place.lat,
-        lng: place.lng
-    }
-
-    console.log('venue', venue);
+    const lat = place.lat;
+    const lng = place.lng;
 
     return {
-        type: 'TOGGLE_CLOSEUP',
+        type: 'START_CLOSEUP',
         value,
-        venue,
-        event
+        lat,
+        lng
     }
 }

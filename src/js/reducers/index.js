@@ -13,7 +13,9 @@ import allVenuesReducer from './allVenues-reducer';
 import mapSizeReducer from './mapSize-reducer';
 import boundsReducer from './bounds-reducer';
 import closeUpReducer from './closeUp-reducer';
+
 import hoverListReducer from './hoverList-reducer';
+import infoWindowReducer from './infoWindow-reducer';
 
 export default combineReducers({
 	events: eventReducer,
@@ -33,6 +35,7 @@ export default combineReducers({
 	bounds: boundsReducer,
 	closeUp: closeUpReducer,
 	hoverEvent: hoverListReducer,
+	infoWindow: infoWindowReducer
 });
 
 /* STATE STRUCTURE:
@@ -53,7 +56,6 @@ const store = {
 	modalVisibility: boolean,	boolean,
 	displayList: []				array
 	sortBy: ''					string ( 'abc' / 'date' )
-	
 	mapSize: {
 		width: num,
 		height: num
@@ -68,11 +70,12 @@ const store = {
 			lng: num
 		}
 	}
-
 	closeUp: {
 		value: boolean
-		venue: obj
+		lat: num
+		lng: num
 	}
+	infoWindow: obj // event 	obj
 }
 
 */
