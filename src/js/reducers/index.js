@@ -16,6 +16,7 @@ import closeUpReducer from './closeUp-reducer';
 
 import hoverListReducer from './hoverList-reducer';
 import infoWindowReducer from './infoWindow-reducer';
+import markerWindowReducer from './markerWindow-reducer';
 
 export default combineReducers({
 	events: eventReducer,
@@ -35,7 +36,8 @@ export default combineReducers({
 	bounds: boundsReducer,
 	closeUp: closeUpReducer,
 	hoverEvent: hoverListReducer,
-	infoWindow: infoWindowReducer
+	infoWindow: infoWindowReducer,
+	markerWindow: markerWindowReducer
 });
 
 /* STATE STRUCTURE:

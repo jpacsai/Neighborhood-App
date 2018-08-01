@@ -6,6 +6,9 @@ import { closeCloseUp } from './../actions/closeCloseUp';
 import { hoverOutList } from './../actions/hoverOutList';
 import { closeUp } from '../actions/closeUp';
 import { infoWindow } from './../actions/infoWindow';
+import { closeInfoWindow } from './../actions/closeInfoWindow';
+import { openMarkerWindow } from './../actions/openMarkerWindow';
+import MarkerEvent from './MarkerWindow';
 
 class Place extends Component {
 
@@ -15,7 +18,7 @@ class Place extends Component {
 
   render() {
 
-    const { closeCloseUp, eventInfo, showInfo, hoverId, hoverOut, closeUp, venue } = this.props;
+    const { closeCloseUp, eventInfo, showInfo, hoverId, hoverOut, closeUp, venue, closeInfoWindow, openMarkerWindow, markerWindow } = this.props;
 
     const match = hoverId === this.props.venueId;
 
@@ -35,9 +38,12 @@ class Place extends Component {
                 className={ markerStyle }
                 onClick={ () => {
                     closeUp(place);
+                    closeInfoWindow();
+                    openMarkerWindow(venue);
                 } }
             ></div>
-            { (showInfo && (this.props.venueId === eventInfo._embedded.venues[0].id)) &&
+
+            { ((showInfo && eventInfo) && (this.props.venueId === eventInfo._embedded.venues[0].id)) &&
             <div className='event-infoWindow'>
                 <h3>{ eventInfo.name}</h3>
                 <h4>{ eventInfo._embedded.venues[0].name}</h4>
@@ -49,6 +55,26 @@ class Place extends Component {
                         hoverOut();
                     } }>X</button>
             </div> }
+
+            { markerWindow &&
+                <div className='event-infoWindow'>
+                <h3>'Title'</h3>
+                
+                <ul>
+                    { markerWindow.map( event => {
+                        return (
+                            <MarkerEvent key={event.id} event={ event } />
+                        )
+                    })}
+                </ul>
+                <button 
+                    className='event-infoWindow-close-btn' 
+                    onClick={ () => {
+                        
+                    } }>X</button>
+            </div> }
+
+
         </div>
     );
   }
@@ -58,7 +84,8 @@ function mapStateToProps(state) {
     return {
         showInfo: state.closeUp.value,
         eventInfo: state.infoWindow,
-        hoverId: state.hoverEvent
+        hoverId: state.hoverEvent,
+        markerWindow: state.markerWindow
     }
 }
 
@@ -66,7 +93,9 @@ function mapDispatchToProps(dispatch) {
     return bindActionCreators({
         closeCloseUp,
         hoverOut: hoverOutList,
-        closeUp
+        closeUp,
+        closeInfoWindow,
+        openMarkerWindow
 	}, dispatch);
 }
 
