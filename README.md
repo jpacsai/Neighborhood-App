@@ -67,12 +67,14 @@
 - [x] click on venue marker centers map over it
 - [x] fix: infowindow when marker clicked (closeUp value)
    - [x] separate cloceup and event / venue actions
+- [x] make marker bounce when marker is selected, change color too
+~~some venue doesn't have a marker ???~~
 ***
-- [ ] some venue doesn't have a marker ???
-- [ ] click on venue marker shows all (filtered) events in list (filter displayed list for that venue)
-   - [ ] add infowindow with venue name and btn to close it
-   - [ ] after closing infowindow display previous (filtered) list
-- [ ] make marker bounce when marker is selected, change color too
+- [ ] refactor hoverIn function
+- [ ] fix: zoom function doesn't when work after zoom manually changed
+- [x] click on venue marker shows all (filtered) events in list in infowindow
+   - [ ] fix everything :/
+   - [ ] add btn to close it
 - [ ] error handling
 - [ ] choose color palette
 - [ ] style page
