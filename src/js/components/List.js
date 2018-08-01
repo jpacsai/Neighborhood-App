@@ -5,12 +5,13 @@ import { bindActionCreators } from 'redux';
 import { hoverInList } from './../actions/hoverInList';
 import { hoverOutList } from './../actions/hoverOutList';
 import { infoWindow } from './../actions/infoWindow';
+import { closeMarkerWindow } from './../actions/closeMarkerWindow';
 
 class List extends Component {
 
     render() {
 
-        const { list, closeUp, hoverIn, hoverOut, infoOpen, infoWindow } = this.props;
+        const { list, closeUp, hoverIn, hoverOut, infoOpen, infoWindow, closeMarkerWindow } = this.props;
     
         if (list === 'no match') {
             return (
@@ -48,6 +49,7 @@ class List extends Component {
                             closeUp(place);
                             hoverIn(venueId);
                             infoWindow(event);
+                            closeMarkerWindow();
                         } }
                     >
                         { event.name }
@@ -75,7 +77,8 @@ function mapDispatchToProps(dispatch) {
         closeUp,
         hoverIn: hoverInList,
         hoverOut: hoverOutList,
-        infoWindow
+        infoWindow,
+        closeMarkerWindow
     }, dispatch);
 }
 

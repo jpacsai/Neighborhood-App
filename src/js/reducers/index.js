@@ -78,6 +78,11 @@ const store = {
 		lng: num
 	}
 	infoWindow: obj // event 	obj
+	markerWindow: {
+		value: boolean
+		venue: {}
+		eventsArr: []
+	}
 }
 
 */

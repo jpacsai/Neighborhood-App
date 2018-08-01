@@ -9,6 +9,7 @@ import { infoWindow } from './../actions/infoWindow';
 import { closeInfoWindow } from './../actions/closeInfoWindow';
 import { openMarkerWindow } from './../actions/openMarkerWindow';
 import MarkerEvent from './MarkerWindow';
+import { closeMarkerWindow } from './../actions/closeMarkerWindow';
 
 class Place extends Component {
 
@@ -18,7 +19,7 @@ class Place extends Component {
 
   render() {
 
-    const { closeCloseUp, eventInfo, showInfo, hoverId, hoverOut, closeUp, venue, closeInfoWindow, openMarkerWindow, markerWindow } = this.props;
+    const { closeCloseUp, eventInfo, showInfo, hoverId, hoverOut, closeUp, venue, closeInfoWindow, openMarkerWindow, markerEvents, markerWindowId, markerWindowOpen, closeMarkerWindow } = this.props;
 
     const match = hoverId === this.props.venueId;
 
@@ -56,12 +57,12 @@ class Place extends Component {
                     } }>X</button>
             </div> }
 
-            { markerWindow &&
+            { (markerWindowOpen && (this.props.venueId === markerWindowId)) &&
                 <div className='event-infoWindow'>
                 <h3>'Title'</h3>
                 
                 <ul>
-                    { markerWindow.map( event => {
+                    { markerEvents.map( event => {
                         return (
                             <MarkerEvent key={event.id} event={ event } />
                         )
@@ -70,7 +71,8 @@ class Place extends Component {
                 <button 
                     className='event-infoWindow-close-btn' 
                     onClick={ () => {
-                        
+                        closeMarkerWindow();
+                        closeCloseUp(place);
                     } }>X</button>
             </div> }
 
@@ -85,7 +87,9 @@ function mapStateToProps(state) {
         showInfo: state.closeUp.value,
         eventInfo: state.infoWindow,
         hoverId: state.hoverEvent,
-        markerWindow: state.markerWindow
+        markerWindowOpen: state.markerWindow.value,
+        markerEvents: state.markerWindow.eventsArr,
+        markerWindowId: state.markerWindow.markerVenue.venueId
     }
 }
 
@@ -95,7 +99,8 @@ function mapDispatchToProps(dispatch) {
         hoverOut: hoverOutList,
         closeUp,
         closeInfoWindow,
-        openMarkerWindow
+        openMarkerWindow,
+        closeMarkerWindow
 	}, dispatch);
 }
 
