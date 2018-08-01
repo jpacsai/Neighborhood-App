@@ -65,8 +65,9 @@
 - [x] add close btn to infowindow
 - [x] fix: disable highlighting other markers when infowindow is open
 - [x] click on venue marker centers map over it
+- [x] fix: infowindow when marker clicked (closeUp value)
+   - [x] separate cloceup and event / venue actions
 ***
-- [ ] fix: place component infowindow when marker clicked (closeUp value)
 - [ ] some venue doesn't have a marker ???
 - [ ] click on venue marker shows all (filtered) events in list (filter displayed list for that venue)
    - [ ] add infowindow with venue name and btn to close it
