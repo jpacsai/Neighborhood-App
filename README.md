@@ -69,18 +69,21 @@
    - [x] separate cloceup and event / venue actions
 - [x] make marker bounce when marker is selected, change color too
 ~~some venue doesn't have a marker ???~~
+- [x] click on venue marker shows all (filtered) events in list in infowindow
+   - [x] fix everything :/
+   - [x] add btn to close it
+- [x] make it responsive
+- [x] animate marker when it's clicked
 ***
+- [ ] add style to relevant events in list when infowindow is open
 - [ ] refactor hoverIn function
 - [ ] fix: zoom function doesn't when work after zoom manually changed
-- [x] click on venue marker shows all (filtered) events in list in infowindow
-   - [ ] fix everything :/
-   - [ ] add btn to close it
+- [ ] add btn to event infowindow for all events at that venue (marker infowindow)
 - [ ] error handling
 - [ ] choose color palette
 - [ ] style page
    - [ ] grid in infowindow
    - [ ] fix css on infowindow size
-- [ ] make it responsive
 - [ ] a11y: 
    - [ ] focus list then capture it if needed
    - [ ] aria labels
