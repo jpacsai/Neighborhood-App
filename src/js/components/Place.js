@@ -19,7 +19,7 @@ class Place extends Component {
 
     const match = hoverId === this.props.venueId;
 
-    const markerStyle = match ? 'map-marker map-marker-list-hovered' : 'map-marker';
+    const markerStyle = match ? 'map-marker map-marker-list-hovered bounce' : 'map-marker';
 
     const place = {
         lat: venue.lat,
