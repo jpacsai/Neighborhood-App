@@ -75,6 +75,7 @@
 - [x] make it responsive
 - [x] animate marker when it's clicked
 ***
+- [ ] in mobile view make infowindow a modal
 - [ ] add style to relevant events in list when infowindow is open
 - [ ] refactor hoverIn function
 - [ ] fix: zoom function doesn't when work after zoom manually changed
