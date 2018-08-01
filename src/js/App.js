@@ -6,6 +6,7 @@ import FilterContainer from './containers/filter-container';
 import List from './components/List';
 import MapContainer from './containers/map-container';
 import { sortingEvents } from './actions/sortingEvents';
+import { toggleAside } from './actions/toggleAside';
 
 require('../css/index.css');
 
@@ -17,16 +18,27 @@ class App extends Component {
 	}
 
 	render() {
-		const { fetchReady, sortAction, displayList } = this.props;
+		const { fetchReady, sortAction, displayList, toggleAside, showAside } = this.props;
+
+		const asideStyle = showAside ? 'aside-show' : 'aside-hide';
 
 		return (
 			<div>
 				<header>
-					<h1 className='title'>Neighborhood App</h1>
+					<h1 className='title'>Last Minute Concerts</h1>
+					<p className='sub-title'>Find concerts for next week in Northern England</p>
 				</header>
+				<nav>
+					<button 
+						className='aside-toggle-btn'
+						onClick={ () => {
+							toggleAside(showAside);
+						} }
+					>X</button>
+				</nav>
 
 				<main>
-					<aside className='side-menu'>
+					<aside className={ asideStyle }>
 						<FilterContainer />
 						<section className='event-list-container'>
 							<h2 className='aside-header aside-header-list'>Events</h2>
@@ -61,7 +73,8 @@ function mapStateToProps(state) {
     return {
 		events: state.events.events,
 		fetchReady: state.fetchReady,
-		displayList: state.displayList
+		displayList: state.displayList,
+		showAside: state.showAside
     }
 }
 
@@ -69,6 +82,7 @@ function mapDispatchToProps(dispatch) {
     return bindActionCreators({
 		loadData: loadData,
 		sortAction: sortingEvents,
+		toggleAside
 	}, dispatch);
 }
 

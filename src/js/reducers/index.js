@@ -13,10 +13,10 @@ import allVenuesReducer from './allVenues-reducer';
 import mapSizeReducer from './mapSize-reducer';
 import boundsReducer from './bounds-reducer';
 import closeUpReducer from './closeUp-reducer';
-
 import hoverListReducer from './hoverList-reducer';
 import infoWindowReducer from './infoWindow-reducer';
 import markerWindowReducer from './markerWindow-reducer';
+import toggleAsideReducer from './toggleAside-reducer';
 
 export default combineReducers({
 	events: eventReducer,
@@ -37,7 +37,8 @@ export default combineReducers({
 	closeUp: closeUpReducer,
 	hoverEvent: hoverListReducer,
 	infoWindow: infoWindowReducer,
-	markerWindow: markerWindowReducer
+	markerWindow: markerWindowReducer,
+	showAside: toggleAsideReducer
 });
 
 /* STATE STRUCTURE:
@@ -83,6 +84,7 @@ const store = {
 		venue: {}
 		eventsArr: []
 	}
+	showAside: boolean
 }
 
 */

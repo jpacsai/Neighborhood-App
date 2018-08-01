@@ -6,21 +6,40 @@ body {
   font-family: sans-serif;
 
   header {
-    height: 8vh;
-  
+    text-align: center;
+    height: 15vh;
+    
     .title {
       text-align: center;
-      padding: 10px;
+      padding: 10px 10px 0;
       margin: 0;
+      font-size: 22px;
+    }
+
+    .sub-title {
+      margin: 5px auto;
+      width: 80%;
+    }
+  }
+
+  nav {
+
+    .aside-toggle-btn {
+      position: absolute;
+      top: 5px;
+      left: 5px;
     }
   }
   
   main {
-    height: 92vh;
-    display: flex;
-    flex-direction: row;
+    height: 85vh;
   
     aside {
+      position: relative;
+      width: 280px;
+      height: 85vh;
+      z-index: 2;
+      background-color: yellow;      
 
       .aside-header {
         margin: 0;
@@ -36,7 +55,6 @@ body {
       }
       
       .filter-container {
-        background-color: white;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -116,9 +134,8 @@ body {
       }
 
       .event-list-container {
-        height: 86%;
+        height: 84%;
         overflow-x: hidden;
-        width: 280px;
 
         .event-count {
           position: relative;
@@ -160,7 +177,18 @@ body {
       }
     }
 
+    .aside-show {
+      left: 0;
+    }
+    
+    .aside-hide {
+      left: -500px;
+    }
+
     #map {
+      width: 100%;
+      position: absolute;
+      top: 15vh;
 
       .map-marker {
         position: relative;

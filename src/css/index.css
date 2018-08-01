@@ -4,166 +4,185 @@ body {
   padding: 0;
   font-family: sans-serif; }
   body header {
-    height: 8vh; }
+    text-align: center;
+    height: 15vh; }
     body header .title {
       text-align: center;
-      padding: 10px;
-      margin: 0; }
-  body main {
-    height: 92vh;
-    display: flex;
-    flex-direction: row; }
-    body main aside .aside-header {
+      padding: 10px 10px 0;
       margin: 0;
-      padding: 8px;
-      text-align: center; }
-    body main aside .aside-header-list {
-      height: 6%;
-      display: flex;
-      justify-content: center;
-      align-items: center; }
-    body main aside .filter-container {
-      background-color: white;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 10px;
-      transition: 1s; }
-      body main aside .filter-container .filter-modal {
-        position: absolute;
-        z-index: 2;
-        top: 15%;
-        left: 10%;
-        width: 80%;
-        height: 70%;
-        min-height: 360px;
-        display: grid;
-        grid-template: 20% 60% 20% / 1fr;
-        background-color: white;
-        animation: fadeIn 0.8s; }
-        body main aside .filter-container .filter-modal .filter-modal-btn {
-          color: red;
-          margin: 5px;
-          width: 150px;
-          padding: 10px; }
-        body main aside .filter-container .filter-modal .filter-modal-close-btn {
-          position: absolute;
-          top: 15px;
-          right: 15px; }
-        body main aside .filter-container .filter-modal .filter-area {
-          grid-area: 2 / 1 / 3 / 2;
-          display: grid;
-          grid-template: 1fr / 50% 50%; }
-          body main aside .filter-container .filter-modal .filter-area .DayPicker {
-            max-width: 320px;
-            height: 270px;
-            margin: auto; }
-          body main aside .filter-container .filter-modal .filter-area .filter-select {
-            grid-area: 1 / 2 / 2 / 3; }
-            body main aside .filter-container .filter-modal .filter-area .filter-select .filter-select-li {
-              margin: 5px; }
-        body main aside .filter-container .filter-modal .filter-buttons {
-          grid-area: 3 / 1 / 4 / 2;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          flex-direction: row; }
-      body main aside .filter-container form {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center; }
-        body main aside .filter-container form .DayPicker {
-          background-color: white; }
-        body main aside .filter-container form select {
-          margin-bottom: 5px; }
-    body main aside .event-list-container {
-      height: 86%;
-      overflow-x: hidden;
-      width: 280px; }
-      body main aside .event-list-container .event-count {
-        position: relative;
-        margin: 5px;
-        text-align: center;
-        height: 30px;
+      font-size: 22px; }
+    body header .sub-title {
+      margin: 5px auto;
+      width: 80%; }
+  body nav .aside-toggle-btn {
+    position: absolute;
+    top: 5px;
+    left: 5px; }
+  body main {
+    height: 85vh; }
+    body main aside {
+      position: relative;
+      width: 280px;
+      height: 85vh;
+      z-index: 2;
+      background-color: yellow; }
+      body main aside .aside-header {
+        margin: 0;
+        padding: 8px;
+        text-align: center; }
+      body main aside .aside-header-list {
+        height: 6%;
         display: flex;
         justify-content: center;
         align-items: center; }
-        body main aside .event-list-container .event-count .event-list-sortBy-btn {
+      body main aside .filter-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        transition: 1s; }
+        body main aside .filter-container .filter-modal {
           position: absolute;
-          right: 0; }
-      body main aside .event-list-container .event-list {
-        list-style-type: none;
-        padding: 0 10px;
-        margin: 0;
-        height: 81%;
-        overflow: scroll;
+          z-index: 2;
+          top: 15%;
+          left: 10%;
+          width: 80%;
+          height: 70%;
+          min-height: 360px;
+          display: grid;
+          grid-template: 20% 60% 20% / 1fr;
+          background-color: white;
+          animation: fadeIn 0.8s; }
+          body main aside .filter-container .filter-modal .filter-modal-btn {
+            color: red;
+            margin: 5px;
+            width: 150px;
+            padding: 10px; }
+          body main aside .filter-container .filter-modal .filter-modal-close-btn {
+            position: absolute;
+            top: 15px;
+            right: 15px; }
+          body main aside .filter-container .filter-modal .filter-area {
+            grid-area: 2 / 1 / 3 / 2;
+            display: grid;
+            grid-template: 1fr / 50% 50%; }
+            body main aside .filter-container .filter-modal .filter-area .DayPicker {
+              max-width: 320px;
+              height: 270px;
+              margin: auto; }
+            body main aside .filter-container .filter-modal .filter-area .filter-select {
+              grid-area: 1 / 2 / 2 / 3; }
+              body main aside .filter-container .filter-modal .filter-area .filter-select .filter-select-li {
+                margin: 5px; }
+          body main aside .filter-container .filter-modal .filter-buttons {
+            grid-area: 3 / 1 / 4 / 2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: row; }
+        body main aside .filter-container form {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          align-items: center; }
+          body main aside .filter-container form .DayPicker {
+            background-color: white; }
+          body main aside .filter-container form select {
+            margin-bottom: 5px; }
+      body main aside .event-list-container {
+        height: 84%;
         overflow-x: hidden; }
-      body main aside .event-list-container .event {
-        margin: 5px 0;
-        background-color: aquamarine;
+        body main aside .event-list-container .event-count {
+          position: relative;
+          margin: 5px;
+          text-align: center;
+          height: 30px;
+          display: flex;
+          justify-content: center;
+          align-items: center; }
+          body main aside .event-list-container .event-count .event-list-sortBy-btn {
+            position: absolute;
+            right: 0; }
+        body main aside .event-list-container .event-list {
+          list-style-type: none;
+          padding: 0 10px;
+          margin: 0;
+          height: 81%;
+          overflow: scroll;
+          overflow-x: hidden; }
+        body main aside .event-list-container .event {
+          margin: 5px 0;
+          background-color: aquamarine;
+          cursor: pointer; }
+          body main aside .event-list-container .event p {
+            margin: 0; }
+        body main aside .event-list-container .event:hover {
+          background-color: lightgrey; }
+    body main .aside-show {
+      left: 0; }
+    body main .aside-hide {
+      left: -500px; }
+    body main #map {
+      width: 100%;
+      position: absolute;
+      top: 15vh; }
+      body main #map .map-marker {
+        position: relative;
+        left: -10px;
+        top: -30px;
+        text-align: 'center';
+        background-color: 'yellow';
+        width: 20px;
+        height: 30px;
+        background: red;
+        -webkit-clip-path: polygon(100% 75%, 50% 100%, 0 75%, 0 0, 50% 25%, 100% 0);
+        clip-path: polygon(100% 75%, 50% 100%, 0 75%, 0 0, 50% 25%, 100% 0);
         cursor: pointer; }
-        body main aside .event-list-container .event p {
-          margin: 0; }
-      body main aside .event-list-container .event:hover {
-        background-color: lightgrey; }
-    body main #map .map-marker {
-      position: relative;
-      left: -10px;
-      top: -30px;
-      text-align: 'center';
-      background-color: 'yellow';
-      width: 20px;
-      height: 30px;
-      background: red;
-      -webkit-clip-path: polygon(100% 75%, 50% 100%, 0 75%, 0 0, 50% 25%, 100% 0);
-      clip-path: polygon(100% 75%, 50% 100%, 0 75%, 0 0, 50% 25%, 100% 0);
-      cursor: pointer; }
-    body main #map .map-marker:hover,
-    body main #map .map-marker-list-hovered {
-      background: greenyellow;
-      z-index: 2; }
-    body main #map .bounce {
-      animation: bounce 0.5s;
-      animation-direction: alternate;
-      animation-timing-function: cubic-bezier(0.5, 0.05, 1, 0.5);
-      animation-iteration-count: infinite; }
+      body main #map .map-marker:hover,
+      body main #map .map-marker-list-hovered {
+        background: greenyellow;
+        z-index: 2; }
+      body main #map .bounce {
+        animation: bounce 0.5s;
+        animation-direction: alternate;
+        animation-timing-function: cubic-bezier(0.5, 0.05, 1, 0.5);
+        animation-iteration-count: infinite; }
 
 @keyframes bounce {
   from {
     transform: translate3d(0, 0, 0); }
   to {
     transform: translate3d(0, 30px, 0); } }
-    body main #map .event-infoWindow {
-      position: relative;
-      padding: 20px;
-      bottom: 310px;
-      background-color: white;
-      width: 200px;
-      max-height: 280px;
-      left: -110px;
-      z-index: 2;
-      border: 2px solid red;
-      text-align: center; }
-      body main #map .event-infoWindow h3 {
-        margin: 0;
-        font-size: 18px; }
-      body main #map .event-infoWindow h4 {
-        font-size: 15px; }
-      body main #map .event-infoWindow .event-infoWindow-img {
-        width: 180px; }
-      body main #map .event-infoWindow .event-infoWindow-close-btn {
+      body main #map .event-infoWindow {
+        position: relative;
+        padding: 20px;
+        bottom: 310px;
+        background-color: white;
+        width: 200px;
+        max-height: 280px;
+        left: -110px;
+        z-index: 2;
+        border: 2px solid red;
+        text-align: center; }
+        body main #map .event-infoWindow h3 {
+          margin: 0;
+          font-size: 18px; }
+        body main #map .event-infoWindow h4 {
+          font-size: 15px; }
+        body main #map .event-infoWindow .event-infoWindow-img {
+          width: 180px; }
+        body main #map .event-infoWindow .event-infoWindow-close-btn {
+          position: absolute;
+          right: 10px;
+          top: 10px; }
+      body main #map .event-infoWindow:before {
+        content: "";
         position: absolute;
-        right: 10px;
-        top: 10px; }
-    body main #map .event-infoWindow:before {
-      content: "";
-      position: absolute;
-      bottom: -10px;
-      left: 118px;
-      width: 0;
-      height: 0;
-      border-top: 8px solid white;
-      border-right: 5px solid transparent;
-      border-left: 5px solid transparent; }
+        bottom: -10px;
+        left: 118px;
+        width: 0;
+        height: 0;
+        border-top: 8px solid white;
+        border-right: 5px solid transparent;
+        border-left: 5px solid transparent; }

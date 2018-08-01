@@ -78,8 +78,7 @@ class Map extends Component {
 				id='map' 
 				ref={ (mapElement) => this.mapElement = mapElement}
 				style={ {
-					height: '100%',
-					width: '100%'
+					height: '85vh'
 				}}>
 
 				{ fetchReady && 
