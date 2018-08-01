@@ -5,7 +5,6 @@ import { bindActionCreators } from 'redux';
 import { closeCloseUp } from './../actions/closeCloseUp';
 import { hoverOutList } from './../actions/hoverOutList';
 import { closeUp } from '../actions/closeUp';
-import { infoWindow } from './../actions/infoWindow';
 import { closeInfoWindow } from './../actions/closeInfoWindow';
 import { openMarkerWindow } from './../actions/openMarkerWindow';
 import MarkerEvent from './MarkerWindow';
@@ -21,7 +20,7 @@ class Place extends Component {
 
     const { closeCloseUp, eventInfo, showInfo, hoverId, hoverOut, closeUp, venue, closeInfoWindow, openMarkerWindow, markerEvents, markerWindowId, markerWindowOpen, closeMarkerWindow } = this.props;
 
-    const match = hoverId === this.props.venueId;
+    const match = ( hoverId || markerWindowId ) === this.props.venueId;
 
     const markerStyle = match ? 'map-marker map-marker-list-hovered bounce' : 'map-marker';
 
