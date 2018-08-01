@@ -6,12 +6,13 @@ import { hoverInList } from './../actions/hoverInList';
 import { hoverOutList } from './../actions/hoverOutList';
 import { infoWindow } from './../actions/infoWindow';
 import { closeMarkerWindow } from './../actions/closeMarkerWindow';
+import { toggleAside } from './../actions/toggleAside';
 
 class List extends Component {
 
     render() {
 
-        const { list, closeUp, hoverIn, hoverOut, infoOpen, infoWindow, closeMarkerWindow } = this.props;
+        const { list, closeUp, hoverIn, hoverOut, infoOpen, infoWindow, closeMarkerWindow, showAside, toggleAside } = this.props;
     
         if (list === 'no match') {
             return (
@@ -50,6 +51,7 @@ class List extends Component {
                             hoverIn(venueId);
                             infoWindow(event);
                             closeMarkerWindow();
+                            toggleAside(showAside);
                         } }
                     >
                         { event.name }
@@ -68,7 +70,8 @@ class List extends Component {
 
 function mapStateToProps(state) {
     return {
-        infoOpen: state.closeUp.value
+        infoOpen: state.closeUp.value,
+        showAside: state.showAside
     }
 }
 
@@ -78,7 +81,8 @@ function mapDispatchToProps(dispatch) {
         hoverIn: hoverInList,
         hoverOut: hoverOutList,
         infoWindow,
-        closeMarkerWindow
+        closeMarkerWindow,
+        toggleAside
     }, dispatch);
 }
 
