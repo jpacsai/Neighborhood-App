@@ -42,7 +42,7 @@ class Place extends Component {
                 } }
             ></div>
 
-            { (infoWindow && (this.props.lat === infoWindow.lat && this.props.lng === infoWindow.lng)) &&
+            { (infoWindow && ( infoWindow.events && this.props.lat === infoWindow.lat && this.props.lng === infoWindow.lng)) &&
             <div>
                 { infoWindow.events.map( event => {
                     return (
@@ -57,7 +57,6 @@ class Place extends Component {
                                 className='event-infoWindow-close-btn' 
                                 onClick={ () => {
                                     closeInfoWindow();
-                                    closeCloseUp(); 
                                     hoverOut();
                                 } }>X</button>
                         </div>

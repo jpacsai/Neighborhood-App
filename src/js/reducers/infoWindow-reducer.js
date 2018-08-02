@@ -11,7 +11,13 @@ export default function infoWindowReducer (state = null, action) {
             return openState;
         
         case 'CLOSE_INFOWINDOW':
-            return null;
+            const closeState = {
+                lat: action.lat,
+                lng: action.lng,
+                events: null
+            }
+
+            return closeState;
 
         default:
             return state
