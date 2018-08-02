@@ -85,17 +85,15 @@ class Map extends Component {
 					>
 					
 					{ (fetchReady && venues ) && venues.map( (venue) => {
-
-							return (
-								<Place 
-									key={ venue.venueName }
-									lat={ venue.lat }
-									lng={ venue.lng }
-									text={ venue.venueName }
-									venueId={ venue.venueId }
-									venue={ venue }
-								/>
-							)
+						return (
+							<Place 
+								key={ venue.venueName }
+								lat={ venue.lat }
+								lng={ venue.lng }
+								// address= { }
+								venue={ venue }
+							/>
+						)
 					}) }
 
 					</GoogleMapReact>

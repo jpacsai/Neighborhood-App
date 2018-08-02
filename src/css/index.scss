@@ -271,12 +271,18 @@ body {
 
     .event-infoWindow {
       padding: 10px;
-      margin: 10px;
+      margin: 20px 20px 0;
       background-color: white;
       left: -110px;
       z-index: 2;
       border: 2px solid red;
       text-align: center;
+      width: 190px;
+      box-sizing: border-box;
+
+      .event-date {
+        margin: 0;
+      }
 
       h3 {
         margin: 0;

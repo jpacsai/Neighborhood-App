@@ -15,9 +15,9 @@ class Place extends Component {
 
   render() {
 
-    const { hoverId, venue, infoWindow, openInfoWindow, closeInfoWindow, highligthMarker_In, highligthMarker_Out, text } = this.props;
+    const { hoverId, venue, infoWindow, openInfoWindow, closeInfoWindow, highligthMarker_In, highligthMarker_Out } = this.props;
     
-    const markerStyle = hoverId === this.props.venueId ? 'map-marker map-marker-list-hovered bounce' : 'map-marker';
+    const markerStyle = hoverId === venue.venueId ? 'map-marker map-marker-list-hovered bounce' : 'map-marker';
 
     const place = {
         lat: venue.lat,
@@ -35,13 +35,14 @@ class Place extends Component {
                 className={ markerStyle }
                 onClick={ () => {
                     openInfoWindow(place, events);
-                    highligthMarker_In(this.props.venueId)
+                    highligthMarker_In(venue.venueId)
                 } }
             >{events.length}</div>
 
-            { (infoWindow && ( infoWindow.events && this.props.lat + 0.015 === infoWindow.lat && this.props.lng === infoWindow.lng)) &&
+            { (infoWindow && ( infoWindow.events && venue.lat + 0.015 === infoWindow.lat && venue.lng === infoWindow.lng)) &&
             <div className='infowindow-wrapper'>
-                <h4>{ text }</h4>
+                <h4>{ venue.venueName }</h4>
+                <p>{ venue.venueAddress }</p>
                 <button 
                     className='event-infoWindow-close-btn' 
                     onClick={ () => {
@@ -55,8 +56,9 @@ class Place extends Component {
                             className='event-infoWindow'
                             key={ event.name }
                         >
+                            <h2 className='event-date'>{ event.dates.start.localDate}</h2>
                             <h3>{ event.name}</h3>
-                            <img className='event-infoWindow-img' src={ event.images[5].url} alt='artist/event' />
+                            <img className='event-infoWindow-img' src={ event.images[2].url} alt='artist/event' />
                         </div>
                     )
                 }) }

@@ -189,12 +189,16 @@ body {
         background: -ms-linear-gradient(top, rgba(255, 255, 255, 0) 0%, white 100%); }
     body main .event-infoWindow {
       padding: 10px;
-      margin: 10px;
+      margin: 20px 20px 0;
       background-color: white;
       left: -110px;
       z-index: 2;
       border: 2px solid red;
-      text-align: center; }
+      text-align: center;
+      width: 190px;
+      box-sizing: border-box; }
+      body main .event-infoWindow .event-date {
+        margin: 0; }
       body main .event-infoWindow h3 {
         margin: 0;
         font-size: 18px; }

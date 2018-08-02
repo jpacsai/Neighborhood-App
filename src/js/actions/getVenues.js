@@ -7,16 +7,20 @@ export function getVenues(displayEvents) {
         if (ids.includes(eventVenueId) === false) {
             ids.push(eventVenueId);
 
-            const venueId = displayEvents[i]._embedded.venues[0].id;
-            const venueName = displayEvents[i]._embedded.venues[0].name;
-            const latitude = Number(displayEvents[i]._embedded.venues[0].location.latitude);
-			const longitude = Number(displayEvents[i]._embedded.venues[0].location.longitude);
+            const obj = displayEvents[i]._embedded.venues[0];
+
+            const venueId = obj.id;
+            const venueName = obj.name;
+            const latitude = Number(obj.location.latitude);
+            const longitude = Number(obj.location.longitude);
+            const venueAddress = obj.address.line1 + ', ' + obj.city.name + ', ' + obj.postalCode;
             
             const venueObj = {
                 venueId,
                 venueName,
                 lat: latitude,
                 lng: longitude,
+                venueAddress,
                 eventsArray : [displayEvents[i]]
             }
 
