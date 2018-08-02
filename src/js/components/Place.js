@@ -2,14 +2,10 @@ import React, {Component} from 'react';
 import shouldPureComponentUpdate from 'react-pure-render';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { closeCloseUp } from './../actions/closeCloseUp';
 import { hoverOutList } from './../actions/hoverOutList';
-import { closeUp } from '../actions/closeUp';
-import { closeInfoWindow } from './../actions/closeInfoWindow';
-import { openMarkerWindow } from './../actions/openMarkerWindow';
-import { closeMarkerWindow } from './../actions/closeMarkerWindow';
 import { openInfoWindow } from './../actions/infoWindow';
 import { hoverInList } from './../actions/hoverInList';
+import { closeInfoWindow } from './../actions/closeInfoWindow';
 
 class Place extends Component {
 
@@ -19,7 +15,7 @@ class Place extends Component {
 
   render() {
 
-    const { closeCloseUp, eventInfo, showInfo, hoverId, hoverOut, closeUp, venue, closeInfoWindow, openMarkerWindow, markerEvents, markerWindowId, markerWindowOpen, closeMarkerWindow, infoWindow, openInfoWindow, hoverIn } = this.props;
+    const { hoverId, hoverOut, venue, markerWindowId, infoWindow, openInfoWindow, closeInfoWindow, hoverIn } = this.props;
 
     const match = ( hoverId || markerWindowId ) === this.props.venueId;
 
@@ -75,24 +71,16 @@ class Place extends Component {
 
 function mapStateToProps(state) {
     return {
-        showInfo: state.closeUp.value,
         eventInfo: state.infoWindow,
         hoverId: state.hoverEvent,
-        markerWindowOpen: state.markerWindow.value,
-        markerEvents: state.markerWindow.eventsArr,
-        markerWindowId: state.markerWindow.markerVenue.venueId,
         infoWindow: state.infoWindow
     }
 }
 
 function mapDispatchToProps(dispatch) {
     return bindActionCreators({
-        closeCloseUp,
         hoverOut: hoverOutList,
-        closeUp,
         closeInfoWindow,
-        openMarkerWindow,
-        closeMarkerWindow,
         openInfoWindow,
         hoverIn: hoverInList
 	}, dispatch);

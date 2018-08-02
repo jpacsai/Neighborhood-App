@@ -12,10 +12,8 @@ import modalVisibilityReducer from './modalVisibility-reducer';
 import allVenuesReducer from './allVenues-reducer';
 import mapSizeReducer from './mapSize-reducer';
 import boundsReducer from './bounds-reducer';
-import closeUpReducer from './closeUp-reducer';
 import hoverListReducer from './hoverList-reducer';
 import infoWindowReducer from './infoWindow-reducer';
-import markerWindowReducer from './markerWindow-reducer';
 import toggleAsideReducer from './toggleAside-reducer';
 
 export default combineReducers({
@@ -34,10 +32,8 @@ export default combineReducers({
 	venues: venueReducer,
 	mapSize: mapSizeReducer,
 	bounds: boundsReducer,
-	closeUp: closeUpReducer,
 	hoverEvent: hoverListReducer,
 	infoWindow: infoWindowReducer,
-	markerWindow: markerWindowReducer,
 	showAside: toggleAsideReducer
 });
 
@@ -73,26 +69,10 @@ const store = {
 			lng: num
 		}
 	}
-	closeUp: {
-		value: boolean
-		lat: num
-		lng: num
-	}
 	infoWindow: {
 		lat: num
 		lng: num
 		events: []
-	}
-	
-	
-	obj // event 	obj
-	
-	
-	
-	markerWindow: {
-		value: boolean
-		venue: {}
-		eventsArr: []
 	}
 	showAside: boolean
 }

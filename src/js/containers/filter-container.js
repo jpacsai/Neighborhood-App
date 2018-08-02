@@ -3,13 +3,12 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import FilterModal from './../components/FilterModal';
 import { modalVisibility } from './../actions/modalVisibility';
-import { closeCloseUp } from './../actions/closeCloseUp';
 
 class FilterContainer extends Component {
 
     render() {
         
-        const { modalVisibility, modalVisible, closeCloseUp } = this.props;
+        const { modalVisibility, modalVisible } = this.props;
 
         return (
             <section className='filter-container'>
@@ -18,7 +17,6 @@ class FilterContainer extends Component {
                     type="button"
                     onClick={ () => {
                         modalVisibility(modalVisible);
-                        closeCloseUp();
                     } }>
                     Show Filters
                 </button>
@@ -36,8 +34,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
     return bindActionCreators({
-        modalVisibility,
-        closeCloseUp
+        modalVisibility
     }, dispatch);
 }
 

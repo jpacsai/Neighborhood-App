@@ -5,35 +5,22 @@ import { connect } from 'react-redux';
 import Place from './Place';
 import mapSize from './../actions/mapSize';
 import { fitBounds } from 'google-map-react/utils';
-import { closeCloseUp } from './../actions/closeCloseUp';
-import { openInfoWindow } from './../actions/infoWindow';
 
 class Map extends Component {
 	
 	componentDidMount() {
 
-		const { mapSize /*, closeCloseUp */} = this.props;
+		const { mapSize } = this.props;
 		const { mapElement } = this;
-
-		// mapElement.addEventListener('click', closeCloseUp);
-
 		
 		const width = mapElement.clientWidth;
 		const height = mapElement.clientHeight;
 		mapSize(width, height);
 	}
 
-	/*componentWillUnmount() {
-		const { closeCloseUp } = this.props;
-		const { mapElement } = this;
-
-		mapElement.removeEventListener('click', closeCloseUp);
-	}*/
-	
-
 	render() {
 
-		const { fetchReady, venues, mapNW, mapSE, mapwidth, mapheight, closeUp, infoWindow, closeUpLng } = this.props;
+		const { fetchReady, venues, mapNW, mapSE, mapwidth, mapheight, infoWindow } = this.props;
 
 		const size = {
 			width: mapwidth, // Map width in pixels
@@ -133,8 +120,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
     return bindActionCreators({
-		mapSize,
-		closeCloseUp
+		mapSize
 	}, dispatch);
 }
 

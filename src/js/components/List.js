@@ -1,18 +1,16 @@
 import React, { Component } from 'react';
-import { closeUp } from './../actions/closeUp';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { hoverInList } from './../actions/hoverInList';
 import { hoverOutList } from './../actions/hoverOutList';
 import { openInfoWindow } from './../actions/infoWindow';
-import { closeMarkerWindow } from './../actions/closeMarkerWindow';
 import { toggleAside } from './../actions/toggleAside';
 
 class List extends Component {
 
     render() {
 
-        const { list, closeUp, hoverIn, hoverOut, infoOpen, infoWindow, closeMarkerWindow, showAside, toggleAside, openInfoWindow } = this.props;
+        const { list, hoverIn, hoverOut, infoOpen, showAside, toggleAside, openInfoWindow } = this.props;
     
         if (list === 'no match') {
             return (
@@ -68,18 +66,15 @@ class List extends Component {
 
 function mapStateToProps(state) {
     return {
-        infoOpen: state.closeUp.value,
         showAside: state.showAside
     }
 }
 
 function mapDispatchToProps(dispatch) {
     return bindActionCreators({
-        closeUp,
         hoverIn: hoverInList,
         hoverOut: hoverOutList,
         openInfoWindow,
-        closeMarkerWindow,
         toggleAside
     }, dispatch);
 }
