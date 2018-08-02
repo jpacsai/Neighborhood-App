@@ -37,7 +37,7 @@ class Place extends Component {
                     openInfoWindow(place, events);
                     hoverIn(this.props.venueId)
                 } }
-            ></div>
+            >{events.length}</div>
 
             { (infoWindow && ( infoWindow.events && this.props.lat + 0.007 === infoWindow.lat && this.props.lng === infoWindow.lng)) &&
             <div>
@@ -49,7 +49,7 @@ class Place extends Component {
                         >
                             <h3>{ event.name}</h3>
                             <h4>{ event._embedded.venues[0].name}</h4>
-                            <img className='event-infoWindow-img' src={ event.images[5].url} alt='Photo of the artist/event' />
+                            <img className='event-infoWindow-img' src={ event.images[5].url} alt='artist/event' />
                             <button 
                                 className='event-infoWindow-close-btn' 
                                 onClick={ () => {

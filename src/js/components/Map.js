@@ -58,7 +58,7 @@ class Map extends Component {
 			lng: infoWindow.lng
 		} : mapBounds.center;
 
-		const zoom = infoWindow ? 13 : mapBounds.zoom;
+		const zoom = !infoWindow ? mapBounds.zoom : 13;
 
 		return (
 			// Important! Always set the container height explicitly
@@ -67,7 +67,8 @@ class Map extends Component {
 				ref={ (mapElement) => this.mapElement = mapElement}
 				style={ {
 					height: '85vh'
-				}}>
+				} }
+			>
 
 				{ fetchReady && 
 
