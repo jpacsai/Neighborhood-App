@@ -10,7 +10,7 @@ class List extends Component {
 
     render() {
 
-        const { list, hoverIn, hoverOut, infoOpen, showAside, toggleAside, openInfoWindow } = this.props;
+        const { list, hoverIn, hoverOut, showAside, toggleAside, openInfoWindow, infoWindow } = this.props;
     
         if (list === 'no match') {
             return (
@@ -35,12 +35,12 @@ class List extends Component {
                         key={ event.id }
                         className='event'
                         onMouseEnter={ () => { 
-                            if (infoOpen === false) {
+                            if (infoWindow === null) {
                                 hoverIn(venueId)
                             }
                         } }
                         onMouseLeave={ () => { 
-                            if (infoOpen === false) {
+                            if (infoWindow === null) {
                                 hoverOut()
                             }
                         } }
@@ -66,7 +66,8 @@ class List extends Component {
 
 function mapStateToProps(state) {
     return {
-        showAside: state.showAside
+        showAside: state.showAside,
+        infoWindow: state.infoWindow
     }
 }
 
