@@ -8,6 +8,8 @@ import { closeUp } from '../actions/closeUp';
 import { closeInfoWindow } from './../actions/closeInfoWindow';
 import { openMarkerWindow } from './../actions/openMarkerWindow';
 import { closeMarkerWindow } from './../actions/closeMarkerWindow';
+import { openInfoWindow } from './../actions/infoWindow';
+import { hoverInList } from './../actions/hoverInList';
 
 class Place extends Component {
 
@@ -17,7 +19,7 @@ class Place extends Component {
 
   render() {
 
-    const { closeCloseUp, eventInfo, showInfo, hoverId, hoverOut, closeUp, venue, closeInfoWindow, openMarkerWindow, markerEvents, markerWindowId, markerWindowOpen, closeMarkerWindow, infoWindow } = this.props;
+    const { closeCloseUp, eventInfo, showInfo, hoverId, hoverOut, closeUp, venue, closeInfoWindow, openMarkerWindow, markerEvents, markerWindowId, markerWindowOpen, closeMarkerWindow, infoWindow, openInfoWindow, hoverIn } = this.props;
 
     const match = ( hoverId || markerWindowId ) === this.props.venueId;
 
@@ -28,6 +30,8 @@ class Place extends Component {
         lng: venue.lng
     }
 
+    const events = venue.eventsArray;
+
     return (
         <div
             onMouseEnter={() => { }}
@@ -36,9 +40,8 @@ class Place extends Component {
             <div 
                 className={ markerStyle }
                 onClick={ () => {
-                    closeUp(place);
-                    closeInfoWindow();
-                    openMarkerWindow(venue);
+                    openInfoWindow(place, events);
+                    hoverIn(this.props.venueId)
                 } }
             ></div>
 
@@ -89,7 +92,9 @@ function mapDispatchToProps(dispatch) {
         closeUp,
         closeInfoWindow,
         openMarkerWindow,
-        closeMarkerWindow
+        closeMarkerWindow,
+        openInfoWindow,
+        hoverIn: hoverInList
 	}, dispatch);
 }
 
