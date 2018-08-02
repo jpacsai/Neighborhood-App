@@ -15,7 +15,7 @@ class Place extends Component {
 
   render() {
 
-    const { hoverId, venue, infoWindow, openInfoWindow, closeInfoWindow, highligthMarker_In, highligthMarker_Out } = this.props;
+    const { hoverId, venue, infoWindow, openInfoWindow, closeInfoWindow, highligthMarker_In, highligthMarker_Out, text } = this.props;
     
     const markerStyle = hoverId === this.props.venueId ? 'map-marker map-marker-list-hovered bounce' : 'map-marker';
 
@@ -39,8 +39,16 @@ class Place extends Component {
                 } }
             >{events.length}</div>
 
-            { (infoWindow && ( infoWindow.events && this.props.lat + 0.007 === infoWindow.lat && this.props.lng === infoWindow.lng)) &&
-            <div>
+            { (infoWindow && ( infoWindow.events && this.props.lat + 0.015 === infoWindow.lat && this.props.lng === infoWindow.lng)) &&
+            <div className='infowindow-wrapper'>
+                <h4>{ text }</h4>
+                <button 
+                    className='event-infoWindow-close-btn' 
+                    onClick={ () => {
+                        closeInfoWindow();
+                        highligthMarker_Out();
+                    } }
+                >X</button>
                 { infoWindow.events.map( event => {
                     return (
                         <div 
@@ -48,18 +56,12 @@ class Place extends Component {
                             key={ event.name }
                         >
                             <h3>{ event.name}</h3>
-                            <h4>{ event._embedded.venues[0].name}</h4>
                             <img className='event-infoWindow-img' src={ event.images[5].url} alt='artist/event' />
-                            <button 
-                                className='event-infoWindow-close-btn' 
-                                onClick={ () => {
-                                    closeInfoWindow();
-                                    highligthMarker_Out();
-                                } }>X</button>
                         </div>
                     )
                 }) }
-                
+                { infoWindow.events.length > 1 &&
+                    <div className='infoWindow-gradient'></div> }
             </div> }
 
         </div>

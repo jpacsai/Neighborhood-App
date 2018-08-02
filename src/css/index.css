@@ -152,38 +152,54 @@ body {
     transform: translate3d(0, -20px, 0); }
   to {
     transform: translate3d(0, 3px, 0); } }
-      body main #map .event-infoWindow {
-        position: relative;
-        padding: 20px;
-        bottom: 310px;
-        background-color: white;
-        width: 200px;
-        max-height: 280px;
-        left: -110px;
-        z-index: 2;
-        border: 2px solid red;
-        text-align: center; }
-        body main #map .event-infoWindow h3 {
-          margin: 0;
-          font-size: 18px; }
-        body main #map .event-infoWindow h4 {
-          font-size: 15px; }
-        body main #map .event-infoWindow .event-infoWindow-img {
-          width: 180px; }
-        body main #map .event-infoWindow .event-infoWindow-close-btn {
-          position: absolute;
-          right: 10px;
-          top: 10px; }
-      body main #map .event-infoWindow:before {
-        content: "";
-        position: absolute;
-        bottom: -10px;
-        left: 118px;
-        width: 0;
-        height: 0;
-        border-top: 8px solid white;
-        border-right: 5px solid transparent;
-        border-left: 5px solid transparent; }
+    body main .infowindow-wrapper {
+      height: 300px;
+      left: -115px;
+      bottom: 385px;
+      box-sizing: border-box;
+      flex-direction: column;
+      align-items: center;
+      display: flex;
+      position: relative;
+      width: 230px;
+      background-color: yellow;
+      overflow: scroll;
+      overflow-x: hidden;
+      z-index: 3; }
+      body main .infowindow-wrapper h4 {
+        font-size: 15px;
+        width: 60%;
+        text-align: center;
+        margin-bottom: 0; }
+      body main .infowindow-wrapper .event-infoWindow-close-btn {
+        position: fixed;
+        right: -100px;
+        z-index: 5;
+        margin-top: 15px; }
+      body main .infowindow-wrapper .infoWindow-gradient {
+        width: 100%;
+        min-height: 35px;
+        bottom: 0px;
+        z-index: 3;
+        position: sticky;
+        display: block;
+        background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, white 100%);
+        background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, white 100%);
+        background: -moz-linear-gradient(top, rgba(255, 255, 255, 0) 0%, white 100%);
+        background: -ms-linear-gradient(top, rgba(255, 255, 255, 0) 0%, white 100%); }
+    body main .event-infoWindow {
+      padding: 10px;
+      margin: 10px;
+      background-color: white;
+      left: -110px;
+      z-index: 2;
+      border: 2px solid red;
+      text-align: center; }
+      body main .event-infoWindow h3 {
+        margin: 0;
+        font-size: 18px; }
+      body main .event-infoWindow .event-infoWindow-img {
+        width: 150px; }
 
 /*
         .filter-modal {

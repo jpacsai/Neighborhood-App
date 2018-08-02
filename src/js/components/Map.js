@@ -53,17 +53,20 @@ class Map extends Component {
 		
 		const mapBounds = fitBounds(bounds, size)
 
-		const center = infoWindow ? {
+		const center = infoWindow.value === true ? {
 			lat: infoWindow.lat,
 			lng: infoWindow.lng
 		} : mapBounds.center;
 
-		const zoom = !infoWindow ? mapBounds.zoom : 13;
+		const zoom = infoWindow.value === false ? mapBounds.zoom : 13;
+
+		const gesture = infoWindow.value ? 'none' : 'auto';
 
 		return (
 			// Important! Always set the container height explicitly
 			<div 
 				id='map' 
+				
 				ref={ (mapElement) => this.mapElement = mapElement}
 				style={ {
 					height: '85vh'
@@ -73,6 +76,7 @@ class Map extends Component {
 				{ fetchReady && 
 
 					<GoogleMapReact
+						options={ { gestureHandling:  gesture } }
 						bootstrapURLKeys={{
 								key: 'AIzaSyA5ivLlpxg-AwsOTPELxcuO1zQ64Vo6yRo'
 						}}

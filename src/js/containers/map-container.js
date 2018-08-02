@@ -4,7 +4,7 @@ import Map from '../components/Map';
 class MapContainer extends Component {
     render() {
         return (
-            <Map />
+            <Map options={{gestureHandling: 'cooperative'}}/>
         )
     }
 }
