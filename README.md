@@ -74,15 +74,19 @@
    - [x] add btn to close it
 - [x] make it responsive
 - [x] animate marker when it's clicked
+- [x] remove zooming out when infowindow is closed
+- [x] refactor: simplify zoom + info/marker window actions
+~~fix: zoom function doesn't when work after zoom manually changed~~
 ***
+- [ ] remove unnecessary code related to deprecated closup actions
 - [ ] in mobile view make infowindow a modal
 - [ ] add style to relevant events in list when infowindow is open
 - [ ] refactor hoverIn function
-- [ ] fix: zoom function doesn't when work after zoom manually changed
 - [ ] add btn to event infowindow for all events at that venue (marker infowindow)
 - [ ] error handling
 - [ ] choose color palette
 - [ ] style page
+   - [ ] style map
    - [ ] grid in infowindow
    - [ ] fix css on infowindow size
 - [ ] a11y: 
