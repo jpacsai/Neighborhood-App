@@ -7,7 +7,6 @@ import { hoverOutList } from './../actions/hoverOutList';
 import { closeUp } from '../actions/closeUp';
 import { closeInfoWindow } from './../actions/closeInfoWindow';
 import { openMarkerWindow } from './../actions/openMarkerWindow';
-import MarkerEvent from './MarkerWindow';
 import { closeMarkerWindow } from './../actions/closeMarkerWindow';
 
 class Place extends Component {
@@ -18,7 +17,7 @@ class Place extends Component {
 
   render() {
 
-    const { closeCloseUp, eventInfo, showInfo, hoverId, hoverOut, closeUp, venue, closeInfoWindow, openMarkerWindow, markerEvents, markerWindowId, markerWindowOpen, closeMarkerWindow } = this.props;
+    const { closeCloseUp, eventInfo, showInfo, hoverId, hoverOut, closeUp, venue, closeInfoWindow, openMarkerWindow, markerEvents, markerWindowId, markerWindowOpen, closeMarkerWindow, infoWindow } = this.props;
 
     const match = ( hoverId || markerWindowId ) === this.props.venueId;
 
@@ -43,38 +42,29 @@ class Place extends Component {
                 } }
             ></div>
 
-            { ((showInfo && eventInfo) && (this.props.venueId === eventInfo._embedded.venues[0].id)) &&
-            <div className='event-infoWindow'>
-                <h3>{ eventInfo.name}</h3>
-                <h4>{ eventInfo._embedded.venues[0].name}</h4>
-                <img className='event-infoWindow-img' src={ eventInfo.images[5].url} alt='Photo of the artist/event' />
-                <button 
-                    className='event-infoWindow-close-btn' 
-                    onClick={ () => {
-                        closeCloseUp(place); 
-                        hoverOut();
-                    } }>X</button>
-            </div> }
-
-            { (markerWindowOpen && (this.props.venueId === markerWindowId)) &&
-                <div className='event-infoWindow'>
-                <h3>'Title'</h3>
+            { (infoWindow && (this.props.lat === infoWindow.lat && this.props.lng === infoWindow.lng)) &&
+            <div>
+                { infoWindow.events.map( event => {
+                    return (
+                        <div 
+                            className='event-infoWindow'
+                            key={ event.name }
+                        >
+                            <h3>{ event.name}</h3>
+                            <h4>{ event._embedded.venues[0].name}</h4>
+                            <img className='event-infoWindow-img' src={ event.images[5].url} alt='Photo of the artist/event' />
+                            <button 
+                                className='event-infoWindow-close-btn' 
+                                onClick={ () => {
+                                    closeInfoWindow();
+                                    closeCloseUp(); 
+                                    hoverOut();
+                                } }>X</button>
+                        </div>
+                    )
+                }) }
                 
-                <ul>
-                    { markerEvents.map( event => {
-                        return (
-                            <MarkerEvent key={event.id} event={ event } />
-                        )
-                    })}
-                </ul>
-                <button 
-                    className='event-infoWindow-close-btn' 
-                    onClick={ () => {
-                        closeMarkerWindow();
-                        closeCloseUp(place);
-                    } }>X</button>
             </div> }
-
 
         </div>
     );
@@ -88,7 +78,8 @@ function mapStateToProps(state) {
         hoverId: state.hoverEvent,
         markerWindowOpen: state.markerWindow.value,
         markerEvents: state.markerWindow.eventsArr,
-        markerWindowId: state.markerWindow.markerVenue.venueId
+        markerWindowId: state.markerWindow.markerVenue.venueId,
+        infoWindow: state.infoWindow
     }
 }
 

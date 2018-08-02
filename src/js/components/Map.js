@@ -6,6 +6,7 @@ import Place from './Place';
 import mapSize from './../actions/mapSize';
 import { fitBounds } from 'google-map-react/utils';
 import { closeCloseUp } from './../actions/closeCloseUp';
+import { openInfoWindow } from './../actions/infoWindow';
 
 class Map extends Component {
 	
@@ -32,7 +33,7 @@ class Map extends Component {
 
 	render() {
 
-		const { fetchReady, venues, mapNW, mapSE, mapwidth, mapheight, closeUp, closeUpLat, closeUpLng } = this.props;
+		const { fetchReady, venues, mapNW, mapSE, mapwidth, mapheight, closeUp, infoWindow, closeUpLng } = this.props;
 
 		const size = {
 			width: mapwidth, // Map width in pixels
@@ -65,12 +66,17 @@ class Map extends Component {
 		
 		const mapBounds = fitBounds(bounds, size)
 
-		const center = closeUp ? {
-			lat: closeUpLat,
-			lng: closeUpLng
+		const center = infoWindow ? {
+			lat: infoWindow.lat,
+			lng: infoWindow.lng
 		} : mapBounds.center;
 
-		const zoom = closeUp ? 13 : mapBounds.zoom;
+		if (infoWindow) {
+			console.log('new center', center)
+		}
+		
+
+		const zoom = infoWindow ? 13 : mapBounds.zoom;
 
 		return (
 			// Important! Always set the container height explicitly
@@ -121,9 +127,7 @@ function mapStateToProps(state) {
 		mapheight: state.mapSize.height,
 		mapNW: state.bounds.nw,
 		mapSE: state.bounds.se,
-		closeUp: state.closeUp.value,
-		closeUpLat: state.closeUp.lat,
-		closeUpLng: state.closeUp.lng,
+		infoWindow: state.infoWindow
     }
 }
 

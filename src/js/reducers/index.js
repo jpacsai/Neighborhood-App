@@ -78,7 +78,17 @@ const store = {
 		lat: num
 		lng: num
 	}
-	infoWindow: obj // event 	obj
+	infoWindow: {
+		lat: num
+		lng: num
+		events: []
+	}
+	
+	
+	obj // event 	obj
+	
+	
+	
 	markerWindow: {
 		value: boolean
 		venue: {}

@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { hoverInList } from './../actions/hoverInList';
 import { hoverOutList } from './../actions/hoverOutList';
-import { infoWindow } from './../actions/infoWindow';
+import { openInfoWindow } from './../actions/infoWindow';
 import { closeMarkerWindow } from './../actions/closeMarkerWindow';
 import { toggleAside } from './../actions/toggleAside';
 
@@ -12,7 +12,7 @@ class List extends Component {
 
     render() {
 
-        const { list, closeUp, hoverIn, hoverOut, infoOpen, infoWindow, closeMarkerWindow, showAside, toggleAside } = this.props;
+        const { list, closeUp, hoverIn, hoverOut, infoOpen, infoWindow, closeMarkerWindow, showAside, toggleAside, openInfoWindow } = this.props;
     
         if (list === 'no match') {
             return (
@@ -47,10 +47,8 @@ class List extends Component {
                             }
                         } }
                         onClick={ () => {
-                            closeUp(place);
                             hoverIn(venueId);
-                            infoWindow(event);
-                            closeMarkerWindow();
+                            openInfoWindow(place, [event]);
                             toggleAside(showAside);
                         } }
                     >
@@ -80,7 +78,7 @@ function mapDispatchToProps(dispatch) {
         closeUp,
         hoverIn: hoverInList,
         hoverOut: hoverOutList,
-        infoWindow,
+        openInfoWindow,
         closeMarkerWindow,
         toggleAside
     }, dispatch);
