@@ -40,7 +40,7 @@ class List extends Component {
                             }
                         } }
                         onMouseLeave={ () => { 
-                            if (infoWindow === null) {
+                            if (infoWindow === null || infoWindow.events === null) {
                                 highligthMarker_Out()
                             }
                         } }
