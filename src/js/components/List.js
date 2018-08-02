@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { hoverInList } from './../actions/hoverInList';
-import { hoverOutList } from './../actions/hoverOutList';
+import { highligthMarker_In } from './../actions/highligthMarker_In';
+import { highligthMarker_Out } from './../actions/highligthMarker_Out';
 import { openInfoWindow } from './../actions/infoWindow';
 import { toggleAside } from './../actions/toggleAside';
 
@@ -10,7 +10,7 @@ class List extends Component {
 
     render() {
 
-        const { list, hoverIn, hoverOut, showAside, toggleAside, openInfoWindow, infoWindow } = this.props;
+        const { list, highligthMarker_In, highligthMarker_Out, showAside, toggleAside, openInfoWindow, infoWindow } = this.props;
     
         if (list === 'no match') {
             return (
@@ -36,16 +36,16 @@ class List extends Component {
                         className='event'
                         onMouseEnter={ () => { 
                             if (infoWindow === null) {
-                                hoverIn(venueId)
+                                highligthMarker_In(venueId)
                             }
                         } }
                         onMouseLeave={ () => { 
                             if (infoWindow === null) {
-                                hoverOut()
+                                highligthMarker_Out()
                             }
                         } }
                         onClick={ () => {
-                            hoverIn(venueId);
+                            highligthMarker_In(venueId);
                             openInfoWindow(place, [event]);
                             toggleAside(showAside);
                         } }
@@ -73,8 +73,8 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
     return bindActionCreators({
-        hoverIn: hoverInList,
-        hoverOut: hoverOutList,
+        highligthMarker_In,
+        highligthMarker_Out,
         openInfoWindow,
         toggleAside
     }, dispatch);

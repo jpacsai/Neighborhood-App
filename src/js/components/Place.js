@@ -2,9 +2,9 @@ import React, {Component} from 'react';
 import shouldPureComponentUpdate from 'react-pure-render';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { hoverOutList } from './../actions/hoverOutList';
+import { highligthMarker_Out } from './../actions/highligthMarker_Out';
 import { openInfoWindow } from './../actions/infoWindow';
-import { hoverInList } from './../actions/hoverInList';
+import { highligthMarker_In } from './../actions/highligthMarker_In';
 import { closeInfoWindow } from './../actions/closeInfoWindow';
 
 class Place extends Component {
@@ -15,7 +15,7 @@ class Place extends Component {
 
   render() {
 
-    const { hoverId, hoverOut, venue, infoWindow, openInfoWindow, closeInfoWindow, hoverIn } = this.props;
+    const { hoverId, venue, infoWindow, openInfoWindow, closeInfoWindow, highligthMarker_In, highligthMarker_Out } = this.props;
     
     const markerStyle = hoverId === this.props.venueId ? 'map-marker map-marker-list-hovered bounce' : 'map-marker';
 
@@ -35,7 +35,7 @@ class Place extends Component {
                 className={ markerStyle }
                 onClick={ () => {
                     openInfoWindow(place, events);
-                    hoverIn(this.props.venueId)
+                    highligthMarker_In(this.props.venueId)
                 } }
             >{events.length}</div>
 
@@ -54,7 +54,7 @@ class Place extends Component {
                                 className='event-infoWindow-close-btn' 
                                 onClick={ () => {
                                     closeInfoWindow();
-                                    hoverOut();
+                                    highligthMarker_Out();
                                 } }>X</button>
                         </div>
                     )
@@ -77,10 +77,10 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
     return bindActionCreators({
-        hoverOut: hoverOutList,
+        highligthMarker_Out,
         closeInfoWindow,
         openInfoWindow,
-        hoverIn: hoverInList
+        highligthMarker_In
 	}, dispatch);
 }
 
