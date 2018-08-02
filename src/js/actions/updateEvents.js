@@ -68,6 +68,10 @@ function addDate(list) {
     const updatedList = list.map(event => { 
         const date = event.dates.start.localDate;
         const obj = new Date(date.slice(0,4), parseInt(date.slice(5, 7)-1, 10), parseInt(date.slice(8,10), 10));
+
+        const display = String(obj).slice(0,15);
+
+        event.dates.start.displayDate = display;
         event.dates.start.dateObj = obj;
         return event;
     });
