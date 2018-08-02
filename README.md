@@ -79,10 +79,13 @@
 ~~fix: zoom function doesn't when work after zoom manually changed~~
 ***
 - [ ] remove unnecessary code related to deprecated closup actions
+- [ ] test infowindow actions
 - [ ] in mobile view make infowindow a modal
 - [ ] add style to relevant events in list when infowindow is open
 - [ ] refactor hoverIn function
 - [ ] add btn to event infowindow for all events at that venue (marker infowindow)
+- [ ] add event counter to infowindow when marker is clicked
+- [ ] style infowindow to accommodate events list
 - [ ] error handling
 - [ ] choose color palette
 - [ ] style page
