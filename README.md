@@ -77,15 +77,19 @@
 - [x] remove zooming out when infowindow is closed
 - [x] refactor: simplify zoom + info/marker window actions
 ~~fix: zoom function doesn't when work after zoom manually changed~~
+- [x] remove unnecessary code related to deprecated closup actions
 ***
-- [ ] remove unnecessary code related to deprecated closup actions
-- [ ] test infowindow actions
-- [ ] in mobile view make infowindow a modal
-- [ ] add style to relevant events in list when infowindow is open
-- [ ] refactor hoverIn function
-- [ ] add btn to event infowindow for all events at that venue (marker infowindow)
-- [ ] add event counter to infowindow when marker is clicked
-- [ ] style infowindow to accommodate events list
+- [ ] fix: highlighting of markers when event list is hovered
+- [ ] feat: offset map center (so the whole infowindow is on screen)
+- [ ] test: infowindow actions
+- [ ] style: in mobile view make infowindow a modal
+- [ ] style: add style to relevant events in list when infowindow is open
+- [ ] refactor: hoverIn function
+- [ ] feat: add btn to event infowindow for all events at that venue (marker infowindow)
+- [ ] feat: add event counter to infowindow when marker is clicked
+- [ ] style: infowindow to accommodate events list
+- [ ] feat: click on map zooms out map (but drag doesn't!)
+***
 - [ ] error handling
 - [ ] choose color palette
 - [ ] style page
