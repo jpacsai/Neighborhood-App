@@ -87,6 +87,8 @@
 - [x] fix: set gestureHandling so infoWindow is scrollable
 - [x] style: don't show gradient in infowindow when there's only 1 event
 ***
+- [ ] feat: add data to infowindow
+- [ ] fix: close infowindow when side menu is opened
 - [ ] test: infowindow actions
 ***
 - [ ] error handling
