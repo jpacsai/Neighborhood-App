@@ -82,14 +82,12 @@
 - [x] feat: offset map center (so the whole infowindow is on screen)
 - [x] refactor: hoverIn function
 - [x] fix: placing of markers when animated
+- [x] fix: hover list doesn't work after infowindow is closed
+- [x] style: infowindow to accommodate events list
+- [x] fix: set gestureHandling so infoWindow is scrollable
+- [x] style: don't show gradient in infowindow when there's only 1 event
 ***
-- [ ] fix: hover list doesn't work after infowindow is closed
 - [ ] test: infowindow actions
-- [ ] style: in mobile view make infowindow a modal
-- [ ] style: add style to relevant events in list when infowindow is open
-- [ ] feat: add btn to event infowindow for all events at that venue (marker infowindow)
-- [ ] feat: add event counter to infowindow when marker is clicked
-- [ ] style: infowindow to accommodate events list
 ***
 - [ ] error handling
 - [ ] choose color palette
