@@ -236,8 +236,6 @@ body {
       position: relative;
       width: 230px;
       background-color: yellow;
-      overflow: scroll;
-      overflow-x: hidden;
       z-index: 3;
       
       h4 {
@@ -248,7 +246,8 @@ body {
       }
 
       .infoWindow-address {
-        margin-bottom: 0;
+        width: 80%;
+        text-align: center;
       }
       
       .infoWindow-close-btn {
@@ -272,32 +271,37 @@ body {
       }
     }
 
-    .infoWindow-event {
-      padding: 10px;
-      margin: 20px 20px 0;
-      background-color: white;
-      left: -110px;
-      z-index: 2;
-      border: 2px solid red;
-      text-align: center;
-      width: 190px;
-      box-sizing: border-box;
+    .infoWindow-event-container {
+      overflow: scroll;
+      overflow-x: hidden;
+      width: 100%;
 
-      .infoWindow-date {
-        margin: 0;
+      .infoWindow-event {
+        padding: 10px;
+        margin: 0 20px 17px;
+        background-color: white;
+        left: -110px;
+        z-index: 2;
+        border: 2px solid red;
+        text-align: center;
+        width: 190px;
+        box-sizing: border-box;
+  
+        .infoWindow-date {
+          margin: 0;
+        }
+  
+        h3 {
+          margin: 0;
+          font-size: 18px;
+        }
+  
+        .infoWindow-img {
+          width: 150px;
+        }
       }
-
-      h3 {
-        margin: 0;
-        font-size: 18px;
-      }
-
-      .infoWindow-img {
-        width: 150px;
-      }
-
-      
     }
+
   }
 }
 

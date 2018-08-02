@@ -163,8 +163,6 @@ body {
       position: relative;
       width: 230px;
       background-color: yellow;
-      overflow: scroll;
-      overflow-x: hidden;
       z-index: 3; }
       body main .infoWindow-wrapper h4 {
         font-size: 15px;
@@ -172,7 +170,8 @@ body {
         text-align: center;
         margin-bottom: 0; }
       body main .infoWindow-wrapper .infoWindow-address {
-        margin-bottom: 0; }
+        width: 80%;
+        text-align: center; }
       body main .infoWindow-wrapper .infoWindow-close-btn {
         position: fixed;
         right: -100px;
@@ -189,23 +188,27 @@ body {
         background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, white 100%);
         background: -moz-linear-gradient(top, rgba(255, 255, 255, 0) 0%, white 100%);
         background: -ms-linear-gradient(top, rgba(255, 255, 255, 0) 0%, white 100%); }
-    body main .infoWindow-event {
-      padding: 10px;
-      margin: 20px 20px 0;
-      background-color: white;
-      left: -110px;
-      z-index: 2;
-      border: 2px solid red;
-      text-align: center;
-      width: 190px;
-      box-sizing: border-box; }
-      body main .infoWindow-event .infoWindow-date {
-        margin: 0; }
-      body main .infoWindow-event h3 {
-        margin: 0;
-        font-size: 18px; }
-      body main .infoWindow-event .infoWindow-img {
-        width: 150px; }
+    body main .infoWindow-event-container {
+      overflow: scroll;
+      overflow-x: hidden;
+      width: 100%; }
+      body main .infoWindow-event-container .infoWindow-event {
+        padding: 10px;
+        margin: 0 20px 17px;
+        background-color: white;
+        left: -110px;
+        z-index: 2;
+        border: 2px solid red;
+        text-align: center;
+        width: 190px;
+        box-sizing: border-box; }
+        body main .infoWindow-event-container .infoWindow-event .infoWindow-date {
+          margin: 0; }
+        body main .infoWindow-event-container .infoWindow-event h3 {
+          margin: 0;
+          font-size: 18px; }
+        body main .infoWindow-event-container .infoWindow-event .infoWindow-img {
+          width: 150px; }
 
 /*
         .filter-modal {

@@ -50,6 +50,7 @@ class Place extends Component {
                         highligthMarker_Out();
                     } }
                 >X</button>
+                <div className='infoWindow-event-container'>
                 { infoWindow.events.map( event => {
                     const gen = event.classifications[0].genre.name;
                     const subGen = event.classifications[0].subType.name;
@@ -63,11 +64,14 @@ class Place extends Component {
                             <h3>{ event.name}</h3>
                             { gen !== null && <p>{ genre }</p> }
                             <img className='infoWindow-img' src={ event.images[2].url} alt='artist/event' />
+                            <a>Info</a>
                         </div>
                     )
                 }) }
                 { infoWindow.events.length > 1 &&
                     <div className='infoWindow-gradient'></div> }
+                </div>
+                
             </div> }
 
         </div>
