@@ -225,7 +225,7 @@ body {
       }
     }
 
-    .infowindow-wrapper {
+    .infoWindow-wrapper {
       height: 300px;
       left: -115px;
       bottom: 385px;
@@ -247,8 +247,11 @@ body {
         margin-bottom: 0;
       }
 
+      .infoWindow-address {
+        margin-bottom: 0;
+      }
       
-      .event-infoWindow-close-btn {
+      .infoWindow-close-btn {
         position: fixed;
         right: -100px;
         z-index: 5;
@@ -269,7 +272,7 @@ body {
       }
     }
 
-    .event-infoWindow {
+    .infoWindow-event {
       padding: 10px;
       margin: 20px 20px 0;
       background-color: white;
@@ -280,7 +283,7 @@ body {
       width: 190px;
       box-sizing: border-box;
 
-      .event-date {
+      .infoWindow-date {
         margin: 0;
       }
 
@@ -289,7 +292,7 @@ body {
         font-size: 18px;
       }
 
-      .event-infoWindow-img {
+      .infoWindow-img {
         width: 150px;
       }
 

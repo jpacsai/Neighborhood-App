@@ -40,25 +40,29 @@ class Place extends Component {
             >{events.length}</div>
 
             { (infoWindow && ( infoWindow.events && venue.lat + 0.015 === infoWindow.lat && venue.lng === infoWindow.lng)) &&
-            <div className='infowindow-wrapper'>
+            <div className='infoWindow-wrapper'>
                 <h4>{ venue.venueName }</h4>
-                <p>{ venue.venueAddress }</p>
+                <p className='infoWindow-address'>{ venue.venueAddress }</p>
                 <button 
-                    className='event-infoWindow-close-btn' 
+                    className='infoWindow-close-btn' 
                     onClick={ () => {
                         closeInfoWindow();
                         highligthMarker_Out();
                     } }
                 >X</button>
                 { infoWindow.events.map( event => {
+                    const gen = event.classifications[0].genre.name;
+                    const subGen = event.classifications[0].subType.name;
+                    const genre = gen === 'Undefined' ? (subGen === 'Undefined' ? null : subGen) : gen;
                     return (
                         <div 
-                            className='event-infoWindow'
+                            className='infoWindow-event'
                             key={ event.name }
                         >
-                            <h2 className='event-date'>{ event.dates.start.localDate}</h2>
+                            <h2 className='infoWindow-date'>{ event.dates.start.displayDate}</h2>
                             <h3>{ event.name}</h3>
-                            <img className='event-infoWindow-img' src={ event.images[2].url} alt='artist/event' />
+                            { gen !== null && <p>{ genre }</p> }
+                            <img className='infoWindow-img' src={ event.images[2].url} alt='artist/event' />
                         </div>
                     )
                 }) }
