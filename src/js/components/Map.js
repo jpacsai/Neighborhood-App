@@ -58,11 +58,6 @@ class Map extends Component {
 			lng: infoWindow.lng
 		} : mapBounds.center;
 
-		if (infoWindow) {
-			console.log('new center', center)
-		}
-		
-
 		const zoom = infoWindow ? 13 : mapBounds.zoom;
 
 		return (

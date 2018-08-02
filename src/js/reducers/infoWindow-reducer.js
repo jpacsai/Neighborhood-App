@@ -10,12 +10,11 @@ export default function infoWindowReducer (state = null, action) {
             console.log('infoWindow', openState);
             return openState;
         
-        case 'CLOSE_INFOWINDOW':
-            const closeState = {
-                lat: action.lat,
-                lng: action.lng,
-                events: null
-            }
+        case 'CLOSE_INFO_WINDOW':
+            const closeState = Object.assign({}, state);
+            closeState.events = null;
+        
+            console.log('close',closeState)
 
             return closeState;
 

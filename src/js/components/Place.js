@@ -15,11 +15,9 @@ class Place extends Component {
 
   render() {
 
-    const { hoverId, hoverOut, venue, markerWindowId, infoWindow, openInfoWindow, closeInfoWindow, hoverIn } = this.props;
-
-    const match = ( hoverId || markerWindowId ) === this.props.venueId;
-
-    const markerStyle = match ? 'map-marker map-marker-list-hovered bounce' : 'map-marker';
+    const { hoverId, hoverOut, venue, infoWindow, openInfoWindow, closeInfoWindow, hoverIn } = this.props;
+    
+    const markerStyle = hoverId === this.props.venueId ? 'map-marker map-marker-list-hovered bounce' : 'map-marker';
 
     const place = {
         lat: venue.lat,
@@ -41,7 +39,7 @@ class Place extends Component {
                 } }
             ></div>
 
-            { (infoWindow && ( infoWindow.events && this.props.lat === infoWindow.lat && this.props.lng === infoWindow.lng)) &&
+            { (infoWindow && ( infoWindow.events && this.props.lat + 0.007 === infoWindow.lat && this.props.lng === infoWindow.lng)) &&
             <div>
                 { infoWindow.events.map( event => {
                     return (
@@ -87,3 +85,26 @@ function mapDispatchToProps(dispatch) {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Place);
+
+/* ( infoWindow.events && this.props.lat === infoWindow.lat && this.props.lng === infoWindow.lng)) &&
+
+                { infoWindow.events.map( event => {
+                    return (
+                        <div 
+                            className='event-infoWindow'
+                            key={ event.name }
+                        >
+                            <h3>{ event.name}</h3>
+                            <h4>{ event._embedded.venues[0].name}</h4>
+                            <img className='event-infoWindow-img' src={ event.images[5].url} alt='artist/event' />
+                            <button 
+                                className='event-infoWindow-close-btn' 
+                                onClick={ () => {
+                                    closeInfoWindow();
+                                    hoverOut();
+                                } }>X</button>
+                        </div>
+                    )
+                }) }
+
+                */
