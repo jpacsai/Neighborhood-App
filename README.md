@@ -87,18 +87,20 @@
 - [x] fix: set gestureHandling so infoWindow is scrollable
 - [x] style: don't show gradient in infowindow when there's only 1 event
 ***
+- [ ] fix: when aside is open push and shrink map 
+- [ ] fix: fitbounds when filtering (1 location)
 - [ ] feat: add data to infowindow
 - [ ] fix: close infowindow when side menu is opened
 - [ ] test: infowindow actions
 ***
+- [ ] move infoWindow into a new component
 - [ ] error handling
-- [ ] choose color palette
+- [ ] fix: day picker styles messed up
 - [ ] style page
-   - [ ] style map
-   - [ ] grid in infowindow
-   - [ ] fix css on infowindow size
+   - [x] choose color palette
+   - [x] add color variables to sass
 - [ ] a11y: 
-   - [ ] focus list then capture it if needed
+   - [ ] focus eventlist then capture it if needed
    - [ ] aria labels
 - [ ] check ticketmaster page form API usage terms
 - [ ] add auto scroll upon filtering ( no idea :/ )
