@@ -2,7 +2,11 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif; }
+  font-family: sans-serif;
+  /* width */
+  /* Track */
+  /* Handle */
+  /* Handle on hover */ }
   body header {
     text-align: center;
     height: 15vh;
@@ -77,9 +81,9 @@ body {
             color: #001a26;
             background-color: whitesmoke; }
             body main aside .filter-container .filter-modal .filter-area .DayPicker .DayPicker-Day--today {
-              color: #EF7F0C; }
+              color: #ef7f0c; }
             body main aside .filter-container .filter-modal .filter-area .DayPicker .DayPicker-Day--selected {
-              background-color: #E5DE44;
+              background-color: #e5de44;
               color: #001a26; }
             body main aside .filter-container .filter-modal .filter-area .DayPicker .DayPicker-Day--disabled {
               color: grey; }
@@ -130,7 +134,7 @@ body {
           body main aside .event-list-container .event p {
             margin: 0; }
         body main aside .event-list-container .event:hover {
-          background-color: #EF7F0C; }
+          background-color: #ef7f0c; }
     body main .aside-show {
       left: 0; }
     body main .aside-hide {
@@ -145,7 +149,7 @@ body {
         top: -30px;
         width: 20px;
         height: 30px;
-        background: #E5DE44;
+        background: #e5de44;
         -webkit-clip-path: polygon(100% 75%, 50% 100%, 0 75%, 0 0, 50% 25%, 100% 0);
         clip-path: polygon(100% 75%, 50% 100%, 0 75%, 0 0, 50% 25%, 100% 0);
         border: 1px solid #001A26;
@@ -158,7 +162,7 @@ body {
         font-size: 15px; }
       body main .map .map-marker:hover,
       body main .map .map-marker-list-hovered {
-        background: #EF7F0C;
+        background: #ef7f0c;
         z-index: 2; }
       body main .map .bounce {
         animation: bounce 0.5s;
@@ -175,25 +179,30 @@ body {
       left: 280px;
       width: calc(100vw - 280px); }
     body main .infoWindow-wrapper {
-      height: 300px;
+      height: 338px;
       left: -115px;
-      bottom: 385px;
+      bottom: 400px;
       box-sizing: border-box;
       flex-direction: column;
       align-items: center;
       display: flex;
       position: relative;
       width: 230px;
-      background-color: whitesmoke;
-      z-index: 3; }
-      body main .infoWindow-wrapper h4 {
-        font-size: 15px;
+      background-color: #001a26;
+      color: whitesmoke;
+      z-index: 3;
+      border: 1px solid #e5de44; }
+      body main .infoWindow-wrapper .infoWindow-venue {
+        font-size: 17px;
         width: 60%;
         text-align: center;
-        margin-bottom: 0; }
-      body main .infoWindow-wrapper .infoWindow-address {
+        margin: 15px 0 0; }
+      body main .infoWindow-wrapper .infoWindow-venue-address {
         width: 80%;
-        text-align: center; }
+        text-align: center;
+        font-size: 14px;
+        margin: 5px 0;
+        color: #ababab; }
       body main .infoWindow-wrapper .infoWindow-close-btn {
         position: fixed;
         right: -100px;
@@ -202,40 +211,65 @@ body {
       body main .infoWindow-wrapper .infoWindow-gradient {
         width: 100%;
         min-height: 35px;
+        margin-top: -25px;
         bottom: 0px;
         z-index: 3;
         position: sticky;
         display: block;
         /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+41,ffffff+99&0+0,1+77 */
-        background: -moz-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.53) 41%, whitesmoke 77%, whitesmoke 99%);
+        background: -moz-linear-gradient(top, rgba(0, 26, 38, 0) 0%, rgba(0, 26, 255, 0.53) 41%, #001a26 77%, #001a26 99%);
         /* FF3.6-15 */
-        background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.53) 41%, whitesmoke 77%, whitesmoke 99%);
+        background: -webkit-linear-gradient(top, rgba(0, 26, 38, 0) 0%, rgba(0, 26, 38, 0.53) 41%, #001a26 77%, #001a26 99%);
         /* Chrome10-25,Safari5.1-6 */
-        background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.53) 41%, whitesmoke 77%, whitesmoke 99%);
+        background: linear-gradient(to bottom, rgba(0, 26, 38, 0) 0%, rgba(0, 26, 38, 0.53) 41%, #001a26 77%, #001a26 99%);
         /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 );
         /* IE6-9 */ }
     body main .infoWindow-event-container {
-      overflow: scroll;
-      overflow-x: hidden;
+      overflow-y: auto;
       width: 100%; }
       body main .infoWindow-event-container .infoWindow-event {
         padding: 10px;
         margin: 0 20px 17px;
-        background-color: whitesmoke;
+        background-color: #053752;
         left: -110px;
         z-index: 2;
-        border: 2px solid red;
         text-align: center;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: space-around;
+        height: 220px;
         width: 190px;
-        box-sizing: border-box; }
-        body main .infoWindow-event-container .infoWindow-event .infoWindow-date {
-          margin: 0; }
-        body main .infoWindow-event-container .infoWindow-event h3 {
+        box-sizing: border-box;
+        font-size: 16px; }
+        body main .infoWindow-event-container .infoWindow-event .infoWindow-event-date {
           margin: 0;
-          font-size: 18px; }
+          font-size: 18px;
+          font-weight: normal;
+          color: #ababab; }
+        body main .infoWindow-event-container .infoWindow-event .infoWindow-event-name {
+          margin: 0;
+          font-size: 18px;
+          color: whitesmoke; }
+        body main .infoWindow-event-container .infoWindow-event .infoWindow-event-genre {
+          margin: 0;
+          font-size: 14px;
+          color: #ababab; }
         body main .infoWindow-event-container .infoWindow-event .infoWindow-img {
           width: 150px; }
+        body main .infoWindow-event-container .infoWindow-event .infoWindow-link {
+          margin-top: 5px;
+          color: #e5de44;
+          font-size: 16px; }
+  body ::-webkit-scrollbar {
+    width: 10px; }
+  body ::-webkit-scrollbar-track {
+    background: #f1f1f1; }
+  body ::-webkit-scrollbar-thumb {
+    background: #888; }
+  body ::-webkit-scrollbar-thumb:hover {
+    background: #555; }
 
 /*
         .filter-modal {

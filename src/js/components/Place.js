@@ -41,8 +41,8 @@ class Place extends Component {
 
             { (infoWindow && ( infoWindow.events && venue.lat + 0.015 === infoWindow.lat && venue.lng === infoWindow.lng)) &&
             <div className='infoWindow-wrapper'>
-                <h4>{ venue.venueName }</h4>
-                <p className='infoWindow-address'>{ venue.venueAddress }</p>
+                <h4 className='infoWindow-venue'>{ venue.venueName }</h4>
+                <p className='infoWindow-venue-address'>{ venue.venueAddress }</p>
                 <button 
                     className='infoWindow-close-btn' 
                     onClick={ () => {
@@ -60,11 +60,11 @@ class Place extends Component {
                             className='infoWindow-event'
                             key={ event.name }
                         >
-                            <h2 className='infoWindow-date'>{ event.dates.start.displayDate}</h2>
-                            <h3>{ event.name}</h3>
-                            { gen !== null && <p>{ genre }</p> }
+                            <h2 className='infoWindow-event-date'>{ event.dates.start.displayDate}</h2>
+                            <h3 className='infoWindow-event-name'>{ event.name}</h3>
+                            { gen !== null && <p className='infoWindow-event-genre'>{ genre }</p> }
                             <img className='infoWindow-img' src={ event.images[2].url} alt='artist/event' />
-                            <a>Info</a>
+                            <a className='infoWindow-link' href={ event.url }>more info here</a>
                         </div>
                     )
                 }) }
