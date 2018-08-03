@@ -28,17 +28,14 @@ class App extends Component {
 				</header>
 
 				<nav>
-					<button 
-						className='aside-toggle-btn'
-						onClick={ () => {
-							if (!modalVisible) {
-								toggleAside(showAside);
-							}
-						}
-						}
-					>
-						<i className="fas fa-bars"></i>
-					</button>
+					{ !modalVisible && 
+						<button 
+							className='aside-toggle-btn'
+							onClick={ () => toggleAside(showAside) }
+						>
+							<i className="fas fa-bars"></i>
+						</button>
+					}
 				</nav>
 
 				<main>
