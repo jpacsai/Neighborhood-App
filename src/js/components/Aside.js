@@ -6,11 +6,13 @@ import List from './List';
 import { sortingEvents } from '../actions/sortingEvents';
 import { modalVisibility } from '../actions/modalVisibility';
 import FilterModal from './FilterModal';
+import { closeInfoWindow } from './../actions/closeInfoWindow';
+import { highligthMarker_Out } from './../actions/highligthMarker_Out';
 
 class Aside extends Component {
 
 	render() {
-		const { fetchReady, sortAction, displayList, showAside, modalVisibility, modalVisible } = this.props;
+		const { fetchReady, sortAction, displayList, showAside, modalVisibility, modalVisible, closeInfoWindow, highligthMarker_Out } = this.props;
 
 		const asideStyle = showAside ? 'aside-show' : 'aside-hide';
 
@@ -33,6 +35,8 @@ class Aside extends Component {
                                 type="button"
                                 onClick={ () => {
                                     modalVisibility(modalVisible);
+                                    closeInfoWindow();
+                                    highligthMarker_Out();
                                 } }>
                                 Show Filters
                             </button>
@@ -73,7 +77,9 @@ function mapDispatchToProps(dispatch) {
     return bindActionCreators({
 		loadData: loadData,
 		sortAction: sortingEvents,
-		modalVisibility
+        modalVisibility,
+        closeInfoWindow,
+        highligthMarker_Out
 	}, dispatch);
 }
 
