@@ -2,10 +2,11 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif; }
+  font-family: sans-serif;
+  background-color: #001a26; }
   body button,
   body input[type=submit] {
-    background-color: red;
+    background-color: #e5de44;
     border: none;
     padding: 10px;
     width: 40px;
@@ -48,7 +49,8 @@ main {
     color: whitesmoke;
     display: flex;
     flex-direction: column;
-    align-items: center; }
+    align-items: center;
+    transition: 0.3s ease-out; }
     main aside .aside-header {
       margin: 0;
       padding: 8px;
@@ -109,9 +111,10 @@ main {
       justify-content: space-around;
       align-items: center;
       padding: 0 20px 0 10px;
-      box-sizing: border-box; }
+      box-sizing: border-box;
+      margin-bottom: 10px; }
       main aside .event-control .event-control-counter {
-        margin: 0; }
+        margin: 0 0 10px; }
       main aside .event-control .event-control-btn-container {
         width: 100%;
         display: flex;
@@ -135,7 +138,7 @@ main {
       color: #001a26; }
     main aside .event {
       margin: 5px 0;
-      background-color: #ebe460;
+      background-color: whitesmoke;
       cursor: pointer;
       padding: 8px; }
       main aside .event .event-name {
@@ -145,11 +148,11 @@ main {
         font-weight: bold;
         color: #053752; }
     main aside .event:hover {
-      background-color: #ef7f0c; }
+      background-color: #e5de44; }
   main .aside-show {
     left: 0; }
   main .aside-hide {
-    left: -500px; }
+    left: -290px; }
   main .map {
     width: 100%;
     position: absolute;
@@ -160,12 +163,21 @@ main {
       top: -30px;
       width: 20px;
       height: 30px;
-      background: #e5de44;
       -webkit-clip-path: polygon(100% 75%, 50% 100%, 0 75%, 0 0, 50% 25%, 100% 0);
       clip-path: polygon(100% 75%, 50% 100%, 0 75%, 0 0, 50% 25%, 100% 0);
-      border: 1px solid #001A26;
       cursor: pointer;
       color: #001A26;
+      /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#e5de44+0,e5de44+51,ef7f0c+100 */
+      background: #e5de44;
+      /* Old browsers */
+      background: -moz-linear-gradient(top, #e5de44 0%, #e5de44 51%, #ef7f0c 100%);
+      /* FF3.6-15 */
+      background: -webkit-linear-gradient(top, #e5de44 0%, #e5de44 51%, #ef7f0c 100%);
+      /* Chrome10-25,Safari5.1-6 */
+      background: linear-gradient(to bottom, #e5de44 0%, #e5de44 51%, #ef7f0c 100%);
+      /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e5de44', endColorstr='#ef7f0c',GradientType=0 );
+      /* IE6-9 */
       display: flex;
       align-items: center;
       justify-content: center;
@@ -190,9 +202,9 @@ main {
     left: 280px;
     width: calc(100vw - 280px); }
   main .infoWindow-wrapper {
-    height: 338px;
+    height: 358px;
     left: -115px;
-    bottom: 400px;
+    bottom: 413px;
     box-sizing: border-box;
     flex-direction: column;
     align-items: center;
@@ -216,9 +228,11 @@ main {
       color: #ababab; }
     main .infoWindow-wrapper .infoWindow-close-btn {
       position: fixed;
-      right: -100px;
+      right: -107px;
       z-index: 5;
-      margin-top: 15px; }
+      margin-top: 7px;
+      height: 30px;
+      width: 30px; }
     main .infoWindow-wrapper .infoWindow-gradient {
       width: 100%;
       min-height: 35px;
@@ -250,13 +264,13 @@ main {
       align-items: center;
       flex-direction: column;
       justify-content: space-around;
-      height: 220px;
+      height: 240px;
       width: 190px;
       box-sizing: border-box;
       font-size: 16px; }
       main .infoWindow-event-container .infoWindow-event .infoWindow-event-name {
         margin: 0;
-        font-size: 18px;
+        font-size: 17px;
         color: whitesmoke; }
       main .infoWindow-event-container .infoWindow-event .infoWindow-event-date {
         margin: 0;

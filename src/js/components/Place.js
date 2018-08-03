@@ -37,7 +37,9 @@ class Place extends Component {
                     openInfoWindow(place, events);
                     highligthMarker_In(venue.venueId)
                 } }
-            >{events.length}</div>
+            >
+                {events.length}
+            </div>
 
             { (infoWindow && ( infoWindow.events && venue.lat + 0.015 === infoWindow.lat && venue.lng === infoWindow.lng)) &&
             <div className='infoWindow-wrapper'>
