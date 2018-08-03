@@ -22,7 +22,7 @@ class FilterModal extends Component {
                 <button 
                     className='filter-modal-close-btn' 
                     type='button'
-                    onClick={ () => hideModal(modalVisible) } ><i class="fas fa-times"></i></button>
+                    onClick={ () => hideModal(modalVisible) } ><i className="fas fa-times"></i></button>
                 <div className='filter-area'>
                     <DatePicker />
                     <FilterList />

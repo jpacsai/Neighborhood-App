@@ -5,6 +5,8 @@ import { connect } from 'react-redux';
 import MapContainer from './containers/map-container';
 import { toggleAside } from './actions/toggleAside';
 import Aside from './components/Aside';
+import { closeInfoWindow } from './actions/closeInfoWindow';
+import { highligthMarker_Out } from './actions/highligthMarker_Out';
 
 require('../css/index.css');
 
@@ -16,7 +18,7 @@ class App extends Component {
 	}
 
 	render() {
-		const { toggleAside, showAside } = this.props;
+		const { toggleAside, showAside, modalVisible } = this.props;
 
 		return (
 			<div>
@@ -28,7 +30,12 @@ class App extends Component {
 				<nav>
 					<button 
 						className='aside-toggle-btn'
-						onClick={ () => toggleAside(showAside) }
+						onClick={ () => {
+							if (!modalVisible) {
+								toggleAside(showAside);
+							}
+						}
+						}
 					>
 						<i className="fas fa-bars"></i>
 					</button>
@@ -48,6 +55,7 @@ function mapStateToProps(state) {
     return {
 		events: state.events.events,
 		showAside: state.showAside,
+		modalVisible: state.modalVisibility
     }
 }
 
@@ -55,6 +63,8 @@ function mapDispatchToProps(dispatch) {
     return bindActionCreators({
 		loadData: loadData,
 		toggleAside,
+		closeInfoWindow,
+		highligthMarker_Out
 	}, dispatch);
 }
 

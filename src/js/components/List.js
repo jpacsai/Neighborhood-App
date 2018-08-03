@@ -47,7 +47,6 @@ class List extends Component {
                         onClick={ () => {
                             highligthMarker_In(venueId);
                             openInfoWindow(place, [event]);
-                            toggleAside(showAside);
                         } }
                     >
                         <h3 className='event-name'>{ event.name }</h3>

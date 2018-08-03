@@ -343,9 +343,12 @@ class Map extends Component {
 		const center = infoWindow.value === true ? {
 			lat: infoWindow.lat,
 			lng: infoWindow.lng
+		} : venues.length === 1 ? {
+			lat: venues[0].lat,
+			lng: venues[0].lng
 		} : mapBounds.center;
 
-		const zoom = infoWindow.value === false ? mapBounds.zoom : 13;
+		const zoom = infoWindow.value === false ? venues.length === 1 ? 13 : mapBounds.zoom : 13;
 
 		const gesture = infoWindow.value ? 'none' : 'auto';
 		const $backgroundColor = '#001a26';
@@ -394,7 +397,6 @@ class Map extends Component {
 
 function mapStateToProps(state) {
     return {
-		displayList: state.displayList,
 		fetchReady: state.fetchReady,
 		venues: state.venues,
 		mapwidth: state.mapSize.width,
