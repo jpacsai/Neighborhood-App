@@ -82,18 +82,21 @@
 - [x] feat: offset map center (so the whole infowindow is on screen)
 - [x] refactor: hoverIn function
 - [x] fix: placing of markers when animated
+- [x] feat: add data to infowindow
 - [x] fix: hover list doesn't work after infowindow is closed
 - [x] style: infowindow to accommodate events list
 - [x] fix: set gestureHandling so infoWindow is scrollable
 - [x] style: don't show gradient in infowindow when there's only 1 event
+- [x] fix: highlight markers when list hovered
+- [x] fix: when aside is open push and shrink map
+- [x] fix: fitbounds when filtering (1 location)
+- [x] fix: close infowindow when side menu is opened
+- [x] fix: disable aside toggle while filters are open
+- [x] fix: put location filters into alphabetical order
 ***
-- [ ] fix: when aside is open push and shrink map 
-- [ ] fix: fitbounds when filtering (1 location)
-- [ ] feat: add data to infowindow
-- [ ] fix: close infowindow when side menu is opened
+- [ ] fix: stop zooming out after infowindow is closed
 - [ ] test: infowindow actions
 ***
-- [ ] fix: highlight markers when list hovered (possibly broke bacause of components rearranged)
 - [ ] move infoWindow into a new component
 - [ ] error handling
 - [ ] fix: day picker styles messed up
