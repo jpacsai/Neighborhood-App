@@ -5,7 +5,9 @@ body {
   font-family: sans-serif; }
   body header {
     text-align: center;
-    height: 15vh; }
+    height: 15vh;
+    background-color: #001a26;
+    color: whitesmoke; }
     body header .title {
       text-align: center;
       padding: 10px 10px 0;
@@ -25,7 +27,8 @@ body {
       width: 280px;
       height: 85vh;
       z-index: 2;
-      background-color: yellow; }
+      background-color: #053752;
+      color: whitesmoke; }
       body main aside .aside-header {
         margin: 0;
         padding: 8px;
@@ -81,67 +84,69 @@ body {
           justify-content: space-between;
           align-items: center; }
           body main aside .filter-container form .DayPicker {
-            background-color: white; }
+            background-color: whitesmoke; }
           body main aside .filter-container form select {
             margin-bottom: 5px; }
       body main aside .event-list-container {
         height: 84%;
-        overflow-x: hidden; }
+        overflow-x: hidden;
+        color: whitesmoke; }
         body main aside .event-list-container .event-count {
           position: relative;
-          margin: 5px;
-          text-align: center;
+          margin: 0;
+          padding-left: 10px;
           height: 30px;
           display: flex;
-          justify-content: center;
           align-items: center; }
           body main aside .event-list-container .event-count .event-list-sortBy-btn {
             position: absolute;
-            right: 0; }
+            right: 10px; }
         body main aside .event-list-container .event-list {
           list-style-type: none;
           padding: 0 10px;
           margin: 0;
           height: 77%;
           overflow: scroll;
-          overflow-x: hidden; }
+          overflow-x: hidden;
+          color: #001A26; }
         body main aside .event-list-container .event {
           margin: 5px 0;
-          background-color: aquamarine;
+          background-color: #ebe460;
           cursor: pointer; }
           body main aside .event-list-container .event p {
             margin: 0; }
         body main aside .event-list-container .event:hover {
-          background-color: lightgrey; }
+          background-color: #EF7F0C; }
     body main .aside-show {
       left: 0; }
     body main .aside-hide {
       left: -500px; }
-    body main #map {
+    body main .map {
       width: 100%;
       position: absolute;
       top: 15vh; }
-      body main #map .map-marker {
+      body main .map .map-marker {
         position: relative;
         left: -10px;
         top: -30px;
         width: 20px;
         height: 30px;
-        background: red;
+        background: #E5DE44;
         -webkit-clip-path: polygon(100% 75%, 50% 100%, 0 75%, 0 0, 50% 25%, 100% 0);
         clip-path: polygon(100% 75%, 50% 100%, 0 75%, 0 0, 50% 25%, 100% 0);
+        border: 1px solid #001A26;
         cursor: pointer;
-        color: white;
+        color: #001A26;
         display: flex;
         align-items: center;
         justify-content: center;
         padding-top: 3px;
         font-size: 15px; }
-      body main #map .map-marker:hover,
-      body main #map .map-marker-list-hovered {
-        background: greenyellow;
+      body main .map .map-marker:hover,
+      body main .map .map-marker-list-hovered {
+        background: #EF7F0C;
         z-index: 2; }
-      body main #map .bounce {
+      body main .map .bounce {
         animation: bounce 0.5s;
         animation-direction: alternate;
         animation-timing-function: cubic-bezier(0.5, 0.05, 1, 0.5);
@@ -152,6 +157,9 @@ body {
     transform: translate3d(0, -20px, 0); }
   to {
     transform: translate3d(0, 3px, 0); } }
+    body main .map-aside {
+      left: 280px;
+      width: calc(100vw - 280px); }
     body main .infoWindow-wrapper {
       height: 300px;
       left: -115px;
@@ -162,7 +170,7 @@ body {
       display: flex;
       position: relative;
       width: 230px;
-      background-color: white;
+      background-color: whitesmoke;
       z-index: 3; }
       body main .infoWindow-wrapper h4 {
         font-size: 15px;
@@ -185,11 +193,11 @@ body {
         position: sticky;
         display: block;
         /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+41,ffffff+99&0+0,1+77 */
-        background: -moz-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.53) 41%, white 77%, white 99%);
+        background: -moz-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.53) 41%, whitesmoke 77%, whitesmoke 99%);
         /* FF3.6-15 */
-        background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.53) 41%, white 77%, white 99%);
+        background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.53) 41%, whitesmoke 77%, whitesmoke 99%);
         /* Chrome10-25,Safari5.1-6 */
-        background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.53) 41%, white 77%, white 99%);
+        background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.53) 41%, whitesmoke 77%, whitesmoke 99%);
         /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 );
         /* IE6-9 */ }
@@ -200,7 +208,7 @@ body {
       body main .infoWindow-event-container .infoWindow-event {
         padding: 10px;
         margin: 0 20px 17px;
-        background-color: white;
+        background-color: whitesmoke;
         left: -110px;
         z-index: 2;
         border: 2px solid red;

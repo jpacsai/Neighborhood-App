@@ -1,5 +1,13 @@
 @import "./normalize.css";
 
+$background-color: #001a26;
+$menu-color: #053752;
+$list-item-color: #ebe460;
+$accent-color: #E5DE44;
+$highlight-color: #EF7F0C;
+$light-text-color: whitesmoke;
+$dark-text-color: #001a26;
+
 body {
   margin: 0;
   padding: 0;
@@ -8,6 +16,8 @@ body {
   header {
     text-align: center;
     height: 15vh;
+    background-color: $background-color;
+    color: $light-text-color;
     
     .title {
       text-align: center;
@@ -39,7 +49,8 @@ body {
       width: 280px;
       height: 85vh;
       z-index: 2;
-      background-color: yellow;      
+      background-color: $menu-color;   
+      color: $light-text-color;   
 
       .aside-header {
         margin: 0;
@@ -122,7 +133,7 @@ body {
           align-items: center;
 
           .DayPicker {
-            background-color: white;
+            background-color: $light-text-color;
           }
 
           select {
@@ -134,19 +145,19 @@ body {
       .event-list-container {
         height: 84%;
         overflow-x: hidden;
+        color: $light-text-color;
 
         .event-count {
           position: relative;
-          margin: 5px;
-          text-align: center;
+          margin: 0;
+          padding-left: 10px;
           height: 30px;
           display: flex;
-          justify-content: center;
           align-items: center;
 
           .event-list-sortBy-btn{
             position: absolute;
-            right: 0;
+            right: 10px;
           }
         }
 
@@ -157,11 +168,12 @@ body {
           height: 77%;
           overflow: scroll;
           overflow-x: hidden;
+          color: #001A26;
         }
   
         .event {
           margin: 5px 0;
-          background-color: aquamarine;
+          background-color: $list-item-color;
           cursor: pointer;
 
           p {
@@ -170,7 +182,7 @@ body {
         }
 
         .event:hover {
-          background-color: lightgrey;
+          background-color: $highlight-color;
         }
       }
     }
@@ -183,22 +195,23 @@ body {
       left: -500px;
     }
 
-    #map {
+    .map {
       width: 100%;
       position: absolute;
       top: 15vh;
-
+      
       .map-marker {
         position: relative;
         left: -10px;
         top: -30px;
         width: 20px;
         height: 30px;
-        background: red;
+        background: $accent-color;
         -webkit-clip-path: polygon(100% 75%, 50% 100%, 0 75%, 0 0, 50% 25%, 100% 0);
         clip-path: polygon(100% 75%, 50% 100%, 0 75%, 0 0, 50% 25%, 100% 0);
+        border: 1px solid #001A26;
         cursor: pointer;
-        color: white;
+        color: #001A26;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -208,7 +221,7 @@ body {
 
       .map-marker:hover,
       .map-marker-list-hovered {
-        background: greenyellow;
+        background: $highlight-color;
         z-index: 2;
       }
 
@@ -225,6 +238,11 @@ body {
       }
     }
 
+    .map-aside {
+      left: 280px;
+      width: calc(100vw - 280px);
+    }
+
     .infoWindow-wrapper {
       height: 300px;
       left: -115px;
@@ -235,7 +253,7 @@ body {
       display: flex;
       position: relative;
       width: 230px;
-      background-color: white;
+      background-color: $light-text-color;
       z-index: 3;
       
       h4 {
@@ -265,9 +283,9 @@ body {
         position: sticky;
         display:block;
         /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+41,ffffff+99&0+0,1+77 */
-        background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,0.53) 41%, rgba(255,255,255,1) 77%, rgba(255,255,255,1) 99%); /* FF3.6-15 */
-        background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,0.53) 41%,rgba(255,255,255,1) 77%,rgba(255,255,255,1) 99%); /* Chrome10-25,Safari5.1-6 */
-        background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,0.53) 41%,rgba(255,255,255,1) 77%,rgba(255,255,255,1) 99%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,0.53) 41%, $light-text-color 77%, $light-text-color 99%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,0.53) 41%,$light-text-color 77%,$light-text-color 99%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,0.53) 41%,$light-text-color 77%,$light-text-color 99%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
       }
     }
@@ -280,7 +298,7 @@ body {
       .infoWindow-event {
         padding: 10px;
         margin: 0 20px 17px;
-        background-color: white;
+        background-color: $light-text-color;
         left: -110px;
         z-index: 2;
         border: 2px solid red;
