@@ -2,11 +2,9 @@ import React, { Component } from 'react';
 import { loadData } from './actions/eventFetch';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import FilterContainer from './containers/filter-container';
-import List from './components/List';
 import MapContainer from './containers/map-container';
-import { sortingEvents } from './actions/sortingEvents';
 import { toggleAside } from './actions/toggleAside';
+import Aside from './components/Aside';
 
 require('../css/index.css');
 
@@ -18,49 +16,26 @@ class App extends Component {
 	}
 
 	render() {
-		const { fetchReady, sortAction, displayList, toggleAside, showAside } = this.props;
-
-		const asideStyle = showAside ? 'aside-show' : 'aside-hide';
+		const { toggleAside, showAside } = this.props;
 
 		return (
 			<div>
 				<header>
 					<h1 className='title'>Last Minute Concerts</h1>
-					<p className='sub-title'>Find concerts for next week in Northern England</p>
+					<p className='sub-title'>Find concerts for the next 7 days in Northern England</p>
 				</header>
+
 				<nav>
 					<button 
 						className='aside-toggle-btn'
-						onClick={ () => {
-							toggleAside(showAside);
-						} }
-					><i class="fas fa-bars"></i></button>
+						onClick={ () => toggleAside(showAside) }
+					>
+						<i class="fas fa-bars"></i>
+					</button>
 				</nav>
 
 				<main>
-					<aside className={ asideStyle }>
-						<FilterContainer />
-						<section className='event-list-container'>
-							<h2 className='aside-header aside-header-list'>Events</h2>
-							{ fetchReady && 
-								<p className='event-count'><span>{ displayList.length || '0' } event{ displayList.length > 1 && 's'} found</span>
-									<select 
-										className='event-list-sortBy-btn'
-										onChange={ (e) => sortAction(displayList, e) }
-									>
-										<option value="abc">Abc</option>
-										<option value="date">Date</option>
-										<option value="location">Location</option>
-									</select>
-								</p>
-							} 
-							<ul className='event-list'>
-							{ fetchReady &&
-								(( displayList.length === 0 && <li className='event'>{ 'no match found' }</li> ) || <List list={ displayList } /> ) }
-							</ul>
-						</section>
-					</aside>
-
+					<Aside />
 					<MapContainer />
 				</main>
 
@@ -72,17 +47,14 @@ class App extends Component {
 function mapStateToProps(state) {
     return {
 		events: state.events.events,
-		fetchReady: state.fetchReady,
-		displayList: state.displayList,
-		showAside: state.showAside
+		showAside: state.showAside,
     }
 }
 
 function mapDispatchToProps(dispatch) {
     return bindActionCreators({
 		loadData: loadData,
-		sortAction: sortingEvents,
-		toggleAside
+		toggleAside,
 	}, dispatch);
 }
 

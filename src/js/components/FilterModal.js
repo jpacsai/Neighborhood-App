@@ -20,11 +20,9 @@ class FilterModal extends Component {
             } } >
                 <h2 className='aside-header aside-filter-header'>Filters</h2>
                 <button 
-                    className='filter-modal-btn filter-modal-close-btn' 
+                    className='filter-modal-close-btn' 
                     type='button'
-                    onClick={ () => hideModal(modalVisible) } >
-                    Close
-                </button>
+                    onClick={ () => hideModal(modalVisible) } ><i class="fas fa-times"></i></button>
                 <div className='filter-area'>
                     <DatePicker />
                     <FilterList />
