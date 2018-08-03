@@ -4,13 +4,12 @@ import { bindActionCreators } from 'redux';
 import { highligthMarker_In } from './../actions/highligthMarker_In';
 import { highligthMarker_Out } from './../actions/highligthMarker_Out';
 import { openInfoWindow } from './../actions/infoWindow';
-import { toggleAside } from './../actions/toggleAside';
 
 class List extends Component {
 
     render() {
 
-        const { list, highligthMarker_In, highligthMarker_Out, showAside, toggleAside, openInfoWindow, infoWindow } = this.props;
+        const { list, highligthMarker_In, highligthMarker_Out, openInfoWindow, infoWindow } = this.props;
     
         if (list === 'no match') {
             return (
@@ -66,7 +65,6 @@ class List extends Component {
 
 function mapStateToProps(state) {
     return {
-        showAside: state.showAside,
         infoWindow: state.infoWindow
     }
 }
@@ -76,7 +74,6 @@ function mapDispatchToProps(dispatch) {
         highligthMarker_In,
         highligthMarker_Out,
         openInfoWindow,
-        toggleAside
     }, dispatch);
 }
 

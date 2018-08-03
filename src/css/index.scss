@@ -214,8 +214,11 @@ body {
 
         p {
           margin: 0;
-          font-weight: bold;
           color: $menu-color;
+
+          span{
+            font-weight: bold;
+          }
         }
       }
 
