@@ -35,12 +35,12 @@ class List extends Component {
                         key={ event.id }
                         className='event'
                         onMouseEnter={ () => { 
-                            if (infoWindow === null || infoWindow.events === null) {
+                            if (infoWindow.value === false) {
                                 highligthMarker_In(venueId)
                             }
                         } }
                         onMouseLeave={ () => { 
-                            if (infoWindow === null || infoWindow.events === null) {
+                            if (infoWindow.value === false) {
                                 highligthMarker_Out()
                             }
                         } }
