@@ -15,8 +15,6 @@ body {
   padding: 0;
   font-family: sans-serif;
 
-
-
   header {
     text-align: center;
     height: 15vh;
@@ -111,7 +109,6 @@ body {
 
           .filter-area {
             
-
             .DayPicker {
               max-width: 320px;
               height: 270px;
@@ -162,7 +159,7 @@ body {
       }
 
       .event-list-container {
-        height: 84%;
+        height: 82%;
         overflow-x: hidden;
         color: $light-text-color;
 
@@ -184,10 +181,10 @@ body {
           list-style-type: none;
           padding: 0 10px;
           margin: 0;
-          height: 77%;
+          height: 82%;
           overflow: scroll;
           overflow-x: hidden;
-          color: #001A26;
+          color: $background-color;
         }
   
         .event {
@@ -202,10 +199,12 @@ body {
           
           span {
             font-weight: bold;
+            color: $menu-color;
           }
 
           p {
             margin: 0;
+            color: $menu-color;
           }
         }
 
@@ -344,17 +343,17 @@ body {
         box-sizing: border-box;
         font-size: 16px;
   
-        .infoWindow-event-date {
-          margin: 0;
-          font-size: 18px;
-          font-weight: normal;
-          color: $grey-text-color;
-        }
-  
         .infoWindow-event-name {
           margin: 0;
           font-size: 18px;
           color: $light-text-color;
+        }
+
+        .infoWindow-event-date {
+          margin: 0;
+          font-size: 14px;
+          font-weight: normal;
+          color: $grey-text-color;
         }
 
         .infoWindow-event-genre {
@@ -372,32 +371,34 @@ body {
           color: $accent-color;
           font-size: 16px;
         }
+
+        .infoWindow-link:hover {
+          color: $highlight-color;
+        }
       }
-      
-      
     }
 
   }
 
-    /* width */
-::-webkit-scrollbar {
-  width: 10px;
-}
+      /* width */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
 
-/* Track */
-::-webkit-scrollbar-track {
-  background: #f1f1f1; 
-}
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
 
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: #888; 
-}
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+  }
 
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #555; 
-}
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
 }
 
 /*

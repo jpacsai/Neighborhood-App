@@ -60,8 +60,9 @@ class Place extends Component {
                             className='infoWindow-event'
                             key={ event.name }
                         >
-                            <h2 className='infoWindow-event-date'>{ event.dates.start.displayDate}</h2>
-                            <h3 className='infoWindow-event-name'>{ event.name}</h3>
+                            <h2 className='infoWindow-event-name'>{ event.name}</h2>
+                            <p className='infoWindow-event-date'>{ event.dates.start.displayDate}</p>
+
                             { gen !== null && <p className='infoWindow-event-genre'>{ genre }</p> }
                             <img className='infoWindow-img' src={ event.images[2].url} alt='artist/event' />
                             <a className='infoWindow-link' href={ event.url }>more info here</a>

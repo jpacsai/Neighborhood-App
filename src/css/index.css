@@ -101,7 +101,7 @@ body {
           body main aside .filter-container form select {
             margin-bottom: 5px; }
       body main aside .event-list-container {
-        height: 84%;
+        height: 82%;
         overflow-x: hidden;
         color: whitesmoke; }
         body main aside .event-list-container .event-count {
@@ -118,10 +118,10 @@ body {
           list-style-type: none;
           padding: 0 10px;
           margin: 0;
-          height: 77%;
+          height: 82%;
           overflow: scroll;
           overflow-x: hidden;
-          color: #001A26; }
+          color: #001a26; }
         body main aside .event-list-container .event {
           margin: 5px 0;
           background-color: #ebe460;
@@ -130,9 +130,11 @@ body {
           body main aside .event-list-container .event .event-name {
             margin: 0 0 5px; }
           body main aside .event-list-container .event span {
-            font-weight: bold; }
+            font-weight: bold;
+            color: #053752; }
           body main aside .event-list-container .event p {
-            margin: 0; }
+            margin: 0;
+            color: #053752; }
         body main aside .event-list-container .event:hover {
           background-color: #ef7f0c; }
     body main .aside-show {
@@ -243,15 +245,15 @@ body {
         width: 190px;
         box-sizing: border-box;
         font-size: 16px; }
-        body main .infoWindow-event-container .infoWindow-event .infoWindow-event-date {
-          margin: 0;
-          font-size: 18px;
-          font-weight: normal;
-          color: #ababab; }
         body main .infoWindow-event-container .infoWindow-event .infoWindow-event-name {
           margin: 0;
           font-size: 18px;
           color: whitesmoke; }
+        body main .infoWindow-event-container .infoWindow-event .infoWindow-event-date {
+          margin: 0;
+          font-size: 14px;
+          font-weight: normal;
+          color: #ababab; }
         body main .infoWindow-event-container .infoWindow-event .infoWindow-event-genre {
           margin: 0;
           font-size: 14px;
@@ -262,6 +264,8 @@ body {
           margin-top: 5px;
           color: #e5de44;
           font-size: 16px; }
+        body main .infoWindow-event-container .infoWindow-event .infoWindow-link:hover {
+          color: #ef7f0c; }
   body ::-webkit-scrollbar {
     width: 10px; }
   body ::-webkit-scrollbar-track {
