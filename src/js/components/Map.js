@@ -20,7 +20,7 @@ class Map extends Component {
 
 	render() {
 
-		const { fetchReady, venues, mapNW, mapSE, mapwidth, mapheight, infoWindow } = this.props;
+		const { fetchReady, venues, mapNW, mapSE, mapwidth, mapheight, infoWindow, showAside } = this.props;
 
 		const mapStyles = [
 			{
@@ -348,12 +348,14 @@ class Map extends Component {
 		const zoom = infoWindow.value === false ? mapBounds.zoom : 13;
 
 		const gesture = infoWindow.value ? 'none' : 'auto';
+		const $backgroundColor = '#001a26';
+		const mapClassName = showAside ? 'map map-aside' : 'map';
 
 		return (
 			// Important! Always set the container height explicitly
 			<div 
 				id='map' 
-				
+				className={ mapClassName }
 				ref={ (mapElement) => this.mapElement = mapElement}
 				style={ {
 					height: '85vh'
@@ -363,7 +365,7 @@ class Map extends Component {
 				{ fetchReady && 
 
 					<GoogleMapReact
-						options={ { gestureHandling:  gesture, styles: mapStyles } } 
+						options={ { gestureHandling:  gesture, styles: mapStyles, backgroundColor: $backgroundColor } } 
 						bootstrapURLKeys={{
 								key: 'AIzaSyA5ivLlpxg-AwsOTPELxcuO1zQ64Vo6yRo'
 						}}
@@ -399,7 +401,8 @@ function mapStateToProps(state) {
 		mapheight: state.mapSize.height,
 		mapNW: state.bounds.nw,
 		mapSE: state.bounds.se,
-		infoWindow: state.infoWindow
+		infoWindow: state.infoWindow,
+		showAside: state.showAside
     }
 }
 
