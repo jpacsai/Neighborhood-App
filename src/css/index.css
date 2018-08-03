@@ -3,6 +3,13 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif; }
+  body button,
+  body input[type=submit] {
+    background-color: red;
+    border: none;
+    padding: 10px;
+    width: 40px;
+    height: 40px; }
   body header {
     text-align: center;
     height: 15vh;
@@ -18,12 +25,13 @@ body {
       font-size: 22px; }
     body header .sub-title {
       margin: 5px auto;
-      width: 80%; }
+      width: 80%;
+      font-size: 13px; }
   body nav .aside-toggle-btn {
     position: absolute;
     top: 4vh;
     left: 2vw;
-    height: 35px;
+    height: 40px;
     display: flex;
     justify-content: center;
     align-items: center; }
@@ -53,6 +61,8 @@ main {
       align-items: center;
       padding: 10px;
       transition: 1s; }
+      main aside .filter-container .filter-modal-btn {
+        width: 115px; }
       main aside .filter-container .filter-modal {
         position: absolute;
         z-index: 2;
@@ -70,14 +80,14 @@ main {
         main aside .filter-container .filter-modal .filter-modal-btn {
           color: #001a26;
           margin: 5px;
-          width: 80px;
+          width: 115px;
           padding: 10px;
           box-sizing: border-box;
-          height: 50px; }
+          height: 40px; }
         main aside .filter-container .filter-modal .filter-modal-close-btn {
           position: absolute;
-          top: 5px;
-          right: 5px; }
+          top: 15px;
+          right: 15px; }
         main aside .filter-container .filter-modal .filter-area .DayPicker {
           max-width: 320px;
           height: 270px;
@@ -105,19 +115,18 @@ main {
         main aside .filter-container form select {
           margin-bottom: 5px; }
     main aside .event-list-container {
-      height: 82%;
+      height: 78%;
       overflow-x: hidden;
       color: whitesmoke; }
       main aside .event-list-container .event-count {
         position: relative;
         margin: 0;
         padding-left: 10px;
-        height: 30px;
+        height: 63px;
         display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
         align-items: center; }
-        main aside .event-list-container .event-count .event-list-sortBy-btn {
-          position: absolute;
-          right: 10px; }
       main aside .event-list-container .event-list {
         list-style-type: none;
         padding: 0 10px;
