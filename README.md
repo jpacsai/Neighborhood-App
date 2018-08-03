@@ -93,16 +93,12 @@
 - [x] fix: close infowindow when side menu is opened
 - [x] fix: disable aside toggle while filters are open
 - [x] fix: put location filters into alphabetical order
-***
-- [ ] fix: stop zooming out after infowindow is closed
-- [ ] test: infowindow actions
-***
-- [ ] move infoWindow into a new component
-- [ ] error handling
-- [ ] fix: day picker styles messed up
-- [ ] style page
+- [x] style page
    - [x] choose color palette
    - [x] add color variables to sass
+***
+- [ ] error handling
+- [ ] fix: day picker styles messed up
 - [ ] a11y: 
    - [ ] focus eventlist then capture it if needed
    - [ ] aria labels
