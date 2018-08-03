@@ -21,7 +21,7 @@ class List extends Component {
         else if (list) {
             return list.map( (event) => {
     
-                const date = event.dates.start.localDate;
+                const date = event.dates.start.displayDate;
                 const time = event.dates.start.localTime ? (event.dates.start.localTime).slice(0, 5) : null;
                 const location = event._embedded.venues[0].city.name;
                 const venueId = event._embedded.venues[0].id;
@@ -50,8 +50,9 @@ class List extends Component {
                             toggleAside(showAside);
                         } }
                     >
-                        { event.name }
-                        <p>Date: { date } { time } Location: { location }</p>
+                        <h3 className='event-name'>{ event.name }</h3>
+                        <p><span>Date: </span>{ date } { time } </p>
+                        <p><span>Location: </span>{ location }</p>
                     </li>
                 )
             })

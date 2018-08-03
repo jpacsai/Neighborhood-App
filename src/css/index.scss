@@ -6,6 +6,7 @@ $list-item-color: #ebe460;
 $accent-color: #E5DE44;
 $highlight-color: #EF7F0C;
 $light-text-color: whitesmoke;
+$modal-background: whitesmoke;
 $dark-text-color: #001a26;
 
 body {
@@ -81,7 +82,7 @@ body {
           width: 100vw;
           height: 85vh;
           min-height: 360px;
-          background-color: turquoise;
+          background-color: $menu-color;
           animation: fadeIn 0.8s;
           overflow: scroll;
           overflow-x: hidden;
@@ -91,7 +92,7 @@ body {
           }
 
           .filter-modal-btn {
-            color: red;
+            color: $dark-text-color;
             margin: 5px;
             width: 80px;
             padding: 10px;
@@ -106,15 +107,32 @@ body {
           }
 
           .filter-area {
+            
 
             .DayPicker {
               max-width: 320px;
               height: 270px;
               margin: auto;
+              color: $dark-text-color;
+              background-color: $modal-background;
+
+              .DayPicker-Day--today {
+                color: $highlight-color;
+              }
+
+              .DayPicker-Day--selected {
+                background-color: $accent-color;
+                color: $dark-text-color;
+              }
+
+              .DayPicker-Day--disabled { 
+                color: grey;
+              }
             }
 
             .filter-select {
-
+              color: $light-text-color;
+              
               .filter-select-li {
                 margin: 10px;
               }
@@ -132,9 +150,7 @@ body {
           justify-content: space-between;
           align-items: center;
 
-          .DayPicker {
-            background-color: $light-text-color;
-          }
+          
 
           select {
             margin-bottom: 5px;
@@ -175,6 +191,15 @@ body {
           margin: 5px 0;
           background-color: $list-item-color;
           cursor: pointer;
+          padding: 8px;
+
+          .event-name {
+            margin: 0 0 5px;
+          }
+          
+          span {
+            font-weight: bold;
+          }
 
           p {
             margin: 0;

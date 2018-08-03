@@ -53,14 +53,14 @@ body {
           width: 100vw;
           height: 85vh;
           min-height: 360px;
-          background-color: turquoise;
+          background-color: #053752;
           animation: fadeIn 0.8s;
           overflow: scroll;
           overflow-x: hidden; }
           body main aside .filter-container .filter-modal .aside-filter-header {
             margin: 13px; }
           body main aside .filter-container .filter-modal .filter-modal-btn {
-            color: red;
+            color: #001a26;
             margin: 5px;
             width: 80px;
             padding: 10px;
@@ -73,9 +73,20 @@ body {
           body main aside .filter-container .filter-modal .filter-area .DayPicker {
             max-width: 320px;
             height: 270px;
-            margin: auto; }
-          body main aside .filter-container .filter-modal .filter-area .filter-select .filter-select-li {
-            margin: 10px; }
+            margin: auto;
+            color: #001a26;
+            background-color: whitesmoke; }
+            body main aside .filter-container .filter-modal .filter-area .DayPicker .DayPicker-Day--today {
+              color: #EF7F0C; }
+            body main aside .filter-container .filter-modal .filter-area .DayPicker .DayPicker-Day--selected {
+              background-color: #E5DE44;
+              color: #001a26; }
+            body main aside .filter-container .filter-modal .filter-area .DayPicker .DayPicker-Day--disabled {
+              color: grey; }
+          body main aside .filter-container .filter-modal .filter-area .filter-select {
+            color: whitesmoke; }
+            body main aside .filter-container .filter-modal .filter-area .filter-select .filter-select-li {
+              margin: 10px; }
           body main aside .filter-container .filter-modal .filter-buttons {
             margin: 5px; }
         body main aside .filter-container form {
@@ -83,8 +94,6 @@ body {
           flex-direction: column;
           justify-content: space-between;
           align-items: center; }
-          body main aside .filter-container form .DayPicker {
-            background-color: whitesmoke; }
           body main aside .filter-container form select {
             margin-bottom: 5px; }
       body main aside .event-list-container {
@@ -112,7 +121,12 @@ body {
         body main aside .event-list-container .event {
           margin: 5px 0;
           background-color: #ebe460;
-          cursor: pointer; }
+          cursor: pointer;
+          padding: 8px; }
+          body main aside .event-list-container .event .event-name {
+            margin: 0 0 5px; }
+          body main aside .event-list-container .event span {
+            font-weight: bold; }
           body main aside .event-list-container .event p {
             margin: 0; }
         body main aside .event-list-container .event:hover {
