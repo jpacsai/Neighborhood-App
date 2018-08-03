@@ -92,7 +92,15 @@ main {
         main aside .filter-modal .filter-area .filter-select .filter-select-li {
           margin: 10px; }
       main aside .filter-modal .filter-buttons {
-        margin: 5px; }
+        margin: 30px;
+        height: 50px;
+        display: flex;
+        width: 100%;
+        padding: 10px;
+        justify-content: space-evenly;
+        align-items: center; }
+        main aside .filter-modal .filter-buttons .filter-modal-btn {
+          width: 115px; }
     main aside .event-control {
       height: 75px;
       width: 100%;
@@ -108,7 +116,7 @@ main {
         width: 100%;
         display: flex;
         justify-content: space-evenly; }
-        main aside .event-control .event-control-btn-container .filter-modal-btn {
+        main aside .event-control .event-control-btn-container .filter-btn {
           color: #001a26;
           width: 115px;
           padding: 10px;

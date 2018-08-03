@@ -29,7 +29,7 @@ class Aside extends Component {
 
                         <div className='event-control-btn-container'>
                             <button 
-                                className='filter-modal-btn'
+                                className='filter-btn'
                                 type="button"
                                 onClick={ () => {
                                     modalVisibility(modalVisible);

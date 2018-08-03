@@ -141,7 +141,17 @@ body {
         }
 
         .filter-buttons {
-          margin: 5px;
+          margin: 30px;
+          height: 50px;
+          display: flex;
+          width: 100%;
+          padding: 10px;
+          justify-content: space-evenly;
+          align-items: center;
+
+          .filter-modal-btn {
+            width: 115px;
+          }
         }
       }
 
@@ -164,7 +174,7 @@ body {
           display: flex;
           justify-content: space-evenly;
   
-          .filter-modal-btn {
+          .filter-btn {
             color: $dark-text-color;
             width: 115px;
             padding: 10px;
