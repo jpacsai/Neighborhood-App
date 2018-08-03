@@ -34,7 +34,7 @@ class App extends Component {
 						onClick={ () => {
 							toggleAside(showAside);
 						} }
-					>X</button>
+					><i class="fas fa-bars"></i></button>
 				</nav>
 
 				<main>

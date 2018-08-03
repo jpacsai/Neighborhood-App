@@ -18,8 +18,11 @@ body {
   header {
     text-align: center;
     height: 15vh;
-    background-color: $background-color;
-    color: $light-text-color;
+    background-color: #001a26;
+    color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     
     .title {
       text-align: center;
@@ -38,8 +41,13 @@ body {
 
     .aside-toggle-btn {
       position: absolute;
-      top: 5px;
-      left: 5px;
+      top: 4vh;
+      left: 2vw;
+      height: 35px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
     }
   }
   
@@ -399,7 +407,6 @@ body {
   ::-webkit-scrollbar-thumb:hover {
     background: #555; 
   }
-}
 
 /*
         .filter-modal {

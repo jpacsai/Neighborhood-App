@@ -2,16 +2,15 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
-  /* width */
-  /* Track */
-  /* Handle */
-  /* Handle on hover */ }
+  font-family: sans-serif; }
   body header {
     text-align: center;
     height: 15vh;
     background-color: #001a26;
-    color: whitesmoke; }
+    color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; }
     body header .title {
       text-align: center;
       padding: 10px 10px 0;
@@ -22,258 +21,271 @@ body {
       width: 80%; }
   body nav .aside-toggle-btn {
     position: absolute;
-    top: 5px;
-    left: 5px; }
-  body main {
-    height: 85vh; }
-    body main aside {
-      position: relative;
-      width: 280px;
-      height: 85vh;
-      z-index: 2;
-      background-color: #053752;
-      color: whitesmoke; }
-      body main aside .aside-header {
-        margin: 0;
-        padding: 8px;
-        text-align: center; }
-      body main aside .aside-header-list {
-        height: 6%;
-        display: flex;
-        justify-content: center;
-        align-items: center; }
-      body main aside .filter-container {
+    top: 4vh;
+    left: 2vw;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+
+main {
+  height: 85vh; }
+  main aside {
+    position: relative;
+    width: 280px;
+    height: 85vh;
+    z-index: 2;
+    background-color: #053752;
+    color: whitesmoke; }
+    main aside .aside-header {
+      margin: 0;
+      padding: 8px;
+      text-align: center; }
+    main aside .aside-header-list {
+      height: 6%;
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+    main aside .filter-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 10px;
+      transition: 1s; }
+      main aside .filter-container .filter-modal {
+        position: absolute;
+        z-index: 2;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 85vh;
+        min-height: 360px;
+        background-color: #053752;
+        animation: fadeIn 0.8s;
+        overflow: scroll;
+        overflow-x: hidden; }
+        main aside .filter-container .filter-modal .aside-filter-header {
+          margin: 13px; }
+        main aside .filter-container .filter-modal .filter-modal-btn {
+          color: #001a26;
+          margin: 5px;
+          width: 80px;
+          padding: 10px;
+          box-sizing: border-box;
+          height: 50px; }
+        main aside .filter-container .filter-modal .filter-modal-close-btn {
+          position: absolute;
+          top: 5px;
+          right: 5px; }
+        main aside .filter-container .filter-modal .filter-area .DayPicker {
+          max-width: 320px;
+          height: 270px;
+          margin: auto;
+          color: #001a26;
+          background-color: whitesmoke; }
+          main aside .filter-container .filter-modal .filter-area .DayPicker .DayPicker-Day--today {
+            color: #ef7f0c; }
+          main aside .filter-container .filter-modal .filter-area .DayPicker .DayPicker-Day--selected {
+            background-color: #e5de44;
+            color: #001a26; }
+          main aside .filter-container .filter-modal .filter-area .DayPicker .DayPicker-Day--disabled {
+            color: grey; }
+        main aside .filter-container .filter-modal .filter-area .filter-select {
+          color: whitesmoke; }
+          main aside .filter-container .filter-modal .filter-area .filter-select .filter-select-li {
+            margin: 10px; }
+        main aside .filter-container .filter-modal .filter-buttons {
+          margin: 5px; }
+      main aside .filter-container form {
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 10px;
-        transition: 1s; }
-        body main aside .filter-container .filter-modal {
-          position: absolute;
-          z-index: 2;
-          top: 0;
-          left: 0;
-          width: 100vw;
-          height: 85vh;
-          min-height: 360px;
-          background-color: #053752;
-          animation: fadeIn 0.8s;
-          overflow: scroll;
-          overflow-x: hidden; }
-          body main aside .filter-container .filter-modal .aside-filter-header {
-            margin: 13px; }
-          body main aside .filter-container .filter-modal .filter-modal-btn {
-            color: #001a26;
-            margin: 5px;
-            width: 80px;
-            padding: 10px;
-            box-sizing: border-box;
-            height: 50px; }
-          body main aside .filter-container .filter-modal .filter-modal-close-btn {
-            position: absolute;
-            top: 5px;
-            right: 5px; }
-          body main aside .filter-container .filter-modal .filter-area .DayPicker {
-            max-width: 320px;
-            height: 270px;
-            margin: auto;
-            color: #001a26;
-            background-color: whitesmoke; }
-            body main aside .filter-container .filter-modal .filter-area .DayPicker .DayPicker-Day--today {
-              color: #ef7f0c; }
-            body main aside .filter-container .filter-modal .filter-area .DayPicker .DayPicker-Day--selected {
-              background-color: #e5de44;
-              color: #001a26; }
-            body main aside .filter-container .filter-modal .filter-area .DayPicker .DayPicker-Day--disabled {
-              color: grey; }
-          body main aside .filter-container .filter-modal .filter-area .filter-select {
-            color: whitesmoke; }
-            body main aside .filter-container .filter-modal .filter-area .filter-select .filter-select-li {
-              margin: 10px; }
-          body main aside .filter-container .filter-modal .filter-buttons {
-            margin: 5px; }
-        body main aside .filter-container form {
-          display: flex;
-          flex-direction: column;
-          justify-content: space-between;
-          align-items: center; }
-          body main aside .filter-container form select {
-            margin-bottom: 5px; }
-      body main aside .event-list-container {
-        height: 82%;
-        overflow-x: hidden;
-        color: whitesmoke; }
-        body main aside .event-list-container .event-count {
-          position: relative;
-          margin: 0;
-          padding-left: 10px;
-          height: 30px;
-          display: flex;
-          align-items: center; }
-          body main aside .event-list-container .event-count .event-list-sortBy-btn {
-            position: absolute;
-            right: 10px; }
-        body main aside .event-list-container .event-list {
-          list-style-type: none;
-          padding: 0 10px;
-          margin: 0;
-          height: 82%;
-          overflow: scroll;
-          overflow-x: hidden;
-          color: #001a26; }
-        body main aside .event-list-container .event {
-          margin: 5px 0;
-          background-color: #ebe460;
-          cursor: pointer;
-          padding: 8px; }
-          body main aside .event-list-container .event .event-name {
-            margin: 0 0 5px; }
-          body main aside .event-list-container .event span {
-            font-weight: bold;
-            color: #053752; }
-          body main aside .event-list-container .event p {
-            margin: 0;
-            color: #053752; }
-        body main aside .event-list-container .event:hover {
-          background-color: #ef7f0c; }
-    body main .aside-show {
-      left: 0; }
-    body main .aside-hide {
-      left: -500px; }
-    body main .map {
-      width: 100%;
-      position: absolute;
-      top: 15vh; }
-      body main .map .map-marker {
+        justify-content: space-between;
+        align-items: center; }
+        main aside .filter-container form select {
+          margin-bottom: 5px; }
+    main aside .event-list-container {
+      height: 82%;
+      overflow-x: hidden;
+      color: whitesmoke; }
+      main aside .event-list-container .event-count {
         position: relative;
-        left: -10px;
-        top: -30px;
-        width: 20px;
+        margin: 0;
+        padding-left: 10px;
         height: 30px;
-        background: #e5de44;
-        -webkit-clip-path: polygon(100% 75%, 50% 100%, 0 75%, 0 0, 50% 25%, 100% 0);
-        clip-path: polygon(100% 75%, 50% 100%, 0 75%, 0 0, 50% 25%, 100% 0);
-        border: 1px solid #001A26;
-        cursor: pointer;
-        color: #001A26;
         display: flex;
-        align-items: center;
-        justify-content: center;
-        padding-top: 3px;
-        font-size: 15px; }
-      body main .map .map-marker:hover,
-      body main .map .map-marker-list-hovered {
-        background: #ef7f0c;
-        z-index: 2; }
-      body main .map .bounce {
-        animation: bounce 0.5s;
-        animation-direction: alternate;
-        animation-timing-function: cubic-bezier(0.5, 0.05, 1, 0.5);
-        animation-iteration-count: infinite; }
+        align-items: center; }
+        main aside .event-list-container .event-count .event-list-sortBy-btn {
+          position: absolute;
+          right: 10px; }
+      main aside .event-list-container .event-list {
+        list-style-type: none;
+        padding: 0 10px;
+        margin: 0;
+        height: 82%;
+        overflow: scroll;
+        overflow-x: hidden;
+        color: #001a26; }
+      main aside .event-list-container .event {
+        margin: 5px 0;
+        background-color: #ebe460;
+        cursor: pointer;
+        padding: 8px; }
+        main aside .event-list-container .event .event-name {
+          margin: 0 0 5px; }
+        main aside .event-list-container .event span {
+          font-weight: bold;
+          color: #053752; }
+        main aside .event-list-container .event p {
+          margin: 0;
+          color: #053752; }
+      main aside .event-list-container .event:hover {
+        background-color: #ef7f0c; }
+  main .aside-show {
+    left: 0; }
+  main .aside-hide {
+    left: -500px; }
+  main .map {
+    width: 100%;
+    position: absolute;
+    top: 15vh; }
+    main .map .map-marker {
+      position: relative;
+      left: -10px;
+      top: -30px;
+      width: 20px;
+      height: 30px;
+      background: #e5de44;
+      -webkit-clip-path: polygon(100% 75%, 50% 100%, 0 75%, 0 0, 50% 25%, 100% 0);
+      clip-path: polygon(100% 75%, 50% 100%, 0 75%, 0 0, 50% 25%, 100% 0);
+      border: 1px solid #001A26;
+      cursor: pointer;
+      color: #001A26;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-top: 3px;
+      font-size: 15px; }
+    main .map .map-marker:hover,
+    main .map .map-marker-list-hovered {
+      background: #ef7f0c;
+      z-index: 2; }
+    main .map .bounce {
+      animation: bounce 0.5s;
+      animation-direction: alternate;
+      animation-timing-function: cubic-bezier(0.5, 0.05, 1, 0.5);
+      animation-iteration-count: infinite; }
 
 @keyframes bounce {
   from {
     transform: translate3d(0, -20px, 0); }
   to {
     transform: translate3d(0, 3px, 0); } }
-    body main .map-aside {
-      left: 280px;
-      width: calc(100vw - 280px); }
-    body main .infoWindow-wrapper {
-      height: 338px;
-      left: -115px;
-      bottom: 400px;
-      box-sizing: border-box;
-      flex-direction: column;
-      align-items: center;
-      display: flex;
-      position: relative;
-      width: 230px;
-      background-color: #001a26;
-      color: whitesmoke;
+  main .map-aside {
+    left: 280px;
+    width: calc(100vw - 280px); }
+  main .infoWindow-wrapper {
+    height: 338px;
+    left: -115px;
+    bottom: 400px;
+    box-sizing: border-box;
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+    position: relative;
+    width: 230px;
+    background-color: #001a26;
+    color: whitesmoke;
+    z-index: 3;
+    border: 1px solid #e5de44; }
+    main .infoWindow-wrapper .infoWindow-venue {
+      font-size: 17px;
+      width: 60%;
+      text-align: center;
+      margin: 15px 0 0; }
+    main .infoWindow-wrapper .infoWindow-venue-address {
+      width: 80%;
+      text-align: center;
+      font-size: 14px;
+      margin: 5px 0;
+      color: #ababab; }
+    main .infoWindow-wrapper .infoWindow-close-btn {
+      position: fixed;
+      right: -100px;
+      z-index: 5;
+      margin-top: 15px; }
+    main .infoWindow-wrapper .infoWindow-gradient {
+      width: 100%;
+      min-height: 35px;
+      margin-top: -25px;
+      bottom: 0px;
       z-index: 3;
-      border: 1px solid #e5de44; }
-      body main .infoWindow-wrapper .infoWindow-venue {
-        font-size: 17px;
-        width: 60%;
-        text-align: center;
-        margin: 15px 0 0; }
-      body main .infoWindow-wrapper .infoWindow-venue-address {
-        width: 80%;
-        text-align: center;
+      position: sticky;
+      display: block;
+      /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+41,ffffff+99&0+0,1+77 */
+      background: -moz-linear-gradient(top, rgba(0, 26, 38, 0) 0%, rgba(0, 26, 255, 0.53) 41%, #001a26 77%, #001a26 99%);
+      /* FF3.6-15 */
+      background: -webkit-linear-gradient(top, rgba(0, 26, 38, 0) 0%, rgba(0, 26, 38, 0.53) 41%, #001a26 77%, #001a26 99%);
+      /* Chrome10-25,Safari5.1-6 */
+      background: linear-gradient(to bottom, rgba(0, 26, 38, 0) 0%, rgba(0, 26, 38, 0.53) 41%, #001a26 77%, #001a26 99%);
+      /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 );
+      /* IE6-9 */ }
+  main .infoWindow-event-container {
+    overflow-y: auto;
+    width: 100%; }
+    main .infoWindow-event-container .infoWindow-event {
+      padding: 10px;
+      margin: 0 20px 17px;
+      background-color: #053752;
+      left: -110px;
+      z-index: 2;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: space-around;
+      height: 220px;
+      width: 190px;
+      box-sizing: border-box;
+      font-size: 16px; }
+      main .infoWindow-event-container .infoWindow-event .infoWindow-event-name {
+        margin: 0;
+        font-size: 18px;
+        color: whitesmoke; }
+      main .infoWindow-event-container .infoWindow-event .infoWindow-event-date {
+        margin: 0;
         font-size: 14px;
-        margin: 5px 0;
+        font-weight: normal;
         color: #ababab; }
-      body main .infoWindow-wrapper .infoWindow-close-btn {
-        position: fixed;
-        right: -100px;
-        z-index: 5;
-        margin-top: 15px; }
-      body main .infoWindow-wrapper .infoWindow-gradient {
-        width: 100%;
-        min-height: 35px;
-        margin-top: -25px;
-        bottom: 0px;
-        z-index: 3;
-        position: sticky;
-        display: block;
-        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+41,ffffff+99&0+0,1+77 */
-        background: -moz-linear-gradient(top, rgba(0, 26, 38, 0) 0%, rgba(0, 26, 255, 0.53) 41%, #001a26 77%, #001a26 99%);
-        /* FF3.6-15 */
-        background: -webkit-linear-gradient(top, rgba(0, 26, 38, 0) 0%, rgba(0, 26, 38, 0.53) 41%, #001a26 77%, #001a26 99%);
-        /* Chrome10-25,Safari5.1-6 */
-        background: linear-gradient(to bottom, rgba(0, 26, 38, 0) 0%, rgba(0, 26, 38, 0.53) 41%, #001a26 77%, #001a26 99%);
-        /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 );
-        /* IE6-9 */ }
-    body main .infoWindow-event-container {
-      overflow-y: auto;
-      width: 100%; }
-      body main .infoWindow-event-container .infoWindow-event {
-        padding: 10px;
-        margin: 0 20px 17px;
-        background-color: #053752;
-        left: -110px;
-        z-index: 2;
-        text-align: center;
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        justify-content: space-around;
-        height: 220px;
-        width: 190px;
-        box-sizing: border-box;
+      main .infoWindow-event-container .infoWindow-event .infoWindow-event-genre {
+        margin: 0;
+        font-size: 14px;
+        color: #ababab; }
+      main .infoWindow-event-container .infoWindow-event .infoWindow-img {
+        width: 150px; }
+      main .infoWindow-event-container .infoWindow-event .infoWindow-link {
+        margin-top: 5px;
+        color: #e5de44;
         font-size: 16px; }
-        body main .infoWindow-event-container .infoWindow-event .infoWindow-event-name {
-          margin: 0;
-          font-size: 18px;
-          color: whitesmoke; }
-        body main .infoWindow-event-container .infoWindow-event .infoWindow-event-date {
-          margin: 0;
-          font-size: 14px;
-          font-weight: normal;
-          color: #ababab; }
-        body main .infoWindow-event-container .infoWindow-event .infoWindow-event-genre {
-          margin: 0;
-          font-size: 14px;
-          color: #ababab; }
-        body main .infoWindow-event-container .infoWindow-event .infoWindow-img {
-          width: 150px; }
-        body main .infoWindow-event-container .infoWindow-event .infoWindow-link {
-          margin-top: 5px;
-          color: #e5de44;
-          font-size: 16px; }
-        body main .infoWindow-event-container .infoWindow-event .infoWindow-link:hover {
-          color: #ef7f0c; }
-  body ::-webkit-scrollbar {
-    width: 10px; }
-  body ::-webkit-scrollbar-track {
-    background: #f1f1f1; }
-  body ::-webkit-scrollbar-thumb {
-    background: #888; }
-  body ::-webkit-scrollbar-thumb:hover {
-    background: #555; }
+      main .infoWindow-event-container .infoWindow-event .infoWindow-link:hover {
+        color: #ef7f0c; }
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px; }
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; }
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; }
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; }
 
 /*
         .filter-modal {
