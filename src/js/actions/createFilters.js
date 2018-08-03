@@ -20,6 +20,8 @@ export function createFilters(events){
         }
     }
 
+    allLocations.sort();
+
     return {
         locations: allLocations,
         dates: allDates,
