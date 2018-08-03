@@ -338,7 +338,7 @@ class Map extends Component {
 			};	
 		}
 		
-		const mapBounds = fitBounds(bounds, size)
+		const mapBounds = fitBounds(bounds, size);
 
 		const center = infoWindow.value === true ? {
 			lat: infoWindow.lat,
@@ -382,7 +382,6 @@ class Map extends Component {
 								key={ venue.venueName }
 								lat={ venue.lat }
 								lng={ venue.lng }
-								// address= { }
 								venue={ venue }
 							/>
 						)

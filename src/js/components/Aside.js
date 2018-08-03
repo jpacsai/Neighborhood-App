@@ -22,7 +22,6 @@ class Aside extends Component {
 
                 <h2 className='aside-header'>Events</h2>
                 
-
                 { modalVisible && < FilterModal /> }
 
                 { fetchReady && 

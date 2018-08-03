@@ -65,7 +65,7 @@ class DatePicker extends Component {
                     {
                         daysOfWeek: formatNoEventDays
                     }
-                 ] }
+                ] }
                 selectedDays={ selectedDays }
                 onDayClick={ (day) => {
                     const between = (todayTime <= day.getTime() && nextWeekTime >= day.getTime());

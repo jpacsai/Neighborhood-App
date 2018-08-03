@@ -27,10 +27,7 @@ class Place extends Component {
     const events = venue.eventsArray;
 
     return (
-        <div
-            onMouseEnter={() => { }}
-            onMouseLeave={() => { }}
-        >
+        <div>
             <div 
                 className={ markerStyle }
                 onClick={ () => {
@@ -45,34 +42,42 @@ class Place extends Component {
             <div className='infoWindow-wrapper'>
                 <h4 className='infoWindow-venue'>{ venue.venueName }</h4>
                 <p className='infoWindow-venue-address'>{ venue.venueAddress }</p>
+
                 <button 
                     className='infoWindow-close-btn' 
                     onClick={ () => {
                         closeInfoWindow();
                         highligthMarker_Out();
                     } }
-                >X</button>
-                <div className='infoWindow-event-container'>
-                { infoWindow.events.map( event => {
-                    const gen = event.classifications[0].genre.name;
-                    const subGen = event.classifications[0].subType.name;
-                    const genre = gen === 'Undefined' ? (subGen === 'Undefined' ? null : subGen) : gen;
-                    return (
-                        <div 
-                            className='infoWindow-event'
-                            key={ event.name }
-                        >
-                            <h2 className='infoWindow-event-name'>{ event.name}</h2>
-                            <p className='infoWindow-event-date'>{ event.dates.start.displayDate}</p>
+                >
+                    <i className="fas fa-times"></i>
+                </button>
 
-                            { gen !== null && <p className='infoWindow-event-genre'>{ genre }</p> }
-                            <img className='infoWindow-img' src={ event.images[2].url} alt='artist/event' />
-                            <a className='infoWindow-link' href={ event.url }>more info here</a>
-                        </div>
-                    )
-                }) }
-                { infoWindow.events.length > 1 &&
-                    <div className='infoWindow-gradient'></div> }
+                <div className='infoWindow-event-container'>
+
+                    { infoWindow.events.map( event => {
+
+                        const gen = event.classifications[0].genre.name;
+                        const subGen = event.classifications[0].subType.name;
+                        const genre = gen === 'Undefined' ? (subGen === 'Undefined' ? null : subGen) : gen;
+
+                        return (
+                            <div 
+                                className='infoWindow-event'
+                                key={ event.name }
+                            >
+                                <h2 className='infoWindow-event-name'>{ event.name}</h2>
+                                <p className='infoWindow-event-date'>{ event.dates.start.displayDate}</p>
+
+                                { genre && <p className='infoWindow-event-genre'>{ genre }</p> }
+                                
+                                <img className='infoWindow-img' src={ event.images[2].url} alt='artist/event' />
+                                <a className='infoWindow-link' href={ event.url } target="_blank">more info here</a>
+                            </div>
+                        )
+                    }) }
+                    { infoWindow.events.length > 1 &&
+                        <div className='infoWindow-gradient'></div> }
                 </div>
                 
             </div> }

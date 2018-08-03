@@ -14,19 +14,28 @@ class FilterModal extends Component {
         const { events, locationFilter, dateFilter, modalVisible, filterEvents, reset, sortByMethod, hideModal, allVenues } = this.props;
 
         return (
-            <form className='filter-modal' onSubmit={ (e) => {
-                filterEvents(e, events, locationFilter, dateFilter, sortByMethod);
-                hideModal(modalVisible);
-            } } >
+            <form 
+                className='filter-modal'
+                onSubmit={ (e) => {
+                    filterEvents(e, events, locationFilter, dateFilter, sortByMethod);
+                    hideModal(modalVisible);
+                } }
+            >
                 <h2 className='aside-header aside-filter-header'>Filters</h2>
+
                 <button 
                     className='filter-modal-close-btn' 
                     type='button'
-                    onClick={ () => hideModal(modalVisible) } ><i className="fas fa-times"></i></button>
+                    onClick={ () => hideModal(modalVisible) }
+                >
+                    <i className="fas fa-times"></i>
+                </button>
+
                 <div className='filter-area'>
                     <DatePicker />
                     <FilterList />
                 </div>
+
                 <div className='filter-buttons'>
                     <input className='filter-modal-btn' type="submit" value="Submit" />
                     <button 
@@ -34,8 +43,10 @@ class FilterModal extends Component {
                         className='filter-modal-btn filter-reset-btn'
                         onClick={ (e) => {
                             reset(events, sortByMethod, allVenues);
-                        } } >Clear</button>
+                        } } 
+                    >Clear</button>
                 </div>
+                
             </form>
         )
     }

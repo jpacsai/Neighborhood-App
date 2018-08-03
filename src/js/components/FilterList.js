@@ -10,26 +10,27 @@ class FilterList extends Component {
         const { locations, filtersToApply, locationFilters } = this.props;
         
         if (locations) {
-
             return (
                 <div className='filter-select'>
                     <h3>Locations</h3>
-                    { locations.map(item => {
 
+                    { locations.map(item => {
                         return (
-                            <div key={ item } className='filter-select-li'>
+                            <div
+                                key={ item }
+                                className='filter-select-li'
+                            >
                                 <input
                                     id={ item }
-                                    
-                                    checked={ locationFilters.includes(item) }
                                     type="checkbox"
+                                    checked={ locationFilters.includes(item) }
                                     name={ item } 
                                     value={ item } 
-                                    onChange={ (value) => {
-                                        filtersToApply(value, locationFilters);
-                                    } }
+                                    onChange={ (value) => filtersToApply(value, locationFilters) }
                                 />
-                                <label htmlFor={ item }>{ item }</label>
+                                <label 
+                                    htmlFor={ item }
+                                >{ item }</label>
                             </div>
                         )
                     }) }

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { loadData } from './actions/eventFetch';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import MapContainer from './containers/map-container';
+import Map from './components/Map';
 import { toggleAside } from './actions/toggleAside';
 import Aside from './components/Aside';
 import { closeInfoWindow } from './actions/closeInfoWindow';
@@ -43,7 +43,7 @@ class App extends Component {
 
 				<main>
 					<Aside />
-					<MapContainer />
+					<Map />
 				</main>
 
 			</div>
