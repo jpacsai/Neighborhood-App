@@ -4,15 +4,15 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import List from './List';
 import { sortingEvents } from '../actions/sortingEvents';
-import { modalVisibility } from '../actions/modalVisibility';
 import FilterModal from './FilterModal';
 import { closeInfoWindow } from './../actions/closeInfoWindow';
 import { highligthMarker_Out } from './../actions/highligthMarker_Out';
+import { toggleModal } from './../actions/modalVisibility';
 
 class Aside extends Component {
 
 	render() {
-		const { fetchReady, sortAction, displayList, showAside, modalVisibility, modalVisible, closeInfoWindow, highligthMarker_Out } = this.props;
+		const { fetchReady, sortAction, displayList, showAside, toggleModal, modalVisible, closeInfoWindow, highligthMarker_Out } = this.props;
 
 		const asideStyle = showAside ? 'aside-show' : 'aside-hide';
 
@@ -33,7 +33,7 @@ class Aside extends Component {
                                 className='filter-btn'
                                 type="button"
                                 onClick={ () => {
-                                    modalVisibility(modalVisible);
+                                    toggleModal(modalVisible);
                                     closeInfoWindow();
                                     highligthMarker_Out();
                                 } }>
@@ -76,7 +76,7 @@ function mapDispatchToProps(dispatch) {
     return bindActionCreators({
 		loadData: loadData,
 		sortAction: sortingEvents,
-        modalVisibility,
+        toggleModal,
         closeInfoWindow,
         highligthMarker_Out
 	}, dispatch);

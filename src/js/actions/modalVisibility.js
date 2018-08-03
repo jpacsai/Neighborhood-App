@@ -1,8 +1,7 @@
-export function modalVisibility(val) {
+export function toggleModal(val) {
+    const message = 'TOGGLE_FILTER_MODAL';
 
     const value = val ? false : true;
-    const message = 'TOGGLE_MODAL_VISIBILITY';
-
     return modalVisibilityDispatcher(message, value);
 }
 

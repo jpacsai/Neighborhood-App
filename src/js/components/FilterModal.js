@@ -2,23 +2,23 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { filterEvents } from './../actions/filterEvents';
-import { modalVisibility } from './../actions/modalVisibility';
 import DatePicker from './../components/DayPicker';
 import FilterList from './FilterList';
 import { resetFiltering } from './../actions/resetFiltering';
+import { hideModal } from './../actions/hideModal';
 
 class FilterModal extends Component {
 
     render() {
 
-        const { events, locationFilter, dateFilter, modalVisible, filterEvents, reset, sortByMethod, hideModal, allVenues } = this.props;
+        const { events, locationFilter, dateFilter, filterEvents, reset, sortByMethod, hideModal, allVenues } = this.props;
 
         return (
             <form 
                 className='filter-modal'
                 onSubmit={ (e) => {
                     filterEvents(e, events, locationFilter, dateFilter, sortByMethod);
-                    hideModal(modalVisible);
+                    hideModal();
                 } }
             >
                 <h2 className='aside-header aside-filter-header'>Filters</h2>
@@ -26,7 +26,7 @@ class FilterModal extends Component {
                 <button 
                     className='filter-modal-close-btn' 
                     type='button'
-                    onClick={ () => hideModal(modalVisible) }
+                    onClick={ () => hideModal() }
                 >
                     <i className="fas fa-times"></i>
                 </button>
@@ -66,7 +66,7 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
     return bindActionCreators({
         filterEvents: filterEvents,
-        hideModal: modalVisibility,
+        hideModal,
         reset: resetFiltering
     }, dispatch);
 }

@@ -93,6 +93,7 @@ body {
         top: 0;
         left: 0;
         width: 100vw;
+        max-width: 360px;
         height: 85vh;
         min-height: 360px;
         background-color: #053752;
@@ -146,7 +147,7 @@ body {
           margin: 30px;
           height: 50px;
           display: flex;
-          width: 100%;
+          width: 300px;
           padding: 10px;
           justify-content: space-evenly;
           align-items: center;
@@ -396,8 +397,7 @@ body {
         }
       }
     }
-
-  }
+}
 
       /* width */
   ::-webkit-scrollbar {
@@ -418,60 +418,3 @@ body {
   ::-webkit-scrollbar-thumb:hover {
     background: #555; 
   }
-
-/*
-        .filter-modal {
-          position: absolute;
-          z-index: 2;
-          top: 15%;
-          left: 10%;
-          width: 80%;
-          height: 70%;
-          min-height: 360px;
-          display: grid;
-          grid-template: 20% 60% 20% / 1fr;
-          background-color: white;
-          animation: fadeIn 0.8s;
-
-          .filter-modal-btn {
-            color: red;
-            margin: 5px;
-            width: 150px;
-            padding: 10px;
-          }
-
-          .filter-modal-close-btn {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-          }
-
-          .filter-area {
-            grid-area: 2 / 1 / 3 / 2;
-            display: grid;
-            grid-template: 1fr / 50% 50%;
-
-            .DayPicker {
-              max-width: 320px;
-              height: 270px;
-              margin: auto;
-            }
-
-            .filter-select {
-              grid-area: 1 / 2 / 2 / 3;
-
-              .filter-select-li {
-                margin: 5px;
-              }
-            }
-          }
-
-          .filter-buttons {
-            grid-area: 3 / 1 / 4 / 2;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: row;
-          }
-        }
-        */

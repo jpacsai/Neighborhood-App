@@ -6,6 +6,7 @@ import { highligthMarker_Out } from './../actions/highligthMarker_Out';
 import { openInfoWindow } from './../actions/infoWindow';
 import { highligthMarker_In } from './../actions/highligthMarker_In';
 import { closeInfoWindow } from './../actions/closeInfoWindow';
+import { hideModal } from './../actions/hideModal';
 
 class Place extends Component {
 
@@ -15,7 +16,7 @@ class Place extends Component {
 
   render() {
 
-    const { hoverId, venue, infoWindow, openInfoWindow, closeInfoWindow, highligthMarker_In, highligthMarker_Out } = this.props;
+    const { hoverId, venue, infoWindow, openInfoWindow, closeInfoWindow, highligthMarker_In, highligthMarker_Out, hideModal, modalVisible } = this.props;
     
     const markerStyle = hoverId === venue.venueId ? 'map-marker map-marker-list-hovered bounce' : 'map-marker';
 
@@ -31,6 +32,7 @@ class Place extends Component {
             <div 
                 className={ markerStyle }
                 onClick={ () => {
+                    hideModal();
                     openInfoWindow(place, events);
                     highligthMarker_In(venue.venueId)
                 } }
@@ -91,7 +93,7 @@ function mapStateToProps(state) {
     return {
         eventInfo: state.infoWindow,
         hoverId: state.hoverEvent,
-        infoWindow: state.infoWindow
+        infoWindow: state.infoWindow,
     }
 }
 
@@ -100,7 +102,8 @@ function mapDispatchToProps(dispatch) {
         highligthMarker_Out,
         closeInfoWindow,
         openInfoWindow,
-        highligthMarker_In
+        highligthMarker_In,
+        hideModal
 	}, dispatch);
 }
 
