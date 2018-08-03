@@ -30,7 +30,7 @@ class App extends Component {
 						className='aside-toggle-btn'
 						onClick={ () => toggleAside(showAside) }
 					>
-						<i class="fas fa-bars"></i>
+						<i className="fas fa-bars"></i>
 					</button>
 				</nav>
 

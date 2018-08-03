@@ -71,167 +71,143 @@ body {
       z-index: 2;
       background-color: $menu-color;   
       color: $light-text-color;   
+      color: $light-text-color;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
 
       .aside-header {
         margin: 0;
         padding: 8px;
         text-align: center;
       }
-      
-      .aside-header-list {
-        height: 6%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-      
-      .filter-container {
+
+      .filter-modal {
+        position: absolute;
         display: flex;
         flex-direction: column;
-        justify-content: center;
         align-items: center;
-        padding: 10px;
-        transition: 1s;
+        z-index: 2;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 85vh;
+        min-height: 360px;
+        background-color: #053752;
+        animation: fadeIn 0.8s;
+        overflow: scroll;
+        overflow-x: hidden;
 
-        .filter-modal-btn {
-          width: 115px;
+        .aside-filter-header {
+          margin: 13px;
         }
 
-        .filter-modal {
+        .filter-modal-close-btn {
           position: absolute;
-          z-index: 2;
-          top: 0;
-          left: 0;
-          width: 100vw;
-          height: 85vh;
-          min-height: 360px;
-          background-color: $menu-color;
-          animation: fadeIn 0.8s;
-          overflow: scroll;
-          overflow-x: hidden;
+          top: 15px;
+          right: 15px;
+        }
 
-          .aside-filter-header {
-            margin: 13px;
+        .filter-area {
+          
+          .DayPicker {
+            max-width: 320px;
+            height: 270px;
+            margin: auto;
+            color: $dark-text-color;
+            background-color: $modal-background;
+
+            .DayPicker-Day--today {
+              color: $highlight-color;
+            }
+
+            .DayPicker-Day--selected {
+              background-color: $accent-color;
+              color: $dark-text-color;
+            }
+
+            .DayPicker-Day--disabled { 
+              color: grey;
+            }
           }
 
+          .filter-select {
+            color: $light-text-color;
+            
+            .filter-select-li {
+              margin: 10px;
+            }
+          }
+        }
+
+        .filter-buttons {
+          margin: 5px;
+        }
+      }
+
+      .event-control {
+        height: 75px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        padding: 0 20px 0 10px;
+        box-sizing: border-box;
+
+        .event-control-counter {
+          margin: 0;
+        }
+
+        .event-control-btn-container {
+          width: 100%;
+          display: flex;
+          justify-content: space-evenly;
+  
           .filter-modal-btn {
             color: $dark-text-color;
-            margin: 5px;
             width: 115px;
             padding: 10px;
             box-sizing: border-box;
             height: 40px;
           }
 
-          .filter-modal-close-btn {
-            position: absolute;
-            top: 15px;
-            right: 15px;
+          .event-list-sortBy-btn {
+            height: 40px;
+            width: 115px;
           }
+        }   
+      }
 
-          .filter-area {
-            
-            .DayPicker {
-              max-width: 320px;
-              height: 270px;
-              margin: auto;
-              color: $dark-text-color;
-              background-color: $modal-background;
+      .event-list {
+        list-style-type: none;
+        padding: 0 10px;
+        margin: 0;
+        height: 82%;
+        overflow: scroll;
+        overflow-x: hidden;
+        color: $background-color;
+      }
 
-              .DayPicker-Day--today {
-                color: $highlight-color;
-              }
+      .event {
+        margin: 5px 0;
+        background-color: $list-item-color;
+        cursor: pointer;
+        padding: 8px;
 
-              .DayPicker-Day--selected {
-                background-color: $accent-color;
-                color: $dark-text-color;
-              }
-
-              .DayPicker-Day--disabled { 
-                color: grey;
-              }
-            }
-
-            .filter-select {
-              color: $light-text-color;
-              
-              .filter-select-li {
-                margin: 10px;
-              }
-            }
-          }
-
-          .filter-buttons {
-            margin: 5px;
-          }
+        .event-name {
+          margin: 0 0 5px;
         }
 
-        form {
-          display: flex;
-          flex-direction: column;
-          justify-content: space-between;
-          align-items: center;
-
-          select {
-            margin-bottom: 5px;
-          }
+        p {
+          margin: 0;
+          font-weight: bold;
+          color: $menu-color;
         }
       }
 
-      .event-list-container {
-        height: 78%;
-        overflow-x: hidden;
-        color: $light-text-color;
-
-        .event-count {
-          position: relative;
-          margin: 0;
-          padding-left: 10px;
-          height: 63px;
-          display: flex;
-          flex-direction: column;
-          justify-content: space-evenly;
-          align-items: center;
-
-          .event-list-sortBy-btn{
-
-          }
-        }
-
-        .event-list {
-          list-style-type: none;
-          padding: 0 10px;
-          margin: 0;
-          height: 82%;
-          overflow: scroll;
-          overflow-x: hidden;
-          color: $background-color;
-        }
-  
-        .event {
-          margin: 5px 0;
-          background-color: $list-item-color;
-          cursor: pointer;
-          padding: 8px;
-
-          .event-name {
-            margin: 0 0 5px;
-          }
-          
-          span {
-            font-weight: bold;
-            color: $menu-color;
-          }
-
-          p {
-            margin: 0;
-            color: $menu-color;
-          }
-        }
-
-        .event:hover {
-          background-color: $highlight-color;
-        }
+      .event:hover {
+        background-color: $highlight-color;
       }
     }
 

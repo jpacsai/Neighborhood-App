@@ -44,112 +44,100 @@ main {
     height: 85vh;
     z-index: 2;
     background-color: #053752;
-    color: whitesmoke; }
+    color: whitesmoke;
+    color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
     main aside .aside-header {
       margin: 0;
       padding: 8px;
       text-align: center; }
-    main aside .aside-header-list {
-      height: 6%;
-      display: flex;
-      justify-content: center;
-      align-items: center; }
-    main aside .filter-container {
+    main aside .filter-modal {
+      position: absolute;
       display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
-      padding: 10px;
-      transition: 1s; }
-      main aside .filter-container .filter-modal-btn {
-        width: 115px; }
-      main aside .filter-container .filter-modal {
+      z-index: 2;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 85vh;
+      min-height: 360px;
+      background-color: #053752;
+      animation: fadeIn 0.8s;
+      overflow: scroll;
+      overflow-x: hidden; }
+      main aside .filter-modal .aside-filter-header {
+        margin: 13px; }
+      main aside .filter-modal .filter-modal-close-btn {
         position: absolute;
-        z-index: 2;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 85vh;
-        min-height: 360px;
-        background-color: #053752;
-        animation: fadeIn 0.8s;
-        overflow: scroll;
-        overflow-x: hidden; }
-        main aside .filter-container .filter-modal .aside-filter-header {
-          margin: 13px; }
-        main aside .filter-container .filter-modal .filter-modal-btn {
+        top: 15px;
+        right: 15px; }
+      main aside .filter-modal .filter-area .DayPicker {
+        max-width: 320px;
+        height: 270px;
+        margin: auto;
+        color: #001a26;
+        background-color: whitesmoke; }
+        main aside .filter-modal .filter-area .DayPicker .DayPicker-Day--today {
+          color: #ef7f0c; }
+        main aside .filter-modal .filter-area .DayPicker .DayPicker-Day--selected {
+          background-color: #e5de44;
+          color: #001a26; }
+        main aside .filter-modal .filter-area .DayPicker .DayPicker-Day--disabled {
+          color: grey; }
+      main aside .filter-modal .filter-area .filter-select {
+        color: whitesmoke; }
+        main aside .filter-modal .filter-area .filter-select .filter-select-li {
+          margin: 10px; }
+      main aside .filter-modal .filter-buttons {
+        margin: 5px; }
+    main aside .event-control {
+      height: 75px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      padding: 0 20px 0 10px;
+      box-sizing: border-box; }
+      main aside .event-control .event-control-counter {
+        margin: 0; }
+      main aside .event-control .event-control-btn-container {
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly; }
+        main aside .event-control .event-control-btn-container .filter-modal-btn {
           color: #001a26;
-          margin: 5px;
           width: 115px;
           padding: 10px;
           box-sizing: border-box;
           height: 40px; }
-        main aside .filter-container .filter-modal .filter-modal-close-btn {
-          position: absolute;
-          top: 15px;
-          right: 15px; }
-        main aside .filter-container .filter-modal .filter-area .DayPicker {
-          max-width: 320px;
-          height: 270px;
-          margin: auto;
-          color: #001a26;
-          background-color: whitesmoke; }
-          main aside .filter-container .filter-modal .filter-area .DayPicker .DayPicker-Day--today {
-            color: #ef7f0c; }
-          main aside .filter-container .filter-modal .filter-area .DayPicker .DayPicker-Day--selected {
-            background-color: #e5de44;
-            color: #001a26; }
-          main aside .filter-container .filter-modal .filter-area .DayPicker .DayPicker-Day--disabled {
-            color: grey; }
-        main aside .filter-container .filter-modal .filter-area .filter-select {
-          color: whitesmoke; }
-          main aside .filter-container .filter-modal .filter-area .filter-select .filter-select-li {
-            margin: 10px; }
-        main aside .filter-container .filter-modal .filter-buttons {
-          margin: 5px; }
-      main aside .filter-container form {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center; }
-        main aside .filter-container form select {
-          margin-bottom: 5px; }
-    main aside .event-list-container {
-      height: 78%;
+        main aside .event-control .event-control-btn-container .event-list-sortBy-btn {
+          height: 40px;
+          width: 115px; }
+    main aside .event-list {
+      list-style-type: none;
+      padding: 0 10px;
+      margin: 0;
+      height: 82%;
+      overflow: scroll;
       overflow-x: hidden;
-      color: whitesmoke; }
-      main aside .event-list-container .event-count {
-        position: relative;
+      color: #001a26; }
+    main aside .event {
+      margin: 5px 0;
+      background-color: #ebe460;
+      cursor: pointer;
+      padding: 8px; }
+      main aside .event .event-name {
+        margin: 0 0 5px; }
+      main aside .event p {
         margin: 0;
-        padding-left: 10px;
-        height: 63px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        align-items: center; }
-      main aside .event-list-container .event-list {
-        list-style-type: none;
-        padding: 0 10px;
-        margin: 0;
-        height: 82%;
-        overflow: scroll;
-        overflow-x: hidden;
-        color: #001a26; }
-      main aside .event-list-container .event {
-        margin: 5px 0;
-        background-color: #ebe460;
-        cursor: pointer;
-        padding: 8px; }
-        main aside .event-list-container .event .event-name {
-          margin: 0 0 5px; }
-        main aside .event-list-container .event span {
-          font-weight: bold;
-          color: #053752; }
-        main aside .event-list-container .event p {
-          margin: 0;
-          color: #053752; }
-      main aside .event-list-container .event:hover {
-        background-color: #ef7f0c; }
+        font-weight: bold;
+        color: #053752; }
+    main aside .event:hover {
+      background-color: #ef7f0c; }
   main .aside-show {
     left: 0; }
   main .aside-hide {

@@ -17,22 +17,26 @@ class Aside extends Component {
 		return (
 
             <aside className={ asideStyle }>
-                <section className='filter-container'>
-                    <h2 className='aside-header aside-header-filter'>Filters</h2>
-                    <button 
-                        className='filter-modal-btn'
-                        type="button"
-                        onClick={ () => {
-                            modalVisibility(modalVisible);
-                        } }>
-                        Show Filters
-                    </button>
-                    { modalVisible && < FilterModal /> }
-                </section>
-                <section className='event-list-container'>
-                    <h2 className='aside-header aside-header-list'>Events</h2>
-                    { fetchReady && 
-                        <p className='event-count'><span>{ displayList.length || '0' } event{ displayList.length > 1 && 's'} found</span>
+
+                <h2 className='aside-header'>Events</h2>
+                
+
+                { modalVisible && < FilterModal /> }
+
+                { fetchReady && 
+                    <div className='event-control'>
+                        <p className='event-control-counter'>{ displayList.length || '0' } event{ displayList.length > 1 && 's'} found</p>
+
+                        <div className='event-control-btn-container'>
+                            <button 
+                                className='filter-modal-btn'
+                                type="button"
+                                onClick={ () => {
+                                    modalVisibility(modalVisible);
+                                } }>
+                                Show Filters
+                            </button>
+
                             <select 
                                 className='event-list-sortBy-btn'
                                 onChange={ (e) => sortAction(displayList, e) }
@@ -41,13 +45,15 @@ class Aside extends Component {
                                 <option value="date">Date</option>
                                 <option value="location">Location</option>
                             </select>
-                        </p>
-                    } 
-                    <ul className='event-list'>
-                    { fetchReady &&
-                        (( displayList.length === 0 && <li className='event'>{ 'no match found' }</li> ) || <List list={ displayList } /> ) }
-                    </ul>
-                </section>
+                        </div>
+                    </div>
+                } 
+
+                <ul className='event-list'>
+                { fetchReady &&
+                    (( displayList.length === 0 && <li className='event'>{ 'no match found' }</li> ) || <List list={ displayList } /> ) }
+                </ul>
+
             </aside>
         )
 	}
