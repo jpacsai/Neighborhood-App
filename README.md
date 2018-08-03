@@ -93,6 +93,7 @@
 - [ ] fix: close infowindow when side menu is opened
 - [ ] test: infowindow actions
 ***
+- [ ] fix: highlight markers when list hovered (possibly broke bacause of components rearranged)
 - [ ] move infoWindow into a new component
 - [ ] error handling
 - [ ] fix: day picker styles messed up
