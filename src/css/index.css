@@ -155,7 +155,8 @@ main {
         color: #053752; }
         main aside .event p span {
           font-weight: bold; }
-    main aside .event:hover {
+    main aside .event:hover,
+    main aside .event:focus {
       background-color: #e5de44; }
   main aside:focus {
     outline: none;

@@ -234,7 +234,8 @@ body {
         }
       }
 
-      .event:hover {
+      .event:hover,
+      .event:focus {
         background-color: $accent-color;
       }
     }
