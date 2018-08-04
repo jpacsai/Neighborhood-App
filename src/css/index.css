@@ -150,6 +150,7 @@ main {
       padding: 0 10px;
       margin: 0;
       height: 82%;
+      width: calc(100% - 20px);
       overflow: scroll;
       overflow-x: hidden;
       color: #001a26; }

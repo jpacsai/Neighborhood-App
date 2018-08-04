@@ -48,7 +48,7 @@ class Aside extends Component {
                                 aria-label='Sort event list by'
                                 id="sortBy"
                                 className='event-list-sortBy-btn'
-                                onChange={ (e) => sortAction(displayList, e) }
+                                onChange={ (e) => sortAction(finalList, e) }
                             >
                                 <option value="abc">Abc</option>
                                 <option value="date">Date</option>
@@ -62,8 +62,9 @@ class Aside extends Component {
                             aria-label='Enter search text'
                             placeholder="Search events name"
                             onChange={ (event) => {
-                                console.log('aside displ', displayList)
                                 searchEvents(event, displayList);
+                                closeInfoWindow();
+                                highligthMarker_Out();
                             } }
                         />
                     </div>

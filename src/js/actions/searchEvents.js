@@ -1,4 +1,6 @@
 import escapeRegexp from 'escape-string-regexp';
+import { getVenues } from './getVenues';
+import { calcBounds } from './calcBounds';
 
 export function searchEvents(event, eventList) {
 
@@ -8,10 +10,24 @@ export function searchEvents(event, eventList) {
         return match.test(event.name)
     });
 
-    console.log('res',results)
+    if (results.length === 0) {
+        const bounds = calcBounds(eventList);
+        return {
+            type: 'NO_MATCHING_SEARCHED_EVENTS',
+            searchResults: [],
+            venues: null,
+            bounds
+        }
+    }
 
-    return {
-        type: 'SEARCHING_EVENTS',
-        searchResults: results
+    else {
+        const venues = getVenues(results);
+        const bounds = calcBounds(venues);
+        return {
+            type: 'SEARCHING_EVENTS',
+            searchResults: results,
+            venues,
+            bounds 
+        }
     }
 }
