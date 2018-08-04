@@ -8,13 +8,16 @@ import FilterModal from './FilterModal';
 import { closeInfoWindow } from './../actions/closeInfoWindow';
 import { highligthMarker_Out } from './../actions/highligthMarker_Out';
 import { toggleModal } from './../actions/modalVisibility';
+import { searchEvents } from './../actions/searchEvents';
 
 class Aside extends Component {
 
 	render() {
-		const { fetchReady, sortAction, displayList, showAside, toggleModal, modalVisible, closeInfoWindow, highligthMarker_Out } = this.props;
+		const { fetchReady, sortAction, displayList, showAside, toggleModal, modalVisible, closeInfoWindow, highligthMarker_Out, searchEvents, searchResult } = this.props;
 
-		const asideStyle = showAside ? 'aside-show' : 'aside-hide';
+        const asideStyle = showAside ? 'aside-show' : 'aside-hide';
+        
+        const finalList = searchResult ? searchResult : displayList;
 
 		return (
 
@@ -51,13 +54,24 @@ class Aside extends Component {
                                 <option value="date">Date</option>
                                 <option value="location">Location</option>
                             </select>
+
                         </div>
+                        <input 
+                            className='event-list-search' 
+                            type='text' 
+                            aria-label='Enter search text'
+                            placeholder="Search events name"
+                            onChange={ (event) => {
+                                console.log('aside displ', displayList)
+                                searchEvents(event, displayList);
+                            } }
+                        />
                     </div>
                 } 
 
                 <ul className='event-list'>
                 { fetchReady &&
-                    (( displayList.length === 0 && <li className='event'>{ 'no match found' }</li> ) || <List list={ displayList } /> ) }
+                    (( displayList.length === 0 && <li className='event'>{ 'no match found' }</li> ) || <List list={ finalList } /> ) }
                 </ul>
 
             </aside>
@@ -71,7 +85,8 @@ function mapStateToProps(state) {
 		fetchReady: state.fetchReady,
 		displayList: state.displayList,
 		showAside: state.showAside,
-		modalVisible: state.modalVisibility
+        modalVisible: state.modalVisibility,
+        searchResult: state.searchResult
     }
 }
 
@@ -81,7 +96,8 @@ function mapDispatchToProps(dispatch) {
 		sortAction: sortingEvents,
         toggleModal,
         closeInfoWindow,
-        highligthMarker_Out
+        highligthMarker_Out,
+        searchEvents
 	}, dispatch);
 }
 

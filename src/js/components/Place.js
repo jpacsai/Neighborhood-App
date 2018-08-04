@@ -111,7 +111,6 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
     return bindActionCreators({
-        highligthMarker_Out,
         closeInfoWindow,
         openInfoWindow,
         highligthMarker_In,

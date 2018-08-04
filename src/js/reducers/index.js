@@ -15,6 +15,7 @@ import boundsReducer from './bounds-reducer';
 import hoverListReducer from './hoverList-reducer';
 import infoWindowReducer from './infoWindow-reducer';
 import toggleAsideReducer from './toggleAside-reducer';
+import searchEventsReducer from './searchEvents-reducer';
 
 export default combineReducers({
 	events: eventReducer,
@@ -34,7 +35,8 @@ export default combineReducers({
 	bounds: boundsReducer,
 	hoverEvent: hoverListReducer,
 	infoWindow: infoWindowReducer,
-	showAside: toggleAsideReducer
+	showAside: toggleAsideReducer,
+	searchResult: searchEventsReducer
 	// mapCenterZoom: 
 });
 

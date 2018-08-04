@@ -170,7 +170,7 @@ body {
       }
 
       .event-control {
-        height: 75px;
+        height: 157px;
         width: 100%;
         display: flex;
         flex-direction: column;
@@ -187,7 +187,7 @@ body {
         .event-control-btn-container {
           width: 100%;
           display: flex;
-          justify-content: space-evenly;
+          justify-content: space-between;
   
           .filter-btn {
             color: $dark-text-color;
@@ -205,8 +205,16 @@ body {
           .sortBy-label {
             display: none;
           }
-          
         }   
+
+        .event-list-search {
+          overflow: visible;
+          width: 100%;
+          height: 40px;
+          box-sizing: border-box;
+          padding: 10px;
+          margin-top: 10px;
+        }
       }
 
       .event-list {

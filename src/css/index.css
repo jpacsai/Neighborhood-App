@@ -112,7 +112,7 @@ main {
         main aside .filter-modal .filter-buttons .filter-modal-btn {
           width: 115px; }
     main aside .event-control {
-      height: 75px;
+      height: 157px;
       width: 100%;
       display: flex;
       flex-direction: column;
@@ -126,7 +126,7 @@ main {
       main aside .event-control .event-control-btn-container {
         width: 100%;
         display: flex;
-        justify-content: space-evenly; }
+        justify-content: space-between; }
         main aside .event-control .event-control-btn-container .filter-btn {
           color: #001a26;
           width: 115px;
@@ -138,6 +138,13 @@ main {
           width: 115px; }
         main aside .event-control .event-control-btn-container .sortBy-label {
           display: none; }
+      main aside .event-control .event-list-search {
+        overflow: visible;
+        width: 100%;
+        height: 40px;
+        box-sizing: border-box;
+        padding: 10px;
+        margin-top: 10px; }
     main aside .event-list {
       list-style-type: none;
       padding: 0 10px;
