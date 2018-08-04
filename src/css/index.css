@@ -11,6 +11,9 @@ body {
     padding: 10px;
     width: 40px;
     height: 40px; }
+  body input[type=submit]:focus {
+    outline: none;
+    border: 1px solid red; }
   body button:focus {
     outline: none;
     border: 1px solid red; }
@@ -158,6 +161,9 @@ main {
     main aside .event:hover,
     main aside .event:focus {
       background-color: #e5de44; }
+    main aside .event:focus {
+      outline: none;
+      border: 1px solid red; }
   main aside:focus {
     outline: none;
     border: 1px solid red; }

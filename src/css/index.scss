@@ -25,6 +25,11 @@ body {
     height: 40px;
   }
 
+  input[type=submit]:focus {
+    outline: none;
+    border: 1px solid red;
+  }
+
   button:focus {
     outline: none;
     border: 1px solid red;
@@ -237,6 +242,11 @@ body {
       .event:hover,
       .event:focus {
         background-color: $accent-color;
+      }
+
+      .event:focus {
+        outline: none;
+        border: 1px solid red;
       }
     }
 
