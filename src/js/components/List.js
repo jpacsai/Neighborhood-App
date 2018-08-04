@@ -4,12 +4,13 @@ import { bindActionCreators } from 'redux';
 import { highligthMarker_In } from './../actions/highligthMarker_In';
 import { highligthMarker_Out } from './../actions/highligthMarker_Out';
 import { openInfoWindow } from './../actions/infoWindow';
+import { closeAside } from './../actions/closeAside';
 
 class List extends Component {
 
     render() {
 
-        const { list, highligthMarker_In, highligthMarker_Out, openInfoWindow, infoWindow } = this.props;
+        const { list, highligthMarker_In, highligthMarker_Out, openInfoWindow, infoWindow, closeAside } = this.props;
     
         if (list === 'no match') {
             return (
@@ -31,6 +32,7 @@ class List extends Component {
                 
                 return (
                     <li 
+                        tabIndex="0"
                         key={ event.id }
                         className='event'
                         onMouseEnter={ () => { 
@@ -43,9 +45,15 @@ class List extends Component {
                                 highligthMarker_Out()
                             }
                         } }
+                        onKeyPress={ () => {
+                            highligthMarker_In(venueId);
+                            openInfoWindow(place, [event]);
+                            closeAside();
+                        }}
                         onClick={ () => {
                             highligthMarker_In(venueId);
                             openInfoWindow(place, [event]);
+                            closeAside();
                         } }
                     >
                         <h3 className='event-name'>{ event.name }</h3>
@@ -74,6 +82,7 @@ function mapDispatchToProps(dispatch) {
         highligthMarker_In,
         highligthMarker_Out,
         openInfoWindow,
+        closeAside
     }, dispatch);
 }
 

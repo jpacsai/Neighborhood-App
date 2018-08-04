@@ -7,6 +7,7 @@ import { openInfoWindow } from './../actions/infoWindow';
 import { highligthMarker_In } from './../actions/highligthMarker_In';
 import { closeInfoWindow } from './../actions/closeInfoWindow';
 import { hideModal } from './../actions/hideModal';
+import { closeAside } from './../actions/closeAside';
 
 class Place extends Component {
 
@@ -16,7 +17,7 @@ class Place extends Component {
 
   render() {
 
-    const { hoverId, venue, infoWindow, openInfoWindow, closeInfoWindow, highligthMarker_In, highligthMarker_Out, hideModal } = this.props;
+    const { hoverId, venue, infoWindow, openInfoWindow, closeInfoWindow, highligthMarker_In, highligthMarker_Out, hideModal, closeAside } = this.props;
     
     const markerStyle = hoverId === venue.venueId ? 'map-marker map-marker-list-hovered bounce' : 'map-marker';
 
@@ -30,11 +31,20 @@ class Place extends Component {
     return (
         <div>
             <div 
+                tabIndex="0"
                 className={ markerStyle }
-                onClick={ () => {
+                onFocus={ () => console.log(venue.venueName)}
+                onKeyPress={() => {
                     hideModal();
                     openInfoWindow(place, events);
                     highligthMarker_In(venue.venueId)
+                    closeAside();
+                }}
+                onClick={ () => {
+                    hideModal();
+                    openInfoWindow(place, events);
+                    highligthMarker_In(venue.venueId);
+                    closeAside();
                 } }
             >
                 {events.length}
@@ -47,7 +57,7 @@ class Place extends Component {
 
                 <button 
                     className='infoWindow-close-btn'
-                    aria-label='Close inf window'
+                    aria-label='Close info window'
                     onClick={ () => {
                         closeInfoWindow();
                         highligthMarker_Out();
@@ -104,7 +114,8 @@ function mapDispatchToProps(dispatch) {
         closeInfoWindow,
         openInfoWindow,
         highligthMarker_In,
-        hideModal
+        hideModal,
+        closeAside
 	}, dispatch);
 }
 

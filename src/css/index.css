@@ -11,6 +11,9 @@ body {
     padding: 10px;
     width: 40px;
     height: 40px; }
+  body button:focus {
+    outline: none;
+    border: 1px solid red; }
   body header {
     text-align: center;
     height: 15vh;
@@ -50,7 +53,8 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    transition: 0.3s ease-out; }
+    transition: 0.3s ease-out;
+    box-sizing: border-box; }
     main aside .aside-header {
       margin: 0;
       padding: 8px;
@@ -153,6 +157,9 @@ main {
           font-weight: bold; }
     main aside .event:hover {
       background-color: #e5de44; }
+  main aside:focus {
+    outline: none;
+    border: 1px solid red; }
   main .aside-show {
     left: 0; }
   main .aside-hide {
@@ -187,6 +194,8 @@ main {
       justify-content: center;
       padding-top: 3px;
       font-size: 15px; }
+    main .map .map-marker:focus {
+      background-color: #ef7f0c; }
     main .map .map-marker:hover,
     main .map .map-marker-list-hovered {
       background: #ef7f0c;
@@ -316,3 +325,6 @@ main {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #555; }
+
+.map-marker:focus {
+  background-color: #ef7f0c; }

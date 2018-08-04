@@ -25,6 +25,11 @@ body {
     height: 40px;
   }
 
+  button:focus {
+    outline: none;
+    border: 1px solid red;
+  }
+
   header {
     text-align: center;
     height: 15vh;
@@ -77,6 +82,7 @@ body {
       flex-direction: column;
       align-items: center;
       transition: 0.3s ease-out;
+      box-sizing: border-box;
 
       .aside-header {
         margin: 0;
@@ -233,6 +239,11 @@ body {
       }
     }
 
+    aside:focus {
+      outline: none;
+      border: 1px solid red;
+    }
+
     .aside-show {
       left: 0;
     }
@@ -269,6 +280,10 @@ body {
         font-size: 15px;
       }
 
+      .map-marker:focus {
+        background-color: $highlight-color;
+      }
+
       .map-marker:hover,
       .map-marker-list-hovered {
         background: $highlight-color;
@@ -287,6 +302,8 @@ body {
         to   { transform: translate3d(0, 3px, 0); }
       }
     }
+
+    
 
     .map-aside {
       left: 280px;
@@ -431,4 +448,8 @@ body {
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
     background: #555; 
+  }
+
+  .map-marker:focus {
+    background-color: $highlight-color;
   }
