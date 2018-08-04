@@ -46,7 +46,8 @@ class Place extends Component {
                 <p className='infoWindow-venue-address'>{ venue.venueAddress }</p>
 
                 <button 
-                    className='infoWindow-close-btn' 
+                    className='infoWindow-close-btn'
+                    aria-label='Close inf window'
                     onClick={ () => {
                         closeInfoWindow();
                         highligthMarker_Out();

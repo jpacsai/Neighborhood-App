@@ -40,8 +40,9 @@ class Aside extends Component {
                                 Show Filters
                             </button>
 
-                            <label htmlFor="sortBy" className='sortBy-label'>Sort event list:</label>
+                            
                             <select 
+                                aria-label='Sort event list by'
                                 id="sortBy"
                                 className='event-list-sortBy-btn'
                                 onChange={ (e) => sortAction(displayList, e) }
