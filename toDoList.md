@@ -1,0 +1,112 @@
+### To-Do:
+
+...
+- [x] generate filters from event list
+- [x] add calendar
+   - [x] disable days
+   - [x] multiselect days
+- [x] fix: date format in fetch
+- [x] hide/show filter section
+- [x] add event counter  
+- [x] fix: event list section scroll
+- [x] disable month toggle in calendar, display 6 weeks
+- [x] move filters to modal window
+- [x] add close button to modal
+- [x] extract dates from fetch
+- [x] inspect date formats in all dates
+- [x] disable dates based on extracted data
+- [x] fix: modal layout
+- [x] change location filters to checkboxes instead of select options
+- [x] fix: filtering with multiple locations
+- [x] add date to filtering
+- [x] add reset filters button + function
+- [x] fix: display all events after resetting filters
+- [x] refactor: transform day function in DayPicker
+- [x] check again all functions using dates for refactoring
+- [x] fix: keep checkboxes checked when modal is closed --> move checkbox checked-state to state
+   - [x] add 'remove date' function to filtersToApply
+   - [x] fix: uncheck all locations when reset is clicked
+- [x] fix: event counter when no match found
+- [x] add state to check if fetch is ready
+- [x] sort event list by date by default
+- [x] sort by function
+   - [x] date (default)
+   - [x] location
+   - [x] alphabet
+- [x] fix: display list message when no events found
+- [x] move display list function to state
+- [x] move sorted list to state
+- [x] add test marker to map
+- [x] find coordinates of places without them
+   - [x] add method to find coordinates from address
+   - [x] add property to event objects without them
+- [x] add all markers to map
+- [x] refactor: fix async geocode  
+~~cluster markers in same location~~
+- [x] add allVenues property to state
+- [x] fix: show all venues on map after resetting filters
+- [x] close modal when filters applied
+- [x] map the flow of actions to store
+   - [x] inject venue property into actions
+- [x] change logic of displaying markers:
+   - [x] reduce displayList into single venues with a list of it's displayed events
+   - [x] add new property to store, change list in Map component
+- [x] fix: clearing filters when no filters selected triggers resorting
+- [x] fix: don't display markers when no match found after filtering
+- [x] calculate most north-west and south-east coordinates
+- [x] add fitbounds to map  
+~~move fitbounds to state~~
+- [x] calculate fitbounds for displayed (filtered) markers to trigger auto zoom on markers
+- [x] recalculate on filtering, resetting
+- [x] add single event infowindow
+- [x] zoom in on venue marker when event is clicked in list
+- [x] close infowindow when filter btn is clicked
+- [x] hover over event list items highlights venue marker
+- [x] add close btn to infowindow
+- [x] fix: disable highlighting other markers when infowindow is open
+- [x] click on venue marker centers map over it
+- [x] fix: infowindow when marker clicked (closeUp value)
+   - [x] separate cloceup and event / venue actions
+- [x] make marker bounce when marker is selected, change color too
+~~some venue doesn't have a marker ???~~
+- [x] click on venue marker shows all (filtered) events in list in infowindow
+   - [x] fix everything :/
+   - [x] add btn to close it
+- [x] make it responsive
+- [x] animate marker when it's clicked
+- [x] remove zooming out when infowindow is closed
+- [x] refactor: simplify zoom + info/marker window actions
+~~fix: zoom function doesn't when work after zoom manually changed~~
+- [x] remove unnecessary code related to deprecated closup actions
+- [x] fix: highlighting of markers when event list is hovered
+- [x] feat: offset map center (so the whole infowindow is on screen)
+- [x] refactor: hoverIn function
+- [x] fix: placing of markers when animated
+- [x] feat: add data to infowindow
+- [x] fix: hover list doesn't work after infowindow is closed
+- [x] style: infowindow to accommodate events list
+- [x] fix: set gestureHandling so infoWindow is scrollable
+- [x] style: don't show gradient in infowindow when there's only 1 event
+- [x] fix: highlight markers when list hovered
+- [x] fix: when aside is open push and shrink map
+- [x] fix: fitbounds when filtering (1 location)
+- [x] fix: close infowindow when side menu is opened
+- [x] fix: disable aside toggle while filters are open
+- [x] fix: put location filters into alphabetical order
+- [x] style page
+   - [x] choose color palette
+   - [x] add color variables to sass
+- [x] error handling
+- [x] fix: onFocus onBlur when clicking on infowindow
+- [x] a11y: 
+   - [x] focus eventlist then capture it if needed
+   - [x] aria labels
+- [x] fix: clicking on marker when filtermodal is open
+- [x] feat: hover marker venue name
+- [x] fix: day picker styles messed up
+- [x] check ticketmaster page form API usage terms
+***
+- [ ] write readme
+- [ ] comment code
+- [ ] validate page (?)
+- [ ] put on gh-pages
