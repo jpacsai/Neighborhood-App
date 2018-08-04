@@ -29,7 +29,7 @@ class Aside extends Component {
 
                 { fetchReady && 
                     <div className='event-control'>
-                        <p className='event-control-counter'>{ displayList.length || '0' } event{ displayList.length > 1 && 's'} found</p>
+                        <p className='event-control-counter'>{ finalList.length || '0' } event{ finalList.length > 1 && 's'} found</p>
 
                         <div className='event-control-btn-container'>
                             <button 
