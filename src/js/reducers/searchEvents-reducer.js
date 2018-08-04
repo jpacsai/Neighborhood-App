@@ -6,6 +6,9 @@ export default function searchEventsReducer(state = null, action) {
         case 'NO_MATCHING_SEARCHED_EVENTS':
             return action.searchResults;
 
+        case 'SORTING_LIST':
+            return action.sortedList;
+
         default:
             return state;
     }

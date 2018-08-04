@@ -378,7 +378,6 @@ class Map extends Component {
 					>
 					
 					{ (fetchReady && venues ) && venues.map( (venue) => {
-						console.log(venues)
 						return (
 							<Place 
 								key={ venue.venueName }

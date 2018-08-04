@@ -14,7 +14,6 @@ export default function displayListReducer (state = [], action) {
             return action.allEvents;
 
         case 'SORTING_LIST':
-            console.log('sorting list',action.sortedList)
             return action.sortedList;
 
         default:
