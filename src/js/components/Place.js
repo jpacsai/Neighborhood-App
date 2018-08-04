@@ -33,8 +33,8 @@ class Place extends Component {
             <div 
                 tabIndex="0"
                 className={ markerStyle }
-                onFocus={ () => highligthMarker_In(venue.venueId) }
-                onBlur={ () => highligthMarker_Out(venue.venueId) }
+                // onFocus={ () => highligthMarker_In(venue.venueId) }
+               // onBlur={ () => highligthMarker_Out(venue.venueId) }
                 onKeyPress={() => {
                     hideModal();
                     openInfoWindow(place, events);
@@ -42,6 +42,7 @@ class Place extends Component {
                     closeAside();
                 }}
                 onClick={ () => {
+                    console.log('click marker', place, events)
                     hideModal();
                     openInfoWindow(place, events);
                     highligthMarker_In(venue.venueId);
