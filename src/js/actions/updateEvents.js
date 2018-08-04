@@ -16,8 +16,6 @@ export function updateEvents(list) {
         return event._embedded.venues[0].hasOwnProperty('location') === true
     })
 
-    console.log(withCoords);
-
     const filterLists = createFilters(withCoords);
 
     /*

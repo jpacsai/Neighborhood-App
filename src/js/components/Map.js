@@ -354,8 +354,6 @@ class Map extends Component {
 		const $backgroundColor = '#001a26';
 		const mapClassName = showAside ? 'map map-aside' : 'map';
 
-		console.log(zoom, center)
-
 		return (
 			// Important! Always set the container height explicitly
 			<div 
