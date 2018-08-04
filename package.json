@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://jpacsai.github.io",
   "dependencies": {
+    "escape-string-regexp": "^1.0.5",
     "gh-pages": "^1.2.0",
     "google-map-react": "^1.0.5",
     "node-sass-chokidar": "^1.3.3",
