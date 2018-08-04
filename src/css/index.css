@@ -17,6 +17,9 @@ body {
   body button:focus {
     outline: none;
     border: 1px solid red; }
+  body button:hover,
+  body input[type=submit]:hover {
+    background-color: #ef7f0c; }
   body header {
     text-align: center;
     height: 15vh;
@@ -226,6 +229,30 @@ main {
     transform: translate3d(0, -20px, 0); }
   to {
     transform: translate3d(0, 3px, 0); } }
+    main .map .map-marker-hoverInfo {
+      color: whitesmoke;
+      width: 150px;
+      height: 120px;
+      z-index: 3;
+      position: relative;
+      top: -190px;
+      left: -75px;
+      padding: 10px;
+      font-size: 15px;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      justify-content: space-around;
+      box-sizing: border-box;
+      flex-direction: column;
+      background-color: #001a26; }
+    main .map .map-marker-hoverInfo-venue {
+      font-size: 17px;
+      margin: 0; }
+    main .map .map-marker-hoverInfo-address {
+      font-size: 14px;
+      margin: 0;
+      color: #ababab; }
   main .map-aside {
     left: 280px;
     width: calc(100vw - 280px); }

@@ -14,6 +14,7 @@ export function getVenues(displayEvents) {
             const latitude = Number(obj.location.latitude);
             const longitude = Number(obj.location.longitude);
             const venueAddress = obj.address.line1 + ', ' + obj.city.name + ', ' + obj.postalCode;
+            const venueCity = obj.city.name;
             
             const venueObj = {
                 venueId,
@@ -21,6 +22,7 @@ export function getVenues(displayEvents) {
                 lat: latitude,
                 lng: longitude,
                 venueAddress,
+                venueCity,
                 eventsArray : [displayEvents[i]]
             }
 

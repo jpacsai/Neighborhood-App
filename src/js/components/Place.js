@@ -8,6 +8,8 @@ import { highligthMarker_In } from './../actions/highligthMarker_In';
 import { closeInfoWindow } from './../actions/closeInfoWindow';
 import { hideModal } from './../actions/hideModal';
 import { closeAside } from './../actions/closeAside';
+import { hoverMarkerIn } from './../actions/hoverMarker_In';
+import { hoverMarkerOut } from './../actions/hoverMarker_out';
 
 class Place extends Component {
 
@@ -17,7 +19,7 @@ class Place extends Component {
 
   render() {
 
-    const { hoverId, venue, infoWindow, openInfoWindow, closeInfoWindow, highligthMarker_In, highligthMarker_Out, hideModal, closeAside } = this.props;
+    const { hoverId, venue, infoWindow, openInfoWindow, closeInfoWindow, highligthMarker_In, highligthMarker_Out, hideModal, closeAside, hoverMarkerIn, hoverMarkerOut, hoverMarker } = this.props;
     
     const markerStyle = hoverId === venue.venueId ? 'map-marker map-marker-list-hovered bounce' : 'map-marker';
 
@@ -32,8 +34,14 @@ class Place extends Component {
         <div>
             <div 
                 tabIndex="0"
+                aria-label={ venue.venueName + " " + venue.venueCity }
                 className={ markerStyle }
-                onFocus={ () => highligthMarker_In(venue.venueId) }
+                onMouseEnter={ () => {
+                    hoverMarkerIn(venue.venueId);
+                }}
+                onMouseLeave={ () => {
+                    hoverMarkerOut();
+                }}
                 onKeyPress={() => {
                     hideModal();
                     openInfoWindow(place, events);
@@ -41,7 +49,6 @@ class Place extends Component {
                     closeAside();
                 }}
                 onClick={ () => {
-                    console.log('click marker', place, events)
                     hideModal();
                     openInfoWindow(place, events);
                     highligthMarker_In(venue.venueId);
@@ -50,6 +57,13 @@ class Place extends Component {
             >
                 {events.length}
             </div>
+
+            { (hoverMarker && (!infoWindow.value && hoverMarker === venue.venueId)) &&
+                <div className='map-marker-hoverInfo'>
+                    <span className='map-marker-hoverInfo-venue'>{ venue.venueName }</span>
+                    <span className='map-marker-hoverInfo-address'>{ venue.venueAddress}</span>
+                </div>
+            }
 
             { (infoWindow && ( infoWindow.events && venue.lat + 0.015 === infoWindow.lat && venue.lng === infoWindow.lng)) &&
             <div className='infoWindow-wrapper'>
@@ -106,6 +120,7 @@ function mapStateToProps(state) {
         eventInfo: state.infoWindow,
         hoverId: state.hoverEvent,
         infoWindow: state.infoWindow,
+        hoverMarker: state.hoverMarker
     }
 }
 
@@ -116,7 +131,9 @@ function mapDispatchToProps(dispatch) {
         highligthMarker_In,
         highligthMarker_Out,
         hideModal,
-        closeAside
+        closeAside,
+        hoverMarkerIn,
+        hoverMarkerOut
 	}, dispatch);
 }
 

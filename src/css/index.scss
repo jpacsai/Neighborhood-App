@@ -35,6 +35,11 @@ body {
     border: 1px solid red;
   }
 
+  button:hover,
+  input[type=submit]:hover {
+    background-color: $highlight-color;
+  }
+
   header {
     text-align: center;
     height: 15vh;
@@ -320,6 +325,36 @@ body {
       @keyframes bounce {
         from { transform: translate3d(0, -20px, 0); }
         to   { transform: translate3d(0, 3px, 0); }
+      }
+
+      .map-marker-hoverInfo {
+        color: $light-text-color;
+        width: 150px;
+        height: 120px;
+        z-index: 3;
+        position: relative;
+        top: -190px;
+        left: -75px;
+        padding: 10px;
+        font-size: 15px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        justify-content: space-around;
+        box-sizing: border-box;
+        flex-direction: column;
+        background-color: $background-color;
+      }
+
+      .map-marker-hoverInfo-venue{
+        font-size: 17px;
+        margin: 0;
+      }
+
+      .map-marker-hoverInfo-address{
+        font-size: 14px;
+        margin: 0;
+        color: $grey-text-color;
       }
     }
 

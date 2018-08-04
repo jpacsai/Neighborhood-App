@@ -16,6 +16,7 @@ import hoverListReducer from './hoverList-reducer';
 import infoWindowReducer from './infoWindow-reducer';
 import toggleAsideReducer from './toggleAside-reducer';
 import searchEventsReducer from './searchEvents-reducer';
+import hoverMarkerReducer from './hoverMarker-reducer';
 
 export default combineReducers({
 	events: eventReducer,
@@ -36,8 +37,8 @@ export default combineReducers({
 	hoverEvent: hoverListReducer,
 	infoWindow: infoWindowReducer,
 	showAside: toggleAsideReducer,
-	searchResult: searchEventsReducer
-	// mapCenterZoom: 
+	searchResult: searchEventsReducer,
+	hoverMarker: hoverMarkerReducer
 });
 
 /* STATE STRUCTURE:
