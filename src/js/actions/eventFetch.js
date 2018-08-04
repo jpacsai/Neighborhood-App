@@ -26,6 +26,7 @@ export function loadData(){
         return fetch(url)
         .then(res => res.json())
         .then((response)=>{
+            console.log(response._embedded);
             dispatch(updateEvents(response));
         })
         .catch(function(error) {

@@ -370,7 +370,7 @@ class Map extends Component {
 					<GoogleMapReact
 						options={ { gestureHandling:  gesture, styles: mapStyles, backgroundColor: $backgroundColor } } 
 						bootstrapURLKeys={{
-								key: 'AIzaSyA5ivLlpxg-AwsOTPELxcuO1zQ64Vo6yRo'
+								key: 'AIzaSyDhBkQX-hoe2X9j-6Lmzyb14Wh6TKpCqEU'
 						}}
 						center={ center }
 						zoom={ zoom }

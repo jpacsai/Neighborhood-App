@@ -4,7 +4,7 @@ import { getVenues } from './getVenues';
 import { sortByAlphabet } from './sortByAlphabet';
 import { calcBounds } from './calcBounds';
 
-Geocode.setApiKey("AIzaSyA5ivLlpxg-AwsOTPELxcuO1zQ64Vo6yRo");
+Geocode.setApiKey("AIzaSyDhBkQX-hoe2X9j-6Lmzyb14Wh6TKpCqEU");
 
 export function updateEvents(list) {
 
@@ -12,12 +12,21 @@ export function updateEvents(list) {
 
     const updatedList = addDate(events);
 
-    const filterLists = createFilters(updatedList);
+    const withCoords = updatedList.filter(event => {
+        return event._embedded.venues[0].hasOwnProperty('location') === true
+    })
+
+    console.log(withCoords);
+
+    const filterLists = createFilters(withCoords);
+
+    /*
 
     const toUpdate = updatedList.filter(event => {
         return event._embedded.venues[0].hasOwnProperty('location') === false
     })
 
+    console.log(toUpdate)
     let promises = toUpdate.map(event => {
         const line1 = event._embedded.venues[0].address.line1;
         const city = event._embedded.venues[0].city.name;
@@ -30,11 +39,24 @@ export function updateEvents(list) {
             return event;
         })
     });
+    */
 
-    let allVenues;
-    let sorted;
-    let bounds;
-      
+    let allVenues = getVenues(withCoords);
+    let sorted = sortByAlphabet(withCoords);
+    let bounds = calcBounds(allVenues);
+
+    return {
+        type:"FETCH_READY",
+        payload: sorted,
+        locations: filterLists.locations,
+        dates: filterLists.dates,
+        datesObj: filterLists.datesObj,
+        allVenues: allVenues,
+        bounds: bounds
+    }
+
+    /* 
+
     // Wait for all Promises to complete
     return (dispatch) => {
         Promise.all(promises)
@@ -60,7 +82,7 @@ export function updateEvents(list) {
         })
         .catch(e => {
             console.error(e);
-        })}
+        })} */
 }
 
 

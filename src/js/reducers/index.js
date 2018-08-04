@@ -35,6 +35,7 @@ export default combineReducers({
 	hoverEvent: hoverListReducer,
 	infoWindow: infoWindowReducer,
 	showAside: toggleAsideReducer
+	// mapCenterZoom: 
 });
 
 /* STATE STRUCTURE:
@@ -75,6 +76,11 @@ const store = {
 		events: []
 	}
 	showAside: boolean
+	mapCenterZoom: {
+		lat:
+		lng:
+		zoom:
+	}
 }
 
 */
