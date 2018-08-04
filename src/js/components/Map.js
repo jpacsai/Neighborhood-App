@@ -368,6 +368,7 @@ class Map extends Component {
 				{ fetchReady && 
 
 					<GoogleMapReact
+						aria-role='application'
 						options={ { gestureHandling:  gesture, styles: mapStyles, backgroundColor: $backgroundColor } } 
 						bootstrapURLKeys={{
 								key: 'AIzaSyDhBkQX-hoe2X9j-6Lmzyb14Wh6TKpCqEU'

@@ -129,6 +129,8 @@ main {
         main aside .event-control .event-control-btn-container .event-list-sortBy-btn {
           height: 40px;
           width: 115px; }
+        main aside .event-control .event-control-btn-container .sortBy-label {
+          display: none; }
     main aside .event-list {
       list-style-type: none;
       padding: 0 10px;
@@ -291,6 +293,13 @@ main {
         font-size: 16px; }
       main .infoWindow-event-container .infoWindow-event .infoWindow-link:hover {
         color: #ef7f0c; }
+
+.error-message {
+  width: 50vh;
+  height: 50vh;
+  text-align: center;
+  color: white;
+  margin: 25vh auto; }
 
 /* width */
 ::-webkit-scrollbar {

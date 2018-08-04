@@ -1,4 +1,5 @@
 import { updateEvents } from './updateEvents';
+import { fetchError } from './fetchError';
 
 export function loadData(){
 
@@ -30,6 +31,7 @@ export function loadData(){
             dispatch(updateEvents(response));
         })
         .catch(function(error) {
+            dispatch(fetchError());
             console.log('error: ', error);
         })
     }

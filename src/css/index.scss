@@ -190,6 +190,11 @@ body {
             height: 40px;
             width: 115px;
           }
+
+          .sortBy-label {
+            display: none;
+          }
+          
         }   
       }
 
@@ -397,8 +402,17 @@ body {
         }
       }
     }
+
+    
 }
 
+.error-message {
+  width: 50vh;
+  height: 50vh;
+  text-align: center;
+  color: white;
+  margin: 25vh auto;
+}
       /* width */
   ::-webkit-scrollbar {
     width: 10px;

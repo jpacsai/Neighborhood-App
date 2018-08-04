@@ -5,7 +5,6 @@ import { connect } from 'react-redux';
 import Map from './components/Map';
 import { toggleAside } from './actions/toggleAside';
 import Aside from './components/Aside';
-import { closeInfoWindow } from './actions/closeInfoWindow';
 import { highligthMarker_Out } from './actions/highligthMarker_Out';
 
 require('../css/index.css');
@@ -18,10 +17,10 @@ class App extends Component {
 	}
 
 	render() {
-		const { toggleAside, showAside, modalVisible } = this.props;
+		const { toggleAside, showAside, modalVisible, fetchReady } = this.props;
 
 		return (
-			<div>
+			fetchReady !== 'error' ? (<div>
 				<header>
 					<h1 className='title'>Last Minute Concerts</h1>
 					<p className='sub-title'>Find concerts for the next 7 days in Northern England</p>
@@ -31,7 +30,9 @@ class App extends Component {
 					{ !modalVisible && 
 						<button 
 							className='aside-toggle-btn'
-							onClick={ () => toggleAside(showAside) }
+							aria-label='Show side menu'
+							onClick={ () => toggleAside(showAside) 
+							}
 						>
 							<i className="fas fa-bars"></i>
 						</button>
@@ -43,16 +44,21 @@ class App extends Component {
 					<Map />
 				</main>
 
-			</div>
+			</div> ) : 
+			(
+				<div className='error-message'>
+					<h1>Error occurred. Please try again later.</h1>
+				</div>
+			)
 		)
 	}
 }
 
 function mapStateToProps(state) {
     return {
-		events: state.events.events,
 		showAside: state.showAside,
-		modalVisible: state.modalVisibility
+		modalVisible: state.modalVisibility,
+		fetchReady: state.fetchReady
     }
 }
 
@@ -60,7 +66,6 @@ function mapDispatchToProps(dispatch) {
     return bindActionCreators({
 		loadData: loadData,
 		toggleAside,
-		closeInfoWindow,
 		highligthMarker_Out
 	}, dispatch);
 }

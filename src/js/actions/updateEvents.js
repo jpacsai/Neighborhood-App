@@ -100,6 +100,7 @@ function addDate(list) {
     return updatedList;
 }
 
+/*
 function getCoords(address) {
     return Geocode.fromAddress(address).then(
         response => {
@@ -126,3 +127,4 @@ function mergeWithCoords(results, updatedList) {
     }
     return list;
 }
+*/
