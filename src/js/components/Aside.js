@@ -48,7 +48,7 @@ class Aside extends Component {
                                 aria-label='Sort event list by'
                                 id="sortBy"
                                 className='event-list-sortBy-btn'
-                                onChange={ (e) => sortAction(finalList, e) }
+                                onChange={ (e) => sortAction(finalList, e, true) }
                             >
                                 <option value="abc">Abc</option>
                                 <option value="date">Date</option>
