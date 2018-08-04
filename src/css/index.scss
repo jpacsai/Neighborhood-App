@@ -73,8 +73,8 @@ body {
       display: flex;
       justify-content: center;
       align-items: center;
-  }
     }
+    
   }
   
   main {
@@ -134,20 +134,18 @@ body {
             height: 270px;
             margin: auto;
             color: $dark-text-color;
-            background-color: $modal-background;
-
+            background-color: lightblue;
+            font-weight: bold;
+        
             .DayPicker-Day--today {
               color: $highlight-color;
             }
-
-            .DayPicker-Day--selected {
-              background-color: $accent-color;
-              color: $dark-text-color;
-            }
-
+        
             .DayPicker-Day--disabled { 
               color: grey;
             }
+          
+            
           }
 
           .filter-select {
@@ -297,7 +295,6 @@ body {
         background: -moz-linear-gradient(top, rgba(229,222,68,1) 0%, rgba(229,222,68,1) 51%, rgba(239,127,12,1) 100%); /* FF3.6-15 */
         background: -webkit-linear-gradient(top, rgba(229,222,68,1) 0%,rgba(229,222,68,1) 51%,rgba(239,127,12,1) 100%); /* Chrome10-25,Safari5.1-6 */
         background: linear-gradient(to bottom, rgba(229,222,68,1) 0%,rgba(229,222,68,1) 51%,rgba(239,127,12,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e5de44', endColorstr='#ef7f0c',GradientType=0 ); /* IE6-9 */
         display: flex;
         align-items: center;
         justify-content: center;
@@ -357,8 +354,6 @@ body {
         color: $grey-text-color;
       }
     }
-
-    
 
     .map-aside {
       left: 280px;
@@ -474,9 +469,7 @@ body {
         }
       }
     }
-
-    
-}
+  }
 
 .error-message {
   width: 50vh;

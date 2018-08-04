@@ -45,66 +45,52 @@ body {
     display: flex;
     justify-content: center;
     align-items: center; }
-
-main {
-  height: 85vh; }
-  main aside {
-    position: relative;
-    width: 280px;
-    height: 85vh;
-    z-index: 2;
-    background-color: #053752;
-    color: whitesmoke;
-    color: whitesmoke;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    transition: 0.3s ease-out;
-    box-sizing: border-box; }
-    main aside .aside-header {
-      margin: 0;
-      padding: 8px;
-      text-align: center; }
-    main aside .filter-modal {
-      position: absolute;
+  body main {
+    height: 85vh; }
+    body main aside {
+      position: relative;
+      width: 280px;
+      height: 85vh;
+      z-index: 2;
+      background-color: #053752;
+      color: whitesmoke;
+      color: whitesmoke;
       display: flex;
       flex-direction: column;
       align-items: center;
-      z-index: 2;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      max-width: 360px;
-      height: 85vh;
-      min-height: 360px;
-      background-color: #053752;
-      animation: fadeIn 0.8s;
-      overflow: scroll;
-      overflow-x: hidden; }
-      main aside .filter-modal .aside-filter-header {
-        margin: 13px; }
-      main aside .filter-modal .filter-modal-close-btn {
+      transition: 0.3s ease-out;
+      box-sizing: border-box; }
+      body main aside .aside-header {
+        margin: 0;
+        padding: 8px;
+        text-align: center; }
+      body main aside .filter-modal {
         position: absolute;
-        top: 15px;
-        right: 15px; }
-      main aside .filter-modal .filter-area .DayPicker {
-        max-width: 320px;
-        height: 270px;
-        margin: auto;
-        color: #001a26;
-        background-color: whitesmoke; }
-        main aside .filter-modal .filter-area .DayPicker .DayPicker-Day--today {
-          color: #ef7f0c; }
-        main aside .filter-modal .filter-area .DayPicker .DayPicker-Day--selected {
-          background-color: #e5de44;
-          color: #001a26; }
-        main aside .filter-modal .filter-area .DayPicker .DayPicker-Day--disabled {
-          color: grey; }
-      main aside .filter-modal .filter-area .filter-select {
-        color: whitesmoke; }
-        main aside .filter-modal .filter-area .filter-select .filter-select-li {
-          margin: 10px; }
-      main aside .filter-modal .filter-buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        z-index: 2;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        max-width: 360px;
+        height: 85vh;
+        min-height: 360px;
+        background-color: #053752;
+        animation: fadeIn 0.8s;
+        overflow: scroll;
+        overflow-x: hidden; }
+        body main aside .filter-modal .aside-filter-header {
+          margin: 13px; }
+        body main aside .filter-modal .filter-modal-close-btn {
+          position: absolute;
+          top: 15px;
+          right: 15px; }
+        body main aside .filter-modal .filter-select {
+          color: whitesmoke; }
+          body main aside .filter-modal .filter-select .filter-select-li {
+            margin: 10px; }
+      body main aside .filter-buttons {
         margin: 30px;
         height: 50px;
         display: flex;
@@ -112,9 +98,9 @@ main {
         padding: 10px;
         justify-content: space-evenly;
         align-items: center; }
-        main aside .filter-modal .filter-buttons .filter-modal-btn {
+        body main aside .filter-buttons .filter-modal-btn {
           width: 115px; }
-    main aside .event-control {
+    body main .event-control {
       height: 157px;
       width: 100%;
       display: flex;
@@ -124,31 +110,31 @@ main {
       padding: 0 20px 0 10px;
       box-sizing: border-box;
       margin-bottom: 10px; }
-      main aside .event-control .event-control-counter {
+      body main .event-control .event-control-counter {
         margin: 0 0 10px; }
-      main aside .event-control .event-control-btn-container {
+      body main .event-control .event-control-btn-container {
         width: 100%;
         display: flex;
         justify-content: space-between; }
-        main aside .event-control .event-control-btn-container .filter-btn {
+        body main .event-control .event-control-btn-container .filter-btn {
           color: #001a26;
           width: 115px;
           padding: 10px;
           box-sizing: border-box;
           height: 40px; }
-        main aside .event-control .event-control-btn-container .event-list-sortBy-btn {
+        body main .event-control .event-control-btn-container .event-list-sortBy-btn {
           height: 40px;
           width: 115px; }
-        main aside .event-control .event-control-btn-container .sortBy-label {
+        body main .event-control .event-control-btn-container .sortBy-label {
           display: none; }
-      main aside .event-control .event-list-search {
+      body main .event-control .event-list-search {
         overflow: visible;
         width: 100%;
         height: 40px;
         box-sizing: border-box;
         padding: 10px;
         margin-top: 10px; }
-    main aside .event-list {
+    body main .event-list {
       list-style-type: none;
       padding: 0 10px;
       margin: 0;
@@ -157,36 +143,36 @@ main {
       overflow: scroll;
       overflow-x: hidden;
       color: #001a26; }
-    main aside .event {
+    body main .event {
       margin: 5px 0;
       background-color: whitesmoke;
       cursor: pointer;
       padding: 8px; }
-      main aside .event .event-name {
+      body main .event .event-name {
         margin: 0 0 5px; }
-      main aside .event p {
+      body main .event p {
         margin: 0;
         color: #053752; }
-        main aside .event p span {
+        body main .event p span {
           font-weight: bold; }
-    main aside .event:hover,
-    main aside .event:focus {
+    body main .event:hover,
+    body main .event:focus {
       background-color: #e5de44; }
-    main aside .event:focus {
+    body main .event:focus {
       outline: none;
       border: 1px solid red; }
-  main aside:focus {
+  body aside:focus {
     outline: none;
     border: 1px solid red; }
-  main .aside-show {
+  body .aside-show {
     left: 0; }
-  main .aside-hide {
+  body .aside-hide {
     left: -290px; }
-  main .map {
+  body .map {
     width: 100%;
     position: absolute;
     top: 15vh; }
-    main .map .map-marker {
+    body .map .map-marker {
       position: relative;
       left: -10px;
       top: -30px;
@@ -205,20 +191,18 @@ main {
       /* Chrome10-25,Safari5.1-6 */
       background: linear-gradient(to bottom, #e5de44 0%, #e5de44 51%, #ef7f0c 100%);
       /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e5de44', endColorstr='#ef7f0c',GradientType=0 );
-      /* IE6-9 */
       display: flex;
       align-items: center;
       justify-content: center;
       padding-top: 3px;
       font-size: 15px; }
-    main .map .map-marker:focus {
+    body .map .map-marker:focus {
       background-color: #ef7f0c; }
-    main .map .map-marker:hover,
-    main .map .map-marker-list-hovered {
+    body .map .map-marker:hover,
+    body .map .map-marker-list-hovered {
       background: #ef7f0c;
       z-index: 2; }
-    main .map .bounce {
+    body .map .bounce {
       animation: bounce 0.5s;
       animation-direction: alternate;
       animation-timing-function: cubic-bezier(0.5, 0.05, 1, 0.5);
@@ -229,7 +213,7 @@ main {
     transform: translate3d(0, -20px, 0); }
   to {
     transform: translate3d(0, 3px, 0); } }
-    main .map .map-marker-hoverInfo {
+    body .map .map-marker-hoverInfo {
       color: whitesmoke;
       width: 150px;
       height: 120px;
@@ -246,17 +230,17 @@ main {
       box-sizing: border-box;
       flex-direction: column;
       background-color: #001a26; }
-    main .map .map-marker-hoverInfo-venue {
+    body .map .map-marker-hoverInfo-venue {
       font-size: 17px;
       margin: 0; }
-    main .map .map-marker-hoverInfo-address {
+    body .map .map-marker-hoverInfo-address {
       font-size: 14px;
       margin: 0;
       color: #ababab; }
-  main .map-aside {
+  body .map-aside {
     left: 280px;
     width: calc(100vw - 280px); }
-  main .infoWindow-wrapper {
+  body .infoWindow-wrapper {
     height: 358px;
     left: -115px;
     bottom: 413px;
@@ -270,25 +254,25 @@ main {
     color: whitesmoke;
     z-index: 3;
     border: 1px solid #e5de44; }
-    main .infoWindow-wrapper .infoWindow-venue {
+    body .infoWindow-wrapper .infoWindow-venue {
       font-size: 17px;
       width: 60%;
       text-align: center;
       margin: 15px 0 0; }
-    main .infoWindow-wrapper .infoWindow-venue-address {
+    body .infoWindow-wrapper .infoWindow-venue-address {
       width: 80%;
       text-align: center;
       font-size: 14px;
       margin: 5px 0;
       color: #ababab; }
-    main .infoWindow-wrapper .infoWindow-close-btn {
+    body .infoWindow-wrapper .infoWindow-close-btn {
       position: fixed;
       right: -107px;
       z-index: 5;
       margin-top: 7px;
       height: 30px;
       width: 30px; }
-    main .infoWindow-wrapper .infoWindow-gradient {
+    body .infoWindow-wrapper .infoWindow-gradient {
       width: 100%;
       min-height: 35px;
       margin-top: -25px;
@@ -305,10 +289,10 @@ main {
       /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
       filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 );
       /* IE6-9 */ }
-  main .infoWindow-event-container {
+  body .infoWindow-event-container {
     overflow-y: auto;
     width: 100%; }
-    main .infoWindow-event-container .infoWindow-event {
+    body .infoWindow-event-container .infoWindow-event {
       padding: 10px;
       margin: 0 20px 17px;
       background-color: #053752;
@@ -323,26 +307,26 @@ main {
       width: 190px;
       box-sizing: border-box;
       font-size: 16px; }
-      main .infoWindow-event-container .infoWindow-event .infoWindow-event-name {
+      body .infoWindow-event-container .infoWindow-event .infoWindow-event-name {
         margin: 0;
         font-size: 17px;
         color: whitesmoke; }
-      main .infoWindow-event-container .infoWindow-event .infoWindow-event-date {
+      body .infoWindow-event-container .infoWindow-event .infoWindow-event-date {
         margin: 0;
         font-size: 14px;
         font-weight: normal;
         color: #ababab; }
-      main .infoWindow-event-container .infoWindow-event .infoWindow-event-genre {
+      body .infoWindow-event-container .infoWindow-event .infoWindow-event-genre {
         margin: 0;
         font-size: 14px;
         color: #ababab; }
-      main .infoWindow-event-container .infoWindow-event .infoWindow-img {
+      body .infoWindow-event-container .infoWindow-event .infoWindow-img {
         width: 150px; }
-      main .infoWindow-event-container .infoWindow-event .infoWindow-link {
+      body .infoWindow-event-container .infoWindow-event .infoWindow-link {
         margin-top: 5px;
         color: #e5de44;
         font-size: 16px; }
-      main .infoWindow-event-container .infoWindow-event .infoWindow-link:hover {
+      body .infoWindow-event-container .infoWindow-event .infoWindow-link:hover {
         color: #ef7f0c; }
 
 .error-message {
@@ -370,3 +354,15 @@ main {
 
 .map-marker:focus {
   background-color: #ef7f0c; }
+
+.DayPicker {
+  max-width: 320px;
+  height: 270px;
+  margin: auto;
+  color: #001a26;
+  background-color: lightblue;
+  font-weight: bold; }
+  .DayPicker .DayPicker-Day--today {
+    color: #ef7f0c; }
+  .DayPicker .DayPicker-Day--disabled {
+    color: grey; }
