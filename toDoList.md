@@ -105,8 +105,7 @@
 - [x] feat: hover marker venue name
 - [x] fix: day picker styles messed up
 - [x] check ticketmaster page form API usage terms
+- [x] write readme
+- [x] comment code
 ***
-- [ ] write readme
-- [ ] comment code
-- [ ] validate page (?)
 - [ ] put on gh-pages
