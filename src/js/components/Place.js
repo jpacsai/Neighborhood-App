@@ -107,9 +107,7 @@ class Place extends Component {
                     { infoWindow.events.length > 1 &&
                         <div className='infoWindow-gradient'></div> }
                 </div>
-                
             </div> }
-
         </div>
     );
   }
@@ -138,26 +136,3 @@ function mapDispatchToProps(dispatch) {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Place);
-
-/* ( infoWindow.events && this.props.lat === infoWindow.lat && this.props.lng === infoWindow.lng)) &&
-
-                { infoWindow.events.map( event => {
-                    return (
-                        <div 
-                            className='event-infoWindow'
-                            key={ event.name }
-                        >
-                            <h3>{ event.name}</h3>
-                            <h4>{ event._embedded.venues[0].name}</h4>
-                            <img className='event-infoWindow-img' src={ event.images[5].url} alt='artist/event' />
-                            <button 
-                                className='event-infoWindow-close-btn' 
-                                onClick={ () => {
-                                    closeInfoWindow();
-                                    hoverOut();
-                                } }>X</button>
-                        </div>
-                    )
-                }) }
-
-                */

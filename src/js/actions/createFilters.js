@@ -1,3 +1,5 @@
+// creates filters from fetched data from Ticketmaster API
+
 export function createFilters(events){ 
 
     const allLocations = [];

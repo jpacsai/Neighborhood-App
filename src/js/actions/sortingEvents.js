@@ -1,5 +1,6 @@
 import { sortSwitch } from './sortSwitch';
 
+// action despatcher for sorting events to let state know of changes
 export function sortingEvents(list, e, type) {
 
     const method = e.target.value

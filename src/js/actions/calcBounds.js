@@ -1,5 +1,7 @@
+// calculates bounds for the calculation of zoom and center of the map
 export function calcBounds(arr) {
 
+    // find most north-western coordinate
     let highestLat = 0;
     let smallestLng = 0;
   
@@ -17,6 +19,7 @@ export function calcBounds(arr) {
         lng: smallestLng
     }
 
+    // find most south-eastern coordinate
     let smallestLat = 180;
     let highestLng = -180;
     

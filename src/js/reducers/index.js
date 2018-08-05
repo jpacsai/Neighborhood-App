@@ -44,21 +44,23 @@ export default combineReducers({
 /* STATE STRUCTURE:
 
 const store = {
-	events: [],					objects
-	fetchReady: boolean,		boolean
+	events: [],					array of objects
+	fetchReady: boolean,		fetch is ready
 	filterLists: {
-		locations: [],			string
-		dates: [], 				string --> format: "2018-07-28"
-		datesObj: []			date Obj
+		locations: [],			array of strings
+		dates: [], 				array of strings --> format: "2018-07-28"
+		datesObj: []			array of date Objects
 	},
 	filtersToApply: {
-		locations: [],			array
-		selectedDates: []		new Date()
+		locations: [],			
+		selectedDates: []		
 	}
-	filteredEvents: [],			object
-	modalVisibility: boolean,	boolean,
-	displayList: []				array
-	sortBy: ''					string ( 'abc' / 'date' )
+	filteredEvents: [],			
+	modalVisibility: boolean,	
+	displayList: []				
+	sortBy: ''					abc / date / location
+	allVenues: []				array of all venue objects
+	venues: []					array of filtered / searched venues to display
 	mapSize: {
 		width: num,
 		height: num
@@ -73,17 +75,15 @@ const store = {
 			lng: num
 		}
 	}
+	hoverEvent: string			id of hovered event list item
 	infoWindow: {
 		lat: num
 		lng: num
 		events: []
 	}
 	showAside: boolean
-	mapCenterZoom: {
-		lat:
-		lng:
-		zoom:
-	}
+	searchResult: []			array of events results of search
+	hoverMarker: string			id of hovered venue
 }
 
 */

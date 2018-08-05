@@ -1,3 +1,4 @@
+// extracts single venues from fetch list of events
 export function getVenues(displayEvents) {
     const displayVenues = [];
     const ids = [];
@@ -40,16 +41,3 @@ export function getVenues(displayEvents) {
 
     return displayVenues;
 }
-
-/*
-
-- change logic:
-move displayList-reducer into action, getVenues immediately, send it to state
-
-- include it in: 
-    - updateEvents
-    - filtering
-    - no match
-    - clear filters
-
-*/

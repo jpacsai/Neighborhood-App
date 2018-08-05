@@ -5,7 +5,6 @@ import { connect } from 'react-redux';
 import Map from './components/Map';
 import { toggleAside } from './actions/toggleAside';
 import Aside from './components/Aside';
-import { highligthMarker_Out } from './actions/highligthMarker_Out';
 
 require('../css/index.css');
 
@@ -66,7 +65,6 @@ function mapDispatchToProps(dispatch) {
     return bindActionCreators({
 		loadData: loadData,
 		toggleAside,
-		highligthMarker_Out
 	}, dispatch);
 }
 

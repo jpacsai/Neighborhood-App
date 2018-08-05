@@ -1,5 +1,6 @@
 import { DateUtils } from 'react-day-picker';
 
+// click on calendar in filter section add that day to filter array in state
 export function selectDay(day, selectedDays){
     let selected;
     let selectedIndex;

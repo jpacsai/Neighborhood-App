@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { loadData } from '../actions/eventFetch';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import List from './List';
@@ -43,7 +42,6 @@ class Aside extends Component {
                                 Show Filters
                             </button>
 
-                            
                             <select 
                                 aria-label='Sort event list by'
                                 id="sortBy"
@@ -82,7 +80,6 @@ class Aside extends Component {
 
 function mapStateToProps(state) {
     return {
-		events: state.events.events,
 		fetchReady: state.fetchReady,
 		displayList: state.displayList,
 		showAside: state.showAside,
@@ -93,7 +90,6 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
     return bindActionCreators({
-		loadData: loadData,
 		sortAction: sortingEvents,
         toggleModal,
         closeInfoWindow,

@@ -2,6 +2,8 @@ import { sortSwitch } from './sortSwitch';
 import { getVenues } from './getVenues';
 import { calcBounds } from './calcBounds';
 
+// filters displayed events with the chosen filters (date, location) by the chosen method 
+// alphabetical, date or location
 export function filterEvents (e, events, locationFilter, dateFilter, sortByMethod) {
 
     e.preventDefault();

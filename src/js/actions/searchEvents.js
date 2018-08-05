@@ -2,6 +2,7 @@ import escapeRegexp from 'escape-string-regexp';
 import { getVenues } from './getVenues';
 import { calcBounds } from './calcBounds';
 
+// search event list by name
 export function searchEvents(event, eventList) {
 
     const val = event.target.value.trim();

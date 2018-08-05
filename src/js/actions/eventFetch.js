@@ -1,6 +1,8 @@
 import { updateEvents } from './updateEvents';
 import { fetchError } from './fetchError';
 
+// fetch data from Ticketmaster API for Northern England for the next 7 days calculated from today 
+
 export function loadData(){
 
     console.log('fetching events');
@@ -27,7 +29,6 @@ export function loadData(){
         return fetch(url)
         .then(res => res.json())
         .then((response)=>{
-            console.log(response._embedded);
             dispatch(updateEvents(response));
         })
         .catch(function(error) {

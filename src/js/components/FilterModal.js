@@ -57,7 +57,6 @@ function mapStateToProps(state) {
         events: state.events,
         locationFilter: state.filtersToApply.locations,
         dateFilter: state.filtersToApply.selectedDays,
-        modalVisible: state.modalVisibility,
         sortByMethod: state.sortBy,
         allVenues: state.allVenues
     }

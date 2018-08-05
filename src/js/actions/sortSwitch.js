@@ -2,6 +2,7 @@ import { sortByAlphabet } from './sortByAlphabet';
 import { sortByDate } from './sortByDate';
 import { sortByLocation } from './sortByLocation';
 
+// sorts event list by the selected method
 export function sortSwitch(list, sortMethod) {
 
     const val = sortMethod || 'abc';

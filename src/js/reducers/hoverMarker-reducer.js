@@ -1,4 +1,5 @@
 export default function hoverMarkerReducer(state = false, action) {
+    
     switch(action.type) {
         case 'HOVER_MARKER_IN':
             return action.id;

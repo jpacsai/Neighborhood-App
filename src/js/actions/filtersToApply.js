@@ -1,3 +1,4 @@
+// adds selected filter to state
 export function filtersToApply(val, locationFilters) {
     
     const location = val.target.name;

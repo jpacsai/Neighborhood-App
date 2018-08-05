@@ -6,6 +6,9 @@ import { calcBounds } from './calcBounds';
 
 Geocode.setApiKey("AIzaSyDhBkQX-hoe2X9j-6Lmzyb14Wh6TKpCqEU");
 
+// adds missing properties to events, calculates bounds for map, create filters after fetch
+// originally it was fetching coordinates for events with missing data from Google Geocode API but 
+// because of quote limits I had to remove that functionality
 export function updateEvents(list) {
 
     const events = list._embedded.events;

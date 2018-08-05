@@ -314,6 +314,7 @@ class Map extends Component {
 			height: mapheight // Map height in pixels
 		};
 
+		// default bounds coordinates
 		let bounds = {
 			nw: {
 				lat: 0,
@@ -369,7 +370,10 @@ class Map extends Component {
 
 					<GoogleMapReact
 						role='application'
-						options={ { gestureHandling:  gesture, styles: mapStyles, backgroundColor: $backgroundColor } } 
+						options={ { 
+							gestureHandling:  gesture,
+							styles: mapStyles,
+							backgroundColor: $backgroundColor } } 
 						bootstrapURLKeys={{
 								key: 'AIzaSyDhBkQX-hoe2X9j-6Lmzyb14Wh6TKpCqEU'
 						}}
