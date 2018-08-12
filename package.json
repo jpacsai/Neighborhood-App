@@ -2,7 +2,7 @@
   "name": "n",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://jpacsai.github.io/Neighborhood-App",
+  "homepage": "https://jpacsai.github.io",
   "dependencies": {
     "escape-string-regexp": "^1.0.5",
     "gh-pages": "^1.2.0",
@@ -22,8 +22,6 @@
     "redux-thunk": "^2.3.0"
   },
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "build-css": "node-sass-chokidar src/css -o src/css",
     "watch-css": "npm run build-css && node-sass-chokidar src/css/ -o src/css --watch --recursive",
     "start-js": "react-scripts start",
