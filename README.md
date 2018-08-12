@@ -6,6 +6,7 @@ This project is developed for Google/Udacity Front End Web Development Nanodegre
 * [Project](#project)
 * [Installation](#installation)
 * [Dependencies](#dependencies)
+* [Live link](#live-link)
 * [How to use](#using-the-app)
 * [Compatibility](#browser-compatibility)
 
@@ -34,6 +35,9 @@ Service worker is being activated in the production version
 
 **To get a production version either run yarn or npm**  
 `yarn build` / `npm run build`
+
+## Live link  
+Open the page directly from [here](https://jpacsai.github.io/Neighborhood-App/)  
 
 ## Using the app  
 On the initial page load data is requested from the Ticketmaster API for the next 7 days for the Northern England region. Filter labels (location, date) are created from the fetched data.  
