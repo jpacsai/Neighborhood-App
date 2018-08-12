@@ -1,9 +1,14 @@
 @import url(./normalize.css);
+@import url("https://fonts.googleapis.com/css?family=Abel|Alegreya+Sans+SC");
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
-  background-color: #001a26; }
+  font-family: 'Abel', sans-serif;
+  background-color: #001a26;
+  /* width */
+  /* Track */
+  /* Handle */
+  /* Handle on hover */ }
   body button,
   body input[type=submit] {
     background-color: #e5de44;
@@ -32,11 +37,12 @@ body {
       text-align: center;
       padding: 10px 10px 0;
       margin: 0;
-      font-size: 22px; }
+      font-size: 25px;
+      font-family: 'Alegreya Sans SC', sans-serif; }
     body header .sub-title {
       margin: 5px auto;
       width: 80%;
-      font-size: 13px; }
+      font-size: 16px; }
   body nav .aside-toggle-btn {
     position: absolute;
     top: 4vh;
@@ -86,283 +92,274 @@ body {
           position: absolute;
           top: 15px;
           right: 15px; }
-        body main aside .filter-modal .filter-select {
-          color: whitesmoke; }
-          body main aside .filter-modal .filter-select .filter-select-li {
-            margin: 10px; }
-      body main aside .filter-buttons {
-        margin: 30px;
-        height: 50px;
-        display: flex;
-        width: 300px;
-        padding: 10px;
-        justify-content: space-evenly;
-        align-items: center; }
-        body main aside .filter-buttons .filter-modal-btn {
-          width: 115px; }
-    body main .event-control {
-      height: 157px;
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-around;
-      align-items: center;
-      padding: 0 20px 0 10px;
-      box-sizing: border-box;
-      margin-bottom: 10px; }
-      body main .event-control .event-control-counter {
-        margin: 0 0 10px; }
-      body main .event-control .event-control-btn-container {
-        width: 100%;
-        display: flex;
-        justify-content: space-between; }
-        body main .event-control .event-control-btn-container .filter-btn {
+        body main aside .filter-modal .filter-area .DayPicker {
+          max-width: 320px;
+          height: 270px;
+          margin: auto;
           color: #001a26;
-          width: 115px;
-          padding: 10px;
-          box-sizing: border-box;
-          height: 40px; }
-        body main .event-control .event-control-btn-container .event-list-sortBy-btn {
-          height: 40px;
-          width: 115px; }
-        body main .event-control .event-control-btn-container .sortBy-label {
-          display: none; }
-      body main .event-control .event-list-search {
-        overflow: visible;
-        width: 100%;
-        height: 40px;
-        box-sizing: border-box;
-        padding: 10px;
-        margin-top: 10px; }
-    body main .event-list {
-      list-style-type: none;
-      padding: 0 10px;
-      margin: 0;
-      height: 82%;
-      width: calc(100% - 20px);
-      overflow: scroll;
-      overflow-x: hidden;
-      color: #001a26; }
-    body main .event {
-      margin: 5px 0;
-      background-color: whitesmoke;
-      cursor: pointer;
-      padding: 8px; }
-      body main .event .event-name {
-        margin: 0 0 5px; }
-      body main .event p {
-        margin: 0;
-        color: #053752; }
-        body main .event p span {
+          background-color: lightblue;
           font-weight: bold; }
-    body main .event:hover,
-    body main .event:focus {
-      background-color: #e5de44; }
-    body main .event:focus {
+          body main aside .filter-modal .filter-area .DayPicker .DayPicker-Day--today {
+            color: #ef7f0c; }
+          body main aside .filter-modal .filter-area .DayPicker .DayPicker-Day--disabled {
+            color: grey; }
+        body main aside .filter-modal .filter-area .filter-select {
+          color: whitesmoke; }
+          body main aside .filter-modal .filter-area .filter-select .filter-select-li {
+            margin: 10px; }
+        body main aside .filter-modal .filter-buttons {
+          margin: 30px;
+          height: 50px;
+          display: flex;
+          width: 300px;
+          padding: 10px;
+          justify-content: space-evenly;
+          align-items: center; }
+          body main aside .filter-modal .filter-buttons .filter-modal-btn {
+            width: 115px; }
+      body main aside .event-control {
+        height: 157px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        padding: 0 20px 0 10px;
+        box-sizing: border-box;
+        margin-bottom: 10px; }
+        body main aside .event-control .event-control-counter {
+          margin: 0 0 10px; }
+        body main aside .event-control .event-control-btn-container {
+          width: 100%;
+          display: flex;
+          justify-content: space-between; }
+          body main aside .event-control .event-control-btn-container .filter-btn {
+            color: #001a26;
+            width: 115px;
+            padding: 10px;
+            box-sizing: border-box;
+            height: 40px; }
+          body main aside .event-control .event-control-btn-container .event-list-sortBy-btn {
+            height: 40px;
+            width: 115px; }
+          body main aside .event-control .event-control-btn-container .sortBy-label {
+            display: none; }
+        body main aside .event-control .event-list-search {
+          overflow: visible;
+          width: 100%;
+          height: 40px;
+          box-sizing: border-box;
+          padding: 10px;
+          margin-top: 10px; }
+      body main aside .event-list {
+        list-style-type: none;
+        padding: 0 10px;
+        margin: 0;
+        height: 82%;
+        width: calc(100% - 20px);
+        overflow: scroll;
+        overflow-x: hidden;
+        color: #001a26; }
+      body main aside .event {
+        margin: 5px 0;
+        background-color: whitesmoke;
+        cursor: pointer;
+        padding: 8px; }
+        body main aside .event .event-name {
+          margin: 0 0 5px; }
+        body main aside .event p {
+          margin: 0;
+          color: #053752; }
+          body main aside .event p span {
+            font-weight: bold; }
+      body main aside .event:hover,
+      body main aside .event:focus {
+        background-color: #e5de44; }
+      body main aside .event:focus {
+        outline: none;
+        border: 1px solid red; }
+    body main aside:focus {
       outline: none;
       border: 1px solid red; }
-  body aside:focus {
-    outline: none;
-    border: 1px solid red; }
-  body .aside-show {
-    left: 0; }
-  body .aside-hide {
-    left: -290px; }
-  body .map {
-    width: 100%;
-    position: absolute;
-    top: 15vh; }
-    body .map .map-marker {
-      position: relative;
-      left: -10px;
-      top: -30px;
-      width: 20px;
-      height: 30px;
-      -webkit-clip-path: polygon(100% 75%, 50% 100%, 0 75%, 0 0, 50% 25%, 100% 0);
-      clip-path: polygon(100% 75%, 50% 100%, 0 75%, 0 0, 50% 25%, 100% 0);
-      cursor: pointer;
-      color: #001A26;
-      /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#e5de44+0,e5de44+51,ef7f0c+100 */
-      background: #e5de44;
-      /* Old browsers */
-      background: -moz-linear-gradient(top, #e5de44 0%, #e5de44 51%, #ef7f0c 100%);
-      /* FF3.6-15 */
-      background: -webkit-linear-gradient(top, #e5de44 0%, #e5de44 51%, #ef7f0c 100%);
-      /* Chrome10-25,Safari5.1-6 */
-      background: linear-gradient(to bottom, #e5de44 0%, #e5de44 51%, #ef7f0c 100%);
-      /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding-top: 3px;
-      font-size: 15px; }
-    body .map .map-marker:focus {
-      background-color: #ef7f0c; }
-    body .map .map-marker:hover,
-    body .map .map-marker-list-hovered {
-      background: #ef7f0c;
-      z-index: 2; }
-    body .map .bounce {
-      animation: bounce 0.5s;
-      animation-direction: alternate;
-      animation-timing-function: cubic-bezier(0.5, 0.05, 1, 0.5);
-      animation-iteration-count: infinite; }
+    body main .aside-show {
+      left: 0; }
+    body main .aside-hide {
+      left: -290px; }
+    body main .map {
+      width: 100%;
+      position: absolute;
+      top: 15vh; }
+      body main .map .gm-style {
+        font-family: 'Abel', sans-serif;
+        font-size: 16px; }
+      body main .map .map-marker {
+        position: relative;
+        left: -10px;
+        top: -30px;
+        width: 20px;
+        height: 30px;
+        -webkit-clip-path: polygon(100% 75%, 50% 100%, 0 75%, 0 0, 50% 25%, 100% 0);
+        clip-path: polygon(100% 75%, 50% 100%, 0 75%, 0 0, 50% 25%, 100% 0);
+        cursor: pointer;
+        color: #001A26;
+        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#e5de44+0,e5de44+51,ef7f0c+100 */
+        background: #e5de44;
+        /* Old browsers */
+        background: -moz-linear-gradient(top, #e5de44 0%, #e5de44 51%, #ef7f0c 100%);
+        /* FF3.6-15 */
+        background: -webkit-linear-gradient(top, #e5de44 0%, #e5de44 51%, #ef7f0c 100%);
+        /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to bottom, #e5de44 0%, #e5de44 51%, #ef7f0c 100%);
+        /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 3px;
+        font-size: 15px; }
+      body main .map .map-marker:focus {
+        background-color: #ef7f0c; }
+      body main .map .map-marker:hover,
+      body main .map .map-marker-list-hovered {
+        background: #ef7f0c;
+        z-index: 2; }
+      body main .map .bounce {
+        animation: bounce 0.5s;
+        animation-direction: alternate;
+        animation-timing-function: cubic-bezier(0.5, 0.05, 1, 0.5);
+        animation-iteration-count: infinite; }
 
 @keyframes bounce {
   from {
     transform: translate3d(0, -20px, 0); }
   to {
     transform: translate3d(0, 3px, 0); } }
-    body .map .map-marker-hoverInfo {
-      color: whitesmoke;
-      width: 150px;
-      height: 120px;
-      z-index: 3;
-      position: relative;
-      top: -190px;
-      left: -75px;
-      padding: 10px;
-      font-size: 15px;
-      display: flex;
-      align-items: center;
-      text-align: center;
-      justify-content: space-around;
-      box-sizing: border-box;
-      flex-direction: column;
-      background-color: #001a26; }
-    body .map .map-marker-hoverInfo-venue {
-      font-size: 17px;
-      margin: 0; }
-    body .map .map-marker-hoverInfo-address {
-      font-size: 14px;
-      margin: 0;
-      color: #ababab; }
-  body .map-aside {
-    left: 280px;
-    width: calc(100vw - 280px); }
-  body .infoWindow-wrapper {
-    height: 358px;
-    left: -115px;
-    bottom: 413px;
-    box-sizing: border-box;
-    flex-direction: column;
-    align-items: center;
-    display: flex;
-    position: relative;
-    width: 230px;
-    background-color: #001a26;
-    color: whitesmoke;
-    z-index: 3;
-    border: 1px solid #e5de44; }
-    body .infoWindow-wrapper .infoWindow-venue {
-      font-size: 17px;
-      width: 60%;
-      text-align: center;
-      margin: 15px 0 0; }
-    body .infoWindow-wrapper .infoWindow-venue-address {
-      width: 80%;
-      text-align: center;
-      font-size: 14px;
-      margin: 5px 0;
-      color: #ababab; }
-    body .infoWindow-wrapper .infoWindow-close-btn {
-      position: fixed;
-      right: -107px;
-      z-index: 5;
-      margin-top: 7px;
-      height: 30px;
-      width: 30px; }
-    body .infoWindow-wrapper .infoWindow-gradient {
-      width: 100%;
-      min-height: 35px;
-      margin-top: -25px;
-      bottom: 0px;
-      z-index: 3;
-      position: sticky;
-      display: block;
-      /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+41,ffffff+99&0+0,1+77 */
-      background: -moz-linear-gradient(top, rgba(0, 26, 38, 0) 0%, rgba(0, 26, 255, 0.53) 41%, #001a26 77%, #001a26 99%);
-      /* FF3.6-15 */
-      background: -webkit-linear-gradient(top, rgba(0, 26, 38, 0) 0%, rgba(0, 26, 38, 0.53) 41%, #001a26 77%, #001a26 99%);
-      /* Chrome10-25,Safari5.1-6 */
-      background: linear-gradient(to bottom, rgba(0, 26, 38, 0) 0%, rgba(0, 26, 38, 0.53) 41%, #001a26 77%, #001a26 99%);
-      /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 );
-      /* IE6-9 */ }
-  body .infoWindow-event-container {
-    overflow-y: auto;
-    width: 100%; }
-    body .infoWindow-event-container .infoWindow-event {
-      padding: 10px;
-      margin: 0 20px 17px;
-      background-color: #053752;
-      left: -110px;
-      z-index: 2;
-      text-align: center;
-      display: flex;
-      align-items: center;
-      flex-direction: column;
-      justify-content: space-around;
-      height: 240px;
-      width: 190px;
-      box-sizing: border-box;
-      font-size: 16px; }
-      body .infoWindow-event-container .infoWindow-event .infoWindow-event-name {
-        margin: 0;
+      body main .map .map-marker-hoverInfo {
+        color: whitesmoke;
+        width: 150px;
+        height: 120px;
+        z-index: 3;
+        position: relative;
+        top: -190px;
+        left: -75px;
+        padding: 10px;
+        font-size: 15px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        justify-content: space-around;
+        box-sizing: border-box;
+        flex-direction: column;
+        background-color: #001a26; }
+      body main .map .map-marker-hoverInfo-venue {
         font-size: 17px;
-        color: whitesmoke; }
-      body .infoWindow-event-container .infoWindow-event .infoWindow-event-date {
-        margin: 0;
+        margin: 0; }
+      body main .map .map-marker-hoverInfo-address {
         font-size: 14px;
-        font-weight: normal;
-        color: #ababab; }
-      body .infoWindow-event-container .infoWindow-event .infoWindow-event-genre {
         margin: 0;
-        font-size: 14px;
         color: #ababab; }
-      body .infoWindow-event-container .infoWindow-event .infoWindow-img {
-        width: 150px; }
-      body .infoWindow-event-container .infoWindow-event .infoWindow-link {
-        margin-top: 5px;
-        color: #e5de44;
+    body main .map-aside {
+      left: 280px;
+      width: calc(100vw - 280px); }
+    body main .infoWindow-wrapper {
+      height: 358px;
+      left: -115px;
+      bottom: 413px;
+      box-sizing: border-box;
+      flex-direction: column;
+      align-items: center;
+      display: flex;
+      position: relative;
+      width: 230px;
+      background-color: #001a26;
+      color: whitesmoke;
+      z-index: 3;
+      border: 1px solid #e5de44;
+      font-family: 'Abel', sans-serif;
+      font-size: 16px; }
+      body main .infoWindow-wrapper .infoWindow-venue {
+        font-size: 17px;
+        width: 60%;
+        text-align: center;
+        margin: 15px 0 0; }
+      body main .infoWindow-wrapper .infoWindow-venue-address {
+        width: 80%;
+        text-align: center;
+        margin: 5px 0;
+        color: #ababab; }
+      body main .infoWindow-wrapper .infoWindow-close-btn {
+        position: fixed;
+        right: -107px;
+        z-index: 5;
+        margin-top: 7px;
+        height: 30px;
+        width: 30px; }
+      body main .infoWindow-wrapper .infoWindow-gradient {
+        width: 100%;
+        min-height: 35px;
+        margin-top: -25px;
+        bottom: 0px;
+        z-index: 3;
+        position: sticky;
+        display: block;
+        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+41,ffffff+99&0+0,1+77 */
+        background: -moz-linear-gradient(top, rgba(0, 26, 38, 0) 0%, rgba(0, 26, 255, 0.53) 41%, #001a26 77%, #001a26 99%);
+        /* FF3.6-15 */
+        background: -webkit-linear-gradient(top, rgba(0, 26, 38, 0) 0%, rgba(0, 26, 38, 0.53) 41%, #001a26 77%, #001a26 99%);
+        /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to bottom, rgba(0, 26, 38, 0) 0%, rgba(0, 26, 38, 0.53) 41%, #001a26 77%, #001a26 99%);
+        /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 );
+        /* IE6-9 */ }
+    body main .infoWindow-event-container {
+      overflow-y: auto;
+      width: 100%; }
+      body main .infoWindow-event-container .infoWindow-event {
+        padding: 10px;
+        margin: 0 20px 17px;
+        background-color: #053752;
+        left: -110px;
+        z-index: 2;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: space-around;
+        height: 240px;
+        width: 190px;
+        box-sizing: border-box;
         font-size: 16px; }
-      body .infoWindow-event-container .infoWindow-event .infoWindow-link:hover {
-        color: #ef7f0c; }
-
-.error-message {
-  width: 50vh;
-  height: 50vh;
-  text-align: center;
-  color: white;
-  margin: 25vh auto; }
-
-/* width */
-::-webkit-scrollbar {
-  width: 10px; }
-
-/* Track */
-::-webkit-scrollbar-track {
-  background: #f1f1f1; }
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: #888; }
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #555; }
-
-.map-marker:focus {
-  background-color: #ef7f0c; }
-
-.DayPicker {
-  max-width: 320px;
-  height: 270px;
-  margin: auto;
-  color: #001a26;
-  background-color: lightblue;
-  font-weight: bold; }
-  .DayPicker .DayPicker-Day--today {
-    color: #ef7f0c; }
-  .DayPicker .DayPicker-Day--disabled {
-    color: grey; }
+        body main .infoWindow-event-container .infoWindow-event .infoWindow-event-name {
+          margin: 0;
+          font-size: 17px;
+          color: whitesmoke; }
+        body main .infoWindow-event-container .infoWindow-event .infoWindow-event-date {
+          margin: 0;
+          font-weight: normal;
+          color: #ababab; }
+        body main .infoWindow-event-container .infoWindow-event .infoWindow-event-genre {
+          margin: 0;
+          color: #ababab; }
+        body main .infoWindow-event-container .infoWindow-event .infoWindow-img {
+          width: 150px; }
+        body main .infoWindow-event-container .infoWindow-event .infoWindow-link {
+          margin-top: 5px;
+          color: #e5de44;
+          font-size: 16px; }
+        body main .infoWindow-event-container .infoWindow-event .infoWindow-link:hover {
+          color: #ef7f0c; }
+  body .error-message {
+    width: 50vh;
+    height: 50vh;
+    text-align: center;
+    color: white;
+    margin: 25vh auto; }
+  body ::-webkit-scrollbar {
+    width: 10px; }
+  body ::-webkit-scrollbar-track {
+    background: #f1f1f1; }
+  body ::-webkit-scrollbar-thumb {
+    background: #888; }
+  body ::-webkit-scrollbar-thumb:hover {
+    background: #555; }
+  body .map-marker:focus {
+    background-color: #ef7f0c; }
