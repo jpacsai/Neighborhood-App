@@ -3,6 +3,7 @@
 
 $background-color: #001a26;
 $menu-color: #053752;
+$light-menu-color: #70a9c7;
 $list-item-color: #ebe460;
 $accent-color: #e5de44;
 $highlight-color: #ef7f0c;
@@ -368,7 +369,7 @@ body {
     }
 
     .infoWindow-wrapper {
-      height: 358px;
+      height: 370px;
       left: -115px;
       bottom: 413px;
       box-sizing: border-box;
@@ -399,12 +400,19 @@ body {
       }
       
       .infoWindow-close-btn {
-        position: fixed;
-        right: -107px;
+        position: absolute;
+        right: 7px;
         z-index: 5;
         margin-top: 7px;
         height: 30px;
         width: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        i {
+          line-height: 0;
+        }
       }
 
       .infoWindow-gradient {
@@ -491,17 +499,17 @@ body {
 
   /* Track */
   ::-webkit-scrollbar-track {
-    background: #f1f1f1; 
+    background: $light-menu-color; 
   }
 
   /* Handle */
   ::-webkit-scrollbar-thumb {
-    background: #888; 
+    background: $menu-color; 
   }
 
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
-    background: #555; 
+    background: $highlight-color; 
   }
 
   .map-marker:focus {
