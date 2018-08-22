@@ -6,12 +6,13 @@ import DatePicker from './../components/DayPicker';
 import FilterList from './FilterList';
 import { resetFiltering } from './../actions/resetFiltering';
 import { hideModal } from './../actions/hideModal';
+import { searchValueClear } from './../actions/searchValueClear';
 
 class FilterModal extends Component {
 
     render() {
 
-        const { events, locationFilter, dateFilter, filterEvents, reset, sortByMethod, hideModal, allVenues } = this.props;
+        const { events, locationFilter, dateFilter, filterEvents, reset, sortByMethod, hideModal, allVenues, searchValueClear } = this.props;
 
         return (
             <form 
@@ -43,6 +44,7 @@ class FilterModal extends Component {
                         className='filter-modal-btn filter-reset-btn'
                         onClick={ (e) => {
                             reset(events, sortByMethod, allVenues);
+                            searchValueClear();
                         } } 
                     >Clear</button>
                 </div>
@@ -66,7 +68,8 @@ function mapDispatchToProps(dispatch) {
     return bindActionCreators({
         filterEvents: filterEvents,
         hideModal,
-        reset: resetFiltering
+        reset: resetFiltering,
+        searchValueClear
     }, dispatch);
 }
 

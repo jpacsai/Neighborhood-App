@@ -17,6 +17,7 @@ import infoWindowReducer from './infoWindow-reducer';
 import toggleAsideReducer from './toggleAside-reducer';
 import searchEventsReducer from './searchEvents-reducer';
 import hoverMarkerReducer from './hoverMarker-reducer';
+import searchValueReducer from './searchValueReducer';
 
 export default combineReducers({
 	events: eventReducer,
@@ -38,7 +39,8 @@ export default combineReducers({
 	infoWindow: infoWindowReducer,
 	showAside: toggleAsideReducer,
 	searchResult: searchEventsReducer,
-	hoverMarker: hoverMarkerReducer
+	hoverMarker: hoverMarkerReducer,
+	searchValue: searchValueReducer
 });
 
 /* STATE STRUCTURE:

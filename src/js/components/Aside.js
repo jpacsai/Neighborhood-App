@@ -8,11 +8,12 @@ import { closeInfoWindow } from './../actions/closeInfoWindow';
 import { highligthMarker_Out } from './../actions/highligthMarker_Out';
 import { toggleModal } from './../actions/modalVisibility';
 import { searchEvents } from './../actions/searchEvents';
+import { searchValue } from './../actions/searchValue';
 
 class Aside extends Component {
 
 	render() {
-		const { fetchReady, sortAction, displayList, showAside, toggleModal, modalVisible, closeInfoWindow, highligthMarker_Out, searchEvents, searchResult } = this.props;
+		const { fetchReady, sortAction, displayList, showAside, toggleModal, modalVisible, closeInfoWindow, highligthMarker_Out, searchEvents, searchResult, searchInputValue, searchValue } = this.props;
 
         const asideStyle = showAside ? 'aside-show' : 'aside-hide';
         
@@ -59,10 +60,12 @@ class Aside extends Component {
                             type='text' 
                             aria-label='Enter search text'
                             placeholder="Search events name"
+                            value={ searchInputValue }
                             onChange={ (event) => {
                                 searchEvents(event, displayList);
                                 closeInfoWindow();
                                 highligthMarker_Out();
+                                searchValue(event);
                             } }
                         />
                     </div>
@@ -84,7 +87,8 @@ function mapStateToProps(state) {
 		displayList: state.displayList,
 		showAside: state.showAside,
         modalVisible: state.modalVisibility,
-        searchResult: state.searchResult
+        searchResult: state.searchResult,
+        searchInputValue: state.searchValue
     }
 }
 
@@ -94,7 +98,8 @@ function mapDispatchToProps(dispatch) {
         toggleModal,
         closeInfoWindow,
         highligthMarker_Out,
-        searchEvents
+        searchEvents,
+        searchValue
 	}, dispatch);
 }
 
