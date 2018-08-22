@@ -10,6 +10,7 @@ export default function searchEventsReducer(state = null, action) {
         case 'SORTING_SEARCH_LIST':
             return action.sortedList;
 
+        case 'SEARCH_CLEAR':
         case 'FILTERING_EVENTS':
             return null;
 
