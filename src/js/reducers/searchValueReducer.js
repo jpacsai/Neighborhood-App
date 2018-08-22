@@ -3,6 +3,7 @@ export default function searchValueReducer(state='', action) {
         case 'SEARCH_VALUE':
             return action.value;
 
+        case 'FILTERING_EVENTS':
         case 'SEARCH_CLEAR':
             return '';
             
