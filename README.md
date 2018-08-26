@@ -9,6 +9,7 @@ This project is developed for Google/Udacity Front End Web Development Nanodegre
 * [Live link](#live-link)
 * [How to use](#using-the-app)
 * [Compatibility](#browser-compatibility)
+* [Screenshots](#screenshots)
 
 ## Project 
 Build a single page map application using React and the Google Maps API. Integrate a third-party data API and make the app accessible and usable offline.  
@@ -47,3 +48,9 @@ Hovering on events in the side menu highlights the relevent venue marker on the 
 
 ## Browser compatibility  
 The site was tested on Google Chrome only
+
+## Screenshots
+![screenshot1](https://github.com/jpacsai/Neighborhood-App/blob/master/public/img/project1.JPG)
+![screenshot2](https://github.com/jpacsai/Neighborhood-App/blob/master/public/img/project2.JPG)
+![screenshot3](https://github.com/jpacsai/Neighborhood-App/blob/master/public/img/project3.jpg)
+![screenshot4](https://github.com/jpacsai/Neighborhood-App/blob/master/public/img/project4.JPG)
