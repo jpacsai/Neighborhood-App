@@ -1,4 +1,4 @@
-# LastMinute Concerts
+# LastMinute Concerts 🎶
 
 **This project is developed for Google/Udacity Front End Web Development Nanodegree (Project 8) as the final capstone project.**  
 
