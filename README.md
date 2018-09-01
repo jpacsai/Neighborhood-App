@@ -12,12 +12,12 @@ The aim of the project was to build a single page map application using React an
 
 ***
 ## 📑 Table of Contents
-* [Live link](#live-link)
-* [Getting started](#getting-started)
-* [How to use](#how-to-use)
-* [Screenshots](#screenshots)
-* [Licence](#licence)
-* [Credits](#credits)
+* [Live link](#-live-link)
+* [Getting started](#-getting-started)
+* [How to use](#-how-to-use)
+* [Screenshots](#-screenshots)
+* [Licence](#-licence)
+* [Credits](#-credits)
 
 ## 🔗 Live link  
 Open the page directly from [here](https://jpacsai.github.io/Neighborhood-App/)  
