@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://jpacsai.github.io/Neighborhood-App/",
   "dependencies": {
+    "build-css": "^0.2.0",
     "escape-string-regexp": "^1.0.5",
     "gh-pages": "^1.2.0",
     "google-map-react": "^1.0.5",
